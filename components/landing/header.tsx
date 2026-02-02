@@ -226,10 +226,79 @@ export function Header() {
               </div>
             </div>
 
-            {/* Mobile/Tablet Menu Button - Shows on screens smaller than xl */}
+            {/* Tablet: Login + Subscribe buttons visible (md to xl) */}
+            <div className="hidden md:flex xl:hidden items-center gap-2 ml-auto mr-2">
+              <Link href="https://autogestion.depcsuite.com/" target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" className="text-white/70 hover:text-white hover:bg-white/10 font-medium text-sm px-3 py-1.5 h-auto bg-transparent">
+                  Iniciar sesión
+                </Button>
+              </Link>
+              <Link href="#precios" onClick={(e) => handleNavClick(e, "#precios")}>
+                <Button className="bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white font-semibold text-sm px-4 py-1.5 h-auto shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 transition-all duration-300">
+                  Suscribirme
+                </Button>
+              </Link>
+              {/* Currency Selector for Tablet */}
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setIsCurrencyOpen(!isCurrencyOpen)}
+                  className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-white/25 hover:bg-white/10 transition-all duration-200"
+                  aria-label={`Moneda: ${selectedCurrency.country}`}
+                >
+                  <span className="text-lg">{selectedCurrency.flag}</span>
+                </button>
+
+                {isCurrencyOpen && (
+                  <>
+                    <div 
+                      className="fixed inset-0 z-10" 
+                      onClick={() => setIsCurrencyOpen(false)}
+                      aria-hidden="true"
+                    />
+                    <div className="absolute right-0 top-full mt-2 w-52 bg-[#1A0F2E] rounded-xl border border-white/15 shadow-2xl shadow-black/40 z-20 py-2 overflow-hidden">
+                      {currencies.map((currency) => (
+                        <button
+                          key={currency.code}
+                          type="button"
+                          onClick={() => {
+                            setSelectedCurrency(currency)
+                            setIsCurrencyOpen(false)
+                          }}
+                          className={`w-full flex items-center gap-3 px-4 py-2.5 text-left hover:bg-white/10 transition-colors ${
+                            selectedCurrency.code === currency.code ? "bg-pink-500/15" : ""
+                          }`}
+                        >
+                          <span className="text-xl">{currency.flag}</span>
+                          <div className="flex-1">
+                            <span className="text-sm font-medium text-white">{currency.country}</span>
+                            <span className="text-xs text-white/50 ml-2">{currency.code}</span>
+                          </div>
+                          {selectedCurrency.code === currency.code && (
+                            <span className="w-2 h-2 rounded-full bg-pink-500 shadow-lg shadow-pink-500/50" />
+                          )}
+                        </button>
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+
+            {/* Mobile: Only hamburger menu (smaller than md) */}
             <button
               type="button"
-              className="xl:hidden p-2 text-white"
+              className="md:hidden p-2 text-white ml-auto"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+
+            {/* Tablet: Hamburger menu for navigation only (md to xl) */}
+            <button
+              type="button"
+              className="hidden md:block xl:hidden p-2 text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
             >
@@ -241,8 +310,8 @@ export function Header() {
           {isMenuOpen && (
             <div className="xl:hidden py-6 border-t border-white/10">
               <nav className="flex flex-col gap-3">
-                {/* Mobile Currency Selector */}
-                <div className="flex items-center gap-3 pb-5 border-b border-white/10">
+                {/* Mobile Only: Currency Selector (hidden on tablet since it's in header) */}
+                <div className="flex md:hidden items-center gap-3 pb-5 border-b border-white/10">
                   <span className="text-sm font-medium text-white/70">Moneda:</span>
                   <div className="flex gap-2">
                     {currencies.map((currency) => (
@@ -318,7 +387,8 @@ export function Header() {
                     </Link>
                   )
                 ))}
-                <div className="flex flex-col gap-3 pt-5 mt-2 border-t border-white/10">
+                {/* Mobile Only: Login/Subscribe buttons (hidden on tablet since they're in header) */}
+                <div className="flex md:hidden flex-col gap-3 pt-5 mt-2 border-t border-white/10">
                   <Link href="https://autogestion.depcsuite.com/" target="_blank" rel="noopener noreferrer">
                     <Button variant="ghost" className="w-full justify-center text-white/80 hover:text-white hover:bg-white/10 font-semibold text-[15px] py-3 h-auto bg-transparent">
                       Iniciar sesión
