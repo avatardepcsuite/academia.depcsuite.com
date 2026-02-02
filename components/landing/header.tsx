@@ -96,14 +96,14 @@ export function Header() {
       {/* Main Header */}
       <div className="bg-[color-mix(in_oklab,#2D1B4E_95%,transparent)] backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/20">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10">
-          <div className="flex items-center justify-between h-18">
-            {/* Logo */}
-            <Link href="/" className="flex items-center">
-              <span className="font-bold text-xl tracking-tight text-white">Academia DePC</span>
+          <div className="flex items-center h-16">
+            {/* Logo - Left aligned */}
+            <Link href="/" className="flex items-center shrink-0">
+              <span className="font-bold text-lg tracking-tight text-white">Academia DePC</span>
             </Link>
 
-            {/* Desktop Navigation - Only on xl screens */}
-            <nav className="hidden xl:flex items-center gap-2">
+            {/* Desktop Navigation - Only on xl screens - Logo + Menu aligned left */}
+            <nav className="hidden xl:flex items-center gap-0.5 ml-6">
               {navItems.map((item) => (
                 item.hasSubmenu ? (
                   <div key={item.href} className="relative">
@@ -111,14 +111,14 @@ export function Header() {
                       type="button"
                       onClick={() => setIsDiplomaturasOpen(!isDiplomaturasOpen)}
                       onMouseEnter={() => setIsDiplomaturasOpen(true)}
-                      className={`flex items-center gap-1 px-5 py-2.5 transition-colors duration-200 font-semibold text-[15px] tracking-wide ${
+                      className={`flex items-center gap-0.5 px-2.5 py-1.5 transition-colors duration-200 font-medium text-sm ${
                         activeSection === item.href || pathname.startsWith("/diplomaturas")
                           ? "text-white" 
                           : "text-white/60 hover:text-white"
                       }`}
                     >
                       {item.label}
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isDiplomaturasOpen ? "rotate-180" : ""}`} />
+                      <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isDiplomaturasOpen ? "rotate-180" : ""}`} />
                     </button>
                     {isDiplomaturasOpen && (
                       <>
@@ -136,7 +136,7 @@ export function Header() {
                               key={diploma.href}
                               href={diploma.href}
                               onClick={() => setIsDiplomaturasOpen(false)}
-                              className={`block px-4 py-3 text-sm font-medium hover:bg-white/10 transition-colors ${
+                              className={`block px-4 py-2.5 text-sm font-medium hover:bg-white/10 transition-colors ${
                                 pathname === diploma.href 
                                   ? "bg-pink-500/15 text-white" 
                                   : "text-white/80"
@@ -154,7 +154,7 @@ export function Header() {
                     key={item.href}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className={`relative px-5 py-2.5 transition-colors duration-200 font-semibold text-[15px] tracking-wide ${
+                    className={`relative px-2.5 py-1.5 transition-colors duration-200 font-medium text-sm ${
                       activeSection === item.href 
                         ? "text-white" 
                         : "text-white/60 hover:text-white"
@@ -166,18 +166,28 @@ export function Header() {
               ))}
             </nav>
 
-            {/* Right Side: Currency Selector + CTA */}
-            <div className="hidden xl:flex items-center gap-5">
-              {/* Currency Selector */}
+            {/* Right Side: Login + Subscribe + Currency Flag - Aligned right */}
+            <div className="hidden xl:flex items-center gap-3 ml-auto">
+              <Link href="https://autogestion.depcsuite.com/" target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" className="text-white/70 hover:text-white hover:bg-white/10 font-medium text-sm px-3 py-1.5 h-auto bg-transparent">
+                  Iniciar sesión
+                </Button>
+              </Link>
+              <Link href="#precios" onClick={(e) => handleNavClick(e, "#precios")}>
+                <Button className="bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white font-semibold text-sm px-4 py-1.5 h-auto shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 transition-all duration-300">
+                  Suscribirme
+                </Button>
+              </Link>
+              
+              {/* Currency Selector - Only flag visible */}
               <div className="relative">
                 <button
                   type="button"
                   onClick={() => setIsCurrencyOpen(!isCurrencyOpen)}
-                  className="flex items-center gap-2.5 px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 hover:border-white/25 hover:bg-white/10 transition-all duration-200"
+                  className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-white/25 hover:bg-white/10 transition-all duration-200"
+                  aria-label={`Moneda: ${selectedCurrency.country}`}
                 >
                   <span className="text-lg">{selectedCurrency.flag}</span>
-                  <span className="text-sm font-semibold text-white tracking-wide">{selectedCurrency.code}</span>
-                  <ChevronDown className={`w-4 h-4 text-white/60 transition-transform duration-200 ${isCurrencyOpen ? "rotate-180" : ""}`} />
                 </button>
 
                 {isCurrencyOpen && (
@@ -196,13 +206,13 @@ export function Header() {
                             setSelectedCurrency(currency)
                             setIsCurrencyOpen(false)
                           }}
-                          className={`w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-white/10 transition-colors ${
+                          className={`w-full flex items-center gap-3 px-4 py-2.5 text-left hover:bg-white/10 transition-colors ${
                             selectedCurrency.code === currency.code ? "bg-pink-500/15" : ""
                           }`}
                         >
                           <span className="text-xl">{currency.flag}</span>
                           <div className="flex-1">
-                            <span className="text-sm font-semibold text-white">{currency.country}</span>
+                            <span className="text-sm font-medium text-white">{currency.country}</span>
                             <span className="text-xs text-white/50 ml-2">{currency.code}</span>
                           </div>
                           {selectedCurrency.code === currency.code && (
@@ -214,17 +224,6 @@ export function Header() {
                   </>
                 )}
               </div>
-
-              <Link href="https://autogestion.depcsuite.com/" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" className="text-white/70 hover:text-white hover:bg-white/10 font-semibold text-[15px] px-5 py-2.5 h-auto bg-transparent">
-                  Iniciar sesión
-                </Button>
-              </Link>
-              <Link href="#precios" onClick={(e) => handleNavClick(e, "#precios")}>
-                <Button className="bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white font-bold text-[15px] px-6 py-2.5 h-auto shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 transition-all duration-300">
-                  Suscribirme
-                </Button>
-              </Link>
             </div>
 
             {/* Mobile/Tablet Menu Button - Shows on screens smaller than xl */}
