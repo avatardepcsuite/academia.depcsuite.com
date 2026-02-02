@@ -48,9 +48,8 @@ const footerLinks = {
   soporte: {
     title: "Soporte",
     links: [
-      { label: "Seguimiento académico", href: "#" },
-      { label: "Contacto con los docentes", href: "#" },
       { label: "Preguntas frecuentes", href: "/preguntas-frecuentes" },
+      { label: "info@depcsuite.com", href: "mailto:info@depcsuite.com" },
     ],
   },
 }
