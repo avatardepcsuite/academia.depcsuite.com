@@ -1,11 +1,11 @@
 # Robots.txt for Academia DePC
-# https://academiadepc.com
+# https://academia.depcsuite.com
 
 User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://academiadepc.com/sitemap.xml
+Sitemap: https://academia.depcsuite.com/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1

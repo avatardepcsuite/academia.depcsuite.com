@@ -16,12 +16,12 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://academiadepc.com'),
+  metadataBase: new URL('https://academia.depcsuite.com'),
   title: {
-    default: 'Academia DePC | Cursos de Programacion y Tecnologia con Certificacion en Argentina y LATAM',
+    default: 'Academia DePC | La comunidad tech más activa de Argentina y Latinoamerica. Certificación nacional e internacional',
     template: '%s | Academia DePC'
   },
-  description: 'Academia DePC ofrece diplomaturas de programacion Full Stack, Python, PHP Laravel y Excel con doble certificacion (nacional e internacional). Cursos 100% online con clases en vivo, webinars gratuitos, hackathones presenciales y portal de empleo exclusivo. La comunidad tech mas activa de Argentina y Latinoamerica.',
+  description: 'Academia DePC ofrece diplomaturas de programación React.js, Node.js, Web Full Stack, Python, PHP Laravel y Excel con doble certificación (nacional e internacional). Cursos 100% online con clases en vivo, webinars gratuitos, hackathones presenciales y portal de empleo exclusivo. La comunidad tech más activa de Argentina y Latinoamerica.',
   keywords: [
     'cursos de programacion',
     'academia de programacion',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     'desarrollador full stack',
     'desarrollador web junior',
   ],
-  authors: [{ name: 'Academia DePC', url: 'https://academiadepc.com' }],
+  authors: [{ name: 'Academia DePC', url: 'https://academia.depcsuite.com' }],
   creator: 'Academia DePC',
   publisher: 'Academia DePC',
   generator: 'Next.js',
@@ -70,9 +70,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'es_AR',
-    url: 'https://academiadepc.com',
+    url: 'https://academia.depcsuite.com',
     siteName: 'Academia DePC',
-    title: 'Academia DePC | Cursos de Programacion con Certificacion en Argentina',
+    title: 'Academia DePC | La comunidad tech más activa de Argentina y Latinoamerica. Certificación nacional e internacional',
     description: 'Diplomaturas de programacion Full Stack, Python, PHP Laravel y Excel con doble certificacion. Clases en vivo, webinars gratuitos, hackathones y portal de empleo. La comunidad tech mas activa de Argentina y LATAM.',
     images: [
       {
@@ -105,14 +105,14 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://academiadepc.com',
+    canonical: 'https://academia.depcsuite.com',
     languages: {
-      'es-AR': 'https://academiadepc.com',
-      'es-CO': 'https://academiadepc.com',
-      'es-MX': 'https://academiadepc.com',
-      'es-CL': 'https://academiadepc.com',
-      'es-PE': 'https://academiadepc.com',
-      'es': 'https://academiadepc.com',
+      'es-AR': 'https://academia.depcsuite.com',
+      'es-CO': 'https://academia.depcsuite.com',
+      'es-MX': 'https://academia.depcsuite.com',
+      'es-CL': 'https://academia.depcsuite.com',
+      'es-PE': 'https://academia.depcsuite.com',
+      'es': 'https://academia.depcsuite.com',
     },
   },
   category: 'education',
