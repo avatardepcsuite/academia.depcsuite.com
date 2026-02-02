@@ -55,9 +55,9 @@ const footerLinks = {
 }
 
 const socialLinks = [
-  { icon: Instagram, href: "https://www.instagram.com/depcsuite/", label: "Instagram", color: "hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-500 hover:to-orange-400" },
-  { icon: Facebook, href: "https://www.facebook.com/depcsuite/", label: "Facebook", color: "hover:bg-[#1877F2]" },
   { icon: LinkedInIcon, href: "https://ar.linkedin.com/company/depcsuite", label: "LinkedIn", color: "hover:bg-[#0A66C2]" },
+  { icon: Facebook, href: "https://www.facebook.com/depcsuite/", label: "Facebook", color: "hover:bg-[#1877F2]" },
+  { icon: Instagram, href: "https://www.instagram.com/depcsuite/", label: "Instagram", color: "hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-500 hover:to-orange-400" },
 ]
 
 export function Footer() {
