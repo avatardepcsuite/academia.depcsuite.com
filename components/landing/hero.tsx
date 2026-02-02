@@ -1,8 +1,16 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Play, Award, BookOpen, Users } from "lucide-react"
-import Link from "next/link"
 
 export function Hero() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-gradient-to-br from-[#2D1B4E] via-[#5C1F5C] to-[#E91E63]">
       {/* Background decorative elements */}
@@ -36,18 +44,23 @@ export function Hero() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="#precios">
-              <Button size="lg" className="bg-white hover:bg-gray-100 text-[#2D1B4E] font-semibold shadow-lg px-8 h-12 text-base">
-                Suscribirme ahora
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </Link>
-            <Link href="#formacion">
-              <Button size="lg" variant="outline" className="border-white/30 hover:bg-white/10 px-8 h-12 text-base text-white bg-transparent">
-                <Play className="mr-2 w-4 h-4" />
-                Ver diplomaturas
-              </Button>
-            </Link>
+            <Button 
+              size="lg" 
+              className="bg-white hover:bg-gray-100 text-[#2D1B4E] font-semibold shadow-lg px-8 h-12 text-base"
+              onClick={() => scrollToSection("precios")}
+            >
+              Suscribirme ahora
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-white/30 hover:bg-white/10 px-8 h-12 text-base text-white bg-transparent"
+              onClick={() => scrollToSection("formacion")}
+            >
+              <Play className="mr-2 w-4 h-4" />
+              Ver diplomaturas
+            </Button>
           </div>
 
           {/* Key Benefits */}

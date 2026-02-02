@@ -3,7 +3,7 @@
 import { Header } from "@/components/landing/header"
 import { Footer } from "@/components/landing/footer"
 import { ChevronDown, HelpCircle, GraduationCap, CreditCard, Users, Award, Calendar, Laptop } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 
 const faqCategories = [
@@ -155,6 +155,10 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
 export default function PreguntasFrecuentes() {
   const [activeCategory, setActiveCategory] = useState("general")
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <main className="min-h-screen bg-white">

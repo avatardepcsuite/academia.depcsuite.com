@@ -139,14 +139,11 @@ export function Footer() {
                 © {new Date().getFullYear()} DEPCSUITE S.A.
               </p>
               <div className="flex items-center gap-4">
-                <Link href="#" className="text-xs text-white/50 hover:text-white transition-colors">
-                  Privacidad
+                <Link href="/politicas-de-privacidad" className="text-xs text-white/50 hover:text-white transition-colors">
+                  Politicas de privacidad
                 </Link>
-                <Link href="#" className="text-xs text-white/50 hover:text-white transition-colors">
-                  Términos
-                </Link>
-                <Link href="#" className="text-xs text-white/50 hover:text-white transition-colors">
-                  Cookies
+                <Link href="/terminos-y-condiciones" className="text-xs text-white/50 hover:text-white transition-colors">
+                  Terminos y condiciones
                 </Link>
               </div>
             </div>
@@ -184,9 +181,14 @@ export function Footer() {
             </div>
           </div>
           
+          {/* About Us */}
+          <p className="text-sm text-white/60 text-center mt-6 max-w-3xl mx-auto">
+            DEPCSUITE SA es una empresa desarrolladora de tecnologia que trabaja con las principales empresas del pais para brindarte la mejor formacion.
+          </p>
+          
           {/* CUIT Info */}
           <p className="text-xs text-white/40 text-center mt-4">
-            CUIT N° 30-71683193-7 | I.N.P.I. Res 2999343/19 | Disposicion Nro: DI-2019-131-APN-DNM#INPI
+            CUIT N° 30-71683193-7 | I.N.P.I. Res 3788960/26 | Disposicion Nro: DI-2026-28-APN-DNM#INPI
           </p>
         </div>
       </div>

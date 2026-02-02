@@ -202,7 +202,7 @@ export function Testimonials() {
         {/* CTA to Google Maps */}
         <div className="text-center mt-10">
           <a 
-            href="https://maps.google.com/?cid=YOUR_CID" 
+            href="https://share.google/Rf6vai7SFjvyIw5gS" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-[#E91E63] hover:text-[#C2185B] font-medium transition-colors"

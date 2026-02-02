@@ -41,7 +41,7 @@ export function Partners() {
             <span className="text-sm text-[#2D1B4E] font-semibold">Beneficios exclusivos</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-balance">
-            Convenios de promocion
+            Convenios de promoción
           </h2>
           <p className="text-lg text-gray-600 text-pretty">
             Si sos socio, empleado o cliente de alguna de estas empresas, accedes a{" "}
