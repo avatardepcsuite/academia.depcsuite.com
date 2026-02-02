@@ -16,7 +16,7 @@ const webinars = [
     available: true,
   },
   {
-    title: "Webinar n8n Pro: Workflows de Alto Impacto (sin codigo)",
+    title: "Webinar n8n Pro: Workflows de Alto Impacto (sin código)",
     description: "Diseña automatizaciones más robustas: manejo de errores, reintentos, rutas alternativas, variables y buenas prácticas para que tus flujos funcionen en producción.",
     image: "/images/webinar-n8n-pro.jpg",
     type: "Webinar",
@@ -27,7 +27,7 @@ const webinars = [
     available: true,
   },
   {
-    title: "Webinar Agentes con IA + n8n: del Chat a Procesos Automaticos",
+    title: "Webinar Agentes con IA + n8n: del Chat a Procesos Automáticos",
     description: "Construí asistentes que clasifican, resumen y responden, y que además ejecutan acciones (tickets, mails, reportes) con control, logs y criterios de seguridad.",
     image: "/images/webinar-ai-agents.jpg",
     type: "Webinar",
@@ -38,7 +38,7 @@ const webinars = [
     available: true,
   },
   {
-    title: "Webinar Make vs Zapier vs n8n: Elegi tu Stack de Automatizacion",
+    title: "Webinar Make vs Zapier vs n8n: Elegí tu Stack de Automatización",
     description: "Comparativa práctica para decidir rápido: costos, facilidad, flexibilidad, mantenimiento y qué herramienta conviene según tu caso (personal, startup, empresa).",
     image: "/images/webinar-make-zapier-n8n.jpg",
     type: "Webinar",
@@ -49,7 +49,7 @@ const webinars = [
     available: true,
   },
   {
-    title: "Webinar Ciberseguridad en la Vida Real: Protege tus Cuentas y tu Trabajo",
+    title: "Webinar Ciberseguridad en la Vida Real: Protegé tus Cuentas y tu Trabajo",
     description: "Entrenamiento express anti-phishing y protección de identidad digital: MFA, gestores de contraseñas, permisos, links/adjuntos y hábitos seguros para trabajo híbrido.",
     image: "/images/webinar-cybersecurity.jpg",
     type: "Webinar",
@@ -61,7 +61,7 @@ const webinars = [
   },
   {
     title: "Webinar Notion + IA para Productividad: Tu Sistema en 90 Minutos",
-    description: "Arma un sistema simple y usable para tareas, proyectos y notas con plantillas, bases de datos y IA para resumir, planificar y documentar sin desorden.",
+    description: "Armá un sistema simple y usable para tareas, proyectos y notas con plantillas, bases de datos y IA para resumir, planificar y documentar sin desorden.",
     image: "/images/webinar-notion-productivity.jpg",
     type: "Webinar",
     typeColor: "bg-gray-800",
@@ -71,7 +71,7 @@ const webinars = [
     available: true,
   },
   {
-    title: "Webinar Second Brain con Notion + IA: Organiza Todo (sin Volverte Loco)",
+    title: "Webinar Second Brain con Notion + IA: Organizá Todo (sin Volverte Loco)",
     description: "Construí tu cerebro digital con capturas rápidas, organización por áreas/proyectos, tracking y generación asistida de resúmenes, planes y entregables.",
     image: "/images/webinar-second-brain.jpg",
     type: "Webinar",
@@ -93,8 +93,8 @@ const webinars = [
     available: true,
   },
   {
-    title: "Webinar Figma para No Disenadores: Prototipa y Colabora como un Pro",
-    description: "Maqueta pantallas, arma prototipos clicables y aprende lo esencial de handoff para trabajar fluido con dev/marketing (ideal para roles hibridos).",
+    title: "Webinar Figma para No Diseñadores: Prototipá y Colaborá como un Pro",
+    description: "Maquetá pantallas, armá prototipos clicables y aprendé lo esencial de handoff para trabajar fluido con dev/marketing (ideal para roles híbridos).",
     image: "/images/webinar-figma.jpg",
     type: "Webinar",
     typeColor: "bg-pink-600",
@@ -105,7 +105,7 @@ const webinars = [
   },
   {
     title: "Webinar Canva para el Mundo Laboral: CV, Presentaciones y Contenido que Vende",
-    description: "Disenos rapidos y prolijos con plantillas, tipografia, color y formatos: CV, decks, piezas para redes y documentos listos para usar en trabajo real.",
+    description: "Diseños rápidos y prolijos con plantillas, tipografía, color y formatos: CV, decks, piezas para redes y documentos listos para usar en trabajo real.",
     image: "/images/webinar-canva.jpg",
     type: "Webinar",
     typeColor: "bg-teal-600",

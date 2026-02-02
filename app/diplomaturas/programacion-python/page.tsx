@@ -622,15 +622,15 @@ export default function DiplomaturaPythonPage() {
           ) : (
             <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-lg">
               <div className="aspect-video">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  title="Primera clase - Diplomatura Python"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
+                <video
+                  controls
+                  controlsList="nodownload"
                   className="w-full h-full"
-                />
+                  poster="/images/course-python.jpg"
+                >
+                  <source src="https://s3.us-east-1.amazonaws.com/academia.depcsuite.com/videos/python-clase-1.mp4" type="video/mp4" />
+                  Tu navegador no soporta el elemento de video.
+                </video>
               </div>
             </div>
           )}
