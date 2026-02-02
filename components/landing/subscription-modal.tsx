@@ -34,13 +34,13 @@ export function SubscriptionModal({ isOpen, onClose, planType, paymentLink }: Su
     if (!formData.email.trim()) {
       newErrors.email = "El correo es requerido"
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Ingresa un correo valido"
+      newErrors.email = "Ingresá un correo válido"
     }
 
     if (!formData.whatsapp.trim()) {
       newErrors.whatsapp = "El WhatsApp es requerido"
     } else if (!/^[\d\s+()-]{8,}$/.test(formData.whatsapp)) {
-      newErrors.whatsapp = "Ingresa un numero valido"
+      newErrors.whatsapp = "Ingresá un número válido"
     }
 
     setErrors(newErrors)
@@ -109,7 +109,7 @@ export function SubscriptionModal({ isOpen, onClose, planType, paymentLink }: Su
         {/* Header */}
         <div className="text-center mb-6">
           <h3 className="text-2xl font-bold text-gray-900 mb-2">
-            {planType === "monthly" ? "Suscripcion Mensual" : "Suscripcion Anual"}
+            {planType === "monthly" ? "Suscripción Mensual" : "Suscripción Anual"}
           </h3>
           <p className="text-gray-600">
             Completa tus datos para continuar con el pago
@@ -137,7 +137,7 @@ export function SubscriptionModal({ isOpen, onClose, planType, paymentLink }: Su
 
           <div>
             <Label htmlFor="email" className="text-gray-700">
-              Correo electronico
+              Correo electrónico
             </Label>
             <Input
               id="email"
@@ -190,7 +190,7 @@ export function SubscriptionModal({ isOpen, onClose, planType, paymentLink }: Su
         </form>
 
         <p className="text-xs text-gray-500 text-center mt-4">
-          Al continuar, aceptas nuestros terminos y condiciones.
+          Al continuar, aceptás nuestros términos y condiciones.
         </p>
       </div>
     </div>

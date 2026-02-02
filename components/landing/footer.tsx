@@ -74,6 +74,7 @@ export function Footer() {
                 alt="Academia DePC Logo"
                 width={48}
                 height={48}
+                loading="lazy"
                 className="rounded-xl"
               />
               <span className="font-bold text-xl text-white">Academia DePC</span>
@@ -175,6 +176,7 @@ export function Footer() {
                   alt="CACE"
                   width={100}
                   height={40}
+                  loading="lazy"
                   className="h-10 w-auto object-contain brightness-0 invert"
                 />
               </Link>
@@ -188,6 +190,7 @@ export function Footer() {
                   alt="Data Fiscal ARCA"
                   width={48}
                   height={56}
+                  loading="lazy"
                   className="h-12 w-auto object-contain"
                 />
               </Link>

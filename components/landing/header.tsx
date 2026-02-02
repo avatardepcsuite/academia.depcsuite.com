@@ -1,8 +1,6 @@
 "use client"
 
-import React from "react"
-
-import { useState, useEffect } from "react"
+import React, { useState, useEffect, useCallback, useMemo } from "react"
 import { usePathname, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown, Sparkles } from "lucide-react"
@@ -35,11 +33,11 @@ export function Header() {
   
   // Rioplatense (Argentina/Uruguay) uses "vos" form
   const isRioplatense = selectedCurrency.code === "ARS"
-  const navItems = getNavItems(isRioplatense)
+  const navItems = useMemo(() => getNavItems(isRioplatense), [isRioplatense])
   const pathname = usePathname()
   const router = useRouter()
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     const sectionId = href.replace("#", "")
     
     if (pathname === "/") {
@@ -54,7 +52,7 @@ export function Header() {
       e.preventDefault()
       router.push(`/${href}`)
     }
-  }
+  }, [pathname, router])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,10 +69,10 @@ export function Header() {
       setActiveSection("")
     }
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     handleScroll()
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [navItems])
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -187,7 +185,7 @@ export function Header() {
                   className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-white/25 hover:bg-white/10 transition-all duration-200"
                   aria-label={`Moneda: ${selectedCurrency.country}`}
                 >
-                  <span className="text-lg">{selectedCurrency.flag}</span>
+                  {selectedCurrency.flagComponent}
                 </button>
 
                 {isCurrencyOpen && (
@@ -210,7 +208,7 @@ export function Header() {
                             selectedCurrency.code === currency.code ? "bg-pink-500/15" : ""
                           }`}
                         >
-                          <span className="text-xl">{currency.flag}</span>
+                          {currency.flagComponent}
                           <div className="flex-1">
                             <span className="text-sm font-medium text-white">{currency.country}</span>
                             <span className="text-xs text-white/50 ml-2">{currency.code}</span>
@@ -246,7 +244,7 @@ export function Header() {
                   className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-white/25 hover:bg-white/10 transition-all duration-200"
                   aria-label={`Moneda: ${selectedCurrency.country}`}
                 >
-                  <span className="text-lg">{selectedCurrency.flag}</span>
+                  {selectedCurrency.flagComponent}
                 </button>
 
                 {isCurrencyOpen && (
@@ -269,7 +267,7 @@ export function Header() {
                             selectedCurrency.code === currency.code ? "bg-pink-500/15" : ""
                           }`}
                         >
-                          <span className="text-xl">{currency.flag}</span>
+                          {currency.flagComponent}
                           <div className="flex-1">
                             <span className="text-sm font-medium text-white">{currency.country}</span>
                             <span className="text-xs text-white/50 ml-2">{currency.code}</span>
@@ -325,7 +323,7 @@ export function Header() {
                             : "bg-white/10 text-white/80 hover:bg-white/20"
                         }`}
                       >
-                        <span className="text-base">{currency.flag}</span>
+                        {currency.flagComponent}
                         <span>{currency.code}</span>
                       </button>
                     ))}

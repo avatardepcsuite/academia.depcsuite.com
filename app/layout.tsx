@@ -5,8 +5,18 @@ import { Analytics } from '@vercel/analytics/next'
 import { CurrencyProvider } from '@/contexts/currency-context'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const geistSans = Geist({ 
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  variable: "--font-geist-sans"
+});
+const geistMono = Geist_Mono({ 
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  variable: "--font-geist-mono"
+});
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -137,17 +147,25 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es-AR">
+    <html lang="es-AR" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
+        {/* Preconnect to external domains for faster loading */}
+        <link rel="preconnect" href="https://s3.us-east-1.amazonaws.com" />
+        <link rel="preconnect" href="https://6rldo3zfyk.execute-api.us-east-1.amazonaws.com" />
+        <link rel="dns-prefetch" href="https://metricas-sitios.s3.us-east-1.amazonaws.com" />
+        <link rel="dns-prefetch" href="https://www.google.com" />
+        
+        {/* Analytics script with async for non-blocking load */}
         <script
           src="https://metricas-sitios.s3.us-east-1.amazonaws.com/analytics.js"
           data-site-id="1"
           data-endpoint="https://6rldo3zfyk.execute-api.us-east-1.amazonaws.com/prod/collect"
           data-token-endpoint="https://6rldo3zfyk.execute-api.us-east-1.amazonaws.com/prod/token"
           defer
+          async
         />
       </head>
-      <body className={`font-sans antialiased`}>
+      <body className="font-sans antialiased">
         <CurrencyProvider>
           {children}
         </CurrencyProvider>

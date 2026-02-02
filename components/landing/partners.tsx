@@ -79,6 +79,8 @@ export function Partners() {
                   src={partner.logo || "/placeholder.svg"}
                   alt={`Logo de ${partner.name} - Convenio de descuento con Academia DePC para ${partner.category}`}
                   fill
+                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
+                  loading="lazy"
                   className="object-contain grayscale group-hover:grayscale-0 transition-all duration-300 px-0 my-0 py-1.5"
                 />
               </div>

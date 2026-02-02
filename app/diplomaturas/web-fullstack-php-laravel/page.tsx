@@ -309,6 +309,8 @@ export default function DiplomaturaPhpLaravelPage() {
                 src="/images/logo-camara-argentina.png"
                 alt="Logo Camara Argentina de Comercio - Certificacion Nacional para Diplomatura PHP Laravel"
                 fill
+                sizes="(max-width: 768px) 160px, 192px"
+                loading="lazy"
                 className="object-contain"
               />
             </div>
@@ -317,6 +319,8 @@ export default function DiplomaturaPhpLaravelPage() {
                 src="/images/logo-oeip.png"
                 alt="Logo OEIP Organizacion de Estados Iberoamericanos para la Educacion - Certificacion Internacional"
                 fill
+                sizes="(max-width: 768px) 160px, 192px"
+                loading="lazy"
                 className="object-contain"
               />
             </div>
@@ -325,6 +329,8 @@ export default function DiplomaturaPhpLaravelPage() {
                 src="/images/logo-portal-de-empleo-sin-fondo.png"
                 alt="Portal de Empleo exclusivo para egresados de Academia DePC"
                 fill
+                sizes="(max-width: 768px) 160px, 192px"
+                loading="lazy"
                 className="object-contain"
               />
             </div>

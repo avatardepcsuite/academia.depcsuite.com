@@ -98,6 +98,7 @@ export function Testimonials() {
               alt="Google"
               width={60}
               height={20}
+              loading="lazy"
               className="object-contain"
             />
             <span className="text-sm text-amber-700 font-medium">Reviews</span>

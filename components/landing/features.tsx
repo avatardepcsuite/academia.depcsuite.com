@@ -150,6 +150,8 @@ export function Features() {
                   src={curso.image || "/placeholder.svg"}
                   alt={curso.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  loading="lazy"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 {/* Badges */}
@@ -195,6 +197,8 @@ export function Features() {
                           src={curso.professorImage || "/placeholder.svg"}
                           alt={curso.professor}
                           fill
+                          sizes="32px"
+                          loading="lazy"
                           className="object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                         />
                       </div>
@@ -269,6 +273,8 @@ export function Features() {
                 src="/images/logo-camara-argentina.png"
                 alt="Camara Argentina para la Formacion Profesional"
                 fill
+                sizes="(max-width: 768px) 160px, 192px"
+                loading="lazy"
                 className="object-contain"
               />
             </div>
@@ -277,6 +283,8 @@ export function Features() {
                 src="/images/logo-oeip.png"
                 alt="OEIP - Organizacion Internacional para la Educacion Permanente"
                 fill
+                sizes="(max-width: 768px) 160px, 192px"
+                loading="lazy"
                 className="object-contain"
               />
             </div>
@@ -285,6 +293,8 @@ export function Features() {
                 src="/images/logo-portal-de-empleo-sin-fondo.png"
                 alt="Portal de Empleo"
                 fill
+                sizes="(max-width: 768px) 160px, 192px"
+                loading="lazy"
                 className="object-contain"
               />
             </div>
