@@ -638,15 +638,15 @@ export default function DiplomaturaFullStackPage() {
           ) : (
             <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-lg">
               <div className="aspect-video">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  title="Primera clase - Diplomatura Full Stack + IA"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
+                <video
+                  controls
+                  controlsList="nodownload"
                   className="w-full h-full"
-                />
+                  poster="/images/course-fullstack-ia.jpg"
+                >
+                  <source src="https://s3.us-east-1.amazonaws.com/academia.depcsuite.com/videos/Curso-React-Node-IA.mp4" type="video/mp4" />
+                  Tu navegador no soporta el elemento de video.
+                </video>
               </div>
             </div>
           )}

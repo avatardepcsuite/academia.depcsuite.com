@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
+import { createContext, useContext, useState, type ReactNode } from "react"
 
 export type CurrencyCode = "ARS" | "COP" | "MXN" | "USD" | "EUR"
 
@@ -81,69 +81,11 @@ interface CurrencyContextType {
 
 const CurrencyContext = createContext<CurrencyContextType | undefined>(undefined)
 
-// Map country codes to currencies
-const countryToCurrency: Record<string, CurrencyCode> = {
-  AR: "ARS",
-  CO: "COP",
-  MX: "MXN",
-  US: "USD",
-  // European countries
-  ES: "EUR",
-  DE: "EUR",
-  FR: "EUR",
-  IT: "EUR",
-  PT: "EUR",
-  NL: "EUR",
-  BE: "EUR",
-  AT: "EUR",
-  IE: "EUR",
-  FI: "EUR",
-  GR: "EUR",
-}
+// Argentina (ARS) is always the default currency - currencies[0]
+const defaultCurrency = currencies[0]
 
 export function CurrencyProvider({ children }: { children: ReactNode }) {
-  const [selectedCurrency, setSelectedCurrency] = useState<Currency>(currencies[0])
-  const [isInitialized, setIsInitialized] = useState(false)
-
-  useEffect(() => {
-    // Try to detect user's country via timezone or locale
-    const detectCurrency = async () => {
-      try {
-        // First try: Use Intl API to get locale
-        const locale = navigator.language || "es-AR"
-        const countryFromLocale = locale.split("-")[1]?.toUpperCase()
-        
-        if (countryFromLocale && countryToCurrency[countryFromLocale]) {
-          const currency = currencies.find(c => c.code === countryToCurrency[countryFromLocale])
-          if (currency) {
-            setSelectedCurrency(currency)
-            setIsInitialized(true)
-            return
-          }
-        }
-
-        // Second try: Use timezone to guess country
-        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
-        if (timezone.includes("Buenos_Aires") || timezone.includes("Argentina")) {
-          setSelectedCurrency(currencies[0]) // ARS
-        } else if (timezone.includes("Bogota") || timezone.includes("Colombia")) {
-          setSelectedCurrency(currencies[1]) // COP
-        } else if (timezone.includes("Mexico")) {
-          setSelectedCurrency(currencies[2]) // MXN
-        } else if (timezone.includes("America/New_York") || timezone.includes("America/Los_Angeles") || timezone.includes("America/Chicago")) {
-          setSelectedCurrency(currencies[3]) // USD
-        } else if (timezone.includes("Europe/")) {
-          setSelectedCurrency(currencies[4]) // EUR
-        }
-        // Default is already ARS
-      } catch {
-        // If detection fails, keep default (ARS)
-      }
-      setIsInitialized(true)
-    }
-
-    detectCurrency()
-  }, [])
+  const [selectedCurrency, setSelectedCurrency] = useState<Currency>(defaultCurrency)
 
   return (
     <CurrencyContext.Provider value={{ selectedCurrency, setSelectedCurrency }}>
