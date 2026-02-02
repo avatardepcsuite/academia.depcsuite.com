@@ -239,6 +239,7 @@ export default function PreguntasFrecuentes() {
                 href="https://wa.me/5491131500093"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-ma="whatsapp"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
               >
                 Contactar por WhatsApp

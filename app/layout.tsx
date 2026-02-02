@@ -138,6 +138,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es-AR">
+      <head>
+        <script
+          src="https://metricas-sitios.s3.us-east-1.amazonaws.com/analytics.js"
+          data-site-id="1"
+          data-endpoint="https://6rldo3zfyk.execute-api.us-east-1.amazonaws.com/prod/collect"
+          data-token-endpoint="https://6rldo3zfyk.execute-api.us-east-1.amazonaws.com/prod/token"
+          defer
+        />
+      </head>
       <body className={`font-sans antialiased`}>
         <CurrencyProvider>
           {children}
