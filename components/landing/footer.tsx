@@ -6,11 +6,11 @@ const footerLinks = {
   formacion: {
     title: "Diplomaturas",
     links: [
-      { label: "React.js/Node.js + IA", href: "https://academia.depcsuite.com/diplomatura-programacion-react-node-ia-2" },
-      { label: "Python", href: "https://academia.depcsuite.com/curso-de-programacion-python-3" },
-      { label: "Web Full Stack PHP", href: "https://academia.depcsuite.com/curso-programacion-web-full-stack-4" },
+      { label: "React.js/Node.js + IA", href: "/diplomaturas/programacion-fullstack-react-node-ia" },
+      { label: "Python", href: "/diplomaturas/programacion-python" },
+      { label: "Web Full Stack PHP", href: "/diplomaturas/web-fullstack-php-laravel" },
       { label: "Ciberseguridad", href: "https://academia.depcsuite.com/diplomatura-ciberseguridad-aplicada-37984" },
-      { label: "Microsoft Excel", href: "https://academia.depcsuite.com/curso-microsoft-excel-6" },
+      { label: "Microsoft Excel", href: "/diplomaturas/fundamentos-microsoft-excel" },
     ],
   },
   eventos: {
@@ -148,34 +148,32 @@ export function Footer() {
               </div>
             </div>
 
-            {/* Right: Legal Badges (subtle) */}
-            <div className="flex items-center gap-4">
+            {/* Right: Legal Badges */}
+            <div className="flex items-center gap-5">
               <Link 
                 href="https://www.cace.org.ar/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="opacity-50 hover:opacity-100 transition-opacity"
               >
                 <Image
                   src="/images/logo-cace.png"
                   alt="CACE"
-                  width={80}
-                  height={32}
-                  className="h-6 w-auto object-contain brightness-0 invert"
+                  width={100}
+                  height={40}
+                  className="h-10 w-auto object-contain brightness-0 invert"
                 />
               </Link>
               <Link 
                 href="https://servicioscf.afip.gob.ar/publico/denuncias/denunciaCD.aspx" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="opacity-50 hover:opacity-100 transition-opacity"
               >
                 <Image
                   src="/images/data-fiscal-arca.jpg"
                   alt="Data Fiscal ARCA"
-                  width={40}
-                  height={48}
-                  className="h-8 w-auto object-contain"
+                  width={48}
+                  height={56}
+                  className="h-12 w-auto object-contain"
                 />
               </Link>
             </div>
@@ -183,7 +181,7 @@ export function Footer() {
           
           {/* About Us */}
           <p className="text-sm text-white/60 text-center mt-6 max-w-3xl mx-auto">
-            DEPCSUITE SA es una empresa desarrolladora de tecnologia que trabaja con las principales empresas del pais para brindarte la mejor formacion.
+            DEPCSUITE SA © es una empresa desarrolladora de tecnologia que trabaja con las principales empresas del país para brindarte la mejor formación.
           </p>
           
           {/* CUIT Info */}

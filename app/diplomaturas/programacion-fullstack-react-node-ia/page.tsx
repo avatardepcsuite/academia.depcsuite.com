@@ -87,12 +87,12 @@ const planDeEstudio = [
     unidad: 1,
     titulo: "HTML, CSS, Flexbox, Vercel, Github avanzado",
     clases: [
-      "Introduccion al desarrollo web",
+      "Introducción al desarrollo web",
       "HTML",
       "HTML5 y Formularios",
       "Git y Github",
       "CSS",
-      "CSS (continuacion)",
+      "CSS (continuación)",
       "CSS Flexbox",
       "CSS Flexbox + Position",
       "CSS Mediaqueries y responsive design (Desktop First)",
@@ -107,7 +107,7 @@ const planDeEstudio = [
     unidad: 2,
     titulo: "Javascript, Copilot IA, Tensorflow IA",
     clases: [
-      "JS Introduccion a la programacion",
+      "JS Introducción a la programación",
       "JS Datos, Operadores, Comparadores",
       "JS Variables, Bloques, Condiciones",
       "JS Bucles",
@@ -120,7 +120,7 @@ const planDeEstudio = [
       "JS + DOM + Eventos",
       "JS + TRY CATCH",
       "JS + Fetch API",
-      "JS DOM + Integracion + Windsurf / Copilot",
+      "JS DOM + Integración + Windsurf / Copilot",
       "JS + Machine learning con Tensorflow",
       "TP final integrador de la unidad"
     ],
@@ -130,12 +130,12 @@ const planDeEstudio = [
     unidad: 3,
     titulo: "React.js, Vercel",
     clases: [
-      "React Introduccion",
+      "React Introducción",
       "React JSX + Componentes",
       "React Listas y Componentes avanzados",
       "React Estados + Eventos",
       "React Efectos + Fetching",
-      "React Practica integradora en clase",
+      "React Práctica integradora en clase",
       "React Router",
       "React Context",
       "React Router + Context (Uso de multiples contextos en distintas rutas)",
@@ -148,13 +148,13 @@ const planDeEstudio = [
     unidad: 4,
     titulo: "Node.js, Express.js, MySQL, MongoDB, Postman",
     clases: [
-      "Introduccion a Node.js",
+      "Introducción a Node.js",
       "Filesystem",
-      "Programacion orientada a objetos: Clases, Encapsulamiento",
-      "Programacion orientada a objetos: Herencias, Methods, Polimorfismo",
-      "Programacion orientada a objetos: Practica integradora",
+      "Programación orientada a objetos: Clases, Encapsulamiento",
+      "Programación orientada a objetos: Herencias, Methods, Polimorfismo",
+      "Programación orientada a objetos: Práctica integradora",
       "Bases de datos relacionales",
-      "Diagramas Entidad Relacion",
+      "Diagramas Entidad Relación",
       "SQL Parte 1",
       "SQL Parte 2",
       "Bases de datos no relacionales",
@@ -174,27 +174,27 @@ const planDeEstudio = [
   },
   {
     unidad: 5,
-    titulo: "Seguridad (Autenticacion, Token, Mailers, DDOS, API)",
+    titulo: "Seguridad (Autenticación, Token, Mailers, DDOS, API)",
     clases: [
-      "Registro y autenticacion de usuarios por tokens + Encriptacion",
-      "Nodemailer + Envio de mails de validacion",
+      "Registro y autenticación de usuarios por tokens + Encriptación",
+      "Nodemailer + Envío de mails de validación",
       "Bearer token + Manejo de sesiones",
       "Manejo de ataques DDOS + Registros de acciones",
-      "Documentacion de una API",
+      "Documentación de una API",
       "TP Final integrador de la unidad"
     ],
     tecnologias: ["JWT", "bcrypt", "Nodemailer"]
   },
   {
     unidad: 6,
-    titulo: "Integracion React + API REST (OpenAI API, Supabase.js)",
+    titulo: "Integración React + API REST (OpenAI API, Supabase.js)",
     clases: [
       "Consumo de nuestra API con React",
-      "Manejo de sesion desde el frontend",
-      "Practica real de uso de nuestra API + Buenas practicas",
+      "Manejo de sesión desde el frontend",
+      "Práctica real de uso de nuestra API + Buenas prácticas",
       "Supabase.js",
       "Manejo de archivos con Supabase",
-      "OpenAI API + Creacion de un asistente virtual",
+      "OpenAI API + Creación de un asistente virtual",
       "Entrega TP final integrador de la cursada"
     ],
     tecnologias: ["OpenAI API", "Supabase.js", "React"]
@@ -218,7 +218,7 @@ export default function DiplomaturaFullStackPage() {
     
     if (!formData.nombre.trim()) newErrors.nombre = "El nombre es requerido"
     if (!formData.email.trim()) newErrors.email = "El email es requerido"
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Email invalido"
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Email inválido"
     if (!formData.whatsapp.trim()) newErrors.whatsapp = "El WhatsApp es requerido"
     
     if (Object.keys(newErrors).length > 0) {
@@ -259,12 +259,12 @@ export default function DiplomaturaFullStackPage() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
               <GraduationCap className="w-4 h-4 text-indigo-300" />
-              <span className="text-sm text-white/90">Diplomatura con certificacion Nacional e Internacional</span>
+              <span className="text-sm text-white/90">Diplomatura con certificación Nacional e Internacional</span>
             </div>
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
-              <span className="text-balance">Programacion </span>
+              <span className="text-balance">Programación </span>
               <span className="bg-gradient-to-r from-indigo-300 to-white bg-clip-text text-transparent">Full Stack + IA</span>
             </h1>
 
@@ -272,7 +272,7 @@ export default function DiplomaturaFullStackPage() {
 
             {/* Subheadline */}
             <p className="text-lg text-white/80 max-w-2xl mx-auto mb-10 text-pretty">
-              Domina el desarrollo web completo: frontend con React.js, backend con Node.js, bases de datos e integracion con Inteligencia Artificial.
+              Domina el desarrollo web completo: frontend con React.js, backend con Node.js, bases de datos e integración con Inteligencia Artificial.
             </p>
 
             {/* CTAs */}
@@ -298,7 +298,7 @@ export default function DiplomaturaFullStackPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
               <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
                 <Clock className="w-5 h-5 text-indigo-300" />
-                <span className="text-white">9 meses de duracion</span>
+                <span className="text-white">9 meses de duración</span>
               </div>
               <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
                 <Monitor className="w-5 h-5 text-indigo-300" />
@@ -318,7 +318,7 @@ export default function DiplomaturaFullStackPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Certificaciones incluidas</h2>
-            <p className="text-gray-600">Certificacion Nacional e Internacional con acceso exclusivo al Portal de Empleo</p>
+            <p className="text-gray-600">Certificación Nacional e Internacional con acceso exclusivo al Portal de Empleo</p>
           </div>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
@@ -358,8 +358,8 @@ export default function DiplomaturaFullStackPage() {
               <BookOpen className="w-4 h-4 text-indigo-600" />
               <span className="text-sm text-indigo-600 font-medium">Contenido del programa</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Que vas a aprender?</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Formacion completa para convertirte en Desarrollador Full Stack con habilidades en IA</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">¿Qué vas a aprender?</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Formación completa para convertirte en Desarrollador Full Stack con habilidades en IA</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -410,7 +410,7 @@ export default function DiplomaturaFullStackPage() {
                 </li>
                 <li className="flex items-start gap-2 text-gray-600">
                   <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                  <span>Autenticacion JWT y bcrypt</span>
+                  <span>Autenticación JWT y bcrypt</span>
                 </li>
               </ul>
             </div>
@@ -455,7 +455,7 @@ export default function DiplomaturaFullStackPage() {
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Perfil del egresado</h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Al finalizar la diplomatura, seras capaz de desempenarte como <strong>Desarrollador/a Fullstack Junior</strong>, con las competencias necesarias para desarrollar aplicaciones web modernas de punta a punta, comprendiendo tanto el desarrollo del lado del cliente (frontend) como del lado del servidor (backend).
+                Al finalizar la diplomatura, serás capaz de desempeñarte como <strong>Desarrollador/a Fullstack Junior</strong>, con las competencias necesarias para desarrollar aplicaciones web modernas de punta a punta, comprendiendo tanto el desarrollo del lado del cliente (frontend) como del lado del servidor (backend).
               </p>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Salida laboral</h3>

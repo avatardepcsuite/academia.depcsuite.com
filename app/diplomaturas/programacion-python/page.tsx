@@ -46,7 +46,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Programacion Python",
+      "name": "Programación Python",
       "item": "https://academiadepc.com/diplomaturas/programacion-python"
     }
   ]
@@ -78,31 +78,31 @@ const courseSchema = {
 const planDeEstudio = [
   {
     unidad: 1,
-    titulo: "Introduccion a la programacion web",
+    titulo: "Introducción a la programación web",
     clases: [
-      "Introduccion al desarrollo web",
-      "HTML5 - Estructura y semantica",
+      "Introducción al desarrollo web",
+      "HTML5 - Estructura y semántica",
       "HTML5 - Formularios y multimedia",
       "CSS - Estilos y selectores",
       "CSS - Box model y layout",
       "Bootstrap - Framework CSS",
       "Git - Control de versiones",
       "Github - Repositorios remotos",
-      "Publicacion en internet"
+      "Publicación en internet"
     ],
     tecnologias: ["HTML5", "CSS", "Bootstrap", "Git"]
   },
   {
     unidad: 2,
-    titulo: "Fundamentos de programacion con Python",
+    titulo: "Fundamentos de programación con Python",
     clases: [
-      "Introduccion a Python - Instalacion y entorno",
+      "Introducción a Python - Instalación y entorno",
       "Variables, tipos de datos y operadores",
       "Estructuras de control - Condicionales",
       "Estructuras de control - Bucles",
       "Funciones y modularidad",
-      "Paquetes y modulos en Python",
-      "Creacion de paquetes propios",
+      "Paquetes y módulos en Python",
+      "Creación de paquetes propios",
       "Manejo de archivos externos",
       "POO - Clases y objetos",
       "POO - Herencia y polimorfismo",
@@ -115,17 +115,17 @@ const planDeEstudio = [
     unidad: 3,
     titulo: "Bases de datos en Python",
     clases: [
-      "Introduccion a bases de datos",
+      "Introducción a bases de datos",
       "Bases de datos relacionales",
-      "SQL - Creacion de bases de datos",
-      "SQL - Creacion de tablas",
-      "SQL - Consultas basicas (SELECT, INSERT, UPDATE, DELETE)",
+      "SQL - Creación de bases de datos",
+      "SQL - Creación de tablas",
+      "SQL - Consultas básicas (SELECT, INSERT, UPDATE, DELETE)",
       "SQL - Consultas avanzadas (JOIN, GROUP BY)",
-      "Claves primarias y foraneas",
-      "Indices y optimizacion",
+      "Claves primarias y foráneas",
+      "Índices y optimización",
       "Relaciones entre tablas",
-      "Librerias Python para SQL (sqlite3, mysql-connector)",
-      "Practica integradora de bases de datos"
+      "Librerías Python para SQL (sqlite3, mysql-connector)",
+      "Práctica integradora de bases de datos"
     ],
     tecnologias: ["SQL", "MySQL", "SQLite"]
   },
@@ -133,38 +133,38 @@ const planDeEstudio = [
     unidad: 4,
     titulo: "Desarrollo web en Python",
     clases: [
-      "Introduccion a frameworks web",
-      "Django - Instalacion y configuracion",
+      "Introducción a frameworks web",
+      "Django - Instalación y configuración",
       "Arquitectura MTV (Model-Template-View)",
       "Entornos virtuales con venv",
-      "Creacion de proyecto Django",
+      "Creación de proyecto Django",
       "URLs y rutas",
       "Views - Vistas basadas en funciones",
       "Templates - Sistema de plantillas",
       "Formularios y validaciones",
-      "Vistas genericas (ListView, DetailView)",
-      "Panel de administracion Django",
-      "Autenticacion de usuarios",
+      "Vistas genéricas (ListView, DetailView)",
+      "Panel de administración Django",
+      "Autenticación de usuarios",
       "Testing en Django",
-      "Archivos estaticos y media"
+      "Archivos estáticos y media"
     ],
     tecnologias: ["Django", "Python"]
   },
   {
     unidad: 5,
-    titulo: "Tecnologias del lado del cliente",
+    titulo: "Tecnologías del lado del cliente",
     clases: [
       "API REST - Conceptos fundamentales",
       "Formato JSON",
-      "Django REST Framework - Instalacion",
+      "Django REST Framework - Instalación",
       "Serializers y ViewSets",
-      "Creacion de endpoints API",
-      "Autenticacion con tokens",
-      "Filtrado y paginacion",
+      "Creación de endpoints API",
+      "Autenticación con tokens",
+      "Filtrado y paginación",
       "Proyecto API de ecommerce",
-      "Vue.js - Introduccion",
+      "Vue.js - Introducción",
       "Componentes en Vue",
-      "Vue Router - Navegacion",
+      "Vue Router - Navegación",
       "Axios - Consumo de APIs",
       "CRUD completo con Vue",
       "Mapeo y filtrado de datos"
@@ -175,12 +175,12 @@ const planDeEstudio = [
     unidad: 6,
     titulo: "Lanzamiento",
     clases: [
-      "Preparacion del proyecto final",
-      "Integracion frontend y backend",
-      "Configuracion para produccion",
+      "Preparación del proyecto final",
+      "Integración frontend y backend",
+      "Configuración para producción",
       "Despliegue en servicio en la nube",
-      "Presentacion del proyecto",
-      "Entrega final y certificacion"
+      "Presentación del proyecto",
+      "Entrega final y certificación"
     ],
     tecnologias: ["Deploy", "Cloud"]
   }
@@ -244,12 +244,12 @@ export default function DiplomaturaPythonPage() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
               <GraduationCap className="w-4 h-4 text-emerald-300" />
-              <span className="text-sm text-white/90">Diplomatura con certificacion Nacional e Internacional</span>
+              <span className="text-sm text-white/90">Diplomatura con certificación Nacional e Internacional</span>
             </div>
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
-              <span className="text-balance">Programacion </span>
+              <span className="text-balance">Programación </span>
               <span className="bg-gradient-to-r from-emerald-300 to-white bg-clip-text text-transparent">Python</span>
             </h1>
 
@@ -257,7 +257,7 @@ export default function DiplomaturaPythonPage() {
 
             {/* Subheadline */}
             <p className="text-lg text-white/80 max-w-2xl mx-auto mb-10 text-pretty">
-              Aprende Python desde cero, domina Django para el backend y Vue.js para crear interfaces dinamicas. Desarrolla APIs REST profesionales.
+              Aprende Python desde cero, domina Django para el backend y Vue.js para crear interfaces dinámicas. Desarrolla APIs REST profesionales.
             </p>
 
             {/* CTAs */}
@@ -283,7 +283,7 @@ export default function DiplomaturaPythonPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
               <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
                 <Clock className="w-5 h-5 text-emerald-300" />
-                <span className="text-white">6 meses de duracion</span>
+                <span className="text-white">6 meses de duración</span>
               </div>
               <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
                 <Monitor className="w-5 h-5 text-emerald-300" />
@@ -303,7 +303,7 @@ export default function DiplomaturaPythonPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Certificaciones incluidas</h2>
-            <p className="text-gray-600">Certificacion Nacional e Internacional con acceso exclusivo al Portal de Empleo</p>
+            <p className="text-gray-600">Certificación Nacional e Internacional con acceso exclusivo al Portal de Empleo</p>
           </div>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
@@ -342,9 +342,9 @@ export default function DiplomaturaPythonPage() {
             <Code className="w-4 h-4 text-emerald-600" />
             <span className="text-sm text-emerald-600 font-medium">Sobre Python</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Que es Python?</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">¿Qué es Python?</h2>
           <p className="text-gray-600 text-lg leading-relaxed">
-            Python es un lenguaje de programacion versatil y poderoso utilizado en una amplia gama de aplicaciones, desde el desarrollo web hasta la inteligencia artificial. Es conocido por su sintaxis clara y legible, lo que lo hace ideal tanto para principiantes como para programadores experimentados. Con Python, puedes desarrollar tanto el Front-End como el Back-End de aplicaciones web completas.
+            Python es un lenguaje de programación versátil y poderoso utilizado en una amplia gama de aplicaciones, desde el desarrollo web hasta la inteligencia artificial. Es conocido por su sintaxis clara y legible, lo que lo hace ideal tanto para principiantes como para programadores experimentados. Con Python, puedes desarrollar tanto el Front-End como el Back-End de aplicaciones web completas.
           </p>
         </div>
       </section>
@@ -357,7 +357,7 @@ export default function DiplomaturaPythonPage() {
               <BookOpen className="w-4 h-4 text-emerald-600" />
               <span className="text-sm text-emerald-600 font-medium">Contenido del programa</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Que vas a aprender?</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">¿Qué vas a aprender?</h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -374,7 +374,7 @@ export default function DiplomaturaPythonPage() {
                 </li>
                 <li className="flex items-start gap-2 text-gray-600">
                   <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                  <span>Vue.js para interfaces dinamicas</span>
+                  <span>Vue.js para interfaces dinámicas</span>
                 </li>
                 <li className="flex items-start gap-2 text-gray-600">
                   <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
@@ -441,7 +441,7 @@ export default function DiplomaturaPythonPage() {
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Perfil del egresado</h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Al finalizar la diplomatura, seras capaz de desempenarte como <strong>Desarrollador/a Python Junior</strong>, con las competencias necesarias para desarrollar aplicaciones web modernas utilizando Django como framework principal y Vue.js para interfaces dinamicas.
+                Al finalizar la diplomatura, serás capaz de desempeñarte como <strong>Desarrollador/a Python Junior</strong>, con las competencias necesarias para desarrollar aplicaciones web modernas utilizando Django como framework principal y Vue.js para interfaces dinámicas.
               </p>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Salida laboral</h3>
@@ -462,7 +462,7 @@ export default function DiplomaturaPythonPage() {
             </div>
 
             <div className="bg-gradient-to-br from-[#306998] to-emerald-600 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-6">Tecnologias que dominaras</h3>
+              <h3 className="text-2xl font-bold mb-6">Tecnologías que dominarás</h3>
               <div className="grid grid-cols-2 gap-4">
                 {["Python", "Django", "Django REST", "Vue.js", "SQL", "MySQL", "HTML/CSS", "Bootstrap", "Git/GitHub", "Axios", "APIs REST", "Deploy"].map((tech) => (
                   <div key={tech} className="flex items-center gap-2 p-3 bg-white/10 rounded-lg">
@@ -485,7 +485,7 @@ export default function DiplomaturaPythonPage() {
               <span className="text-sm text-emerald-600 font-medium">Programa completo</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Plan de estudio</h2>
-            <p className="text-gray-600">6 unidades con contenido teorico-practico y proyecto final integrador</p>
+            <p className="text-gray-600">6 unidades con contenido teórico-práctico y proyecto final integrador</p>
           </div>
 
           <div className="max-w-4xl mx-auto space-y-4">
@@ -586,7 +586,7 @@ export default function DiplomaturaPythonPage() {
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                      Correo electronico
+                      Correo electrónico
                     </label>
                     <Input
                       id="email"
@@ -641,14 +641,14 @@ export default function DiplomaturaPythonPage() {
       <section className="py-20 bg-gradient-to-br from-[#2D1B4E] via-[#306998] to-emerald-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-            Comenza tu carrera como Desarrollador Python
+            Comenzá tu carrera como Desarrollador Python
           </h2>
           <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-            Accede a todas las diplomaturas, webinars, hackathones y al portal de empleo con una sola suscripcion.
+            Accede a todas las diplomaturas, webinars, hackathones y al portal de empleo con una sola suscripción.
           </p>
           <Link href="/#precios">
             <Button size="lg" className="bg-white hover:bg-gray-100 text-[#2D1B4E] font-semibold shadow-lg px-8 h-12 text-base">
-              Ver planes de suscripcion
+              Ver planes de suscripción
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </Link>

@@ -78,33 +78,33 @@ const courseSchema = {
 const planDeEstudio = [
   {
     unidad: 1,
-    titulo: "Maquetacion",
+    titulo: "Maquetación",
     clases: [
-      "Introduccion al desarrollo web",
-      "HTML5 - Estructura y semantica",
+      "Introducción al desarrollo web",
+      "HTML5 - Estructura y semántica",
       "HTML5 - Formularios y multimedia",
       "CSS - Estilos y selectores",
       "CSS - Box model y layout",
       "Bootstrap - Framework CSS",
       "Git - Control de versiones",
       "Github - Repositorios remotos",
-      "Portfolio personal - Proyecto practico"
+      "Portfolio personal - Proyecto práctico"
     ],
     tecnologias: ["HTML5", "CSS", "Git", "Bootstrap"]
   },
   {
     unidad: 2,
-    titulo: "Fundamentos de Programacion",
+    titulo: "Fundamentos de Programación",
     clases: [
-      "Introduccion a PHP - Instalacion y entorno",
+      "Introducción a PHP - Instalación y entorno",
       "Variables, tipos de datos y operadores",
       "Estructuras de control - Condicionales",
       "Estructuras de control - Bucles",
       "Funciones y modularidad",
       "Arrays y estructuras de datos",
       "Manejo de formularios",
-      "Servidor Apache - Configuracion",
-      "Algoritmos y logica de programacion",
+      "Servidor Apache - Configuración",
+      "Algoritmos y lógica de programación",
       "JSON - Formato de intercambio de datos",
       "Examen multiple choice unidades 1 y 2"
     ],
@@ -116,15 +116,15 @@ const planDeEstudio = [
     clases: [
       "POO - Clases y objetos",
       "POO - Herencia y polimorfismo",
-      "POO - Encapsulamiento y abstraccion",
-      "Introduccion a bases de datos relacionales",
+      "POO - Encapsulamiento y abstracción",
+      "Introducción a bases de datos relacionales",
       "Diagramas UML - Modelado de datos",
-      "MySQL - Creacion de bases de datos",
-      "MySQL - Creacion de tablas y relaciones",
-      "SQL - Consultas basicas (SELECT, INSERT, UPDATE, DELETE)",
+      "MySQL - Creación de bases de datos",
+      "MySQL - Creación de tablas y relaciones",
+      "SQL - Consultas básicas (SELECT, INSERT, UPDATE, DELETE)",
       "SQL - Consultas avanzadas (JOIN, GROUP BY)",
-      "Conexion PHP con MySQL",
-      "Patron de diseno MVC",
+      "Conexión PHP con MySQL",
+      "Patrón de diseño MVC",
       "Sistema integrado con base de datos",
       "Examen multiple choice unidad 3"
     ],
@@ -132,18 +132,18 @@ const planDeEstudio = [
   },
   {
     unidad: 4,
-    titulo: "JavaScript y Librerias",
+    titulo: "JavaScript y Librerías",
     clases: [
-      "JavaScript - Introduccion y sintaxis",
+      "JavaScript - Introducción y sintaxis",
       "JavaScript - Variables y tipos de datos",
       "JavaScript - Funciones y scope",
       "JavaScript - POO en JavaScript",
       "JavaScript - DOM Manipulation",
       "JavaScript - Eventos",
-      "AJAX - Introduccion a la asincronia",
+      "AJAX - Introducción a la asincronía",
       "AJAX - Fetch API",
       "Single Page Applications",
-      "Practica integradora"
+      "Práctica integradora"
     ],
     tecnologias: ["JavaScript", "AJAX"]
   },
@@ -151,18 +151,18 @@ const planDeEstudio = [
     unidad: 5,
     titulo: "Framework Laravel",
     clases: [
-      "Introduccion a frameworks",
-      "Laravel - Instalacion y configuracion",
+      "Introducción a frameworks",
+      "Laravel - Instalación y configuración",
       "Laravel - Arquitectura MVC",
       "Laravel - Routing y Controllers",
       "Laravel - Blade Templates",
       "Laravel - Eloquent ORM",
       "Laravel - Migraciones y Seeders",
       "Laravel - Validaciones",
-      "Laravel - Autenticacion",
+      "Laravel - Autenticación",
       "Laravel - Middleware",
       "Laravel - API REST",
-      "Practica integradora con Laravel"
+      "Práctica integradora con Laravel"
     ],
     tecnologias: ["Laravel"]
   },
@@ -170,14 +170,14 @@ const planDeEstudio = [
     unidad: 6,
     titulo: "Proyecto Final",
     clases: [
-      "Planificacion del proyecto ecommerce",
-      "Desarrollo del catalogo de productos",
-      "Implementacion del carrito de compras",
-      "Integracion con MercadoPago",
-      "Panel de administracion",
-      "Despliegue en produccion",
-      "Presentacion del proyecto final",
-      "Entrega y certificacion"
+      "Planificación del proyecto ecommerce",
+      "Desarrollo del catálogo de productos",
+      "Implementación del carrito de compras",
+      "Integración con MercadoPago",
+      "Panel de administración",
+      "Despliegue en producción",
+      "Presentación del proyecto final",
+      "Entrega y certificación"
     ],
     tecnologias: ["MercadoPago", "e-Commerce"]
   }
@@ -200,7 +200,7 @@ export default function DiplomaturaPhpLaravelPage() {
     
     if (!formData.nombre.trim()) newErrors.nombre = "El nombre es requerido"
     if (!formData.email.trim()) newErrors.email = "El email es requerido"
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Email invalido"
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Email inválido"
     if (!formData.whatsapp.trim()) newErrors.whatsapp = "El WhatsApp es requerido"
     
     if (Object.keys(newErrors).length > 0) {
@@ -241,12 +241,12 @@ export default function DiplomaturaPhpLaravelPage() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
               <GraduationCap className="w-4 h-4 text-orange-300" />
-              <span className="text-sm text-white/90">Diplomatura con certificacion Nacional e Internacional</span>
+              <span className="text-sm text-white/90">Diplomatura con certificación Nacional e Internacional</span>
             </div>
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
-              <span className="text-balance">Programacion Web </span>
+              <span className="text-balance">Programación Web </span>
               <span className="bg-gradient-to-r from-orange-300 to-white bg-clip-text text-transparent">Full Stack</span>
             </h1>
 
@@ -280,7 +280,7 @@ export default function DiplomaturaPhpLaravelPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
               <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
                 <Clock className="w-5 h-5 text-orange-300" />
-                <span className="text-white">6 meses de duracion</span>
+                <span className="text-white">6 meses de duración</span>
               </div>
               <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
                 <Monitor className="w-5 h-5 text-orange-300" />
@@ -300,7 +300,7 @@ export default function DiplomaturaPhpLaravelPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Certificaciones incluidas</h2>
-            <p className="text-gray-600">Certificacion Nacional e Internacional con acceso exclusivo al Portal de Empleo</p>
+            <p className="text-gray-600">Certificación Nacional e Internacional con acceso exclusivo al Portal de Empleo</p>
           </div>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
@@ -339,9 +339,9 @@ export default function DiplomaturaPhpLaravelPage() {
             <Code className="w-4 h-4 text-orange-600" />
             <span className="text-sm text-orange-600 font-medium">Sobre Full Stack</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Que significa Full Stack?</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">¿Qué significa Full Stack?</h2>
           <p className="text-gray-600 text-lg leading-relaxed">
-            El Programador Web Full Stack es aquel que integra la tecnologia Front-End - es decir, la interaccion y visualizacion que tiene el usuario con la pagina web - y el Back-End, que es toda la logica que provee de seguridad, acceso a datos y logica de programacion en el lado del servidor.
+            El Programador Web Full Stack es aquel que integra la tecnología Front-End - es decir, la interacción y visualización que tiene el usuario con la página web - y el Back-End, que es toda la lógica que provee de seguridad, acceso a datos y lógica de programación en el lado del servidor.
           </p>
         </div>
       </section>
@@ -354,7 +354,7 @@ export default function DiplomaturaPhpLaravelPage() {
               <BookOpen className="w-4 h-4 text-orange-600" />
               <span className="text-sm text-orange-600 font-medium">Contenido del programa</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Que vas a aprender?</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">¿Qué vas a aprender?</h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -415,11 +415,11 @@ export default function DiplomaturaPhpLaravelPage() {
                 </li>
                 <li className="flex items-start gap-2 text-gray-600">
                   <CheckCircle2 className="w-5 h-5 text-orange-500 mt-0.5 flex-shrink-0" />
-                  <span>Integracion MercadoPago</span>
+                  <span>Integración MercadoPago</span>
                 </li>
                 <li className="flex items-start gap-2 text-gray-600">
                   <CheckCircle2 className="w-5 h-5 text-orange-500 mt-0.5 flex-shrink-0" />
-                  <span>Panel de administracion</span>
+                  <span>Panel de administración</span>
                 </li>
               </ul>
             </div>
@@ -438,7 +438,7 @@ export default function DiplomaturaPhpLaravelPage() {
               <div className="w-14 h-14 rounded-xl bg-orange-100 flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🌐</span>
               </div>
-              <h3 className="font-semibold text-gray-900">Paginas Web</h3>
+              <h3 className="font-semibold text-gray-900">Páginas Web</h3>
             </div>
             <div className="bg-white rounded-2xl p-6 text-center border border-gray-200 shadow-sm">
               <div className="w-14 h-14 rounded-xl bg-orange-100 flex items-center justify-center mx-auto mb-4">
@@ -473,7 +473,7 @@ export default function DiplomaturaPhpLaravelPage() {
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Perfil del egresado</h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Al finalizar la diplomatura, seras capaz de desempenarte como <strong>Desarrollador/a Web Full Stack Junior</strong>, con las competencias necesarias para desarrollar paginas web, sistemas y sitios ecommerce totalmente funcionales con PHP y Laravel.
+                Al finalizar la diplomatura, serás capaz de desempeñarte como <strong>Desarrollador/a Web Full Stack Junior</strong>, con las competencias necesarias para desarrollar páginas web, sistemas y sitios ecommerce totalmente funcionales con PHP y Laravel.
               </p>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Salida laboral</h3>
@@ -494,7 +494,7 @@ export default function DiplomaturaPhpLaravelPage() {
             </div>
 
             <div className="bg-gradient-to-br from-[#FF2D20] to-orange-500 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-6">Tecnologias que dominaras</h3>
+              <h3 className="text-2xl font-bold mb-6">Tecnologías que dominarás</h3>
               <div className="grid grid-cols-2 gap-4">
                 {["PHP", "Laravel", "MySQL", "JavaScript", "AJAX", "HTML/CSS", "Bootstrap", "Git/GitHub", "MercadoPago", "Apache", "MVC", "API REST"].map((tech) => (
                   <div key={tech} className="flex items-center gap-2 p-3 bg-white/10 rounded-lg">
@@ -517,7 +517,7 @@ export default function DiplomaturaPhpLaravelPage() {
               <span className="text-sm text-orange-600 font-medium">Programa completo</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Plan de estudio</h2>
-            <p className="text-gray-600">6 unidades con contenido teorico-practico y proyecto final integrador</p>
+            <p className="text-gray-600">6 unidades con contenido teórico-práctico y proyecto final integrador</p>
           </div>
 
           <div className="max-w-4xl mx-auto space-y-4">
@@ -618,7 +618,7 @@ export default function DiplomaturaPhpLaravelPage() {
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                      Correo electronico
+                      Correo electrónico
                     </label>
                     <Input
                       id="email"
@@ -673,14 +673,14 @@ export default function DiplomaturaPhpLaravelPage() {
       <section className="py-20 bg-gradient-to-br from-[#2D1B4E] via-[#FF2D20] to-orange-500">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-            Comenza tu carrera como Desarrollador PHP
+            Comenzá tu carrera como Desarrollador PHP
           </h2>
           <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-            Accede a todas las diplomaturas, webinars, hackathones y al portal de empleo con una sola suscripcion.
+            Accede a todas las diplomaturas, webinars, hackathones y al portal de empleo con una sola suscripción.
           </p>
           <Link href="/#precios">
             <Button size="lg" className="bg-white hover:bg-gray-100 text-[#2D1B4E] font-semibold shadow-lg px-8 h-12 text-base">
-              Ver planes de suscripcion
+              Ver planes de suscripción
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </Link>

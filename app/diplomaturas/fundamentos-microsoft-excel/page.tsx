@@ -32,7 +32,7 @@ const courseSchema = {
   "@context": "https://schema.org",
   "@type": "Course",
   "name": "Curso de Fundamentos de Microsoft Excel",
-  "description": "Domina Microsoft Excel desde cero. Aprende formulas, funciones, tablas dinamicas y graficos profesionales para destacar en cualquier entorno laboral. 12 horas de contenido, 100% online.",
+  "description": "Domina Microsoft Excel desde cero. Aprende fórmulas, funciones, tablas dinámicas y gráficos profesionales para destacar en cualquier entorno laboral. 12 horas de contenido, 100% online.",
   "provider": {
     "@type": "EducationalOrganization",
     "name": "Academia DePC",
@@ -41,7 +41,7 @@ const courseSchema = {
   "courseMode": "online",
   "educationalLevel": "Beginner",
   "inLanguage": "es",
-  "teaches": ["Microsoft Excel", "Formulas", "Funciones", "Tablas Dinamicas", "Graficos", "Filtros", "Formatos Condicionales"],
+  "teaches": ["Microsoft Excel", "Fórmulas", "Funciones", "Tablas Dinámicas", "Gráficos", "Filtros", "Formatos Condicionales"],
   "occupationalCredentialAwarded": "Certificado de Fundamentos de Microsoft Excel con validez Nacional e Internacional",
   "hasCourseInstance": {
     "@type": "CourseInstance",
@@ -78,27 +78,27 @@ const breadcrumbSchema = {
 const planDeEstudio = [
   {
     unidad: 1,
-    titulo: "Introduccion a Excel",
+    titulo: "Introducción a Excel",
     clases: [
-      "Concepto de hoja de calculo",
-      "Estructura basica de una hoja de calculo",
+      "Concepto de hoja de cálculo",
+      "Estructura básica de una hoja de cálculo",
       "Libros y hojas",
       "Celdas, filas, columnas y rangos",
       "Tipos de datos, modificar datos",
       "Guardar un libro de trabajo",
       "Abrir un libro de trabajo"
     ],
-    tecnologias: ["Excel Basico"]
+    tecnologias: ["Excel Básico"]
   },
   {
     unidad: 2,
     titulo: "El libro de Excel",
     clases: [
       "Manejo de la hoja de trabajo",
-      "Seleccion de celdas",
-      "Anadir una seleccion",
+      "Selección de celdas",
+      "Añadir una selección",
       "Copiar y cortar datos",
-      "Pegado basico y Pegado especial - Diferencias",
+      "Pegado básico y Pegado especial - Diferencias",
       "Borrar celdas vs eliminar celdas"
     ],
     tecnologias: ["Excel Intermedio"]
@@ -108,8 +108,8 @@ const planDeEstudio = [
     titulo: "Formatos y estilos",
     clases: [
       "Formatos de las celdas, alineaciones, centrados",
-      "Formatos de los datos: numericos, de texto",
-      "Tipos de letras y tamanos",
+      "Formatos de los datos: numéricos, de texto",
+      "Tipos de letras y tamaños",
       "Crear y utilizar estilos",
       "Tablas y bordes",
       "Formatos condicionales"
@@ -118,36 +118,36 @@ const planDeEstudio = [
   },
   {
     unidad: 4,
-    titulo: "Objetos e hipervinculos",
+    titulo: "Objetos e hipervínculos",
     clases: [
-      "Insercion de imagenes, pdf y demas archivos",
-      "Modificacion de imagenes",
+      "Inserción de imágenes, pdf y demás archivos",
+      "Modificación de imágenes",
       "Autoformas y WordArt",
       "Fondos",
-      "Hipervinculos"
+      "Hipervínculos"
     ],
     tecnologias: ["Objetos", "Multimedia"]
   },
   {
     unidad: 5,
-    titulo: "Formulas y funciones",
+    titulo: "Fórmulas y funciones",
     clases: [
-      "Formulas y operadores numericos",
-      "Operadores de texto y logicos",
-      "Introduccion a funciones",
-      "Biblioteca de funciones y sus categorias",
+      "Fórmulas y operadores numéricos",
+      "Operadores de texto y lógicos",
+      "Introducción a funciones",
+      "Biblioteca de funciones y sus categorías",
       "Sintaxis y argumentos",
       "Tipos de referencias a celdas",
-      "Errores en funciones y como solucionarlos"
+      "Errores en funciones y cómo solucionarlos"
     ],
-    tecnologias: ["Formulas", "Funciones"]
+    tecnologias: ["Fórmulas", "Funciones"]
   },
   {
     unidad: 6,
     titulo: "Formularios, listas y filtros",
     clases: [
-      "Validacion de datos",
-      "Formularios de introduccion de datos",
+      "Validación de datos",
+      "Formularios de introducción de datos",
       "Listas y series",
       "Filtros y autofiltros"
     ],
@@ -155,16 +155,16 @@ const planDeEstudio = [
   },
   {
     unidad: 7,
-    titulo: "Tablas y graficos",
+    titulo: "Tablas y gráficos",
     clases: [
       "Graficar tablas con valores",
-      "Graficos recomendados",
-      "Tipos de graficos, series y categorias",
-      "Editar graficos",
-      "Insertar Encabezado y Pie de pagina",
-      "Establecer y borrar area de impresion"
+      "Gráficos recomendados",
+      "Tipos de gráficos, series y categorías",
+      "Editar gráficos",
+      "Insertar Encabezado y Pie de página",
+      "Establecer y borrar área de impresión"
     ],
-    tecnologias: ["Graficos", "Tablas Dinamicas"]
+    tecnologias: ["Gráficos", "Tablas Dinámicas"]
   }
 ]
 
@@ -185,7 +185,7 @@ export default function FundamentosExcelPage() {
     
     if (!formData.nombre.trim()) newErrors.nombre = "El nombre es requerido"
     if (!formData.email.trim()) newErrors.email = "El email es requerido"
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Email invalido"
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Email inválido"
     if (!formData.whatsapp.trim()) newErrors.whatsapp = "El WhatsApp es requerido"
     
     if (Object.keys(newErrors).length > 0) {
@@ -226,7 +226,7 @@ export default function FundamentosExcelPage() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
               <FileSpreadsheet className="w-4 h-4 text-green-300" />
-              <span className="text-sm text-white/90">Curso con certificacion</span>
+              <span className="text-sm text-white/90">Curso con certificación</span>
             </div>
 
             {/* Headline */}
@@ -235,11 +235,11 @@ export default function FundamentosExcelPage() {
               <span className="bg-gradient-to-r from-green-300 to-white bg-clip-text text-transparent">Microsoft Excel</span>
             </h1>
 
-            <p className="text-xl sm:text-2xl text-green-200 font-medium mb-6">Formulas + Tablas Dinamicas + Graficos</p>
+            <p className="text-xl sm:text-2xl text-green-200 font-medium mb-6">Fórmulas + Tablas Dinámicas + Gráficos</p>
 
             {/* Subheadline */}
             <p className="text-lg text-white/80 max-w-2xl mx-auto mb-10 text-pretty">
-              Domina Excel desde cero. Aprende formulas, funciones, tablas dinamicas y graficos profesionales para destacar en cualquier entorno laboral.
+              Domina Excel desde cero. Aprende fórmulas, funciones, tablas dinámicas y gráficos profesionales para destacar en cualquier entorno laboral.
             </p>
 
             {/* CTAs */}
@@ -285,7 +285,7 @@ export default function FundamentosExcelPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Certificaciones incluidas</h2>
-            <p className="text-gray-600">Certificado de aprobacion con validez Nacional e Internacional</p>
+            <p className="text-gray-600">Certificado de aprobación con validez Nacional e Internacional</p>
           </div>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
@@ -323,7 +323,7 @@ export default function FundamentosExcelPage() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 border border-green-200 mb-4">
               <FileSpreadsheet className="w-4 h-4 text-green-600" />
-              <span className="text-sm text-green-600 font-medium">Habilidades practicas</span>
+              <span className="text-sm text-green-600 font-medium">Habilidades prácticas</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Esto y mucho mas es lo que vas a poder crear</h2>
           </div>
@@ -332,21 +332,21 @@ export default function FundamentosExcelPage() {
               <div className="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mx-auto mb-4">
                 <Calculator className="w-7 h-7 text-green-600" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Formulas</h3>
-              <p className="text-sm text-gray-600">Automatiza calculos complejos</p>
+              <h3 className="font-semibold text-gray-900 mb-2">Fórmulas</h3>
+              <p className="text-sm text-gray-600">Automatiza cálculos complejos</p>
             </div>
             <div className="bg-white rounded-2xl p-6 border border-gray-200 text-center shadow-sm hover:shadow-lg transition-shadow">
               <div className="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mx-auto mb-4">
                 <Table className="w-7 h-7 text-green-600" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Tablas Dinamicas</h3>
-              <p className="text-sm text-gray-600">Analiza grandes volumenes de datos</p>
+              <h3 className="font-semibold text-gray-900 mb-2">Tablas Dinámicas</h3>
+              <p className="text-sm text-gray-600">Analiza grandes volúmenes de datos</p>
             </div>
             <div className="bg-white rounded-2xl p-6 border border-gray-200 text-center shadow-sm hover:shadow-lg transition-shadow">
               <div className="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mx-auto mb-4">
                 <BarChart3 className="w-7 h-7 text-green-600" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Graficos</h3>
+              <h3 className="font-semibold text-gray-900 mb-2">Gráficos</h3>
               <p className="text-sm text-gray-600">Visualiza datos de forma profesional</p>
             </div>
             <div className="bg-white rounded-2xl p-6 border border-gray-200 text-center shadow-sm hover:shadow-lg transition-shadow">
@@ -365,11 +365,11 @@ export default function FundamentosExcelPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 border border-green-200 mb-6">
             <Award className="w-4 h-4 text-green-600" />
-            <span className="text-sm text-green-600 font-medium">Por que aprender Excel?</span>
+            <span className="text-sm text-green-600 font-medium">¿Por qué aprender Excel?</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Importancia de Excel en tu carrera profesional</h2>
           <p className="text-gray-600 text-lg leading-relaxed">
-            Excel es la herramienta mas utilizada por todo tipo de instituciones y empresas. Conocer el programa, sus funcionalidades y aplicaciones practicas, es fundamental para ser competitivo ante busquedas laborales. Excel no es solo una herramienta mas, sino un imprescindible que acompana de manera agil la eficiencia, productividad y el exito en empresas de todos los tamanos.
+            Excel es la herramienta más utilizada por todo tipo de instituciones y empresas. Conocer el programa, sus funcionalidades y aplicaciones prácticas, es fundamental para ser competitivo ante búsquedas laborales. Excel no es solo una herramienta más, sino un imprescindible que acompaña de manera ágil la eficiencia, productividad y el éxito en empresas de todos los tamaños.
           </p>
         </div>
       </section>
@@ -385,7 +385,7 @@ export default function FundamentosExcelPage() {
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Perfil del egresado</h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Al finalizar el curso, seras capaz de utilizar Microsoft Excel de manera profesional, creando hojas de calculo complejas con formulas, graficos y tablas dinamicas para el analisis de datos.
+                Al finalizar el curso, serás capaz de utilizar Microsoft Excel de manera profesional, creando hojas de cálculo complejas con fórmulas, gráficos y tablas dinámicas para el análisis de datos.
               </p>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Aplicaciones laborales</h3>
@@ -404,20 +404,20 @@ export default function FundamentosExcelPage() {
                 </li>
                 <li className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200">
                   <Briefcase className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Gestor de inventarios y logistica</span>
+                  <span className="text-gray-700">Gestor de inventarios y logística</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-gradient-to-br from-[#217346] to-green-500 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-6">Que aprenderas?</h3>
+              <h3 className="text-2xl font-bold mb-6">¿Qué aprenderás?</h3>
               <div className="space-y-6">
                 <div>
                   <h4 className="font-semibold mb-3">Fundamentos</h4>
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-200" />
-                      <span className="text-sm">Estructura de hojas de calculo y libros</span>
+                      <span className="text-sm">Estructura de hojas de cálculo y libros</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-200" />
@@ -426,11 +426,11 @@ export default function FundamentosExcelPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3">Formulas y Funciones</h4>
+                  <h4 className="font-semibold mb-3">Fórmulas y Funciones</h4>
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-200" />
-                      <span className="text-sm">Operadores numericos, texto y logicos</span>
+                      <span className="text-sm">Operadores numéricos, texto y lógicos</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-200" />
@@ -439,15 +439,15 @@ export default function FundamentosExcelPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3">Analisis de Datos</h4>
+                  <h4 className="font-semibold mb-3">Análisis de Datos</h4>
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-200" />
-                      <span className="text-sm">Tablas dinamicas y filtros avanzados</span>
+                      <span className="text-sm">Tablas dinámicas y filtros avanzados</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-200" />
-                      <span className="text-sm">Graficos profesionales y visualizacion</span>
+                      <span className="text-sm">Gráficos profesionales y visualización</span>
                     </li>
                   </ul>
                 </div>
@@ -466,7 +466,7 @@ export default function FundamentosExcelPage() {
               <span className="text-sm text-green-600 font-medium">Programa completo</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Plan de estudio</h2>
-            <p className="text-gray-600">7 unidades con contenido teorico-practico</p>
+            <p className="text-gray-600">7 unidades con contenido teórico-práctico</p>
           </div>
 
           <div className="max-w-4xl mx-auto space-y-4">
@@ -567,7 +567,7 @@ export default function FundamentosExcelPage() {
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                      Correo electronico
+                      Correo electrónico
                     </label>
                     <Input
                       id="email"
@@ -625,11 +625,11 @@ export default function FundamentosExcelPage() {
             Domina Excel y destaca en cualquier entorno laboral
           </h2>
           <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-            Accede a todos los cursos, webinars, hackathones y al portal de empleo con una sola suscripcion.
+            Accede a todos los cursos, webinars, hackathones y al portal de empleo con una sola suscripción.
           </p>
           <Link href="/#precios">
             <Button size="lg" className="bg-white hover:bg-gray-100 text-[#2D1B4E] font-semibold shadow-lg px-8 h-12 text-base">
-              Ver planes de suscripcion
+              Ver planes de suscripción
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </Link>
