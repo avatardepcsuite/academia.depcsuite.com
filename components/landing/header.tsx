@@ -1,0 +1,218 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import { Button } from "@/components/ui/button"
+import { Menu, X, ChevronDown, Sparkles } from "lucide-react"
+import Link from "next/link"
+import { useCurrency, currencies } from "@/contexts/currency-context"
+
+const navItems = [
+  { href: "#formacion", label: "Diplomaturas" },
+  { href: "#webinars", label: "Webinars" },
+  { href: "#hackathones", label: "Hackathones" },
+  { href: "#empleo", label: "Portal de Empleo" },
+  { href: "#comunidad", label: "Comunidad" },
+  { href: "#precios", label: "Formar parte" },
+]
+
+export function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isCurrencyOpen, setIsCurrencyOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState("")
+  const { selectedCurrency, setSelectedCurrency } = useCurrency()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map(item => item.href.replace("#", ""))
+      const scrollPosition = window.scrollY + 140
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i])
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(`#${sections[i]}`)
+          return
+        }
+      }
+      setActiveSection("")
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    handleScroll()
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Promotional Banner */}
+      <div className="bg-gradient-to-r from-[#6B1B4D] via-[#8B2563] to-[#6B1B4D] py-2">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="flex items-center justify-center gap-2 text-white text-sm font-medium">
+            <Sparkles className="w-4 h-4" />
+            <span className="text-center">
+              {selectedCurrency.code === "ARS" 
+                ? "¡Sumate a la comunidad más activa de estudiantes de tecnología en Argentina y LATAM!" 
+                : "¡Únete a la comunidad más activa de estudiantes de tecnología en Argentina y LATAM!"}
+            </span>
+            <Sparkles className="w-4 h-4" />
+          </div>
+        </div>
+      </div>
+      
+      {/* Main Header */}
+      <div className="bg-[color-mix(in_oklab,#2D1B4E_95%,transparent)] backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/20">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="flex items-center justify-between h-18">
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
+              <span className="font-bold text-xl tracking-tight text-white">Academia DePC</span>
+            </Link>
+
+            {/* Desktop Navigation - Only on xl screens */}
+            <nav className="hidden xl:flex items-center gap-2">
+              {navItems.map((item) => (
+                <Link 
+                  key={item.href}
+                  href={item.href} 
+                  className={`relative px-5 py-2.5 transition-colors duration-200 font-semibold text-[15px] tracking-wide ${
+                    activeSection === item.href 
+                      ? "text-white" 
+                      : "text-white/60 hover:text-white"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+
+            {/* Right Side: Currency Selector + CTA */}
+            <div className="hidden xl:flex items-center gap-5">
+              {/* Currency Selector */}
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setIsCurrencyOpen(!isCurrencyOpen)}
+                  className="flex items-center gap-2.5 px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 hover:border-white/25 hover:bg-white/10 transition-all duration-200"
+                >
+                  <span className="text-lg">{selectedCurrency.flag}</span>
+                  <span className="text-sm font-semibold text-white tracking-wide">{selectedCurrency.code}</span>
+                  <ChevronDown className={`w-4 h-4 text-white/60 transition-transform duration-200 ${isCurrencyOpen ? "rotate-180" : ""}`} />
+                </button>
+
+                {isCurrencyOpen && (
+                  <>
+                    <div 
+                      className="fixed inset-0 z-10" 
+                      onClick={() => setIsCurrencyOpen(false)}
+                      aria-hidden="true"
+                    />
+                    <div className="absolute right-0 top-full mt-2 w-52 bg-[#1A0F2E] rounded-xl border border-white/15 shadow-2xl shadow-black/40 z-20 py-2 overflow-hidden">
+                      {currencies.map((currency) => (
+                        <button
+                          key={currency.code}
+                          type="button"
+                          onClick={() => {
+                            setSelectedCurrency(currency)
+                            setIsCurrencyOpen(false)
+                          }}
+                          className={`w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-white/10 transition-colors ${
+                            selectedCurrency.code === currency.code ? "bg-pink-500/15" : ""
+                          }`}
+                        >
+                          <span className="text-xl">{currency.flag}</span>
+                          <div className="flex-1">
+                            <span className="text-sm font-semibold text-white">{currency.country}</span>
+                            <span className="text-xs text-white/50 ml-2">{currency.code}</span>
+                          </div>
+                          {selectedCurrency.code === currency.code && (
+                            <span className="w-2 h-2 rounded-full bg-pink-500 shadow-lg shadow-pink-500/50" />
+                          )}
+                        </button>
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+
+              <Link href="https://autogestion.depcsuite.com/" target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" className="text-white/70 hover:text-white hover:bg-white/10 font-semibold text-[15px] px-5 py-2.5 h-auto bg-transparent">
+                  Iniciar sesión
+                </Button>
+              </Link>
+              <Link href="#precios">
+                <Button className="bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white font-bold text-[15px] px-6 py-2.5 h-auto shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 transition-all duration-300">
+                  Suscribirme
+                </Button>
+              </Link>
+            </div>
+
+            {/* Mobile/Tablet Menu Button - Shows on screens smaller than xl */}
+            <button
+              type="button"
+              className="xl:hidden p-2 text-white"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+
+          {/* Mobile/Tablet Navigation */}
+          {isMenuOpen && (
+            <div className="xl:hidden py-6 border-t border-white/10">
+              <nav className="flex flex-col gap-3">
+                {/* Mobile Currency Selector */}
+                <div className="flex items-center gap-3 pb-5 border-b border-white/10">
+                  <span className="text-sm font-medium text-white/70">Moneda:</span>
+                  <div className="flex gap-2">
+                    {currencies.map((currency) => (
+                      <button
+                        key={currency.code}
+                        type="button"
+                        onClick={() => setSelectedCurrency(currency)}
+                        className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
+                          selectedCurrency.code === currency.code
+                            ? "bg-gradient-to-r from-pink-500 to-fuchsia-500 text-white shadow-lg shadow-pink-500/30"
+                            : "bg-white/10 text-white/80 hover:bg-white/20"
+                        }`}
+                      >
+                        <span className="text-base">{currency.flag}</span>
+                        <span>{currency.code}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {navItems.map((item) => (
+                  <Link 
+                    key={item.href}
+                    href={item.href} 
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`px-4 py-3 rounded-lg text-[15px] font-semibold transition-all duration-200 ${
+                      activeSection === item.href 
+                        ? "bg-gradient-to-r from-pink-500/20 to-fuchsia-500/20 text-white border-l-4 border-pink-500" 
+                        : "text-white/70 hover:text-white hover:bg-white/10"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                <div className="flex flex-col gap-3 pt-5 mt-2 border-t border-white/10">
+                  <Link href="https://autogestion.depcsuite.com/" target="_blank" rel="noopener noreferrer">
+                    <Button variant="ghost" className="w-full justify-center text-white/80 hover:text-white hover:bg-white/10 font-semibold text-[15px] py-3 h-auto bg-transparent">
+                      Iniciar sesión
+                    </Button>
+                  </Link>
+                  <Link href="#precios" onClick={() => setIsMenuOpen(false)}>
+                    <Button className="w-full bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white font-bold text-[15px] py-3 h-auto shadow-lg shadow-pink-500/25">
+                      Suscribirme
+                    </Button>
+                  </Link>
+                </div>
+              </nav>
+            </div>
+          )}
+        </div>
+      </div>
+    </header>
+  )
+}
