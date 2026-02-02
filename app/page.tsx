@@ -31,12 +31,8 @@ const CTA = dynamic(() => import("@/components/landing/cta").then(mod => ({ defa
 const Footer = dynamic(() => import("@/components/landing/footer").then(mod => ({ default: mod.Footer })), {
   loading: () => <div className="bg-gradient-to-r from-[#2D1B4E] via-[#5C1F5C] to-[#E91E63] py-16" />
 })
-const WhatsAppButton = dynamic(() => import("@/components/landing/whatsapp-button").then(mod => ({ default: mod.WhatsAppButton })), {
-  ssr: false
-})
-const PromoPopup = dynamic(() => import("@/components/landing/promo-popup").then(mod => ({ default: mod.PromoPopup })), {
-  ssr: false
-})
+const WhatsAppButton = dynamic(() => import("@/components/landing/whatsapp-button").then(mod => ({ default: mod.WhatsAppButton })))
+const PromoPopup = dynamic(() => import("@/components/landing/promo-popup").then(mod => ({ default: mod.PromoPopup })))
 
 // Structured Data for SEO and GEO (Generative Engine Optimization)
 const organizationSchema = {
