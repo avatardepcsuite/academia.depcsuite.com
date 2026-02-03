@@ -1,7 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Instagram, Facebook, Mail } from "lucide-react"
-import { Linkedin } from "lucide-react" // Declared the LinkedIn variable
 
 // LinkedIn official logo SVG component
 function LinkedInIcon({ className }: { className?: string }) {
@@ -79,7 +78,7 @@ export function Footer() {
               <span className="font-bold text-xl text-white">Academia DePC</span>
             </Link>
             <p className="text-sm text-white/70 mb-6">
-              Comunidad educativa tech con formación, certificaciones y oportunidades laborales para Argentina y LATAM.
+              Comunidad educativa tech con formacion, certificaciones y oportunidades laborales para Argentina y LATAM.
             </p>
             
             {/* Social Links - Prominent */}
@@ -198,7 +197,7 @@ export function Footer() {
           
           {/* About Us */}
           <p className="text-sm text-white/60 text-center mt-6 max-w-3xl mx-auto">
-            DEPCSUITE SA © es una empresa desarrolladora de tecnologia que trabaja con las principales empresas del país para brindarte la mejor formación.
+            DEPCSUITE SA es una empresa desarrolladora de tecnologia que trabaja con las principales empresas del pais para brindarte la mejor formacion.
           </p>
           
           {/* CUIT Info */}

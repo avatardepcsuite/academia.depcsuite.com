@@ -12,8 +12,8 @@ const included = [
   "2 Masterclass mensuales con Docente en vivo",
   "Hackathones presenciales",
   "Webinars de tendencias tech",
-  "Certificación nacional (Cámara Argentina)",
-  "Certificación internacional (OIEP)",
+  "Certificacion nacional (Camara Argentina)",
+  "Certificacion internacional (OIEP)",
   "Acceso al portal de empleo",
   "Credencial digital verificable",
   "Comunidad activa de estudiantes tech",
@@ -50,13 +50,13 @@ export function Pricing() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E91E63]/10 border border-[#E91E63]/20 mb-4">
             <Sparkles className="w-4 h-4 text-[#E91E63]" />
-            <span className="text-sm font-medium text-[#E91E63]">Planes de Membresía</span>
+            <span className="text-sm font-medium text-[#E91E63]">Planes de Membresia</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 text-balance">
-            Invertí en tu futuro tech
+            Inverti en tu futuro tech
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto text-pretty">
-            Una sola suscripción te da acceso a toda la formación, eventos y la comunidad más activa de estudiantes tech.
+            Una sola suscripcion te da acceso a toda la formacion, eventos y la comunidad mas activa de estudiantes tech.
           </p>
         </div>
 

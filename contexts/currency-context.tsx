@@ -120,7 +120,7 @@ export const currencies: Currency[] = [
   { 
     code: "MXN", 
     symbol: "$", 
-    country: "México", 
+    country: "Mexico", 
     monthly: "349", 
     annual: "2.999", 
     originalAnnual: "3.500",
@@ -130,7 +130,7 @@ export const currencies: Currency[] = [
   { 
     code: "USD", 
     symbol: "$", 
-    country: "Otros países", 
+    country: "Otros paises", 
     monthly: "20", 
     annual: "170", 
     originalAnnual: "200",
@@ -139,7 +139,7 @@ export const currencies: Currency[] = [
   },
   { 
     code: "EUR", 
-    symbol: "€", 
+    symbol: "E", 
     country: "Europa", 
     monthly: "20", 
     annual: "170", 

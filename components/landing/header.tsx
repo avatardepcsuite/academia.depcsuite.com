@@ -3,31 +3,103 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react"
 import { usePathname, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown, Sparkles } from "lucide-react"
+import { Menu, X, ChevronDown, Sparkles, Zap, Code, Brain, Clock, Palette, Briefcase, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { useCurrency, currencies, flagComponents } from "@/contexts/currency-context"
 
 const diplomaturas = [
   { href: "/diplomaturas/programacion-fullstack-react-node-ia", label: "Full Stack React + Node.js + IA" },
-  { href: "/diplomaturas/programacion-python", label: "Programacion Python" },
+  { href: "/diplomaturas/programacion-python", label: "Programación Python" },
   { href: "/diplomaturas/web-fullstack-php-laravel", label: "Web Full Stack PHP Laravel" },
   { href: "/diplomaturas/fundamentos-microsoft-excel", label: "Fundamentos Microsoft Excel" },
 ]
 
+const webinarCategories = [
+  {
+    id: "automatizacion",
+    label: "Automatización",
+    icon: Zap,
+    color: "text-orange-400",
+    bgColor: "bg-orange-500/10",
+    webinars: [
+      { title: "Aprendé a crear un Bot de WhatsApp con n8n" },
+      { title: "n8n desde Cero: Automatiza tu Trabajo en 90 Minutos" },
+    ]
+  },
+  {
+    id: "programacion",
+    label: "Programación",
+    icon: Code,
+    color: "text-cyan-400",
+    bgColor: "bg-cyan-500/10",
+    webinars: [
+      { title: "Frameworks frontend: qué son, para qué sirven y por qué usar React" },
+      { title: "Cómo extraer datos de la web y cómo evitar que lo hagan con tu sitio" },
+      { title: "Cómo aplicar estrategias de sistemas de autenticación seguros y escalables" },
+    ]
+  },
+  {
+    id: "ia",
+    label: "Inteligencia Artificial",
+    icon: Brain,
+    color: "text-purple-400",
+    bgColor: "bg-purple-500/10",
+    webinars: [
+      { title: "Potenciar tu productividad con IA: Copilot vs Agent First" },
+      { title: "Cómo construir un asistente virtual para tu web" },
+      { title: "Aprendé a documentar tus proyectos de forma profesional con IA" },
+    ]
+  },
+  {
+    id: "productividad",
+    label: "Productividad",
+    icon: Clock,
+    color: "text-emerald-400",
+    bgColor: "bg-emerald-500/10",
+    webinars: [
+      { title: "Notion + IA para Productividad: Tu Sistema en 90 Minutos" },
+    ]
+  },
+  {
+    id: "diseno",
+    label: "Diseño",
+    icon: Palette,
+    color: "text-pink-400",
+    bgColor: "bg-pink-500/10",
+    webinars: [
+      { title: "Figma para no diseñadores: Prototipá y Colaborá como un Pro" },
+      { title: "Canva para el Mundo Laboral: CV, Presentaciones y Contenido que Vende" },
+    ]
+  },
+  {
+    id: "empleabilidad",
+    label: "Empleabilidad",
+    icon: Briefcase,
+    color: "text-amber-400",
+    bgColor: "bg-amber-500/10",
+    webinars: [
+      { title: "Entrevistas 2026: CV, LinkedIn y Respuestas que te Hacen Contratable" },
+    ]
+  },
+]
+
 const getNavItems = (isRioplatense: boolean) => [
-  { href: "#formacion", label: "Diplomaturas", hasSubmenu: true },
-  { href: "#webinars", label: "Webinars" },
+  { href: "#formacion", label: "Diplomaturas", hasSubmenu: "diplomaturas" },
+  { href: "#webinars", label: "Webinars", hasSubmenu: "webinars" },
   { href: "#hackathones", label: "Hackathones" },
   { href: "#empleo", label: "Portal de Empleo" },
   { href: "#comunidad", label: "Comunidad" },
-  { href: "#precios", label: isRioplatense ? "¡Formá parte!" : "¡Forma parte!" },
+  { href: "#instituciones", label: "Promociones" },
+  { href: "#precios", label: isRioplatense ? "¡Forma parte!" : "¡Forma parte!" },
 ]
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isCurrencyOpen, setIsCurrencyOpen] = useState(false)
   const [isDiplomaturasOpen, setIsDiplomaturasOpen] = useState(false)
+  const [isWebinarsOpen, setIsWebinarsOpen] = useState(false)
   const [isMobileDiplomaturasOpen, setIsMobileDiplomaturasOpen] = useState(false)
+  const [isMobileWebinarsOpen, setIsMobileWebinarsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("")
   const { selectedCurrency, setSelectedCurrency } = useCurrency()
   
@@ -103,12 +175,12 @@ export function Header() {
             {/* Desktop Navigation - Only on xl screens - Logo + Menu aligned left */}
             <nav className="hidden xl:flex items-center gap-0.5 ml-6">
               {navItems.map((item) => (
-                item.hasSubmenu ? (
+                item.hasSubmenu === "diplomaturas" ? (
                   <div key={item.href} className="relative">
                     <button
                       type="button"
                       onClick={() => setIsDiplomaturasOpen(!isDiplomaturasOpen)}
-                      onMouseEnter={() => setIsDiplomaturasOpen(true)}
+                      onMouseEnter={() => { setIsDiplomaturasOpen(true); setIsWebinarsOpen(false); }}
                       className={`flex items-center gap-0.5 px-2.5 py-1.5 transition-colors duration-200 font-medium text-sm ${
                         activeSection === item.href || pathname.startsWith("/diplomaturas")
                           ? "text-white" 
@@ -143,6 +215,77 @@ export function Header() {
                               {diploma.label}
                             </Link>
                           ))}
+                        </div>
+                      </>
+                    )}
+                  </div>
+                ) : item.hasSubmenu === "webinars" ? (
+                  <div key={item.href} className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setIsWebinarsOpen(!isWebinarsOpen)}
+                      onMouseEnter={() => { setIsWebinarsOpen(true); setIsDiplomaturasOpen(false); }}
+                      className={`flex items-center gap-0.5 px-2.5 py-1.5 transition-colors duration-200 font-medium text-sm ${
+                        activeSection === item.href
+                          ? "text-white" 
+                          : "text-white/60 hover:text-white"
+                      }`}
+                    >
+                      {item.label}
+                      <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isWebinarsOpen ? "rotate-180" : ""}`} />
+                    </button>
+                    {isWebinarsOpen && (
+                      <>
+                        <div 
+                          className="fixed inset-0 z-10" 
+                          onClick={() => setIsWebinarsOpen(false)}
+                          aria-hidden="true"
+                        />
+                        <div 
+                          className="absolute left-0 top-full mt-2 w-[480px] bg-[#1A0F2E] rounded-xl border border-white/15 shadow-2xl shadow-black/40 z-20 p-3 overflow-hidden"
+                          onMouseLeave={() => setIsWebinarsOpen(false)}
+                        >
+                          <div className="grid grid-cols-2 gap-2">
+                            {webinarCategories.map((category) => {
+                              const IconComponent = category.icon
+                              return (
+                                <Link
+                                  key={category.id}
+                                  href="#webinars"
+                                  onClick={(e) => {
+                                    handleNavClick(e, "#webinars")
+                                    setIsWebinarsOpen(false)
+                                  }}
+                                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-all duration-200 group/item"
+                                >
+                                  <div className={`w-10 h-10 rounded-lg ${category.bgColor} flex items-center justify-center shrink-0`}>
+                                    <IconComponent className={`w-5 h-5 ${category.color}`} />
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <span className="block text-sm font-medium text-white group-hover/item:text-pink-300 transition-colors">
+                                      {category.label}
+                                    </span>
+                                    <span className="block text-xs text-white/50">
+                                      {category.webinars.length} {category.webinars.length === 1 ? "webinar" : "webinars"}
+                                    </span>
+                                  </div>
+                                </Link>
+                              )
+                            })}
+                          </div>
+                          <div className="mt-3 pt-3 border-t border-white/10">
+                            <Link
+                              href="#webinars"
+                              onClick={(e) => {
+                                handleNavClick(e, "#webinars")
+                                setIsWebinarsOpen(false)
+                              }}
+                              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-fuchsia-500/10 text-sm text-pink-400 hover:text-pink-300 hover:from-pink-500/20 hover:to-fuchsia-500/20 font-medium transition-all"
+                            >
+                              Ver todos los webinars
+                              <ArrowRight className="w-4 h-4" />
+                            </Link>
+                          </div>
                         </div>
                       </>
                     )}
@@ -288,7 +431,7 @@ export function Header() {
               type="button"
               className="md:hidden p-2 text-white ml-auto"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-label={isMenuOpen ? "Cerrar menu" : "Abrir menu"}
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -298,7 +441,7 @@ export function Header() {
               type="button"
               className="hidden md:block xl:hidden p-2 text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-label={isMenuOpen ? "Cerrar menu" : "Abrir menu"}
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -351,7 +494,7 @@ export function Header() {
                 </div>
 
                 {navItems.map((item) => (
-                  item.hasSubmenu ? (
+                  item.hasSubmenu === "diplomaturas" ? (
                     <div key={item.href}>
                       <button
                         type="button"
@@ -387,6 +530,64 @@ export function Header() {
                         </div>
                       )}
                     </div>
+                  ) : item.hasSubmenu === "webinars" ? (
+                    <div key={item.href}>
+                      <button
+                        type="button"
+                        onClick={() => setIsMobileWebinarsOpen(!isMobileWebinarsOpen)}
+                        className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-[15px] font-semibold transition-all duration-200 ${
+                          activeSection === item.href
+                            ? "bg-gradient-to-r from-pink-500/20 to-fuchsia-500/20 text-white border-l-4 border-pink-500" 
+                            : "text-white/70 hover:text-white hover:bg-white/10"
+                        }`}
+                      >
+                        {item.label}
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileWebinarsOpen ? "rotate-180" : ""}`} />
+                      </button>
+                      {isMobileWebinarsOpen && (
+                        <div className="mt-3 flex flex-col gap-1.5 max-h-[50vh] overflow-y-auto">
+                          {webinarCategories.map((category) => {
+                            const IconComponent = category.icon
+                            return (
+                              <Link
+                                key={category.id}
+                                href="#webinars"
+                                onClick={(e) => {
+                                  handleNavClick(e, "#webinars")
+                                  setIsMenuOpen(false)
+                                  setIsMobileWebinarsOpen(false)
+                                }}
+                                className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5 transition-all duration-200"
+                              >
+                                <div className={`w-9 h-9 rounded-lg ${category.bgColor} flex items-center justify-center shrink-0`}>
+                                  <IconComponent className={`w-4 h-4 ${category.color}`} />
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <span className="block text-sm font-medium text-white">
+                                    {category.label}
+                                  </span>
+                                  <span className="block text-xs text-white/50">
+                                    {category.webinars.length} {category.webinars.length === 1 ? "webinar" : "webinars"}
+                                  </span>
+                                </div>
+                              </Link>
+                            )
+                          })}
+                          <Link
+                            href="#webinars"
+                            onClick={(e) => {
+                              handleNavClick(e, "#webinars")
+                              setIsMenuOpen(false)
+                              setIsMobileWebinarsOpen(false)
+                            }}
+                            className="flex items-center justify-center gap-2 mt-2 py-2.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-fuchsia-500/10 text-sm text-pink-400 font-medium"
+                          >
+                            Ver todos los webinars
+                            <ArrowRight className="w-4 h-4" />
+                          </Link>
+                        </div>
+                      )}
+                    </div>
                   ) : (
                     <Link 
                       key={item.href}
@@ -405,19 +606,28 @@ export function Header() {
                     </Link>
                   )
                 ))}
-                {/* Mobile Only: Login/Subscribe buttons (hidden on tablet since they're in header) */}
-                <div className="flex md:hidden flex-col gap-3 pt-5 mt-2 border-t border-white/10">
-                  <Link href="https://autogestion.depcsuite.com/" target="_blank" rel="noopener noreferrer">
-                    <Button variant="ghost" className="w-full justify-center text-white/80 hover:text-white hover:bg-white/10 font-semibold text-[15px] py-3 h-auto bg-transparent">
+
+                {/* Mobile Only: Buttons */}
+                <div className="md:hidden flex flex-col gap-3 pt-5 border-t border-white/10 mt-2">
+                  <Link 
+                    href="https://autogestion.depcsuite.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <Button variant="outline" className="w-full border-white/20 text-white hover:bg-white/10 font-medium bg-transparent">
                       Iniciar sesión
                     </Button>
                   </Link>
-                  <Link href="#precios" onClick={(e) => {
+                  <Link 
+                    href="#precios" 
+                    onClick={(e) => {
                       handleNavClick(e, "#precios")
                       setIsMenuOpen(false)
-                    }}>
-                    <Button className="w-full bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white font-bold text-[15px] py-3 h-auto shadow-lg shadow-pink-500/25">
-                      Suscribirme
+                    }}
+                  >
+                    <Button className="w-full bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white font-semibold shadow-lg shadow-pink-500/25">
+                      Suscribirme ahora
                     </Button>
                   </Link>
                 </div>

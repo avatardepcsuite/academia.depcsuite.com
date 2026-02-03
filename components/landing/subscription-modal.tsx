@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { X, Loader2 } from "lucide-react"
-import axios from "axios"
 
 interface SubscriptionModalProps {
   isOpen: boolean
@@ -48,9 +47,9 @@ export function SubscriptionModal({ isOpen, onClose, planType, paymentLink }: Su
     return Object.keys(newErrors).length === 0
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-
+    
     if (!validateForm()) return
 
     setIsSubmitting(true)
@@ -61,43 +60,20 @@ export function SubscriptionModal({ isOpen, onClose, planType, paymentLink }: Su
       planType,
       timestamp: new Date().toISOString(),
     }
+    
+    // Store in localStorage as a simple solution
     const existingData = localStorage.getItem("subscriptionLeads")
     const leads = existingData ? JSON.parse(existingData) : []
     leads.push(subscriptionData)
     localStorage.setItem("subscriptionLeads", JSON.stringify(leads))
 
+    // Redirect to payment link
     window.open(paymentLink, "_blank")
-
-
-    const payload = {
-      fk_idarea: 2,
-      email: formData.email.trim().toLowerCase(),
-      nombre: formData.name.trim(),
-      telefono: formData.whatsapp.trim(),
-      carrito: [
-        {
-          idproducto: planType === "monthly" ? 97364 : 97366,
-          cantidad: 1
-        },
-      ],
-    }
-
-    try {
-      await axios.post("https://z1pk745fxh.execute-api.us-east-1.amazonaws.com/prod/carrito-olvidado", {
-        httpMethod: "POST",
-        headers: { "Content-Type": "application/json" },
-        queryStringParameters: {},
-        pathParameters: {},
-        body: JSON.stringify(payload),
-        isBase64Encoded: false,
-      })
-
-      setFormData({ name: "", email: "", whatsapp: "" })
-      setIsSubmitting(false)
-      onClose()
-    } catch {
-      setIsSubmitting(false)
-    }
+    
+    // Reset form and close modal
+    setFormData({ name: "", email: "", whatsapp: "" })
+    setIsSubmitting(false)
+    onClose()
   }
 
   const handleChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -112,12 +88,12 @@ export function SubscriptionModal({ isOpen, onClose, planType, paymentLink }: Su
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* Backdrop */}
-      <div
+      <div 
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={onClose}
         aria-hidden="true"
       />
-
+      
       {/* Modal */}
       <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 p-6 sm:p-8">
         {/* Close button */}
@@ -196,10 +172,11 @@ export function SubscriptionModal({ isOpen, onClose, planType, paymentLink }: Su
           <Button
             type="submit"
             disabled={isSubmitting}
-            className={`w-full h-12 text-base font-semibold mt-6 ${planType === "annual"
-                ? "bg-gradient-to-r from-[#E91E63] to-[#C2185B] hover:from-[#D81B60] hover:to-[#AD1457]"
+            className={`w-full h-12 text-base font-semibold mt-6 ${
+              planType === "annual" 
+                ? "bg-gradient-to-r from-[#E91E63] to-[#C2185B] hover:from-[#D81B60] hover:to-[#AD1457]" 
                 : "bg-[#2D1B4E] hover:bg-[#3D2B5E]"
-              }`}
+            }`}
           >
             {isSubmitting ? (
               <>
