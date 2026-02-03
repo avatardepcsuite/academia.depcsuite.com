@@ -2,43 +2,37 @@ import dynamic from "next/dynamic"
 import { Header } from "@/components/landing/header"
 import { Hero } from "@/components/landing/hero"
 import { Features } from "@/components/landing/features"
+import { ClientOnly } from "./_client-only"
 
-// Lazy load below-the-fold components for better initial page load
-const Webinars = dynamic(() => import("@/components/landing/webinars").then(mod => ({ default: mod.Webinars })), {
-  loading: () => <div className="py-24 bg-gradient-to-b from-white to-[#2D1B4E]/5" />
+const Webinars = dynamic(() => import("@/components/landing/webinars").then((mod) => ({ default: mod.Webinars })), {
+  loading: () => <div className="py-24 bg-linear-to-b from-white to-[#2D1B4E]/5" />,
 })
-const Hackathons = dynamic(() => import("@/components/landing/hackathons").then(mod => ({ default: mod.Hackathons })), {
-  loading: () => <div className="py-24 bg-[#0A0A0A]" />
+const Hackathons = dynamic(() => import("@/components/landing/hackathons").then((mod) => ({ default: mod.Hackathons })), {
+  loading: () => <div className="py-24 bg-[#0A0A0A]" />,
 })
-const Employment = dynamic(() => import("@/components/landing/employment").then(mod => ({ default: mod.Employment })), {
-  loading: () => <div className="py-24 bg-white" />
+const Employment = dynamic(() => import("@/components/landing/employment").then((mod) => ({ default: mod.Employment })), {
+  loading: () => <div className="py-24 bg-white" />,
 })
-const Community = dynamic(() => import("@/components/landing/community").then(mod => ({ default: mod.Community })), {
-  loading: () => <div className="py-24 bg-gradient-to-b from-white to-[#2D1B4E]/5" />
+const Community = dynamic(() => import("@/components/landing/community").then((mod) => ({ default: mod.Community })), {
+  loading: () => <div className="py-24 bg-linear-to-b from-white to-[#2D1B4E]/5" />,
 })
-const Testimonials = dynamic(() => import("@/components/landing/testimonials").then(mod => ({ default: mod.Testimonials })), {
-  loading: () => <div className="py-20 bg-white" />
+const Testimonials = dynamic(
+  () => import("@/components/landing/testimonials").then((mod) => ({ default: mod.Testimonials })),
+  { loading: () => <div className="py-20 bg-white" /> }
+)
+const Partners = dynamic(() => import("@/components/landing/partners").then((mod) => ({ default: mod.Partners })), {
+  loading: () => <div className="py-24" />,
 })
-const Partners = dynamic(() => import("@/components/landing/partners").then(mod => ({ default: mod.Partners })), {
-  loading: () => <div className="py-24" />
+const Pricing = dynamic(() => import("@/components/landing/pricing").then((mod) => ({ default: mod.Pricing })), {
+  loading: () => <div className="py-24 bg-linear-to-br from-[#2D1B4E] via-[#5C1F5C] to-[#E91E63]" />,
 })
-const Pricing = dynamic(() => import("@/components/landing/pricing").then(mod => ({ default: mod.Pricing })), {
-  loading: () => <div className="py-24 bg-gradient-to-br from-[#2D1B4E] via-[#5C1F5C] to-[#E91E63]" />
+const CTA = dynamic(() => import("@/components/landing/cta").then((mod) => ({ default: mod.CTA })), {
+  loading: () => <div className="py-20 bg-linear-to-r from-[#2D1B4E] via-[#5C1F5C] to-[#E91E63]" />,
 })
-const CTA = dynamic(() => import("@/components/landing/cta").then(mod => ({ default: mod.CTA })), {
-  loading: () => <div className="py-20 bg-gradient-to-r from-[#2D1B4E] via-[#5C1F5C] to-[#E91E63]" />
-})
-const Footer = dynamic(() => import("@/components/landing/footer").then(mod => ({ default: mod.Footer })), {
-  loading: () => <div className="bg-gradient-to-r from-[#2D1B4E] via-[#5C1F5C] to-[#E91E63] py-16" />
-})
-const WhatsAppButton = dynamic(() => import("@/components/landing/whatsapp-button").then(mod => ({ default: mod.WhatsAppButton })), {
-  ssr: false
-})
-const PromoPopup = dynamic(() => import("@/components/landing/promo-popup").then(mod => ({ default: mod.PromoPopup })), {
-  ssr: false
+const Footer = dynamic(() => import("@/components/landing/footer").then((mod) => ({ default: mod.Footer })), {
+  loading: () => <div className="bg-linear-to-r from-[#2D1B4E] via-[#5C1F5C] to-[#E91E63] py-16" />,
 })
 
-// Structured Data for SEO and GEO (Generative Engine Optimization)
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
@@ -183,22 +177,11 @@ const faqSchema = {
 export default function Home() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
       <main className="min-h-screen bg-white">
         <Header />
         <Hero />
@@ -212,8 +195,7 @@ export default function Home() {
         <Pricing />
         <CTA />
         <Footer />
-        <WhatsAppButton />
-        <PromoPopup />
+        <ClientOnly />
       </main>
     </>
   )
