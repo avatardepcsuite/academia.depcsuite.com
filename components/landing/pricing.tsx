@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Check, Sparkles, Clock, Calendar, ChevronDown } from "lucide-react"
-import { useCurrency, currencies } from "@/contexts/currency-context"
+import { useCurrency, currencies, flagComponents } from "@/contexts/currency-context"
 import { useState, useRef, useEffect } from "react"
 import { SubscriptionModal } from "./subscription-modal"
 
@@ -68,7 +68,7 @@ export function Pricing() {
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center gap-2 px-4 py-2.5 bg-white rounded-full border border-gray-200 shadow-sm hover:border-[#E91E63]/50 hover:shadow-md transition-all cursor-pointer"
             >
-              {selectedCurrency.flagComponent}
+              {flagComponents[selectedCurrency.code]()}
               <span className="text-sm text-gray-600">Precios en</span>
               <span className="text-sm font-semibold text-gray-900">{selectedCurrency.code}</span>
               <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${isOpen ? "rotate-180" : ""}`} />
@@ -89,7 +89,7 @@ export function Pricing() {
                       selectedCurrency.code === currency.code ? "bg-[#E91E63]/10" : ""
                     }`}
                   >
-                    {currency.flagComponent}
+                    {flagComponents[currency.code]()}
                     <div className="text-left">
                       <p className={`text-sm font-medium ${selectedCurrency.code === currency.code ? "text-[#E91E63]" : "text-gray-900"}`}>
                         {currency.code}

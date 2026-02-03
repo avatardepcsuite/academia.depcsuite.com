@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown, Sparkles } from "lucide-react"
 import Link from "next/link"
-import { useCurrency, currencies } from "@/contexts/currency-context"
+import { useCurrency, currencies, flagComponents } from "@/contexts/currency-context"
 
 const diplomaturas = [
   { href: "/diplomaturas/programacion-fullstack-react-node-ia", label: "Full Stack React + Node.js + IA" },
@@ -185,7 +185,7 @@ export function Header() {
                   className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-white/25 hover:bg-white/10 transition-all duration-200"
                   aria-label={`Moneda: ${selectedCurrency.country}`}
                 >
-                  {selectedCurrency.flagComponent}
+                  {flagComponents[selectedCurrency.code]()}
                 </button>
 
                 {isCurrencyOpen && (
@@ -208,7 +208,7 @@ export function Header() {
                             selectedCurrency.code === currency.code ? "bg-pink-500/15" : ""
                           }`}
                         >
-                          {currency.flagComponent}
+                          {flagComponents[currency.code]()}
                           <div className="flex-1">
                             <span className="text-sm font-medium text-white">{currency.country}</span>
                             <span className="text-xs text-white/50 ml-2">{currency.code}</span>
@@ -244,7 +244,7 @@ export function Header() {
                   className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-white/25 hover:bg-white/10 transition-all duration-200"
                   aria-label={`Moneda: ${selectedCurrency.country}`}
                 >
-                  {selectedCurrency.flagComponent}
+                  {flagComponents[selectedCurrency.code]()}
                 </button>
 
                 {isCurrencyOpen && (
@@ -267,7 +267,7 @@ export function Header() {
                             selectedCurrency.code === currency.code ? "bg-pink-500/15" : ""
                           }`}
                         >
-                          {currency.flagComponent}
+                          {flagComponents[currency.code]()}
                           <div className="flex-1">
                             <span className="text-sm font-medium text-white">{currency.country}</span>
                             <span className="text-xs text-white/50 ml-2">{currency.code}</span>
@@ -308,25 +308,45 @@ export function Header() {
           {isMenuOpen && (
             <div className="xl:hidden py-6 border-t border-white/10">
               <nav className="flex flex-col gap-3">
-                {/* Mobile Only: Currency Selector (hidden on tablet since it's in header) */}
-                <div className="flex md:hidden items-center gap-3 pb-5 border-b border-white/10">
-                  <span className="text-sm font-medium text-white/70">Moneda:</span>
-                  <div className="flex gap-2">
-                    {currencies.map((currency) => (
-                      <button
-                        key={currency.code}
-                        type="button"
-                        onClick={() => setSelectedCurrency(currency)}
-                        className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
-                          selectedCurrency.code === currency.code
-                            ? "bg-gradient-to-r from-pink-500 to-fuchsia-500 text-white shadow-lg shadow-pink-500/30"
-                            : "bg-white/10 text-white/80 hover:bg-white/20"
-                        }`}
-                      >
-                        {currency.flagComponent}
-                        <span>{currency.code}</span>
-                      </button>
-                    ))}
+                {/* Mobile Only: Currency Selector Dropdown (hidden on tablet since it's in header) */}
+                <div className="md:hidden pb-5 border-b border-white/10">
+                  <div className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setIsCurrencyOpen(!isCurrencyOpen)}
+                      className="w-full flex items-center justify-between px-4 py-3 rounded-lg bg-white/10 text-white"
+                    >
+                      <div className="flex items-center gap-3">
+                        {flagComponents[selectedCurrency.code]()}
+                        <span className="text-sm font-medium">{selectedCurrency.country}</span>
+                        <span className="text-xs text-white/60">({selectedCurrency.code})</span>
+                      </div>
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isCurrencyOpen ? "rotate-180" : ""}`} />
+                    </button>
+                    
+                    {isCurrencyOpen && (
+                      <div className="absolute top-full left-0 right-0 mt-2 bg-[#1a1a2e] border border-white/10 rounded-lg overflow-hidden z-50">
+                        {currencies.map((currency) => (
+                          <button
+                            key={currency.code}
+                            type="button"
+                            onClick={() => {
+                              setSelectedCurrency(currency)
+                              setIsCurrencyOpen(false)
+                            }}
+                            className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-colors ${
+                              selectedCurrency.code === currency.code
+                                ? "bg-pink-500/20 text-white"
+                                : "text-white/70 hover:bg-white/10 hover:text-white"
+                            }`}
+                          >
+                            {flagComponents[currency.code]()}
+                            <span className="text-sm font-medium">{currency.country}</span>
+                            <span className="text-xs text-white/50">({currency.code})</span>
+                          </button>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
 

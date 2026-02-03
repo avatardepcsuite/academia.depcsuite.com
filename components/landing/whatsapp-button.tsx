@@ -2,7 +2,7 @@
 
 export function WhatsAppButton() {
   const phoneNumber = "541162845700"
-  const message = "Hola! Me interesa conocer mas sobre las diplomaturas de DePC Tech"
+  const message = "Hola! Me interesa conocer mas sobre la suscripción DePC Tech"
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
   return (
