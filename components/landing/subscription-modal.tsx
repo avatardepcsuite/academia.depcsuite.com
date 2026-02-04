@@ -47,7 +47,7 @@ export function SubscriptionModal({ isOpen, onClose, planType, paymentLink }: Su
     return Object.keys(newErrors).length === 0
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async(e: React.FormEvent) => {
     e.preventDefault()
     
     if (!validateForm()) return
