@@ -26,7 +26,7 @@ const PythonIcon = ({ className }: { className?: string }) => (
 
 const LaravelIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-    <path d="M23.642 5.43a.364.364 0 0 1 .014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 0 1-.188.326L9.93 23.949a.316.316 0 0 1-.066.027c-.008.002-.016.008-.024.01a.348.348 0 0 1-.192 0c-.011-.002-.02-.008-.03-.012-.02-.006-.043-.012-.063-.025L.533 18.755a.376.376 0 0 1-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 0 1 .023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 0 1 .375 0L9.93 2.647h.002c.015.01.027.021.04.033l.038.027c.013.014.02.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 0 1 .024-.059c.007-.012.018-.02.025-.033.012-.015.021-.03.033-.043.012-.012.025-.02.037-.028.014-.011.026-.023.041-.032h.001l4.513-2.598a.375.375 0 0 1 .375 0l4.513 2.598c.016.01.027.021.042.031.012.01.025.018.036.028.013.014.022.029.034.044.008.012.019.021.024.033.011.02.018.04.024.06.006.01.012.021.015.032Zm-.74 5.032V6.179l-1.578.908-2.182 1.256v4.283l3.76-2.164Zm-4.511 7.75v-4.287l-2.146 1.225-6.127 3.498v4.326l8.273-4.761ZM1.093 3.624v14.588l8.273 4.762v-4.326l-4.322-2.445-.002-.003h-.002c-.014-.01-.025-.021-.04-.033-.012-.01-.025-.017-.036-.028l-.001-.002c-.011-.012-.02-.025-.03-.039-.01-.012-.021-.023-.028-.037h-.002c-.008-.014-.012-.03-.018-.045-.006-.016-.014-.027-.018-.043a.49.49 0 0 1-.008-.057c-.002-.014-.006-.027-.006-.041V5.789l-2.18-1.257-1.58-.908ZM5.418.787 1.66 2.947l3.755 2.164L9.168 2.95 5.418.786v.001Zm2.254 11.631 2.182-1.256V3.624l-1.58.909-2.182 1.256v7.538l1.58-.909Zm11.356-10.47-3.755 2.162 3.756 2.162 3.753-2.164-3.754-2.16Zm-.376 4.978-2.182-1.256-1.58-.908v4.283l2.182 1.256 1.58.908V6.926Zm-8.649 9.019 5.51-3.146 2.756-1.572-3.752-2.16-4.323 2.49-3.947 2.27 3.756 2.118Z"/>
+    <path d="M23.642 5.43a.364.364 0 0 1 .014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 0 1-.188.326L9.93 23.949a.316.316 0 0 1-.066.027c-.008.002-.016.008-.024.01a.348.348 0 0 1-.192 0c-.011-.002-.02-.008-.03-.012-.02-.006-.043-.012-.063-.025L.533 18.755a.376.376 0 0 1-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 0 1 .023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 0 1 .375 0L9.93 2.647h.002c.015.01.027.021.04.033l.038.027c.013.014.02.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 0 1 .024-.059c.007-.012.018-.02.025-.033.012-.015.021-.03.033-.043.012-.012.025-.02.037-.028.014-.011.026-.023.041-.032h.001l4.513-2.598a.375.375 0 0 1 .375 0l4.513 2.598c.016.01.027.021.042.031.012.01.025.018.036.028.013.014.022.029.034.044.008.012.021.021.024.033.011.02.018.04.024.06.006.01.012.021.015.032Zm-.74 5.032V6.179l-1.578.908-2.182 1.256v4.283l3.76-2.164Zm-4.511 7.75v-4.287l-2.146 1.225-6.127 3.498v4.326l8.273-4.761ZM1.093 3.624v14.588l8.273 4.762v-4.326l-4.322-2.445-.002-.003h-.002c-.014-.01-.025-.021-.04-.033-.012-.01-.025-.017-.036-.028l-.001-.002c-.011-.012-.02-.025-.03-.039-.01-.012-.021-.023-.028-.037h-.002c-.008-.014-.012-.03-.018-.045-.006-.016-.014-.027-.018-.043a.49.49 0 0 1-.008-.057c-.002-.014-.006-.027-.006-.041V5.789l-2.18-1.257-1.58-.908ZM5.418.787 1.66 2.947l3.755 2.164L9.168 2.95 5.418.786v.001Zm2.254 11.631 2.182-1.256V3.624l-1.58.909-2.182 1.256v7.538l1.58-.909Zm11.356-10.47-3.755 2.162 3.756 2.162 3.753-2.164-3.947 2.27 3.756 2.118Z"/>
   </svg>
 )
 
@@ -202,11 +202,15 @@ export function Header() {
             <nav className="hidden xl:flex items-center gap-0.5 ml-6">
               {navItems.map((item) => (
                 item.hasSubmenu === "diplomaturas" ? (
-                  <div key={item.href} className="relative">
+                  <div 
+                    key={item.href} 
+                    className="relative"
+                    onMouseEnter={() => { setIsDiplomaturasOpen(true); setIsWebinarsOpen(false); }}
+                    onMouseLeave={() => setIsDiplomaturasOpen(false)}
+                  >
                     <button
                       type="button"
                       onClick={() => setIsDiplomaturasOpen(!isDiplomaturasOpen)}
-                      onMouseEnter={() => { setIsDiplomaturasOpen(true); setIsWebinarsOpen(false); }}
                       className={`flex items-center gap-0.5 px-2.5 py-1.5 transition-colors duration-200 font-medium text-sm ${
                         activeSection === item.href || pathname.startsWith("/diplomaturas")
                           ? "text-white" 
@@ -217,15 +221,11 @@ export function Header() {
                       <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isDiplomaturasOpen ? "rotate-180" : ""}`} />
                     </button>
                     {isDiplomaturasOpen && (
-                      <>
+                      <div 
+                        className="absolute left-0 top-full pt-2"
+                      >
                         <div 
-                          className="fixed inset-0 z-10" 
-                          onClick={() => setIsDiplomaturasOpen(false)}
-                          aria-hidden="true"
-                        />
-                        <div 
-                          className="absolute left-0 top-full mt-2 w-72 bg-[#1A0F2E] rounded-xl border border-white/15 shadow-2xl shadow-black/40 z-20 py-2 overflow-hidden"
-                          onMouseLeave={() => setIsDiplomaturasOpen(false)}
+                          className="w-72 bg-[#1A0F2E] rounded-xl border border-white/15 shadow-2xl shadow-black/40 py-2 overflow-hidden"
                         >
                           {diplomaturas.map((diploma) => {
                             const IconComponent = diploma.icon
@@ -248,15 +248,19 @@ export function Header() {
                             )
                           })}
                         </div>
-                      </>
+                      </div>
                     )}
                   </div>
                 ) : item.hasSubmenu === "webinars" ? (
-                  <div key={item.href} className="relative">
+                  <div 
+                    key={item.href} 
+                    className="relative"
+                    onMouseEnter={() => { setIsWebinarsOpen(true); setIsDiplomaturasOpen(false); }}
+                    onMouseLeave={() => setIsWebinarsOpen(false)}
+                  >
                     <button
                       type="button"
                       onClick={() => setIsWebinarsOpen(!isWebinarsOpen)}
-                      onMouseEnter={() => { setIsWebinarsOpen(true); setIsDiplomaturasOpen(false); }}
                       className={`flex items-center gap-0.5 px-2.5 py-1.5 transition-colors duration-200 font-medium text-sm ${
                         activeSection === item.href
                           ? "text-white" 
@@ -267,15 +271,11 @@ export function Header() {
                       <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isWebinarsOpen ? "rotate-180" : ""}`} />
                     </button>
                     {isWebinarsOpen && (
-                      <>
+                      <div 
+                        className="absolute left-0 top-full pt-2"
+                      >
                         <div 
-                          className="fixed inset-0 z-10" 
-                          onClick={() => setIsWebinarsOpen(false)}
-                          aria-hidden="true"
-                        />
-                        <div 
-                          className="absolute left-0 top-full mt-2 w-[480px] bg-[#1A0F2E] rounded-xl border border-white/15 shadow-2xl shadow-black/40 z-20 p-3 overflow-hidden"
-                          onMouseLeave={() => setIsWebinarsOpen(false)}
+                          className="w-[480px] bg-[#1A0F2E] rounded-xl border border-white/15 shadow-2xl shadow-black/40 p-3 overflow-hidden"
                         >
                           <div className="grid grid-cols-2 gap-2">
                             {webinarCategories.map((category) => {
@@ -286,12 +286,12 @@ export function Header() {
                                   href="#webinars"
                                   onClick={(e) => {
                                     handleNavClick(e, "#webinars")
-                                    setIsWebinarsOpen(false)
+                                    setIsDiplomaturasOpen(false)
                                   }}
                                   className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-all duration-200 group/item"
                                 >
-                                  <div className={`w-10 h-10 rounded-lg ${category.bgColor} flex items-center justify-center shrink-0`}>
-                                    <IconComponent className={`w-5 h-5 ${category.color}`} />
+                                  <div className={`w-9 h-9 rounded-lg ${category.bgColor} flex items-center justify-center shrink-0`}>
+                                    <IconComponent className={`w-4 h-4 ${category.color}`} />
                                   </div>
                                   <div className="flex-1 min-w-0">
                                     <span className="block text-sm font-medium text-white group-hover/item:text-pink-300 transition-colors">
@@ -310,7 +310,7 @@ export function Header() {
                               href="#webinars"
                               onClick={(e) => {
                                 handleNavClick(e, "#webinars")
-                                setIsWebinarsOpen(false)
+                                setIsDiplomaturasOpen(false)
                               }}
                               className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-fuchsia-500/10 text-sm text-pink-400 hover:text-pink-300 hover:from-pink-500/20 hover:to-fuchsia-500/20 font-medium transition-all"
                             >
@@ -319,7 +319,7 @@ export function Header() {
                             </Link>
                           </div>
                         </div>
-                      </>
+                      </div>
                     )}
                   </div>
                 ) : (
