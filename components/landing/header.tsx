@@ -7,11 +7,40 @@ import { Menu, X, ChevronDown, Sparkles, Zap, Code, Brain, Clock, Palette, Brief
 import Link from "next/link"
 import { useCurrency, currencies, flagComponents } from "@/contexts/currency-context"
 
+// Custom brand icons
+const ReactIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <circle cx="12" cy="12" r="2.05"/>
+    <ellipse cx="12" cy="12" rx="11" ry="4.2" fill="none" stroke="currentColor" strokeWidth="1"/>
+    <ellipse cx="12" cy="12" rx="11" ry="4.2" fill="none" stroke="currentColor" strokeWidth="1" transform="rotate(60 12 12)"/>
+    <ellipse cx="12" cy="12" rx="11" ry="4.2" fill="none" stroke="currentColor" strokeWidth="1" transform="rotate(120 12 12)"/>
+  </svg>
+)
+
+const PythonIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.96 3.403 5.96h2.03v-2.867s-.109-3.42 3.35-3.42h5.766s3.24.052 3.24-3.148V3.202S18.28 0 11.913 0ZM8.708 1.85c.578 0 1.046.47 1.046 1.052 0 .58-.468 1.051-1.046 1.051-.578 0-1.046-.47-1.046-1.051 0-.581.468-1.052 1.046-1.052Z"/>
+    <path d="M12.087 24c6.093 0 5.713-2.656 5.713-2.656l-.007-2.752h-5.814v-.826h8.121s3.9.445 3.9-5.735c0-6.18-3.403-5.96-3.403-5.96h-2.03v2.867s.109 3.42-3.35 3.42H9.45s-3.24-.052-3.24 3.148v5.292S5.72 24 12.087 24Zm3.206-1.85a1.049 1.049 0 0 1-1.046-1.052c0-.58.468-1.051 1.046-1.051.578 0 1.046.47 1.046 1.051 0 .581-.468 1.052-1.046 1.052Z"/>
+  </svg>
+)
+
+const LaravelIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M23.642 5.43a.364.364 0 0 1 .014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 0 1-.188.326L9.93 23.949a.316.316 0 0 1-.066.027c-.008.002-.016.008-.024.01a.348.348 0 0 1-.192 0c-.011-.002-.02-.008-.03-.012-.02-.006-.043-.012-.063-.025L.533 18.755a.376.376 0 0 1-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 0 1 .023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 0 1 .375 0L9.93 2.647h.002c.015.01.027.021.04.033l.038.027c.013.014.02.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 0 1 .024-.059c.007-.012.018-.02.025-.033.012-.015.021-.03.033-.043.012-.012.025-.02.037-.028.014-.011.026-.023.041-.032h.001l4.513-2.598a.375.375 0 0 1 .375 0l4.513 2.598c.016.01.027.021.042.031.012.01.025.018.036.028.013.014.022.029.034.044.008.012.019.021.024.033.011.02.018.04.024.06.006.01.012.021.015.032Zm-.74 5.032V6.179l-1.578.908-2.182 1.256v4.283l3.76-2.164Zm-4.511 7.75v-4.287l-2.146 1.225-6.127 3.498v4.326l8.273-4.761ZM1.093 3.624v14.588l8.273 4.762v-4.326l-4.322-2.445-.002-.003h-.002c-.014-.01-.025-.021-.04-.033-.012-.01-.025-.017-.036-.028l-.001-.002c-.011-.012-.02-.025-.03-.039-.01-.012-.021-.023-.028-.037h-.002c-.008-.014-.012-.03-.018-.045-.006-.016-.014-.027-.018-.043a.49.49 0 0 1-.008-.057c-.002-.014-.006-.027-.006-.041V5.789l-2.18-1.257-1.58-.908ZM5.418.787 1.66 2.947l3.755 2.164L9.168 2.95 5.418.786v.001Zm2.254 11.631 2.182-1.256V3.624l-1.58.909-2.182 1.256v7.538l1.58-.909Zm11.356-10.47-3.755 2.162 3.756 2.162 3.753-2.164-3.754-2.16Zm-.376 4.978-2.182-1.256-1.58-.908v4.283l2.182 1.256 1.58.908V6.926Zm-8.649 9.019 5.51-3.146 2.756-1.572-3.752-2.16-4.323 2.49-3.947 2.27 3.756 2.118Z"/>
+  </svg>
+)
+
+const ExcelIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M23 1.5q.41 0 .7.3.3.29.3.7v19q0 .41-.3.7-.29.3-.7.3H7q-.41 0-.7-.3-.3-.29-.3-.7V18H1q-.41 0-.7-.3-.3-.29-.3-.7V7q0-.41.3-.7Q.58 6 1 6h5V2.5q0-.41.3-.7.29-.3.7-.3zM1 16.5h14v-9H1zm8-5.25L6.73 7.5H4.46l3.04 4.5-3.04 4.5h2.27L9 12.75l2.27 3.75h2.27l-3.04-4.5 3.04-4.5h-2.27zm13.5 7.25V18H8v1.5zm0-3V14H8v1.5zm0-11.5H8V6h14.5zm0 3H14v1.5h8.5zm0 3H14V12h8.5zm0 3H14v1.5h8.5z"/>
+  </svg>
+)
+
 const diplomaturas = [
-  { href: "/diplomaturas/programacion-fullstack-react-node-ia", label: "Full Stack React + Node.js + IA" },
-  { href: "/diplomaturas/programacion-python", label: "Programación Python" },
-  { href: "/diplomaturas/web-fullstack-php-laravel", label: "Web Full Stack PHP Laravel" },
-  { href: "/diplomaturas/fundamentos-microsoft-excel", label: "Fundamentos Microsoft Excel" },
+  { href: "/diplomaturas/programacion-fullstack-react-node-ia", label: "Full Stack React + Node.js + IA", icon: ReactIcon, color: "text-cyan-400", bgColor: "bg-cyan-500/10" },
+  { href: "/diplomaturas/programacion-python", label: "Programacion Python", icon: PythonIcon, color: "text-yellow-400", bgColor: "bg-yellow-500/10" },
+  { href: "/diplomaturas/web-fullstack-php-laravel", label: "Web Full Stack PHP Laravel", icon: LaravelIcon, color: "text-red-400", bgColor: "bg-red-500/10" },
+  { href: "/diplomaturas/fundamentos-microsoft-excel", label: "Fundamentos Microsoft Excel", icon: ExcelIcon, color: "text-green-500", bgColor: "bg-green-500/10" },
 ]
 
 const webinarCategories = [
@@ -201,20 +230,26 @@ export function Header() {
                           className="absolute left-0 top-full mt-2 w-72 bg-[#1A0F2E] rounded-xl border border-white/15 shadow-2xl shadow-black/40 z-20 py-2 overflow-hidden"
                           onMouseLeave={() => setIsDiplomaturasOpen(false)}
                         >
-                          {diplomaturas.map((diploma) => (
-                            <Link
-                              key={diploma.href}
-                              href={diploma.href}
-                              onClick={() => setIsDiplomaturasOpen(false)}
-                              className={`block px-4 py-2.5 text-sm font-medium hover:bg-white/10 transition-colors ${
-                                pathname === diploma.href 
-                                  ? "bg-pink-500/15 text-white" 
-                                  : "text-white/80"
-                              }`}
-                            >
-                              {diploma.label}
-                            </Link>
-                          ))}
+                          {diplomaturas.map((diploma) => {
+                            const IconComponent = diploma.icon
+                            return (
+                              <Link
+                                key={diploma.href}
+                                href={diploma.href}
+                                onClick={() => setIsDiplomaturasOpen(false)}
+                                className={`flex items-center gap-3 px-4 py-2.5 text-sm font-medium hover:bg-white/10 transition-colors ${
+                                  pathname === diploma.href 
+                                    ? "bg-pink-500/15 text-white" 
+                                    : "text-white/80"
+                                }`}
+                              >
+                                <div className={`w-8 h-8 rounded-lg ${diploma.bgColor} flex items-center justify-center shrink-0`}>
+                                  <IconComponent className={`w-4 h-4 ${diploma.color}`} />
+                                </div>
+                                {diploma.label}
+                              </Link>
+                            )
+                          })}
                         </div>
                       </>
                     )}
@@ -509,24 +544,30 @@ export function Header() {
                         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileDiplomaturasOpen ? "rotate-180" : ""}`} />
                       </button>
                       {isMobileDiplomaturasOpen && (
-                        <div className="ml-4 mt-2 flex flex-col gap-1 border-l-2 border-white/20 pl-4">
-                          {diplomaturas.map((diploma) => (
-                            <Link
-                              key={diploma.href}
-                              href={diploma.href}
-                              onClick={() => {
-                                setIsMenuOpen(false)
-                                setIsMobileDiplomaturasOpen(false)
-                              }}
-                              className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                                pathname === diploma.href 
-                                  ? "bg-pink-500/20 text-white" 
-                                  : "text-white/60 hover:text-white hover:bg-white/10"
-                              }`}
-                            >
-                              {diploma.label}
-                            </Link>
-                          ))}
+                        <div className="mt-3 flex flex-col gap-1.5">
+                          {diplomaturas.map((diploma) => {
+                            const IconComponent = diploma.icon
+                            return (
+                              <Link
+                                key={diploma.href}
+                                href={diploma.href}
+                                onClick={() => {
+                                  setIsMenuOpen(false)
+                                  setIsMobileDiplomaturasOpen(false)
+                                }}
+                                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                                  pathname === diploma.href 
+                                    ? "bg-pink-500/20 text-white" 
+                                    : "text-white/60 hover:text-white hover:bg-white/5"
+                                }`}
+                              >
+                                <div className={`w-9 h-9 rounded-lg ${diploma.bgColor} flex items-center justify-center shrink-0`}>
+                                  <IconComponent className={`w-4 h-4 ${diploma.color}`} />
+                                </div>
+                                {diploma.label}
+                              </Link>
+                            )
+                          })}
                         </div>
                       )}
                     </div>

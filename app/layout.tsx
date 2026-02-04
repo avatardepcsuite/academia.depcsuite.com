@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { CurrencyProvider } from '@/contexts/currency-context'
+import { WhatsAppButton } from '@/components/landing/whatsapp-button'
 import './globals.css'
 
 const geistSans = Geist({ 
@@ -168,6 +169,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <CurrencyProvider>
           {children}
+          <WhatsAppButton />
         </CurrencyProvider>
         <Analytics />
       </body>

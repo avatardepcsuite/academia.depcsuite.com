@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { X, Loader2 } from "lucide-react"
-import axios from 'axios'
+
 interface SubscriptionModalProps {
   isOpen: boolean
   onClose: () => void
@@ -47,9 +47,9 @@ export function SubscriptionModal({ isOpen, onClose, planType, paymentLink }: Su
     return Object.keys(newErrors).length === 0
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-
+    
     if (!validateForm()) return
 
     setIsSubmitting(true)
@@ -60,43 +60,20 @@ export function SubscriptionModal({ isOpen, onClose, planType, paymentLink }: Su
       planType,
       timestamp: new Date().toISOString(),
     }
+    
+    // Store in localStorage as a simple solution
     const existingData = localStorage.getItem("subscriptionLeads")
     const leads = existingData ? JSON.parse(existingData) : []
     leads.push(subscriptionData)
     localStorage.setItem("subscriptionLeads", JSON.stringify(leads))
 
+    // Redirect to payment link
     window.open(paymentLink, "_blank")
-
-
-    const payload = {
-      fk_idarea: 2,
-      email: formData.email.trim().toLowerCase(),
-      nombre: formData.name.trim(),
-      telefono: formData.whatsapp.trim(),
-      carrito: [
-        {
-          idproducto: planType === "monthly" ? 97364 : 97366,
-          cantidad: 1
-        },
-      ],
-    }
-
-    try {
-      await axios.post("https://z1pk745fxh.execute-api.us-east-1.amazonaws.com/prod/carrito-olvidado", {
-        httpMethod: "POST",
-        headers: { "Content-Type": "application/json" },
-        queryStringParameters: {},
-        pathParameters: {},
-        body: JSON.stringify(payload),
-        isBase64Encoded: false,
-      })
-
-      setFormData({ name: "", email: "", whatsapp: "" })
-      setIsSubmitting(false)
-      onClose()
-    } catch {
-      setIsSubmitting(false)
-    }
+    
+    // Reset form and close modal
+    setFormData({ name: "", email: "", whatsapp: "" })
+    setIsSubmitting(false)
+    onClose()
   }
 
   const handleChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
