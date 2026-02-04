@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { X, Loader2 } from "lucide-react"
-
+import axios from 'axios'
 interface SubscriptionModalProps {
   isOpen: boolean
   onClose: () => void
@@ -70,10 +70,35 @@ export function SubscriptionModal({ isOpen, onClose, planType, paymentLink }: Su
     // Redirect to payment link
     window.open(paymentLink, "_blank")
     
-    // Reset form and close modal
-    setFormData({ name: "", email: "", whatsapp: "" })
-    setIsSubmitting(false)
-    onClose()
+    const payload = {
+      fk_idarea: 2,
+      email: formData.email.trim().toLowerCase(),
+      nombre: formData.name.trim(),
+      telefono: formData.whatsapp.trim(),
+      carrito: [
+        {
+          idproducto: planType === "monthly" ? 97364 : 97366,
+          cantidad: 1
+        },
+      ],
+    }
+
+    try {
+      await axios.post("https://z1pk745fxh.execute-api.us-east-1.amazonaws.com/prod/carrito-olvidado", {
+        httpMethod: "POST",
+        headers: { "Content-Type": "application/json" },
+        queryStringParameters: {},
+        pathParameters: {},
+        body: JSON.stringify(payload),
+        isBase64Encoded: false,
+      })
+
+      setFormData({ name: "", email: "", whatsapp: "" })
+      setIsSubmitting(false)
+      onClose()
+    } catch {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
