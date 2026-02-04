@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react"
 import { usePathname, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown, Sparkles, Zap, Code, Brain, Clock, Palette, Briefcase, ArrowRight } from "lucide-react"
+import { Menu, X, ChevronDown, Sparkles, Zap, Code, Brain, Clock, Palette, Briefcase, ArrowRight, FileSpreadsheet } from "lucide-react"
 import Link from "next/link"
 import { useCurrency, currencies, flagComponents } from "@/contexts/currency-context"
 
@@ -30,11 +30,8 @@ const LaravelIcon = ({ className }: { className?: string }) => (
   </svg>
 )
 
-const ExcelIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-    <path d="M23 1.5q.41 0 .7.3.3.29.3.7v19q0 .41-.3.7-.29.3-.7.3H7q-.41 0-.7-.3-.3-.29-.3-.7V18H1q-.41 0-.7-.3-.3-.29-.3-.7V7q0-.41.3-.7Q.58 6 1 6h5V2.5q0-.41.3-.7.29-.3.7-.3zM1 16.5h14v-9H1zm8-5.25L6.73 7.5H4.46l3.04 4.5-3.04 4.5h2.27L9 12.75l2.27 3.75h2.27l-3.04-4.5 3.04-4.5h-2.27zm13.5 7.25V18H8v1.5zm0-3V14H8v1.5zm0-11.5H8V6h14.5zm0 3H14v1.5h8.5zm0 3H14V12h8.5zm0 3H14v1.5h8.5z"/>
-  </svg>
-)
+// Using FileSpreadsheet from Lucide for Excel
+const ExcelIcon = FileSpreadsheet
 
 const diplomaturas = [
   { href: "/diplomaturas/programacion-fullstack-react-node-ia", label: "Full Stack React + Node.js + IA", icon: ReactIcon, color: "text-cyan-400", bgColor: "bg-cyan-500/10" },
