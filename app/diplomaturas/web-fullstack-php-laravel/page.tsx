@@ -25,6 +25,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/landing/header"
 import { Footer } from "@/components/landing/footer"
+import axios from "axios"
 
 // Structured Data for SEO/GEO
 const breadcrumbSchema = {
@@ -194,23 +195,51 @@ export default function DiplomaturaPhpLaravelPage() {
     window.scrollTo(0, 0)
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     const newErrors: typeof errors = {}
-    
+
     if (!formData.nombre.trim()) newErrors.nombre = "El nombre es requerido"
     if (!formData.email.trim()) newErrors.email = "El email es requerido"
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Email inválido"
     if (!formData.whatsapp.trim()) newErrors.whatsapp = "El WhatsApp es requerido"
-    
+
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors)
       return
     }
-    
+
     setErrors({})
-    setFormSubmitted(true)
-    setShowVideo(true)
+
+    const payload = {
+      fk_idarea: 2,
+      email: formData.email.trim().toLowerCase(),
+      nombre: formData.nombre.trim(),
+      telefono: formData.whatsapp.trim(),
+      carrito: [
+        {
+          idproducto: 97364,
+          cantidad: 1
+        },
+      ],
+    }
+
+    try {
+      await axios.post("https://z1pk745fxh.execute-api.us-east-1.amazonaws.com/prod/carrito-olvidado", {
+        httpMethod: "POST",
+        headers: { "Content-Type": "application/json" },
+        queryStringParameters: {},
+        pathParameters: {},
+        body: JSON.stringify(payload),
+        isBase64Encoded: false,
+      })
+
+      setFormSubmitted(true)
+      setShowVideo(true)
+    } catch {
+      setFormSubmitted(false)
+      setShowVideo(false)
+    }
   }
 
   return (
