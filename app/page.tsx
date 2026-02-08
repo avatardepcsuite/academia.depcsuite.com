@@ -3,6 +3,7 @@ import { Header } from "@/components/landing/header"
 import { Hero } from "@/components/landing/hero"
 import { Features } from "@/components/landing/features"
 
+
 // Lazy load below-the-fold components for better initial page load
 const Webinars = dynamic(() => import("@/components/landing/webinars").then(mod => ({ default: mod.Webinars })), {
   loading: () => <div className="py-24 bg-gradient-to-b from-white to-[#2D1B4E]/5" />
@@ -39,8 +40,8 @@ const organizationSchema = {
   "@type": "EducationalOrganization",
   "name": "Academia DePC",
   "alternateName": "DePC Suite",
-  "url": "https://academiadepc.com",
-  "logo": "https://academiadepc.com/images/logo-depc-cuadrado.jpg",
+  "url": "https://academia.depcsuite.com",
+  "logo": "https://academia.depcsuite.com/images/logo-depc-cuadrado.jpg",
   "description": "Academia de programación y tecnología con diplomaturas certificadas en Full Stack, Python, PHP Laravel y Excel. Cursos 100% online con clases en vivo, webinars gratuitos, hackathones presenciales y portal de empleo exclusivo en Argentina y Latinoamérica.",
   "foundingDate": "2020",
   "address": {
@@ -107,10 +108,10 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Academia DePC",
-  "url": "https://academiadepc.com",
+  "url": "https://academia.depcsuite.com",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://academiadepc.com/?q={search_term_string}",
+    "target": "https://academia.depcsuite.com/?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 }
@@ -123,7 +124,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Inicio",
-      "item": "https://academiadepc.com"
+      "item": "https://academia.depcsuite.com"
     }
   ]
 }

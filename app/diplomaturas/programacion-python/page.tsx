@@ -36,19 +36,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Academia DePC",
-      "item": "https://academiadepc.com"
+      "item": "https://academia.depcsuite.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Diplomaturas",
-      "item": "https://academiadepc.com/#diplomaturas"
+      "item": "https://academia.depcsuite.com/#diplomaturas"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Programación Python",
-      "item": "https://academiadepc.com/diplomaturas/programacion-python"
+      "item": "https://academia.depcsuite.com/diplomaturas/programacion-python"
     }
   ]
 }
@@ -61,7 +61,7 @@ const courseSchema = {
   "provider": {
     "@type": "EducationalOrganization",
     "name": "Academia DePC",
-    "url": "https://academiadepc.com"
+    "url": "https://academia.depcsuite.com"
   },
   "courseMode": "online",
   "educationalLevel": "Beginner to Intermediate",
@@ -339,7 +339,7 @@ export default function DiplomaturaPythonPage() {
             <div className="relative w-40 h-24 md:w-48 md:h-28 flex-shrink-0">
               <Image
                 src="/images/logo-camara-argentina.png"
-                alt="Logo Camara Argentina de Comercio - Certificacion Nacional para Diplomatura Python"
+                alt="Logo Cámara Argentina de Comercio - Certificación Nacional para Diplomatura Python"
                 fill
                 sizes="(max-width: 768px) 160px, 192px"
                 loading="lazy"
@@ -349,7 +349,7 @@ export default function DiplomaturaPythonPage() {
             <div className="relative w-40 h-24 md:w-48 md:h-28 flex-shrink-0">
               <Image
                 src="/images/logo-oeip.png"
-                alt="Logo OEIP Organizacion de Estados Iberoamericanos para la Educacion - Certificacion Internacional"
+                alt="Logo OEIP Organización de Estados Iberoamericanos para la Educación - Certificación Internacional"
                 fill
                 sizes="(max-width: 768px) 160px, 192px"
                 loading="lazy"

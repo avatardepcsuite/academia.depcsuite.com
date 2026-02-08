@@ -6,39 +6,39 @@ import { useRef, useState, useEffect } from "react"
 
 const testimonials = [
   {
-    name: "Martin Gonzalez",
+    name: "Martín González",
     role: "Egresado Full Stack",
     rating: 5,
-    text: "Excelente experiencia! Los profesores explican de manera clara y el contenido esta muy actualizado. Consegui trabajo como desarrollador junior a los 2 meses de terminar.",
+    text: "Excelente experiencia! Los profesores explican de manera clara y el contenido está muy actualizado. Conseguí trabajo como desarrollador junior a los 2 meses de terminar.",
     date: "Hace 2 meses",
     avatar: null
   },
   {
-    name: "Lucia Fernandez",
+    name: "Lucía Fernández",
     role: "Estudiante Python",
     rating: 5,
-    text: "La mejor decision que tome fue inscribirme en DEPC. Las clases en vivo son muy interactivas y el soporte del equipo es increible. 100% recomendado.",
+    text: "La mejor decisión que tomé fue inscribirme en DEPC. Las clases en vivo son muy interactivas y el soporte del equipo es increíble. 100% recomendado.",
     date: "Hace 1 mes",
     avatar: null
   },
   {
-    name: "Santiago Rodriguez",
+    name: "Santiago Rodríguez",
     role: "Egresado React + Node",
     rating: 5,
-    text: "Muy buena la cursada, el profesor tiene mucha paciencia y los proyectos practicos te preparan para el mundo laboral real. Ya estoy trabajando como freelancer!",
+    text: "Muy buena la cursada, el profesor tiene mucha paciencia y los proyectos prácticos te preparan para el mundo laboral real. Ya estoy trabajando como freelancer!",
     date: "Hace 3 meses",
     avatar: null
   },
   {
-    name: "Camila Martinez",
+    name: "Camila Martínez",
     role: "Estudiante Full Stack",
     rating: 5,
-    text: "Super completo el programa. Me gusto mucho que integren IA en el curso, es algo que no vi en otras escuelas. El campus virtual funciona perfecto.",
+    text: "Súper completo el programa. Me gustó mucho que integren IA en el curso, es algo que no vi en otras escuelas. El campus virtual funciona perfecto.",
     date: "Hace 2 semanas",
     avatar: null
   },
   {
-    name: "Federico Lopez",
+    name: "Federico López",
     role: "Egresado Python",
     rating: 5,
     text: "Arranqué sin saber nada de programación y ahora puedo hacer mis propias apps. El acompañamiento es excelente y las hackathons te motivan mucho.",
@@ -149,7 +149,7 @@ export function Testimonials() {
                 ? "hover:bg-gray-50 hover:scale-105 cursor-pointer" 
                 : "opacity-0 cursor-default"
             }`}
-            aria-label="Ver mas testimonios"
+            aria-label="Ver más testimonios"
           >
             <ChevronRight className="w-5 h-5 text-gray-600" />
           </button>

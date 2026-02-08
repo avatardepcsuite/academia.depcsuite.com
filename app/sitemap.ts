@@ -1,8 +1,16 @@
 import type { MetadataRoute } from 'next'
+import { webinars } from '@/lib/webinars-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://academia.depcsuite.com'
   const currentDate = new Date().toISOString()
+
+  const webinarEntries: MetadataRoute.Sitemap = webinars.map((webinar) => ({
+    url: `${baseUrl}/webinars/${webinar.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
 
   return [
     {
@@ -35,6 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    ...webinarEntries,
     {
       url: `${baseUrl}/preguntas-frecuentes`,
       lastModified: currentDate,

@@ -4,21 +4,21 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Preguntas Frecuentes - FAQ",
   description:
-    "Encuentra respuestas a las preguntas mas comunes sobre las diplomaturas de programacion, certificaciones, pagos, comunidad y portal de empleo de Academia DePC.",
+    "Encontrá respuestas a las preguntas más comunes sobre las diplomaturas de programación, certificaciones, pagos, comunidad y portal de empleo de Academia DePC.",
   keywords: [
     "preguntas frecuentes",
     "FAQ academia depc",
-    "dudas cursos programacion",
+    "dudas cursos programación",
     "certificaciones academia depc",
-    "como inscribirse academia depc",
+    "cómo inscribirse academia depc",
     "pagos cursos online",
     "portal empleo programadores",
   ],
   openGraph: {
     title: "Preguntas Frecuentes | Academia DePC",
     description:
-      "Respuestas a las dudas mas comunes sobre diplomaturas, certificaciones, pagos y comunidad de Academia DePC.",
-    url: "https://academiadepc.com/preguntas-frecuentes",
+      "Respuestas a las dudas más comunes sobre diplomaturas, certificaciones, pagos y comunidad de Academia DePC.",
+    url: "https://academia.depcsuite.com/preguntas-frecuentes",
     images: [
       {
         url: "/images/logo-depc-cuadrado.jpg",
@@ -32,11 +32,29 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Preguntas Frecuentes | Academia DePC",
     description:
-      "Respuestas a las dudas mas comunes sobre diplomaturas, certificaciones, pagos y comunidad.",
+      "Respuestas a las dudas más comunes sobre diplomaturas, certificaciones, pagos y comunidad.",
     images: ["/images/logo-depc-cuadrado.jpg"],
   },
   alternates: {
-    canonical: "https://academiadepc.com/preguntas-frecuentes",
+    canonical: "https://academia.depcsuite.com/preguntas-frecuentes",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  other: {
+    "geo.region": "AR",
+    "geo.placename": "Buenos Aires, Argentina",
+    "geo.position": "-34.6037;-58.3816",
+    "ICBM": "-34.6037, -58.3816",
+    "content-language": "es-AR",
   },
 }
 

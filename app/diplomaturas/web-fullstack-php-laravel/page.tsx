@@ -36,19 +36,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Academia DePC",
-      "item": "https://academiadepc.com"
+      "item": "https://academia.depcsuite.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Diplomaturas",
-      "item": "https://academiadepc.com/#diplomaturas"
+      "item": "https://academia.depcsuite.com/#diplomaturas"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Full Stack PHP Laravel",
-      "item": "https://academiadepc.com/diplomaturas/web-fullstack-php-laravel"
+      "item": "https://academia.depcsuite.com/diplomaturas/web-fullstack-php-laravel"
     }
   ]
 }
@@ -61,7 +61,7 @@ const courseSchema = {
   "provider": {
     "@type": "EducationalOrganization",
     "name": "Academia DePC",
-    "url": "https://academiadepc.com"
+    "url": "https://academia.depcsuite.com"
   },
   "courseMode": "online",
   "educationalLevel": "Beginner to Intermediate",
@@ -336,7 +336,7 @@ export default function DiplomaturaPhpLaravelPage() {
             <div className="relative w-40 h-24 md:w-48 md:h-28 flex-shrink-0">
               <Image
                 src="/images/logo-camara-argentina.png"
-                alt="Logo Camara Argentina de Comercio - Certificacion Nacional para Diplomatura PHP Laravel"
+                alt="Logo Cámara Argentina de Comercio - Certificación Nacional para Diplomatura PHP Laravel"
                 fill
                 sizes="(max-width: 768px) 160px, 192px"
                 loading="lazy"
@@ -346,7 +346,7 @@ export default function DiplomaturaPhpLaravelPage() {
             <div className="relative w-40 h-24 md:w-48 md:h-28 flex-shrink-0">
               <Image
                 src="/images/logo-oeip.png"
-                alt="Logo OEIP Organizacion de Estados Iberoamericanos para la Educacion - Certificacion Internacional"
+                alt="Logo OEIP Organización de Estados Iberoamericanos para la Educación - Certificación Internacional"
                 fill
                 sizes="(max-width: 768px) 160px, 192px"
                 loading="lazy"
@@ -466,7 +466,7 @@ export default function DiplomaturaPhpLaravelPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Esto y mucho mas es lo que vas a poder crear</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Esto y mucho más es lo que vas a poder crear</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl p-6 text-center border border-gray-200 shadow-sm">

@@ -2,27 +2,27 @@ import React from "react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Terminos y Condiciones | Academia DePC - Cursos de Programacion en Argentina",
+  title: "Términos y Condiciones | Academia DePC - Cursos de Programación en Argentina",
   description:
-    "Terminos y condiciones de Academia DePC Argentina. Informacion completa sobre suscripciones, cancelaciones, derecho de arrepentimiento segun Ley 24.240, renovaciones automaticas y politicas de uso de cursos de programacion online.",
+    "Términos y condiciones de Academia DePC Argentina. Información completa sobre suscripciones, cancelaciones, derecho de arrepentimiento según Ley 24.240, renovaciones automáticas y políticas de uso de cursos de programación online.",
   keywords: [
-    "terminos y condiciones academia depc",
-    "condiciones de uso cursos programacion",
-    "suscripcion cursos argentina",
-    "cancelar suscripcion cursos online",
+    "términos y condiciones academia depc",
+    "condiciones de uso cursos programación",
+    "suscripción cursos argentina",
+    "cancelar suscripción cursos online",
     "ley defensa consumidor argentina",
     "ley 24240 cursos online",
-    "derecho arrepentimiento educacion",
-    "renovacion automatica suscripcion",
-    "contrato cursos programacion online",
-    "academia programacion buenos aires terminos",
-    "cursos tecnologia latinoamerica condiciones",
-    "suscripcion mensual cursos it argentina",
+    "derecho arrepentimiento educación",
+    "renovación automática suscripción",
+    "contrato cursos programación online",
+    "academia programación buenos aires términos",
+    "cursos tecnología latinoamérica condiciones",
+    "suscripción mensual cursos it argentina",
   ],
   openGraph: {
-    title: "Terminos y Condiciones | Academia DePC Argentina",
+    title: "Términos y Condiciones | Academia DePC Argentina",
     description:
-      "Terminos y condiciones de uso. Suscripciones, cancelaciones y politicas de Academia DePC conforme a la legislacion argentina.",
+      "Términos y condiciones de uso. Suscripciones, cancelaciones y políticas de Academia DePC conforme a la legislación argentina.",
     url: "https://academia.depcsuite.com/terminos-y-condiciones",
     siteName: "Academia DePC",
     locale: "es_AR",
@@ -32,15 +32,15 @@ export const metadata: Metadata = {
         url: "/images/logo-depc-cuadrado.jpg",
         width: 1200,
         height: 630,
-        alt: "Academia DePC Argentina - Terminos y Condiciones",
+        alt: "Academia DePC Argentina - Términos y Condiciones",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terminos y Condiciones | Academia DePC Argentina",
+    title: "Términos y Condiciones | Academia DePC Argentina",
     description:
-      "Terminos y condiciones de uso. Suscripciones, cancelaciones y politicas conforme a la legislacion argentina.",
+      "Términos y condiciones de uso. Suscripciones, cancelaciones y políticas conforme a la legislación argentina.",
     images: ["/images/logo-depc-cuadrado.jpg"],
   },
   alternates: {
@@ -73,8 +73,8 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Terminos y Condiciones - Academia DePC",
-  description: "Terminos y condiciones de uso de Academia DePC Argentina",
+  name: "Términos y Condiciones - Academia DePC",
+  description: "Términos y condiciones de uso de Academia DePC Argentina",
   url: "https://academia.depcsuite.com/terminos-y-condiciones",
   inLanguage: "es-AR",
   isPartOf: {
@@ -95,7 +95,7 @@ const jsonLd = {
       "@type": "PostalAddress",
       addressCountry: "AR",
       addressRegion: "Buenos Aires",
-      addressLocality: "Ciudad Autonoma de Buenos Aires",
+      addressLocality: "Ciudad Autónoma de Buenos Aires",
     },
     contactPoint: [
       {
@@ -115,7 +115,7 @@ const jsonLd = {
   },
   mainEntity: {
     "@type": "TermsOfService",
-    name: "Terminos y Condiciones Academia DePC",
+    name: "Términos y Condiciones Academia DePC",
     dateModified: "2026-02-01",
     inLanguage: "es-AR",
   },
@@ -131,7 +131,7 @@ const jsonLd = {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Terminos y Condiciones",
+        name: "Términos y Condiciones",
         item: "https://academia.depcsuite.com/terminos-y-condiciones",
       },
     ],

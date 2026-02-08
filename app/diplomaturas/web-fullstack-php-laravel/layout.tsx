@@ -4,20 +4,20 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Diplomatura Full Stack PHP + Laravel | Academia DePC",
   description:
-    "Aprende desarrollo web profesional con PHP y Laravel. Crea sistemas, ecommerce y aplicaciones web con MercadoPago. 6 meses, 100% online, doble certificacion nacional e internacional.",
+    "Aprendé desarrollo web profesional con PHP y Laravel. Creá sistemas, ecommerce y aplicaciones web con MercadoPago. 6 meses, 100% online, doble certificación nacional e internacional.",
   keywords: [
     "curso php",
     "diplomatura php",
     "laravel curso",
     "desarrollo web php",
     "ecommerce php",
-    "mercadopago integracion",
+    "mercadopago integración",
     "bootcamp php argentina",
     "curso laravel online",
     "aprender php desde cero",
     "php backend",
-    "certificacion php",
-    "curso programacion argentina",
+    "certificación php",
+    "curso programación argentina",
     "desarrollador php junior",
     "mysql php",
     "tienda online php",
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Diplomatura Full Stack PHP + Laravel | Academia DePC",
     description:
-      "Aprende PHP y Laravel. Crea sistemas y ecommerce con MercadoPago. 6 meses, 100% online, con doble certificacion.",
-    url: "https://academiadepc.com/diplomaturas/web-fullstack-php-laravel",
+      "Aprendé PHP y Laravel. Creá sistemas y ecommerce con MercadoPago. 6 meses, 100% online, con doble certificación.",
+    url: "https://academia.depcsuite.com/diplomaturas/web-fullstack-php-laravel",
     siteName: "Academia DePC",
     images: [
       {
@@ -43,15 +43,29 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Diplomatura Full Stack PHP + Laravel",
     description:
-      "Aprende PHP y Laravel para crear sistemas y ecommerce. Certificacion nacional e internacional.",
+      "Aprendé PHP y Laravel para crear sistemas y ecommerce. Certificación nacional e internacional.",
     images: ["/images/course-php-laravel.jpg"],
   },
   alternates: {
-    canonical: "https://academiadepc.com/diplomaturas/web-fullstack-php-laravel",
+    canonical: "https://academia.depcsuite.com/diplomaturas/web-fullstack-php-laravel",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  other: {
+    "geo.region": "AR",
+    "geo.placename": "Buenos Aires, Argentina",
+    "geo.position": "-34.6037;-58.3816",
+    "ICBM": "-34.6037, -58.3816",
+    "content-language": "es-AR",
   },
 }
 

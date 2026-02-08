@@ -2,26 +2,26 @@ import React from "react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Politicas de Privacidad | Academia DePC - Cursos de Programacion en Argentina",
+  title: "Políticas de Privacidad | Academia DePC - Cursos de Programación en Argentina",
   description:
-    "Politica de privacidad de Academia DePC Argentina. Conoce como protegemos tu informacion personal, tratamiento de datos segun Ley 25.326 de Proteccion de Datos Personales, derechos ARCO y seguridad de datos en cursos online de programacion.",
+    "Política de privacidad de Academia DePC Argentina. Conocé cómo protegemos tu información personal, tratamiento de datos según Ley 25.326 de Protección de Datos Personales, derechos ARCO y seguridad de datos en cursos online de programación.",
   keywords: [
-    "politica de privacidad academia depc",
-    "proteccion de datos personales argentina",
-    "ley 25326 proteccion datos",
+    "política de privacidad academia depc",
+    "protección de datos personales argentina",
+    "ley 25326 protección datos",
     "tratamiento datos personales cursos online",
     "derechos arco argentina",
-    "privacidad cursos programacion",
-    "seguridad datos educacion online",
-    "cookies cursos tecnologia",
+    "privacidad cursos programación",
+    "seguridad datos educación online",
+    "cookies cursos tecnología",
     "habeas data argentina",
-    "academia programacion buenos aires privacidad",
-    "cursos online latinoamerica privacidad",
+    "academia programación buenos aires privacidad",
+    "cursos online latinoamérica privacidad",
   ],
   openGraph: {
-    title: "Politicas de Privacidad | Academia DePC Argentina",
+    title: "Políticas de Privacidad | Academia DePC Argentina",
     description:
-      "Conoce como protegemos tu informacion personal en Academia DePC. Cumplimos con la Ley 25.326 de Proteccion de Datos Personales de Argentina.",
+      "Conocé cómo protegemos tu información personal en Academia DePC. Cumplimos con la Ley 25.326 de Protección de Datos Personales de Argentina.",
     url: "https://academia.depcsuite.com/politicas-de-privacidad",
     siteName: "Academia DePC",
     locale: "es_AR",
@@ -31,15 +31,15 @@ export const metadata: Metadata = {
         url: "/images/logo-depc-cuadrado.jpg",
         width: 1200,
         height: 630,
-        alt: "Academia DePC Argentina - Politicas de Privacidad",
+        alt: "Academia DePC Argentina - Políticas de Privacidad",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Politicas de Privacidad | Academia DePC Argentina",
+    title: "Políticas de Privacidad | Academia DePC Argentina",
     description:
-      "Conoce como protegemos tu informacion personal. Cumplimos con la legislacion argentina de proteccion de datos.",
+      "Conocé cómo protegemos tu información personal. Cumplimos con la legislación argentina de protección de datos.",
     images: ["/images/logo-depc-cuadrado.jpg"],
   },
   alternates: {
@@ -72,8 +72,8 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Politicas de Privacidad - Academia DePC",
-  description: "Politica de privacidad y proteccion de datos personales de Academia DePC Argentina",
+  name: "Políticas de Privacidad - Academia DePC",
+  description: "Política de privacidad y protección de datos personales de Academia DePC Argentina",
   url: "https://academia.depcsuite.com/politicas-de-privacidad",
   inLanguage: "es-AR",
   isPartOf: {
@@ -94,7 +94,7 @@ const jsonLd = {
       "@type": "PostalAddress",
       addressCountry: "AR",
       addressRegion: "Buenos Aires",
-      addressLocality: "Ciudad Autonoma de Buenos Aires",
+      addressLocality: "Ciudad Autónoma de Buenos Aires",
     },
     contactPoint: {
       "@type": "ContactPoint",
@@ -106,7 +106,7 @@ const jsonLd = {
   },
   mainEntity: {
     "@type": "PrivacyPolicy",
-    name: "Politica de Privacidad Academia DePC",
+    name: "Política de Privacidad Academia DePC",
     dateModified: "2026-02-01",
     inLanguage: "es-AR",
   },
@@ -122,7 +122,7 @@ const jsonLd = {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Politicas de Privacidad",
+        name: "Políticas de Privacidad",
         item: "https://academia.depcsuite.com/politicas-de-privacidad",
       },
     ],

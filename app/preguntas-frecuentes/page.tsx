@@ -13,16 +13,16 @@ const faqCategories = [
     icon: HelpCircle,
     questions: [
       {
-        question: "¿Que es Academia DePC?",
-        answer: "Academia DePC es una comunidad educativa tech que ofrece diplomaturas y cursos de programacion con doble certificacion (nacional e internacional). Contamos con clases en vivo, webinars gratuitos, hackathones presenciales y un portal de empleo exclusivo para nuestros egresados en Argentina y Latinoamerica."
+        question: "¿Qué es Academia DePC?",
+        answer: "Academia DePC es una comunidad educativa tech que ofrece diplomaturas y cursos de programación con doble certificación (nacional e internacional). Contamos con clases en vivo, webinars gratuitos, hackathones presenciales y un portal de empleo exclusivo para nuestros egresados en Argentina y Latinoamérica."
       },
       {
         question: "¿Necesito conocimientos previos para inscribirme?",
-        answer: "No, nuestras diplomaturas estan diseñadas para comenzar desde cero. No se requieren conocimientos previos de programacion. Solo necesitas una computadora con conexion a internet y ganas de aprender."
+        answer: "No, nuestras diplomaturas están diseñadas para comenzar desde cero. No se requieren conocimientos previos de programación. Solo necesitás una computadora con conexión a internet y ganas de aprender."
       },
       {
         question: "¿Las clases son en vivo o grabadas?",
-        answer: "Ofrecemos ambas modalidades. Las diplomaturas incluyen clases grabadas on demand que puedes ver a tu ritmo, mas masterclass en vivo con el docente para resolver dudas. Los webinars son en vivo y gratuitos para toda la comunidad."
+        answer: "Ofrecemos ambas modalidades. Las diplomaturas incluyen clases grabadas on demand que podés ver a tu ritmo, más masterclass en vivo con el docente para resolver dudas. Los webinars son en vivo y gratuitos para toda la comunidad."
       },
     ]
   },
@@ -32,20 +32,20 @@ const faqCategories = [
     icon: GraduationCap,
     questions: [
       {
-        question: "¿Cuanto dura cada diplomatura?",
-        answer: "La Diplomatura Full Stack con React, Node.js e IA dura 9 meses. Las diplomaturas de Python y PHP Laravel duran 6 meses cada una. El curso de Excel tiene 12 horas de contenido que puedes completar a tu ritmo."
+        question: "¿Cuánto dura cada diplomatura?",
+        answer: "La Diplomatura Full Stack con React, Node.js e IA dura 9 meses. Las diplomaturas de Python y PHP Laravel duran 6 meses cada una. El curso de Excel tiene 12 horas de contenido que podés completar a tu ritmo."
       },
       {
-        question: "¿Que diplomaturas ofrecen?",
-        answer: "Ofrecemos: Diplomatura en Programacion Full Stack con React, Node.js e Inteligencia Artificial (9 meses), Diplomatura en Programacion Python con Django y Vue.js (6 meses), Diplomatura en Programacion Web Full Stack con PHP y Laravel (6 meses), Diplomatura en Ciberseguridad Aplicada, y Curso de Fundamentos de Microsoft Excel."
+        question: "¿Qué diplomaturas ofrecen?",
+        answer: "Ofrecemos: Diplomatura en Programación Full Stack con React, Node.js e Inteligencia Artificial (9 meses), Diplomatura en Programación Python con Django y Vue.js (6 meses), Diplomatura en Programación Web Full Stack con PHP y Laravel (6 meses), Diplomatura en Ciberseguridad Aplicada, y Curso de Fundamentos de Microsoft Excel."
       },
       {
         question: "¿Puedo acceder a las clases en cualquier momento?",
-        answer: "Si, todo el contenido grabado esta disponible 24/7 en nuestra plataforma. Puedes estudiar a tu propio ritmo y volver a ver las clases las veces que necesites durante tu suscripcion."
+        answer: "Sí, todo el contenido grabado está disponible 24/7 en nuestra plataforma. Podés estudiar a tu propio ritmo y volver a ver las clases las veces que necesites durante tu suscripción."
       },
       {
-        question: "¿Que tecnologias aprendere en la diplomatura Full Stack?",
-        answer: "Aprenderas HTML, CSS, JavaScript, React.js, Node.js, Express, MongoDB, PostgreSQL, Git, APIs REST, e integracion con Inteligencia Artificial usando OpenAI. Tambien trabajaras con metodologias agiles y herramientas profesionales de desarrollo."
+        question: "¿Qué tecnologías aprenderé en la diplomatura Full Stack?",
+        answer: "Aprenderás HTML, CSS, JavaScript, React.js, Node.js, Express, MongoDB, PostgreSQL, Git, APIs REST, e integración con Inteligencia Artificial usando OpenAI. También trabajarás con metodologías ágiles y herramientas profesionales de desarrollo."
       },
     ]
   },
@@ -55,39 +55,39 @@ const faqCategories = [
     icon: Award,
     questions: [
       {
-        question: "¿Que certificaciones otorga Academia DePC?",
-        answer: "Academia DePC otorga doble certificacion: una certificacion nacional avalada por la Camara Argentina de Comercio y una certificacion internacional de la OEIP (Organizacion de Estados Iberoamericanos para la Educacion). Ademas, los egresados tienen acceso exclusivo al Portal de Empleo."
+        question: "¿Qué certificaciones otorga Academia DePC?",
+        answer: "Academia DePC otorga doble certificación: una certificación nacional avalada por la Cámara Argentina de Comercio y una certificación internacional de la OEIP (Organización de Estados Iberoamericanos para la Educación). Además, los egresados tienen acceso exclusivo al Portal de Empleo."
       },
       {
         question: "¿Las certificaciones tienen validez internacional?",
-        answer: "Si, la certificacion de la OEIP tiene validez internacional en todos los paises iberoamericanos. Esto te permite demostrar tus conocimientos y habilidades en cualquier parte del mundo."
+        answer: "Sí, la certificación de la OEIP tiene validez internacional en todos los países iberoamericanos. Esto te permite demostrar tus conocimientos y habilidades en cualquier parte del mundo."
       },
       {
-        question: "¿Como obtengo mi certificado?",
-        answer: "Al completar todos los modulos de tu diplomatura y aprobar las evaluaciones correspondientes, recibiras automaticamente tu doble certificacion digital. Tambien puedes solicitar el certificado fisico con costo adicional de envio."
+        question: "¿Cómo obtengo mi certificado?",
+        answer: "Al completar todos los módulos de tu diplomatura y aprobar las evaluaciones correspondientes, recibirás automáticamente tu doble certificación digital. También podés solicitar el certificado físico con costo adicional de envío."
       },
     ]
   },
   {
     id: "pagos",
-    title: "Pagos y Suscripcion",
+    title: "Pagos y Suscripción",
     icon: CreditCard,
     questions: [
       {
-        question: "¿Que incluye la suscripcion a Academia DePC?",
-        answer: "La suscripcion incluye acceso a todas las diplomaturas, webinars en vivo, masterclass con docentes, hackathones presenciales, acceso exclusivo al Portal de Empleo, comunidad activa de estudiantes y doble certificacion al completar cada diplomatura."
+        question: "¿Qué incluye la suscripción a Academia DePC?",
+        answer: "La suscripción incluye acceso a todas las diplomaturas, webinars en vivo, masterclass con docentes, hackathones presenciales, acceso exclusivo al Portal de Empleo, comunidad activa de estudiantes y doble certificación al completar cada diplomatura."
       },
       {
-        question: "¿Cuales son las formas de pago disponibles?",
-        answer: "Aceptamos tarjetas de credito y debito (Visa, Mastercard, American Express), MercadoPago, transferencia bancaria y pagos en efectivo a traves de Rapipago y PagoFacil. Para pagos internacionales aceptamos PayPal y tarjetas internacionales."
+        question: "¿Cuáles son las formas de pago disponibles?",
+        answer: "Aceptamos tarjetas de crédito y débito (Visa, Mastercard, American Express), MercadoPago, transferencia bancaria y pagos en efectivo a través de Rapipago y PagoFácil. Para pagos internacionales aceptamos PayPal y tarjetas internacionales."
       },
       {
         question: "¿Puedo pagar en cuotas?",
-        answer: "Si, ofrecemos financiacion en cuotas sin interes con tarjetas de credito participantes. La cantidad de cuotas disponibles depende del plan que elijas y de tu banco emisor."
+        answer: "Sí, ofrecemos financiación en cuotas sin interés con tarjetas de crédito participantes. La cantidad de cuotas disponibles depende del plan que elijas y de tu banco emisor."
       },
       {
         question: "¿Ofrecen descuentos?",
-        answer: "Si, tenemos convenios con mas de 20 empresas e instituciones que ofrecen descuentos exclusivos a sus empleados y asociados. Consulta en la seccion de convenios si tu empresa esta incluida. Tambien ofrecemos descuentos por pago anual anticipado."
+        answer: "Sí, tenemos convenios con más de 20 empresas e instituciones que ofrecen descuentos exclusivos a sus empleados y asociados. Consultá en la sección de convenios si tu empresa está incluida. También ofrecemos descuentos por pago anual anticipado."
       },
     ]
   },
@@ -97,16 +97,16 @@ const faqCategories = [
     icon: Users,
     questions: [
       {
-        question: "¿Que es la Comunidad DePC?",
+        question: "¿Qué es la Comunidad DePC?",
         answer: "Es nuestra red social exclusiva donde estudiantes y egresados pueden conectarse, compartir proyectos, resolver dudas entre pares, participar en eventos y acceder a oportunidades laborales. Es como LinkedIn pero enfocado en nuestra comunidad tech."
       },
       {
-        question: "¿Como puedo contactar a los docentes?",
-        answer: "Puedes contactar a los docentes a traves de la plataforma de clases, en las masterclass en vivo, y en los canales dedicados dentro de la comunidad. Tambien contamos con tutores que resuelven dudas de forma continua."
+        question: "¿Cómo puedo contactar a los docentes?",
+        answer: "Podés contactar a los docentes a través de la plataforma de clases, en las masterclass en vivo, y en los canales dedicados dentro de la comunidad. También contamos con tutores que resuelven dudas de forma continua."
       },
       {
-        question: "¿Que son los hackathones?",
-        answer: "Los hackathones son eventos presenciales donde estudiantes y egresados trabajan en equipos para resolver desafios de programacion reales. Son una excelente oportunidad para practicar, hacer networking y demostrar tus habilidades."
+        question: "¿Qué son los hackathones?",
+        answer: "Los hackathones son eventos presenciales donde estudiantes y egresados trabajan en equipos para resolver desafíos de programación reales. Son una excelente oportunidad para practicar, hacer networking y demostrar tus habilidades."
       },
     ]
   },
@@ -116,16 +116,16 @@ const faqCategories = [
     icon: Laptop,
     questions: [
       {
-        question: "¿Como funciona el Portal de Empleo?",
-        answer: "El Portal de Empleo es exclusivo para egresados de Academia DePC. Alli encontraras ofertas laborales de empresas que buscan especificamente perfiles formados con nosotros. Tu perfil profesional y certificaciones estaran visibles para los reclutadores."
+        question: "¿Cómo funciona el Portal de Empleo?",
+        answer: "El Portal de Empleo es exclusivo para egresados de Academia DePC. Allí encontrarás ofertas laborales de empresas que buscan específicamente perfiles formados con nosotros. Tu perfil profesional y certificaciones estarán visibles para los reclutadores."
       },
       {
         question: "¿Garantizan empleo al terminar?",
-        answer: "No garantizamos empleo, pero te brindamos todas las herramientas para conseguirlo: formacion de calidad, certificaciones reconocidas, acceso al portal de empleo, networking en hackathones y una comunidad activa que comparte oportunidades."
+        answer: "No garantizamos empleo, pero te brindamos todas las herramientas para conseguirlo: formación de calidad, certificaciones reconocidas, acceso al portal de empleo, networking en hackathones y una comunidad activa que comparte oportunidades."
       },
       {
-        question: "¿Que tipo de empresas publican en el portal?",
-        answer: "Empresas de tecnologia, startups, consultoras IT, agencias digitales y empresas de diversos rubros que buscan talento tech. Muchas son empresas argentinas y otras ofrecen trabajo remoto para toda Latinoamerica."
+        question: "¿Qué tipo de empresas publican en el portal?",
+        answer: "Empresas de tecnología, startups, consultoras IT, agencias digitales y empresas de diversos rubros que buscan talento tech. Muchas son empresas argentinas y otras ofrecen trabajo remoto para toda Latinoamérica."
       },
     ]
   },
@@ -175,7 +175,7 @@ export default function PreguntasFrecuentes() {
             Preguntas Frecuentes
           </h1>
           <p className="text-lg text-white/70 max-w-2xl mx-auto text-pretty">
-            Encuentra respuestas a las preguntas mas comunes sobre nuestras diplomaturas, certificaciones, pagos y comunidad.
+            Encontrá respuestas a las preguntas más comunes sobre nuestras diplomaturas, certificaciones, pagos y comunidad.
           </p>
         </div>
       </section>
@@ -233,7 +233,7 @@ export default function PreguntasFrecuentes() {
           {/* CTA Section */}
           <div className="mt-16 text-center bg-gradient-to-r from-[#2D1B4E]/5 to-[#E91E63]/5 rounded-2xl p-8 border border-gray-200">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">¿No encontraste lo que buscabas?</h3>
-            <p className="text-gray-600 mb-6">Nuestro equipo esta listo para ayudarte con cualquier consulta adicional.</p>
+            <p className="text-gray-600 mb-6">Nuestro equipo está listo para ayudarte con cualquier consulta adicional.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="https://wa.me/5491131500093"

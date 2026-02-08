@@ -26,43 +26,43 @@ export default function PoliticasDePrivacidad() {
             Volver al inicio
           </Link>
 
-          <h1 className="text-4xl font-bold text-gray-900 mb-8">Politicas de Privacidad</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-8">Políticas de Privacidad</h1>
           
           <div className="prose prose-lg max-w-none text-gray-700">
             <p className="text-gray-600 mb-6">
-              Ultima actualizacion: Febrero 2026
+              Última actualización: Febrero 2026
             </p>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Informacion General</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Información General</h2>
               <p>
-                DEPCSUITE S.A. (en adelante "Academia DePC", "nosotros" o "la empresa") se compromete a proteger la privacidad de los usuarios de nuestra plataforma educativa. Esta politica describe como recopilamos, usamos, almacenamos y protegemos su informacion personal.
+                DEPCSUITE S.A. (en adelante &quot;Academia DePC&quot;, &quot;nosotros&quot; o &quot;la empresa&quot;) se compromete a proteger la privacidad de los usuarios de nuestra plataforma educativa. Esta política describe cómo recopilamos, usamos, almacenamos y protegemos su información personal.
               </p>
               <p className="mt-4">
-                Domicilio legal: Republica Argentina<br />
+                Domicilio legal: República Argentina<br />
                 CUIT: 30-71683193-7<br />
                 Contacto: info@depcsuite.com
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Informacion que Recopilamos</h2>
-              <p>Recopilamos los siguientes tipos de informacion:</p>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Información que Recopilamos</h2>
+              <p>Recopilamos los siguientes tipos de información:</p>
               <ul className="list-disc pl-6 mt-4 space-y-2">
-                <li><strong>Datos de registro:</strong> nombre completo, correo electronico, numero de telefono, pais de residencia.</li>
-                <li><strong>Datos de pago:</strong> informacion de facturacion procesada a traves de pasarelas de pago seguras (no almacenamos datos de tarjetas de credito).</li>
-                <li><strong>Datos de uso:</strong> progreso en cursos, participacion en eventos, interacciones con la plataforma.</li>
-                <li><strong>Datos tecnicos:</strong> direccion IP, tipo de navegador, dispositivo utilizado.</li>
+                <li><strong>Datos de registro:</strong> nombre completo, correo electrónico, número de teléfono, país de residencia.</li>
+                <li><strong>Datos de pago:</strong> información de facturación procesada a través de pasarelas de pago seguras (no almacenamos datos de tarjetas de crédito).</li>
+                <li><strong>Datos de uso:</strong> progreso en cursos, participación en eventos, interacciones con la plataforma.</li>
+                <li><strong>Datos técnicos:</strong> dirección IP, tipo de navegador, dispositivo utilizado.</li>
               </ul>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. Uso de la Informacion</h2>
-              <p>Utilizamos su informacion para:</p>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. Uso de la Información</h2>
+              <p>Utilizamos su información para:</p>
               <ul className="list-disc pl-6 mt-4 space-y-2">
                 <li>Proveer acceso a los servicios educativos contratados</li>
                 <li>Procesar pagos y gestionar suscripciones</li>
-                <li>Enviar comunicaciones relacionadas con su formacion</li>
+                <li>Enviar comunicaciones relacionadas con su formación</li>
                 <li>Emitir certificaciones y credenciales digitales</li>
                 <li>Mejorar nuestros servicios y experiencia de usuario</li>
                 <li>Cumplir con obligaciones legales y fiscales</li>
@@ -70,13 +70,13 @@ export default function PoliticasDePrivacidad() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Comparticion de Datos</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Compartición de Datos</h2>
               <p>
-                No vendemos ni alquilamos su informacion personal a terceros. Podemos compartir datos con:
+                No vendemos ni alquilamos su información personal a terceros. Podemos compartir datos con:
               </p>
               <ul className="list-disc pl-6 mt-4 space-y-2">
                 <li>Proveedores de servicios de pago para procesar transacciones</li>
-                <li>Organismos certificadores para la emision de credenciales</li>
+                <li>Organismos certificadores para la emisión de credenciales</li>
                 <li>Autoridades gubernamentales cuando sea legalmente requerido</li>
               </ul>
             </section>
@@ -84,10 +84,10 @@ export default function PoliticasDePrivacidad() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Seguridad de los Datos</h2>
               <p>
-                Implementamos medidas de seguridad tecnicas y organizativas para proteger su informacion, incluyendo:
+                Implementamos medidas de seguridad técnicas y organizativas para proteger su información, incluyendo:
               </p>
               <ul className="list-disc pl-6 mt-4 space-y-2">
-                <li>Encriptacion SSL/TLS para todas las comunicaciones</li>
+                <li>Encriptación SSL/TLS para todas las comunicaciones</li>
                 <li>Almacenamiento seguro en servidores protegidos</li>
                 <li>Acceso restringido a datos personales</li>
                 <li>Monitoreo continuo de seguridad</li>
@@ -99,43 +99,43 @@ export default function PoliticasDePrivacidad() {
               <p>Usted tiene derecho a:</p>
               <ul className="list-disc pl-6 mt-4 space-y-2">
                 <li>Acceder a sus datos personales</li>
-                <li>Rectificar informacion incorrecta</li>
+                <li>Rectificar información incorrecta</li>
                 <li>Solicitar la eliminacion de sus datos</li>
                 <li>Oponerse al procesamiento de sus datos</li>
                 <li>Solicitar la portabilidad de sus datos</li>
               </ul>
               <p className="mt-4">
-                Para ejercer estos derechos, contactenos a: privacidad@depcsuite.com
+                Para ejercer estos derechos, contáctenos a: privacidad@depcsuite.com
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Retencion de Datos</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Retención de Datos</h2>
               <p>
-                Conservamos sus datos personales mientras mantenga una cuenta activa o segun sea necesario para cumplir con obligaciones legales. Los datos de facturacion se conservan por el periodo requerido por la legislacion fiscal aplicable.
+                Conservamos sus datos personales mientras mantenga una cuenta activa o según sea necesario para cumplir con obligaciones legales. Los datos de facturación se conservan por el período requerido por la legislación fiscal aplicable.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">8. Cookies y Tecnologias Similares</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">8. Cookies y Tecnologías Similares</h2>
               <p>
-                Utilizamos cookies y tecnologias similares para mejorar su experiencia en nuestra plataforma, analizar el uso del sitio y personalizar contenido. Puede configurar su navegador para rechazar cookies, aunque esto puede afectar la funcionalidad del sitio.
+                Utilizamos cookies y tecnologías similares para mejorar su experiencia en nuestra plataforma, analizar el uso del sitio y personalizar contenido. Puede configurar su navegador para rechazar cookies, aunque esto puede afectar la funcionalidad del sitio.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">9. Cambios en esta Politica</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">9. Cambios en esta Política</h2>
               <p>
-                Podemos actualizar esta politica periodicamente. Le notificaremos cambios significativos por correo electronico o mediante un aviso en nuestra plataforma.
+                Podemos actualizar esta política periódicamente. Le notificaremos cambios significativos por correo electrónico o mediante un aviso en nuestra plataforma.
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">10. Contacto</h2>
               <p>
-                Para consultas sobre privacidad, contactenos a:<br />
+                Para consultas sobre privacidad, contáctenos a:<br />
                 Email: privacidad@depcsuite.com<br />
-                Atencion al cliente: info@depcsuite.com
+                Atención al cliente: info@depcsuite.com
               </p>
             </section>
           </div>

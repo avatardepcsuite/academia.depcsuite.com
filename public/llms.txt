@@ -1,0 +1,58 @@
+# Academia DePC
+
+> Academia DePC es una plataforma educativa online de Argentina que ofrece diplomaturas y cursos de programación, tecnología y herramientas digitales con certificación nacional e internacional.
+
+## Sobre Academia DePC
+
+Academia DePC es una institución educativa online con sede en Buenos Aires, Argentina. Forma parte de DEPCSUITE S.A. y ofrece formación en tecnología con doble certificación: nacional (Cámara Argentina de Comercio) e internacional (OEIP - Organización de Estados Iberoamericanos para la Educación). Los egresados acceden a un Portal de Empleo exclusivo.
+
+## Diplomaturas disponibles
+
+### Diplomatura Full Stack React + Node.js + IA
+- Duración: 9 meses
+- Modalidad: 100% online
+- Tecnologías: React.js, Node.js, Express.js, MongoDB, MySQL, JavaScript, OpenAI API, Supabase, Vercel
+- Requisitos: Sin conocimientos previos
+- Certificación: Nacional e Internacional
+- URL: https://academia.depcsuite.com/diplomaturas/programacion-fullstack-react-node-ia
+
+### Diplomatura Programación Python + Django + Vue.js
+- Duración: 6 meses
+- Modalidad: 100% online
+- Tecnologías: Python, Django, Django REST Framework, Vue.js, SQL, MySQL, SQLite
+- Requisitos: Sin conocimientos previos
+- Certificación: Nacional e Internacional
+- URL: https://academia.depcsuite.com/diplomaturas/programacion-python
+
+### Diplomatura Full Stack PHP + Laravel
+- Duración: 6 meses
+- Modalidad: 100% online
+- Tecnologías: PHP, Laravel, MySQL, JavaScript, AJAX, Bootstrap, MercadoPago
+- Requisitos: Sin conocimientos previos
+- Certificación: Nacional e Internacional
+- URL: https://academia.depcsuite.com/diplomaturas/web-fullstack-php-laravel
+
+### Curso Fundamentos de Microsoft Excel
+- Duración: 12 horas
+- Modalidad: 100% online
+- Contenido: Fórmulas, funciones, tablas dinámicas, gráficos, formatos condicionales
+- Requisitos: Sin conocimientos previos
+- Certificación: Nacional e Internacional
+- URL: https://academia.depcsuite.com/diplomaturas/fundamentos-microsoft-excel
+
+## Webinars gratuitos
+
+Academia DePC ofrece webinars gratuitos en vivo sobre empleabilidad tech, inteligencia artificial, automatización, productividad, programación y diseño. Los webinars se dictan regularmente y están abiertos a toda la comunidad.
+
+URL: https://academia.depcsuite.com/#webinars
+
+## Contacto
+
+- Web: https://academia.depcsuite.com
+- Instagram: @academia.depc
+- Ubicación: Buenos Aires, Argentina
+- Cobertura: Argentina y Latinoamérica
+
+## Preguntas frecuentes
+
+URL: https://academia.depcsuite.com/preguntas-frecuentes

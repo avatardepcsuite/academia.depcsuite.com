@@ -10,7 +10,7 @@ Sitemap: https://academia.depcsuite.com/sitemap.xml
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
 
-# Allow all search engine bots
+# Search engine bots
 User-agent: Googlebot
 Allow: /
 
@@ -18,6 +18,9 @@ User-agent: Bingbot
 Allow: /
 
 User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Yandex
 Allow: /
 
 # AI and LLM crawlers for GEO optimization
@@ -39,5 +42,17 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: Applebot-Extended
+Allow: /
+
 User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Meta-ExternalAgent
 Allow: /

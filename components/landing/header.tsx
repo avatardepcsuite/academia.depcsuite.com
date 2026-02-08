@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown, Sparkles, Zap, Code, Brain, Clock, Palette, Briefcase, ArrowRight, FileSpreadsheet } from "lucide-react"
 import Link from "next/link"
 import { useCurrency, currencies, flagComponents } from "@/contexts/currency-context"
+import { webinars as webinarsData } from "@/lib/webinars-data"
 
 // Custom brand icons
 const ReactIcon = ({ className }: { className?: string }) => (
@@ -40,74 +41,19 @@ const diplomaturas = [
   { href: "/diplomaturas/fundamentos-microsoft-excel", label: "Fundamentos Microsoft Excel", icon: ExcelIcon, color: "text-green-500", bgColor: "bg-green-500/10" },
 ]
 
-const webinarCategories = [
-  {
-    id: "automatizacion",
-    label: "Automatización",
-    icon: Zap,
-    color: "text-orange-400",
-    bgColor: "bg-orange-500/10",
-    webinars: [
-      { title: "Aprendé a crear un Bot de WhatsApp con n8n" },
-      { title: "n8n desde Cero: Automatiza tu Trabajo en 90 Minutos" },
-    ]
-  },
-  {
-    id: "programacion",
-    label: "Programación",
-    icon: Code,
-    color: "text-cyan-400",
-    bgColor: "bg-cyan-500/10",
-    webinars: [
-      { title: "Frameworks frontend: qué son, para qué sirven y por qué usar React" },
-      { title: "Cómo extraer datos de la web y cómo evitar que lo hagan con tu sitio" },
-      { title: "Cómo aplicar estrategias de sistemas de autenticación seguros y escalables" },
-    ]
-  },
-  {
-    id: "ia",
-    label: "Inteligencia Artificial",
-    icon: Brain,
-    color: "text-purple-400",
-    bgColor: "bg-purple-500/10",
-    webinars: [
-      { title: "Potenciar tu productividad con IA: Copilot vs Agent First" },
-      { title: "Cómo construir un asistente virtual para tu web" },
-      { title: "Aprendé a documentar tus proyectos de forma profesional con IA" },
-    ]
-  },
-  {
-    id: "productividad",
-    label: "Productividad",
-    icon: Clock,
-    color: "text-emerald-400",
-    bgColor: "bg-emerald-500/10",
-    webinars: [
-      { title: "Notion + IA para Productividad: Tu Sistema en 90 Minutos" },
-    ]
-  },
-  {
-    id: "diseno",
-    label: "Diseño",
-    icon: Palette,
-    color: "text-pink-400",
-    bgColor: "bg-pink-500/10",
-    webinars: [
-      { title: "Figma para no diseñadores: Prototipá y Colaborá como un Pro" },
-      { title: "Canva para el Mundo Laboral: CV, Presentaciones y Contenido que Vende" },
-    ]
-  },
-  {
-    id: "empleabilidad",
-    label: "Empleabilidad",
-    icon: Briefcase,
-    color: "text-amber-400",
-    bgColor: "bg-amber-500/10",
-    webinars: [
-      { title: "Entrevistas 2026: CV, LinkedIn y Respuestas que te Hacen Contratable" },
-    ]
-  },
+const webinarCategoryDefs = [
+  { id: "automatizacion", label: "Automatizaci\u00f3n", icon: Zap, color: "text-orange-400", bgColor: "bg-orange-500/10" },
+  { id: "programacion", label: "Programaci\u00f3n", icon: Code, color: "text-cyan-400", bgColor: "bg-cyan-500/10" },
+  { id: "ia", label: "Inteligencia Artificial", icon: Brain, color: "text-purple-400", bgColor: "bg-purple-500/10" },
+  { id: "productividad", label: "Productividad", icon: Clock, color: "text-emerald-400", bgColor: "bg-emerald-500/10" },
+  { id: "diseno", label: "Dise\u00f1o", icon: Palette, color: "text-pink-400", bgColor: "bg-pink-500/10" },
+  { id: "empleabilidad", label: "Empleabilidad", icon: Briefcase, color: "text-amber-400", bgColor: "bg-amber-500/10" },
 ]
+
+const webinarCategories = webinarCategoryDefs.map(cat => ({
+  ...cat,
+  count: webinarsData.filter(w => w.category === cat.id).length,
+}))
 
 const getNavItems = (isRioplatense: boolean) => [
   { href: "#formacion", label: "Diplomaturas", hasSubmenu: "diplomaturas" },
@@ -283,10 +229,16 @@ export function Header() {
                               return (
                                 <Link
                                   key={category.id}
-                                  href="#webinars"
+                                  href={`/#webinars?cat=${category.id}`}
                                   onClick={(e) => {
-                                    handleNavClick(e, "#webinars")
-                                    setIsDiplomaturasOpen(false)
+                                    e.preventDefault()
+                                    setIsWebinarsOpen(false)
+                                    if (pathname === "/") {
+                                      window.dispatchEvent(new CustomEvent("filter-webinar-category", { detail: category.id }))
+                                      document.getElementById("webinars")?.scrollIntoView({ behavior: "smooth" })
+                                    } else {
+                                      router.push(`/?webinar_cat=${category.id}#webinars`)
+                                    }
                                   }}
                                   className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-all duration-200 group/item"
                                 >
@@ -298,7 +250,7 @@ export function Header() {
                                       {category.label}
                                     </span>
                                     <span className="block text-xs text-white/50">
-                                      {category.webinars.length} {category.webinars.length === 1 ? "webinar" : "webinars"}
+                                      {category.count} {category.count === 1 ? "webinar" : "webinars"}
                                     </span>
                                   </div>
                                 </Link>
@@ -310,7 +262,7 @@ export function Header() {
                               href="#webinars"
                               onClick={(e) => {
                                 handleNavClick(e, "#webinars")
-                                setIsDiplomaturasOpen(false)
+                                setIsWebinarsOpen(false)
                               }}
                               className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-fuchsia-500/10 text-sm text-pink-400 hover:text-pink-300 hover:from-pink-500/20 hover:to-fuchsia-500/20 font-medium transition-all"
                             >
@@ -589,11 +541,17 @@ export function Header() {
                             return (
                               <Link
                                 key={category.id}
-                                href="#webinars"
+                                href={`/#webinars?cat=${category.id}`}
                                 onClick={(e) => {
-                                  handleNavClick(e, "#webinars")
+                                  e.preventDefault()
                                   setIsMenuOpen(false)
                                   setIsMobileWebinarsOpen(false)
+                                  if (pathname === "/") {
+                                    window.dispatchEvent(new CustomEvent("filter-webinar-category", { detail: category.id }))
+                                    document.getElementById("webinars")?.scrollIntoView({ behavior: "smooth" })
+                                  } else {
+                                    router.push(`/?webinar_cat=${category.id}#webinars`)
+                                  }
                                 }}
                                 className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5 transition-all duration-200"
                               >
@@ -605,7 +563,7 @@ export function Header() {
                                     {category.label}
                                   </span>
                                   <span className="block text-xs text-white/50">
-                                    {category.webinars.length} {category.webinars.length === 1 ? "webinar" : "webinars"}
+                                    {category.count} {category.count === 1 ? "webinar" : "webinars"}
                                   </span>
                                 </div>
                               </Link>

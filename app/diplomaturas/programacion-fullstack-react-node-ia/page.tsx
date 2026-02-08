@@ -37,19 +37,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Academia DePC",
-      "item": "https://academiadepc.com"
+      "item": "https://academia.depcsuite.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Diplomaturas",
-      "item": "https://academiadepc.com/#diplomaturas"
+      "item": "https://academia.depcsuite.com/#diplomaturas"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Full Stack React + Node.js + IA",
-      "item": "https://academiadepc.com/diplomaturas/programacion-fullstack-react-node-ia"
+      "item": "https://academia.depcsuite.com/diplomaturas/programacion-fullstack-react-node-ia"
     }
   ]
 }
@@ -62,7 +62,7 @@ const courseSchema = {
   "provider": {
     "@type": "EducationalOrganization",
     "name": "Academia DePC",
-    "url": "https://academiadepc.com"
+    "url": "https://academia.depcsuite.com"
   },
   "courseMode": "online",
   "educationalLevel": "Beginner to Intermediate",
@@ -167,7 +167,7 @@ const planDeEstudio = [
       "Express + Postman",
       "Express + body, params, query",
       "Express + Routing + Middlewares",
-      "Express + Arquitectura clean + Programacion en capas",
+      "Express + Arquitectura clean + Programación en capas",
       "Despliegue en Vercel + Postman con entornos",
       "TP Final integrador de la unidad"
     ],
@@ -354,7 +354,7 @@ export default function DiplomaturaFullStackPage() {
             <div className="relative w-40 h-24 md:w-48 md:h-28 flex-shrink-0">
               <Image
                 src="/images/logo-camara-argentina.png"
-                alt="Logo Camara Argentina de Comercio - Certificacion Nacional para Diplomatura Full Stack"
+                alt="Logo Cámara Argentina de Comercio - Certificación Nacional para Diplomatura Full Stack"
                 fill
                 sizes="(max-width: 768px) 160px, 192px"
                 loading="lazy"
@@ -364,7 +364,7 @@ export default function DiplomaturaFullStackPage() {
             <div className="relative w-40 h-24 md:w-48 md:h-28 flex-shrink-0">
               <Image
                 src="/images/logo-oeip.png"
-                alt="Logo OEIP Organizacion de Estados Iberoamericanos para la Educacion - Certificacion Internacional"
+                alt="Logo OEIP Organización de Estados Iberoamericanos para la Educación - Certificación Internacional"
                 fill
                 sizes="(max-width: 768px) 160px, 192px"
                 loading="lazy"
@@ -501,17 +501,17 @@ export default function DiplomaturaFullStackPage() {
                 </li>
                 <li className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl">
                   <Briefcase className="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Desempenarte como freelancer en proyectos propios o de terceros</span>
+                  <span className="text-gray-700">Desempeñarte como freelancer en proyectos propios o de terceros</span>
                 </li>
                 <li className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl">
                   <Briefcase className="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Continuar tu formacion hacia perfiles especializados en frontend, backend o arquitectura</span>
+                  <span className="text-gray-700">Continuar tu formación hacia perfiles especializados en frontend, backend o arquitectura</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-gradient-to-br from-[#2D1B4E] to-indigo-600 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-6">Tecnologias que dominaras</h3>
+              <h3 className="text-2xl font-bold mb-6">Tecnologías que dominarás</h3>
               <div className="grid grid-cols-2 gap-4">
                 {["React.js", "Node.js", "Express.js", "MongoDB", "MySQL", "JavaScript", "HTML/CSS", "Git/GitHub", "OpenAI API", "JWT", "Vercel", "Supabase"].map((tech) => (
                   <div key={tech} className="flex items-center gap-2 p-3 bg-white/10 rounded-lg">
@@ -695,11 +695,11 @@ export default function DiplomaturaFullStackPage() {
             Comenza tu carrera como Desarrollador Full Stack
           </h2>
           <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-            Accede a todas las diplomaturas, webinars, hackathones y al portal de empleo con una sola suscripcion.
+            Accedé a todas las diplomaturas, webinars, hackathones y al portal de empleo con una sola suscripción.
           </p>
           <Link href="/#precios">
             <Button size="lg" className="bg-white hover:bg-gray-100 text-[#2D1B4E] font-semibold shadow-lg px-8 h-12 text-base">
-              Ver planes de suscripcion
+              Ver planes de suscripción
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </Link>

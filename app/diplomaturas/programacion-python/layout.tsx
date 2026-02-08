@@ -2,9 +2,9 @@ import React from "react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Diplomatura Programacion Python + Django + Vue.js | Academia DePC",
+  title: "Diplomatura Programación Python + Django + Vue.js | Academia DePC",
   description:
-    "Aprende Python desde cero con Django y Vue.js. Desarrolla APIs REST profesionales. 6 meses, 100% online, doble certificacion nacional e internacional. Sin conocimientos previos.",
+    "Aprendé Python desde cero con Django y Vue.js. Desarrollá APIs REST profesionales. 6 meses, 100% online, doble certificación nacional e internacional. Sin conocimientos previos.",
   keywords: [
     "curso python",
     "diplomatura python",
@@ -16,23 +16,23 @@ export const metadata: Metadata = {
     "curso django online",
     "aprender python desde cero",
     "python backend",
-    "certificacion python",
-    "curso programacion argentina",
+    "certificación python",
+    "curso programación argentina",
     "desarrollador python junior",
     "django rest framework",
   ],
   openGraph: {
-    title: "Diplomatura Programacion Python + Django + Vue.js | Academia DePC",
+    title: "Diplomatura Programación Python + Django + Vue.js | Academia DePC",
     description:
-      "Aprende Python, Django y Vue.js. Desarrolla APIs REST profesionales. 6 meses, 100% online, con doble certificacion.",
-    url: "https://academiadepc.com/diplomaturas/programacion-python",
+      "Aprendé Python, Django y Vue.js. Desarrollá APIs REST profesionales. 6 meses, 100% online, con doble certificación.",
+    url: "https://academia.depcsuite.com/diplomaturas/programacion-python",
     siteName: "Academia DePC",
     images: [
       {
         url: "/images/course-python.jpg",
         width: 1200,
         height: 630,
-        alt: "Diplomatura Programacion Python con Django y Vue.js - Academia DePC",
+        alt: "Diplomatura Programación Python con Django y Vue.js - Academia DePC",
       },
     ],
     locale: "es_AR",
@@ -40,17 +40,31 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Diplomatura Programacion Python + Django + Vue.js",
+    title: "Diplomatura Programación Python + Django + Vue.js",
     description:
-      "Aprende Python, Django y Vue.js. Certificacion nacional e internacional.",
+      "Aprendé Python, Django y Vue.js. Certificación nacional e internacional.",
     images: ["/images/course-python.jpg"],
   },
   alternates: {
-    canonical: "https://academiadepc.com/diplomaturas/programacion-python",
+    canonical: "https://academia.depcsuite.com/diplomaturas/programacion-python",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  other: {
+    "geo.region": "AR",
+    "geo.placename": "Buenos Aires, Argentina",
+    "geo.position": "-34.6037;-58.3816",
+    "ICBM": "-34.6037, -58.3816",
+    "content-language": "es-AR",
   },
 }
 

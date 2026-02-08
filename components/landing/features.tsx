@@ -263,7 +263,7 @@ export function Features() {
               Instituciones que nos respaldan
             </h3>
             <p className="text-gray-600">
-              Otorgamos Certificacion Nacional e Internacional, y nuestros alumnos obtienen acceso exclusivo al Portal de Empleo.
+              Otorgamos Certificación Nacional e Internacional, y nuestros alumnos obtienen acceso exclusivo al Portal de Empleo.
             </p>
           </div>
           
@@ -271,7 +271,7 @@ export function Features() {
             <div className="relative w-40 h-24 md:w-48 md:h-28 flex-shrink-0">
               <Image
                 src="/images/logo-camara-argentina.png"
-                alt="Camara Argentina para la Formacion Profesional"
+                alt="Cámara Argentina para la Formación Profesional"
                 fill
                 sizes="(max-width: 768px) 160px, 192px"
                 loading="lazy"
@@ -281,7 +281,7 @@ export function Features() {
             <div className="relative w-40 h-24 md:w-48 md:h-28 flex-shrink-0">
               <Image
                 src="/images/logo-oeip.png"
-                alt="OEIP - Organizacion Internacional para la Educacion Permanente"
+                alt="OEIP - Organización Internacional para la Educación Permanente"
                 fill
                 sizes="(max-width: 768px) 160px, 192px"
                 loading="lazy"

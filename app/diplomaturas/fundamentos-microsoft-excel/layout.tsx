@@ -4,17 +4,17 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Curso Fundamentos Microsoft Excel | Academia DePC",
   description:
-    "Domina Microsoft Excel desde cero. Aprende formulas, funciones, tablas dinamicas y graficos profesionales. 12 horas de contenido, 100% online, con certificacion nacional e internacional.",
+    "Dominá Microsoft Excel desde cero. Aprendé fórmulas, funciones, tablas dinámicas y gráficos profesionales. 12 horas de contenido, 100% online, con certificación nacional e internacional.",
   keywords: [
     "curso excel",
     "excel desde cero",
-    "formulas excel",
-    "tablas dinamicas",
-    "graficos excel",
+    "fórmulas excel",
+    "tablas dinámicas",
+    "gráficos excel",
     "curso excel online",
-    "excel basico",
+    "excel básico",
     "excel intermedio",
-    "certificacion excel",
+    "certificación excel",
     "aprender excel",
     "funciones excel",
     "curso excel argentina",
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Curso Fundamentos Microsoft Excel | Academia DePC",
     description:
-      "Domina Excel: formulas, tablas dinamicas y graficos. 12 horas, 100% online, con certificacion.",
-    url: "https://academiadepc.com/diplomaturas/fundamentos-microsoft-excel",
+      "Dominá Excel: fórmulas, tablas dinámicas y gráficos. 12 horas, 100% online, con certificación.",
+    url: "https://academia.depcsuite.com/diplomaturas/fundamentos-microsoft-excel",
     siteName: "Academia DePC",
     images: [
       {
@@ -43,15 +43,29 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Curso Fundamentos Microsoft Excel",
     description:
-      "Aprende Excel desde cero: formulas, tablas dinamicas y graficos. Certificacion incluida.",
+      "Aprendé Excel desde cero: fórmulas, tablas dinámicas y gráficos. Certificación incluida.",
     images: ["/images/course-excel.jpg"],
   },
   alternates: {
-    canonical: "https://academiadepc.com/diplomaturas/fundamentos-microsoft-excel",
+    canonical: "https://academia.depcsuite.com/diplomaturas/fundamentos-microsoft-excel",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  other: {
+    "geo.region": "AR",
+    "geo.placename": "Buenos Aires, Argentina",
+    "geo.position": "-34.6037;-58.3816",
+    "ICBM": "-34.6037, -58.3816",
+    "content-language": "es-AR",
   },
 }
 
