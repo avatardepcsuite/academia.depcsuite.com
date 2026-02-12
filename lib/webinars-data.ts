@@ -113,7 +113,7 @@ export const webinars: Webinar[] = [
     instructor: "Prof. Mat\u00edas Gimenez",
     instructorImage: "/images/docente-matias.png",
     date: "2026-03-19",
-    dateLabel: "Jueves 19 de Marzo 2026",
+    dateLabel: "Miércoles 18 de Marzo 2026",
     time: "18:30 (Argentina) / 16:30 (Colombia)",
     audience:
       "Estudiantes y j\u00f3venes profesionales tech que quieren avanzar m\u00e1s r\u00e1pido sin perder criterio.",
@@ -356,7 +356,7 @@ export const webinars: Webinar[] = [
     instructor: "Prof. Mat\u00edas Gim\u00e9nez",
     instructorImage: "/images/docente-matias.png",
     date: "2026-08-20",
-    dateLabel: "Martes 4 de Agosto 2026",
+    dateLabel: "Miércoles 5 de Agosto 2026",
     time: "18:30 (Argentina) / 16:30 (Colombia)",
     audience:
       "Devs junior, estudiantes con portfolio, freelas y equipos chicos.",
@@ -380,7 +380,7 @@ export const webinars: Webinar[] = [
     instructor: "Prof. Mat\u00edas Gim\u00e9nez",
     instructorImage: "/images/docente-matias.png",
     date: "2026-09-08",
-    dateLabel: "Jueves 20 de Agosto 2026",
+    dateLabel: "Miércoles 19 de Agosto 2026",
     time: "18:30 (Argentina) / 16:30 (Colombia)",
     audience: "Emprendedores, marketing+tech, PMs y devs web.",
     downloadableMaterial:
@@ -454,7 +454,7 @@ export const webinars: Webinar[] = [
     instructor: "Prof. Mat\u00edas Gim\u00e9nez",
     instructorImage: "/images/docente-matias.png",
     date: "2026-10-22",
-    dateLabel: "Martes 29 de Septiembre 2026",
+    dateLabel: "Miércoles 30 de Septiembre 2026",
     time: "18:30 (Argentina) / 16:30 (Colombia)",
     audience:
       "Devs juniors, estudiantes y autodidactas que vienen de HTML/CSS/JS.",
@@ -478,7 +478,7 @@ export const webinars: Webinar[] = [
     instructor: "Prof. Mat\u00edas Gim\u00e9nez",
     instructorImage: "/images/docente-matias.png",
     date: "2026-11-03",
-    dateLabel: "Jueves 15 de Octubre 2026",
+    dateLabel: "Miércoles 14 de Octubre 2026",
     time: "18:30 (Argentina) / 16:30 (Colombia)",
     audience:
       "Devs web, estudiantes, analistas/makers y admins de sitios.",
@@ -503,7 +503,7 @@ export const webinars: Webinar[] = [
     instructor: "Prof. Mat\u00edas Gim\u00e9nez",
     instructorImage: "/images/docente-matias.png",
     date: "2026-11-19",
-    dateLabel: "Martes 27 de Octubre 2026",
+    dateLabel: "Miércoles 28 de Octubre 2026",
     time: "18:30 (Argentina) / 16:30 (Colombia)",
     audience:
       "Devs backend/fullstack junior\u2013semi senior y estudiantes avanzados.",
