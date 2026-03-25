@@ -215,6 +215,8 @@ export function Pricing() {
         planType={selectedPlan}
         paymentLink={selectedPaymentLink}
       />
+
+
     </section>
   )
 }
