@@ -11,7 +11,7 @@ import axios from 'axios'
 interface SubscriptionModalProps {
   isOpen: boolean
   onClose: () => void
-  planType: "monthly" | "annual"
+  planType: "monthly" | "annual" | "free"
   paymentLink: string
 }
 
@@ -66,6 +66,17 @@ export function SubscriptionModal({ isOpen, onClose, planType, paymentLink }: Su
     const leads = existingData ? JSON.parse(existingData) : []
     leads.push(subscriptionData)
     localStorage.setItem("subscriptionLeads", JSON.stringify(leads))
+
+    // For free plan, redirect to WhatsApp
+    if (planType === "free") {
+      const whatsappMessage = encodeURIComponent("Hola, quiero registrarme gratis a la Comunidad Tech DePC")
+      const whatsappUrl = `https://wa.me/5491162845700?text=${whatsappMessage}`
+      window.open(whatsappUrl, "_blank")
+      setFormData({ name: "", email: "", whatsapp: "" })
+      setIsSubmitting(false)
+      onClose()
+      return
+    }
 
     // Redirect to payment link
     window.open(paymentLink, "_blank")
@@ -134,10 +145,10 @@ export function SubscriptionModal({ isOpen, onClose, planType, paymentLink }: Su
         {/* Header */}
         <div className="text-center mb-6">
           <h3 className="text-2xl font-bold text-gray-900 mb-2">
-            {planType === "monthly" ? "Suscripción Mensual" : "Suscripción Anual"}
+            {planType === "free" ? "Comenzar Gratis" : planType === "monthly" ? "Suscripción Mensual" : "Suscripción Anual"}
           </h3>
           <p className="text-gray-600">
-            Completa tus datos para continuar con el pago
+            {planType === "free" ? "Completa tus datos para registrarte" : "Completa tus datos para continuar con el pago"}
           </p>
         </div>
 
@@ -209,7 +220,7 @@ export function SubscriptionModal({ isOpen, onClose, planType, paymentLink }: Su
                 Procesando...
               </>
             ) : (
-              "Continuar al pago"
+              planType === "free" ? "Registrarme" : "Continuar al pago"
             )}
           </Button>
         </form>

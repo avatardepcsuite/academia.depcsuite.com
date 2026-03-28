@@ -5,9 +5,8 @@ frontend:
       commands:
         - node -v
         - npm -v
-        - corepack enable
-        - corepack prepare pnpm@latest --activate
-        - pnpm config set store-dir .pnpm-store
+        - npm install -g pnpm
+        - pnpm -v
         - pnpm install --frozen-lockfile
     build:
       commands:
