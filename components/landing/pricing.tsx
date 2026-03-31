@@ -7,7 +7,7 @@ import { useState, useRef, useEffect } from "react"
 import { SubscriptionModal } from "./subscription-modal"
 
 const freeIncluded = [
-  "Gratis por 15 días",
+  "Gratis por 7 días",
   "Acceso a la primera clase de las diplomaturas",
   "1 Webinar gratis",
 ]
@@ -126,7 +126,7 @@ export function Pricing() {
             <div className="mb-6">
               <div className="flex items-baseline gap-1">
                 <span className="text-4xl font-bold text-gray-900">$0</span>
-                <span className="text-gray-500">por 15 días</span>
+                <span className="text-gray-500">por 7 días</span>
               </div>
             </div>
 

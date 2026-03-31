@@ -104,11 +104,10 @@ export default function WebinarDetailPage() {
     categories.find((c) => c.id === webinar.category)?.label || webinar.category
   const catColors = categoryColorMap[webinar.category]
 
-  // Get 4 random webinars excluding current (shuffled)
-  const allRelated = webinars
-    .filter((w) => w.slug !== webinar.slug)
-    .sort(() => 0.5 - Math.random())
-    .slice(0, 4)
+  // Get 4 related webinars excluding current (deterministic - same category first, then others)
+  const sameCategory = webinars.filter((w) => w.slug !== webinar.slug && w.category === webinar.category)
+  const otherCategory = webinars.filter((w) => w.slug !== webinar.slug && w.category !== webinar.category)
+  const allRelated = [...sameCategory, ...otherCategory].slice(0, 4)
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
