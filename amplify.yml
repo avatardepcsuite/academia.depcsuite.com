@@ -7,7 +7,7 @@ frontend:
         - npm -v
         - npm install -g pnpm
         - pnpm -v
-        - pnpm install --frozen-lockfile
+        - pnpm install --no-frozen-lockfile
     build:
       commands:
         - pnpm run build

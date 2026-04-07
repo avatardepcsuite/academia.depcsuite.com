@@ -6,6 +6,113 @@ import { ChevronDown, HelpCircle, GraduationCap, CreditCard, Users, Award, Calen
 import { useState, useEffect } from "react"
 import Link from "next/link"
 
+// Schema.org FAQPage structured data
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es Academia DePC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Academia DePC es una comunidad educativa tech que ofrece diplomaturas en tecnología, webinars en vivo, masterclass con docentes y hackathones presenciales. Las diplomaturas cuentan con doble certificación (nacional e internacional). A través de la Cámara Argentina de Capacitación, accedés a un portal de empleo exclusivo para egresados en Argentina y Latinoamérica."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesitás conocimientos previos para inscribirte?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Nuestras diplomaturas están pensadas para que puedas empezar desde cero o para que te enfoques en la aplicación laboral. No necesitás conocimientos previos. Solo necesitás una computadora con conexión a internet y ganas de aprender."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Las clases son en vivo o grabadas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ofrecemos ambas modalidades. Las diplomaturas incluyen clases grabadas on demand para que las veas a tu ritmo, y masterclass en vivo con el docente para resolver dudas. Los webinars tratan sobre productividad, actualidad tecnológica, inteligencia artificial y capacitaciones prácticas para aplicar en el trabajo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto dura cada diplomatura?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La Diplomatura Full Stack con React.js/Node.js + IA dura 9 meses. Las diplomaturas de Python y PHP Laravel duran 6 meses cada una. El curso de Microsoft Excel tiene 12 horas de contenido para que lo completes a tu ritmo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué certificaciones te da Academia DePC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Academia DePC otorga doble certificación: una certificación nacional avalada por la Cámara Argentina de Comercio y una certificación internacional de la OEIP (Organización de Estados Iberoamericanos para la Educación). Además, si egresás, accedés de manera exclusiva al Portal de Empleo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Las certificaciones tienen validez internacional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. La certificación de la OEIP tiene validez internacional en los países iberoamericanos. Esto te permite respaldar tus conocimientos y habilidades en distintos países."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué incluye la suscripción a Academia DePC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Incluye acceso a: todas las diplomaturas, webinars en vivo, masterclass con docentes, hackathones presenciales, Portal de Empleo (exclusivo), comunidad activa de estudiantes y doble certificación al completar cada diplomatura."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hay mínimo de permanencia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. En DePC, vos sos dueño de tu educación."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo funciona el Portal de Empleo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es exclusivo para egresados de Academia DePC. Vas a encontrar ofertas laborales de empresas que buscan perfiles formados con nosotros. Tu perfil profesional y tus certificaciones van a estar visibles para reclutadores."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué son los hackathones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Son eventos presenciales donde estudiantes y egresados trabajan en equipo para resolver desafíos reales de programación. Es una gran oportunidad para practicar, hacer networking y mostrar tus habilidades."
+      }
+    }
+  ]
+}
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Academia DePC",
+      "item": "https://academia.depcsuite.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Preguntas Frecuentes",
+      "item": "https://academia.depcsuite.com/preguntas-frecuentes"
+    }
+  ]
+}
+
 const faqCategories = [
   {
     id: "general",
@@ -177,8 +284,17 @@ export default function PreguntasFrecuentes() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-white">
-      <Header />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <main className="min-h-screen bg-white">
+        <Header />
       
       {/* Hero Section */}
       <section className="pt-40 pb-16 bg-gradient-to-br from-[#1A0F2E] via-[#2D1B4E] to-[#4A1942]">
@@ -272,6 +388,7 @@ export default function PreguntasFrecuentes() {
       </section>
 
       <Footer />
-    </main>
+      </main>
+    </>
   )
 }

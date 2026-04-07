@@ -300,7 +300,7 @@ export function Header() {
               </Link>
               <Link href="#precios" onClick={(e) => handleNavClick(e, "#precios")}>
                 <Button className="bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white font-semibold text-sm px-4 py-1.5 h-auto shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 transition-all duration-300">
-                  Suscribirme
+                  Comenzar
                 </Button>
               </Link>
               
@@ -353,17 +353,17 @@ export function Header() {
 
             {/* Tablet: Login + Subscribe buttons visible (md to xl) */}
             <div className="hidden md:flex xl:hidden items-center gap-2 ml-auto mr-2">
-              <Link href="https://autogestion.depcsuite.com/" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" className="text-white/70 hover:text-white hover:bg-white/10 font-medium text-sm px-3 py-1.5 h-auto bg-transparent">
-                  Iniciar sesión
-                </Button>
-              </Link>
-              <Link href="#precios" onClick={(e) => handleNavClick(e, "#precios")}>
-                <Button className="bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white font-semibold text-sm px-4 py-1.5 h-auto shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 transition-all duration-300">
-                  Suscribirme
-                </Button>
-              </Link>
-              {/* Currency Selector for Tablet */}
+<Link href="https://autogestion.depcsuite.com/" target="_blank" rel="noopener noreferrer">
+              <Button variant="ghost" className="text-white/70 hover:text-white hover:bg-white/10 font-medium text-sm px-3 py-1.5 h-auto bg-transparent">
+                Iniciar sesión
+              </Button>
+            </Link>
+            <Link href="#precios" onClick={(e) => handleNavClick(e, "#precios")}>
+              <Button className="bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white font-semibold text-sm px-4 py-1.5 h-auto shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 transition-all duration-300">
+                Comenzar
+              </Button>
+            </Link>
+            {/* Currency Selector for Tablet */}
               <div className="relative">
                 <button
                   type="button"
@@ -622,9 +622,9 @@ export function Header() {
                       setIsMenuOpen(false)
                     }}
                   >
-                    <Button className="w-full bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white font-semibold shadow-lg shadow-pink-500/25">
-                      Suscribirme ahora
-                    </Button>
+<Button className="w-full bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white font-semibold shadow-lg shadow-pink-500/25">
+                    Comenzar ahora
+                  </Button>
                   </Link>
                 </div>
               </nav>

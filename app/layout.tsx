@@ -1,6 +1,7 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import { CurrencyProvider } from '@/contexts/currency-context'
 import { WhatsAppButton } from '@/components/landing/whatsapp-button'
@@ -173,6 +174,30 @@ export default function RootLayout({
           <WhatsAppButton />
         </CurrencyProvider>
         <Analytics />
+        
+        {/* Microsoft Clarity */}
+        <Script
+          id="clarity-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "w1g2uve0vt");
+            `
+          }}
+        />
+        
+        {/* Analytics script */}
+        <Script
+          src="https://metricas-sitios.s3.us-east-1.amazonaws.com/analytics.js"
+          data-site-id="1"
+          data-endpoint="https://6rldo3zfyk.execute-api.us-east-1.amazonaws.com/prod/collect"
+          data-token-endpoint="https://6rldo3zfyk.execute-api.us-east-1.amazonaws.com/prod/token"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   )

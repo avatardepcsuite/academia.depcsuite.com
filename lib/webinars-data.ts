@@ -124,23 +124,59 @@ export const webinars: Webinar[] = [
     slug: "notion-desde-cero-primer-sistema-productividad",
     title: "Notion desde cero: tu primer sistema de productividad digital",
     shortDescription:
-      "Aprend\u00e9 Notion desde cero y arm\u00e1 un sistema simple para planificaci\u00f3n semanal + seguimiento de pendientes en vivo.",
-    fullDescription:
-      "Dejar de anotar todo \u201cen cualquier lado\u201d es un upgrade profesional. En este webinar aprend\u00e9s Notion desde cero (bloques, bases de datos, vistas, enlaces y plantillas) y armamos en vivo un sistema simple para planificaci\u00f3n semanal + seguimiento de pendientes.\n\nTe llev\u00e1s buenas pr\u00e1cticas para que tu Notion sea usable (y no un tablero lindo que abandon\u00e1s a los 10 d\u00edas).",
+      "Aprendé Notion desde cero y armá un sistema simple para planificación semanal + seguimiento de pendientes en vivo.",
+    fullDescription: `En este webinar se revisan los componentes clave de la interfaz de Notion (workspace, panel de control, páginas privadas/compartidas y teamspaces), los principales bloques de construcción y cómo crearlos con "/" (texto, encabezados, listas, tablas, toggles, callouts, etc.), los fundamentos de las bases de datos (qué son y cómo funcionan con páginas, propiedades, vistas y filtros, y cuándo conviene usarlas inline vs full page), los beneficios de la gestión del conocimiento mediante una wiki (incluyendo propiedades típicas como dueño, verificación y etiquetas) y un panorama general de AI Agents y sus consideraciones de uso, especialmente vía API.
+
+**Temario:**
+
+**1. Componentes de la Interfaz de Notion**
+• Espacio de trabajo (Workspace): El contenedor de nivel más alto donde vive todo tu contenido.
+• Panel de control (Control panel): Búsqueda, Inicio y Bandeja de entrada.
+• Páginas privadas (Private pages): Páginas visibles solo para el usuario.
+• Espacios de equipo (Teamspaces): Espacios dedicados para que los equipos gestionen documentación.
+• Páginas compartidas (Shared pages): Páginas compartidas con personas específicas.
+• Marketplace: Colección de plantillas listas para usar.
+
+**2. Bloques de Construcción de Notion (Se usa "/" para crear un bloque)**
+• Bloques Básicos: Texto, Encabezados, Listas, Tablas, Toggles, Callouts.
+• Bases de Datos: Colecciones de páginas con propiedades personalizables, vistas y filtros.
+• Bloques de Medios: Imágenes, Videos, Archivos, Audio, Fragmentos de código.
+• Incrustaciones (Embeds): Integración con más de 500 aplicaciones externas.
+• Bloques Avanzados: Botones, Tabla de contenidos, Bloques de IA, Ecuaciones, Bloques sincronizados.
+
+**3. Databases**
+• Páginas (Pages): Cada elemento es una página de Notion.
+• Propiedades (Properties): Campos que almacenan tipos específicos de información.
+• Plantillas de Base de Datos: Formato consistente para nuevas entradas.
+• Vistas (Views): Tablas, tableros, calendarios, cronogramas, galerías y listas.
+• Filtros (Filters): Control de qué elementos aparecen.
+• Bases de Datos Integradas vs. de Página Completa.
+
+**4. Gestión del Conocimiento: Beneficios de una Wiki**
+• Repositorio centralizado de información confiable.
+• Propiedades clave: Dueño de la página, Verificación, Etiquetas.
+
+**5. AI Agent**
+• Capacidades vía API: Crear bases de datos, crear páginas, usar plantillas, actualizar contenido.
+• Acciones disponibles: Crear/editar bases de datos, crear/editar páginas, buscar contenido.
+
+**6. Ejecutable**
+• Sistema semanal + pendientes (simple).
+
+**7. Certificación**
+• Con la información obtenida, los estudiantes van a ser capaces de obtener la certificación Notion Essentials.`,
     image: "/images/webinar-notion-productivity.jpg",
     type: "Webinar",
     typeColor: "bg-gray-800",
     category: "productividad",
-    duration: "90 \u2013 120 min",
-    instructor: "Prof. Santiago Rinc\u00f3n",
+    duration: "90 – 120 min",
+    instructor: "Prof. Santiago Rincón",
     instructorImage: "/images/docente-santiago.jpeg",
     date: "2026-05-05",
     dateLabel: "Martes 31 de Marzo 2026",
     time: "18:30 (Argentina) / 16:30 (Colombia)",
     audience: "Principiantes, estudiantes y trabajadores remotos.",
-    downloadableMaterial:
-      "Template (plan semanal + tareas + h\u00e1bitos) + gu\u00eda r\u00e1pida de uso.",
-    tags: ["Notion", "Productividad", "Organizaci\u00f3n"],
+    tags: ["Notion", "Productividad", "Organización", "Wiki", "Bases de Datos"],
     available: true,
   },
   {

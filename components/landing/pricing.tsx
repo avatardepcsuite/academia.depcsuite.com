@@ -1,22 +1,25 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Check, Sparkles, Clock, Calendar, ChevronDown } from "lucide-react"
+import { Check, Sparkles, Gift, Calendar, ChevronDown } from "lucide-react"
 import { useCurrency, currencies, flagComponents } from "@/contexts/currency-context"
 import { useState, useRef, useEffect } from "react"
 import { SubscriptionModal } from "./subscription-modal"
 
-const included = [
-  "Acceso completo a todos los cursos",
-  "Contenido grabado On Demand",
-  "2 Masterclass mensuales con Docente en vivo",
-  "Hackathones presenciales",
-  "Webinars de tendencias tech",
-  "Certificación nacional (Cámara Argentina)",
-  "Certificación internacional (OEIP)",
+const freeIncluded = [
+  "Gratis por 7 días",
+  "Acceso a la primera clase de las diplomaturas",
+  "1 Webinar gratis",
+]
+
+const annualIncluded = [
+  "Acceso a la comunidad Tech",
+  "Acceso a todas las Diplomaturas",
+  "Webinars en vivo y on demand",
+  "Master class con docente en vivo",
+  "Certificación Nacional e Internacional",
   "Acceso al portal de empleo",
-  "Credencial digital verificable",
-  "Comunidad activa de estudiantes tech",
+  "Descuento preferencial en hackathones",
 ]
 
 export function Pricing() {
@@ -108,24 +111,22 @@ export function Pricing() {
 
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {/* Monthly Plan */}
+          {/* Free Plan */}
           <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center">
-                <Clock className="w-5 h-5 text-gray-600" />
+                <Gift className="w-5 h-5 text-gray-600" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Plan Mensual</h3>
-                <p className="text-sm text-gray-500">Flexibilidad total</p>
+                <h3 className="font-semibold text-gray-900">Plan Gratis</h3>
+                <p className="text-sm text-gray-500">Probá sin compromiso</p>
               </div>
             </div>
 
             <div className="mb-6">
               <div className="flex items-baseline gap-1">
-                <span className="text-4xl font-bold text-gray-900">
-                  {selectedCurrency.symbol}{selectedCurrency.monthly}
-                </span>
-                <span className="text-gray-500">{selectedCurrency.code}/mes</span>
+                <span className="text-4xl font-bold text-gray-900">$0</span>
+                <span className="text-gray-500">por 7 días</span>
               </div>
             </div>
 
@@ -133,13 +134,13 @@ export function Pricing() {
               onClick={() => handleSubscriptionClick("monthly", selectedCurrency.monthlyLink)}
               className="w-full mb-6 h-12 bg-[#2D1B4E] hover:bg-[#3D2B5E] text-white"
             >
-              Suscribirme mensual
+              Comenzar gratis
             </Button>
 
             <div className="border-t border-gray-100 pt-6">
-              <p className="text-sm font-medium text-gray-900 mb-4">Todo incluido:</p>
+              <p className="text-sm font-medium text-gray-900 mb-4">Incluye:</p>
               <ul className="space-y-3">
-                {included.map((item) => (
+                {freeIncluded.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                     <span className="text-sm text-gray-600">{item}</span>
@@ -154,7 +155,7 @@ export function Pricing() {
             <div className="absolute -top-3 left-1/2 -translate-x-1/2">
               <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-gradient-to-r from-[#E91E63] to-[#C2185B] text-white text-sm font-medium">
                 <Sparkles className="w-3 h-3" />
-                15% OFF
+                Recomendado
               </span>
             </div>
 
@@ -164,25 +165,27 @@ export function Pricing() {
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900">Plan Anual</h3>
-                <p className="text-sm text-gray-500">Mejor valor</p>
+                <p className="text-sm text-gray-500">Acceso completo</p>
               </div>
             </div>
 
             <div className="mb-6">
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-bold text-gray-900">
-                  {selectedCurrency.symbol}{selectedCurrency.annual}
-                </span>
-                <span className="text-gray-500">{selectedCurrency.code}/año</span>
+                <span className="text-4xl font-bold text-gray-900">$360.000</span>
+                <span className="text-gray-500">ARS/año</span>
               </div>
-              <p className="text-sm text-gray-500 mt-1">
-                <span className="line-through">{selectedCurrency.symbol}{selectedCurrency.originalAnnual}</span>
-                <span className="text-emerald-600 ml-2 font-medium">Ahorras 15%</span>
-              </p>
+              <div className="mt-2 space-y-1">
+                <p className="text-sm text-gray-600">
+                  Hasta <span className="font-semibold text-[#E91E63]">12 cuotas sin interés</span> con tarjeta
+                </p>
+                <p className="text-sm text-gray-600">
+                  o <span className="font-semibold">4 cuotas</span> por transferencia
+                </p>
+              </div>
             </div>
 
             <Button 
-              onClick={() => handleSubscriptionClick("annual", selectedCurrency.annualLink)}
+              onClick={() => handleSubscriptionClick("annual", "https://pagos.depcsuite.com/2880?currency=ARS&medio=8&vendedor=283")}
               className="w-full mb-6 h-12 bg-gradient-to-r from-[#E91E63] to-[#C2185B] hover:from-[#D81B60] hover:to-[#AD1457] text-white"
             >
               Suscribirme anual
@@ -191,7 +194,7 @@ export function Pricing() {
             <div className="border-t border-gray-100 pt-6">
               <p className="text-sm font-medium text-gray-900 mb-4">Todo incluido:</p>
               <ul className="space-y-3">
-                {included.map((item) => (
+                {annualIncluded.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                     <span className="text-sm text-gray-600">{item}</span>
@@ -215,6 +218,8 @@ export function Pricing() {
         planType={selectedPlan}
         paymentLink={selectedPaymentLink}
       />
+
+
     </section>
   )
 }

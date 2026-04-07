@@ -104,11 +104,10 @@ export default function WebinarDetailPage() {
     categories.find((c) => c.id === webinar.category)?.label || webinar.category
   const catColors = categoryColorMap[webinar.category]
 
-  // Get 4 random webinars excluding current (shuffled)
-  const allRelated = webinars
-    .filter((w) => w.slug !== webinar.slug)
-    .sort(() => 0.5 - Math.random())
-    .slice(0, 4)
+  // Get 4 related webinars excluding current (deterministic - same category first, then others)
+  const sameCategory = webinars.filter((w) => w.slug !== webinar.slug && w.category === webinar.category)
+  const otherCategory = webinars.filter((w) => w.slug !== webinar.slug && w.category !== webinar.category)
+  const allRelated = [...sameCategory, ...otherCategory].slice(0, 4)
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -166,7 +165,7 @@ export default function WebinarDetailPage() {
     },
   }
 
-  const descriptionParagraphs = webinar.fullDescription.split("\n\n")
+  const descriptionParagraphs = webinar.fullDescription ? webinar.fullDescription.split("\n\n") : []
 
   return (
     <>
@@ -264,14 +263,42 @@ export default function WebinarDetailPage() {
                 </h2>
 
                 <div className="prose prose-lg max-w-none mb-10">
-                  {descriptionParagraphs.map((paragraph, index) => (
-                    <p
-                      key={`p-${index}`}
-                      className="text-gray-600 leading-relaxed mb-4"
-                    >
-                      {paragraph}
-                    </p>
-                  ))}
+                  {descriptionParagraphs.map((paragraph, index) => {
+                    // Check if paragraph is a heading (starts with **)
+                    const isHeading = paragraph.startsWith("**") && paragraph.includes("**")
+                    
+                    if (isHeading) {
+                      // Extract heading text and any content after it
+                      const headingMatch = paragraph.match(/^\*\*(.+?)\*\*(.*)/)
+                      if (headingMatch) {
+                        const headingText = headingMatch[1]
+                        const restContent = headingMatch[2].trim()
+                        return (
+                          <div key={`p-${index}`} className="mb-4">
+                            <h3 className="text-lg font-bold text-gray-900 mb-2">{headingText}</h3>
+                            {restContent && (
+                              <p className="text-gray-600 leading-relaxed whitespace-pre-line">
+                                {restContent.replace(/\*\*(.+?)\*\*/g, '$1')}
+                              </p>
+                            )}
+                          </div>
+                        )
+                      }
+                    }
+                    
+                    // Regular paragraph - also handle inline bold
+                    const parts = paragraph.split(/\*\*(.+?)\*\*/g)
+                    return (
+                      <p
+                        key={`p-${index}`}
+                        className="text-gray-600 leading-relaxed mb-4 whitespace-pre-line"
+                      >
+                        {parts.map((part, i) => 
+                          i % 2 === 1 ? <strong key={i} className="text-gray-900">{part}</strong> : part
+                        )}
+                      </p>
+                    )
+                  })}
                 </div>
 
                 {/* Audience */}
