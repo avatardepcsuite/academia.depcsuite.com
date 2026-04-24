@@ -144,7 +144,7 @@ const faqCategories = [
       },
       {
         question: "¿Qué diplomaturas ofrecen?",
-        answer: "Ofrecemos: Diplomatura en Programación Full Stack con React, Node.js e Inteligencia Artificial (9 meses), Diplomatura en Programación Python con Django y Vue.js (6 meses), Diplomatura en Programación Web Full Stack con PHP y Laravel (6 meses), Diplomatura en Ciberseguridad Aplicada, y Curso de Fundamentos de Microsoft Excel."
+        answer: "Ofrecemos: Diplomatura en Programación Full Stack con React, Node.js e Inteligencia Artificial (9 meses), Diplomatura en Programación Python con Django y Vue.js (6 meses), Diplomatura en Programación Web Full Stack con PHP y Laravel (6 meses), Diplomatura Fundamentos en Ciberseguridad, y Curso de Fundamentos de Microsoft Excel."
       },
       {
         question: "¿Podés acceder a las clases en cualquier momento?",

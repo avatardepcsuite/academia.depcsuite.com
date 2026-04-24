@@ -7,24 +7,25 @@ import Image from "next/image"
 
 const discountPartners = [
   // Bancos y Fintech
-  { name: "Banco Galicia", logo: "/images/convenio-galicia.png", category: "Bancos", description: "Clientes del Banco Galicia acceden a un 60% de descuento en el primer mes de suscripción. El beneficio aplica para titulares de tarjetas de crédito y débito del banco." },
-  { name: "ICBC", logo: "/images/convenio-icbc.svg", category: "Bancos", description: "Empleados y clientes de ICBC Argentina obtienen un 60% de descuento en el primer mes de suscripción. Válido para todos los productos bancarios y tarjetas del banco." },
-  { name: "Personal", logo: "/images/convenio-personal.svg", category: "Fintech", description: "Usuarios de Personal Pay acceden a un 60% de descuento en el primer mes de suscripción. El descuento se aplica automáticamente al verificar tu tarjeta de débito de Personal Pay en el proceso de suscripción." },
-  { name: "Edenor", logo: "/images/convenio-edenor.svg", category: "Servicios", description: "Usuarios y empleados de Edenor a un 60% de descuento en el primer mes de suscripción. Presentá tu cupón de descuento para acceder al beneficio." },
-  { name: "Swiss Medical", logo: "/images/convenio-swiss-medical.svg", category: "Salud", description: "Afiliados a Swiss Medical Group acceden a un 60% de descuento en el primer mes de suscripción. Presentá tu cupón de descuento para acceder al beneficio. El beneficio incluye a titulares y grupo familiar de todas las coberturas médicas." },
-  { name: "OSDE", logo: "/images/convenio-osde.png", category: "Salud", description: "Socios de OSDE acceden a un 60% de descuento en el primer mes de suscripción. Presentá tu cupón de descuento para acceder al beneficio. Válido para todas las categorías y planes de la prepaga." },
-  { name: "Prex", logo: "/images/convenio-prex.svg", category: "Fintech", description: "Usuarios de Prex acceden a un 60% de descuento en el primer mes de suscripción al pagar con su tarjeta." },
-  { name: "Sancor Seguros", logo: "/images/convenio-sancor.svg", category: "Seguros", description: "Empleados y productores de Sancor Seguros acceden a un 60% de descuento en el primer mes de suscripción. Presentá tu cupón de descuento para acceder al beneficio. El convenio también incluye a familiares directos." },
-  { name: "Prosegur", logo: "/images/convenio-prosegur.svg", category: "Seguridad", description: "Personal de Prosegur Argentina acceden a un 60% de descuento en el primer mes de suscripción. Presentá tu cupón de descuento para acceder al beneficio." },
-  { name: "Todo Descuentos", logo: "/images/convenio-todo-descuentos.png", category: "Beneficios", description: "Usuarios de la plataforma Todo Descuentos acceden a un 60% de descuento en el primer mes de suscripción. Presentá tu cupón de descuento para acceder al beneficio." },
-  { name: "Circa Beneficios", logo: "/images/convenio-circa.png", category: "Beneficios", description: "Empleados de empresas adheridas a Circa Argentina acceden a un 60% de descuento en el primer mes de suscripción. Presentá tu cupón de descuento para acceder al beneficio." },
-  { name: "Bonda", logo: "/images/convenio-bonda.svg", category: "Fintech", description: "Usuarios de Bonda acceden a un 60% de descuento en el primer mes de suscripción. Presentá tu cupón de descuento para acceder al beneficio." },
-  { name: "Maslow", logo: "/images/convenio-maslow.png", category: "Beneficios", description: "Beneficiarios de Maslow acceden a un 60% de descuento en el primer mes de suscripción. Presentá tu cupón de descuento para acceder al beneficio." },
-  { name: "GO Integro", logo: "/images/convenio-go-integro.png", category: "Beneficios", description: "Colaboradores de empresas con GO Integro acceden a un 60% de descuento en el primer mes de suscripción. Presentá tu cupón de descuento para acceder al beneficio." },
-  { name: "Más+U", logo: "/images/convenio-mas-u.svg", category: "Beneficios", description: "Usuarios de Más+U acceden a un 60% de descuento en el primer mes de suscripción. Presentá tu cupón de descuento para acceder al beneficio." },
-  { name: "CACE", logo: "/images/convenio-cace.png", category: "Cámara", description: "Socios de la Cámara Argentina de Comercio Electrónico acceden a un 60% de descuento en el primer mes de suscripción. Presentá tu cupón de descuento para acceder al beneficio. El convenio incluye a todas las empresas asociadas y sus empleados." },
-  { name: "EAN", logo: "/images/convenio-ean.png", category: "Educación", description: "Estudiantes de la Universidad EAN acceden a un 60% de descuento en el primer mes de suscripción. Presentá tu cupón de descuento para acceder al beneficio. El beneficio se extiende también a docentes y personal administrativo." },
-  { name: "Colegio North Hills", logo: "/images/convenio-north-hills.png", category: "Educación", description: "Familias del Colegio North Hills acceden a un 60% de descuento en el primer mes de suscripción. Presentá tu cupón de descuento para acceder al beneficio. Incluye a padres, alumnos y personal del colegio." },
+  { name: "Banco Galicia", logo: "/images/convenio-galicia.png", category: "Bancos", description: "Clientes del Banco Galicia acceden hasta un 60% de descuento en la suscripción. El beneficio aplica para titulares de tarjetas de crédito y débito del banco." },
+  { name: "ICBC", logo: "/images/convenio-icbc.svg", category: "Bancos", description: "Empleados y clientes de ICBC Argentina acceden hasta un 60% de descuento en la suscripción. Válido para todos los productos bancarios y tarjetas del banco." },
+  { name: "Personal", logo: "/images/convenio-personal.svg", category: "Fintech", description: "Usuarios de Personal Pay acceden hasta un 60% de descuento en la suscripción. El descuento se aplica automáticamente al verificar tu tarjeta de débito de Personal Pay en el proceso de suscripción." },
+  { name: "Edenor", logo: "/images/convenio-edenor.svg", category: "Servicios", description: "Usuarios y empleados de Edenor acceden hasta un 60% de descuento en la suscripción. Presentá tu cupón de descuento para acceder al beneficio." },
+  { name: "Swiss Medical", logo: "/images/convenio-swiss-medical.svg", category: "Salud", description: "Afiliados a Swiss Medical Group acceden hasta un 60% de descuento en la suscripción. Presentá tu cupón de descuento para acceder al beneficio. El beneficio incluye a titulares y grupo familiar de todas las coberturas médicas." },
+  { name: "OSDE", logo: "/images/convenio-osde.png", category: "Salud", description: "Socios de OSDE acceden hasta un 60% de descuento en la suscripción. Presentá tu cupón de descuento para acceder al beneficio. Válido para todas las categorías y planes de la prepaga." },
+  { name: "Prex", logo: "/images/convenio-prex.svg", category: "Fintech", description: "Usuarios de Prex acceden hasta un 60% de descuento en la suscripción al pagar con su tarjeta." },
+  { name: "Sancor Seguros", logo: "/images/convenio-sancor.svg", category: "Seguros", description: "Empleados y productores de Sancor Seguros acceden hasta un 60% de descuento en la suscripción. Presentá tu cupón de descuento para acceder al beneficio. El convenio también incluye a familiares directos." },
+  { name: "Prosegur", logo: "/images/convenio-prosegur.svg", category: "Seguridad", description: "Personal de Prosegur Argentina accede hasta un 60% de descuento en la suscripción. Presentá tu cupón de descuento para acceder al beneficio." },
+  { name: "Todo Descuentos", logo: "/images/convenio-todo-descuentos.png", category: "Beneficios", description: "Usuarios de la plataforma Todo Descuentos acceden hasta un 60% de descuento en la suscripción. Presentá tu cupón de descuento para acceder al beneficio." },
+  { name: "Circa Beneficios", logo: "/images/convenio-circa.png", category: "Beneficios", description: "Empleados de empresas adheridas a Circa Argentina acceden hasta un 60% de descuento en la suscripción. Presentá tu cupón de descuento para acceder al beneficio." },
+  { name: "Bonda", logo: "/images/convenio-bonda.svg", category: "Fintech", description: "Usuarios de Bonda acceden hasta un 60% de descuento en la suscripción. Presentá tu cupón de descuento para acceder al beneficio." },
+  { name: "Maslow", logo: "/images/convenio-maslow.png", category: "Beneficios", description: "Beneficiarios de Maslow acceden hasta un 60% de descuento en la suscripción. Presentá tu cupón de descuento para acceder al beneficio." },
+  { name: "GO Integro", logo: "/images/convenio-go-integro.png", category: "Beneficios", description: "Colaboradores de empresas con GO Integro acceden hasta un 60% de descuento en la suscripción. Presentá tu cupón de descuento para acceder al beneficio." },
+  { name: "Más+U", logo: "/images/convenio-mas-u.svg", category: "Beneficios", description: "Usuarios de Más+U acceden hasta un 60% de descuento en la suscripción. Presentá tu cupón de descuento para acceder al beneficio." },
+  { name: "CACE", logo: "/images/convenio-cace.png", category: "Cámara", description: "Socios de la Cámara Argentina de Comercio Electrónico acceden hasta un 60% de descuento en la suscripción. Presentá tu cupón de descuento para acceder al beneficio. El convenio incluye a todas las empresas asociadas y sus empleados." },
+  { name: "EAN", logo: "/images/convenio-ean.png", category: "Educación", description: "Estudiantes de la Universidad EAN acceden hasta un 60% de descuento en la suscripción. Presentá tu cupón de descuento para acceder al beneficio. El beneficio se extiende también a docentes y personal administrativo." },
+  { name: "Colegio North Hills", logo: "/images/convenio-north-hills.png", category: "Educación", description: "Familias del Colegio North Hills acceden hasta un 60% de descuento en la suscripción. Presentá tu cupón de descuento para acceder al beneficio. Incluye a padres, alumnos y personal del colegio." },
+  { name: "Consejo", logo: "/images/convenio-consejo.png", category: "Profesional", description: "Miembros del Consejo acceden hasta un 60% de descuento en la suscripción. Presentá tu cupón de descuento para acceder al beneficio." },
 ]
 
 const MAX_DESCRIPTION_LENGTH = 100; // Declare the variable here
@@ -76,8 +77,8 @@ export function Partners() {
             Convenios de promoción
           </h2>
           <p className="text-lg text-gray-600 text-pretty">
-            Si sos socio, empleado o cliente de alguna de estas empresas, accedés a{" "}
-            <span className="text-[#E91E63] font-semibold">descuentos preferenciales</span> en tu suscripción
+            Si sos socio, empleado o cliente de alguna de estas empresas, accedés{" "}
+            <span className="text-[#E91E63] font-semibold">hasta un 60% de descuento</span> en tu suscripción
           </p>
         </div>
 
@@ -90,7 +91,7 @@ export function Partners() {
               <span className="text-sm font-medium uppercase tracking-wide">Oferta especial</span>
             </div>
             <p className="text-2xl md:text-3xl font-bold mb-2">
-              Hasta 60% OFF en tu primer mes
+              Hasta 60% OFF en tu suscripción
             </p>
             <p className="text-white/80 text-sm md:text-base">
               Consulta tu descuento especial al momento de suscribirte

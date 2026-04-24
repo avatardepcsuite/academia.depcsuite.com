@@ -5,10 +5,10 @@ import { useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import {
   Video, Clock, Clock3, BookOpen, ArrowRight, Calendar, LayoutGrid, List,
-  Briefcase, Bot, Zap, Atom, Palette,
+  Briefcase, Bot, Zap, Atom,
   FileText, Sparkles, MessageSquare, GraduationCap, Cpu, GitBranch,
   MessageCircle, Mic, Building2, Link2, FileCode2, Headphones, Plug,
-  Settings, Search, Shield, Heart, PenTool,
+  Settings, Search, Shield, Heart,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -28,7 +28,7 @@ const categoryIconMap: Record<string, React.ElementType> = {
   automatizacion: Zap,
   productividad: Clock3,
   programacion: Atom,
-  diseno: Palette,
+  seguridad: Shield,
 }
 
 const categoryHeaderColors: Record<string, { bg: string; iconColor: string }> = {
@@ -37,7 +37,7 @@ const categoryHeaderColors: Record<string, { bg: string; iconColor: string }> = 
   automatizacion: { bg: "bg-orange-500", iconColor: "text-orange-200/20" },
   productividad: { bg: "bg-slate-700", iconColor: "text-slate-300/20" },
   programacion: { bg: "bg-cyan-600", iconColor: "text-cyan-200/20" },
-  diseno: { bg: "bg-pink-600", iconColor: "text-pink-200/20" },
+  seguridad: { bg: "bg-red-600", iconColor: "text-red-200/20" },
 }
 
 const watermarkIconMap: Record<string, React.ElementType> = {
@@ -60,7 +60,8 @@ const watermarkIconMap: Record<string, React.ElementType> = {
   "extraer-datos-web-scraping-proteger-sitio": Search,
   "sistemas-autenticacion-seguros-escalables": Shield,
   "habilidades-blandas-soft-skills-era-ia": Heart,
-  "figma-para-no-disenadores-prototipa-colabora": PenTool,
+  "fundamentos-ciberseguridad": Shield,
+  "como-aplicar-ia-en-ciberseguridad": Shield,
 }
 
 function WebinarCard({ webinar }: { webinar: Webinar }) {
@@ -284,9 +285,10 @@ export function Webinars() {
     }
   }, [searchParams])
 
-  const filteredWebinars = activeCategory === "all" 
+  const filteredWebinars = (activeCategory === "all" 
     ? webinars 
     : webinars.filter(webinar => webinar.category === activeCategory)
+  ).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
   return (
     <section id="webinars" className="py-24 relative bg-gradient-to-b from-white to-[#2D1B4E]/5">

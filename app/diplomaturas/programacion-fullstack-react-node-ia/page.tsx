@@ -21,7 +21,8 @@ import {
   Users,
   Code,
   Database,
-  Cpu
+  Cpu,
+  MessageCircle
 } from "lucide-react"
 import Image from "next/image"
 import { Header } from "@/components/landing/header"
@@ -382,6 +383,29 @@ export default function DiplomaturaFullStackPage() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* WhatsApp CTA - Clase de prueba gratis */}
+      <section className="py-8 bg-gradient-to-r from-[#25D366] to-[#128C7E]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <a 
+            href="https://wa.me/541162845700?text=Hola!%20Me%20interesa%20acceder%20a%20una%20clase%20de%20prueba%20gratis%20de%20la%20Diplomatura%20Full%20Stack%20con%20React%20y%20Node.js"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 text-white hover:opacity-90 transition-opacity"
+          >
+            <div className="flex items-center gap-3">
+              <MessageCircle className="w-8 h-8" />
+              <div className="text-center sm:text-left">
+                <p className="text-lg sm:text-xl font-bold">Accede a una clase de prueba gratis</p>
+                <p className="text-sm text-white/90">Contactanos por WhatsApp y conoce nuestra metodologia</p>
+              </div>
+            </div>
+            <div className="bg-white text-[#25D366] font-semibold px-6 py-2 rounded-full text-sm hover:bg-gray-100 transition-colors">
+              Escribinos ahora
+            </div>
+          </a>
         </div>
       </section>
 

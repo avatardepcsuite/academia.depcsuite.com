@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react"
 import { usePathname, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown, Sparkles, Zap, Code, Brain, Clock, Palette, Briefcase, ArrowRight, FileSpreadsheet } from "lucide-react"
+import { Menu, X, ChevronDown, Sparkles, Zap, Code, Brain, Clock, Palette, Briefcase, ArrowRight, FileSpreadsheet, Shield } from "lucide-react"
 import Link from "next/link"
 import { useCurrency, currencies, flagComponents } from "@/contexts/currency-context"
 import { webinars as webinarsData } from "@/lib/webinars-data"
@@ -42,12 +42,13 @@ const diplomaturas = [
 ]
 
 const webinarCategoryDefs = [
-  { id: "automatizacion", label: "Automatizaci\u00f3n", icon: Zap, color: "text-orange-400", bgColor: "bg-orange-500/10" },
-  { id: "programacion", label: "Programaci\u00f3n", icon: Code, color: "text-cyan-400", bgColor: "bg-cyan-500/10" },
+  { id: "automatizacion", label: "Automatización", icon: Zap, color: "text-orange-400", bgColor: "bg-orange-500/10" },
+  { id: "programacion", label: "Programación", icon: Code, color: "text-cyan-400", bgColor: "bg-cyan-500/10" },
   { id: "ia", label: "Inteligencia Artificial", icon: Brain, color: "text-purple-400", bgColor: "bg-purple-500/10" },
   { id: "productividad", label: "Productividad", icon: Clock, color: "text-emerald-400", bgColor: "bg-emerald-500/10" },
-  { id: "diseno", label: "Dise\u00f1o", icon: Palette, color: "text-pink-400", bgColor: "bg-pink-500/10" },
+  { id: "diseno", label: "Diseño", icon: Palette, color: "text-pink-400", bgColor: "bg-pink-500/10" },
   { id: "empleabilidad", label: "Empleabilidad", icon: Briefcase, color: "text-amber-400", bgColor: "bg-amber-500/10" },
+  { id: "ciberseguridad", label: "Ciberseguridad", icon: Shield, color: "text-slate-400", bgColor: "bg-slate-500/10" },
 ]
 
 const webinarCategories = webinarCategoryDefs.map(cat => ({

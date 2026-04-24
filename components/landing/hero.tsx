@@ -39,7 +39,7 @@ export function Hero() {
 
           {/* Subheadline */}
           <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 text-pretty">
-            Diplomaturas on demand, webinars en vivo, masterclass con docentes, hackathones presenciales y acceso al portal de empleo. Todo con una sola suscripción.
+            Diplomaturas en vivo y on demand, webinars en vivo, masterclass con docentes, hackathones presenciales y acceso al portal de empleo. Todo con una sola suscripción.
           </p>
 
           {/* CTAs */}
@@ -70,8 +70,8 @@ export function Hero() {
                 <BookOpen className="w-5 h-5 text-pink-300" />
               </div>
               <div className="text-left">
-                <p className="font-semibold text-white">Cursos On Demand</p>
-                <p className="text-sm text-white/70">Cientos de horas grabadas</p>
+                <p className="font-semibold text-white">Diplomaturas Tech</p>
+                <p className="text-sm text-white/70">Online en vivo y grabadas</p>
               </div>
             </div>
             <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
@@ -89,7 +89,7 @@ export function Hero() {
               </div>
               <div className="text-left">
                 <p className="font-semibold text-white">Doble Certificación</p>
-                <p className="text-sm text-white/70">Nacional e Internacional</p>
+                <p className="text-sm text-white/70">Nacional e internacional</p>
               </div>
             </div>
           </div>

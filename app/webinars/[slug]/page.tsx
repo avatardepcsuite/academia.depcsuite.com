@@ -20,7 +20,7 @@ import {
   Bot,
   Zap,
   Atom,
-  Palette,
+  Shield,
 } from "lucide-react"
 import { Header } from "@/components/landing/header"
 import { Footer } from "@/components/landing/footer"
@@ -32,7 +32,7 @@ const categoryIconMap: Record<string, React.ElementType> = {
   automatizacion: Zap,
   productividad: Clock3,
   programacion: Atom,
-  diseno: Palette,
+  seguridad: Shield,
 }
 
 function RelatedWebinarCard({ webinar }: { webinar: Webinar }) {

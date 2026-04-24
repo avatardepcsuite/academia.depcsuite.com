@@ -78,7 +78,7 @@ const diplomaturas = [
     available: true,
   },
   {
-    title: "Diplomatura Ciberseguridad Aplicada",
+    title: "Diplomatura Fundamentos en Ciberseguridad",
     subtitle: "Seguridad Informática",
     description: "Protegé sistemas y redes con técnicas profesionales de seguridad informática.",
     href: "/diplomaturas/ciberseguridad-aplicada",
