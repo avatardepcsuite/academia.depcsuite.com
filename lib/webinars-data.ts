@@ -77,6 +77,30 @@ export const categoryColorMap: Record<string, { stripe: string; heroGradient: st
 
 export const webinars: Webinar[] = [
   {
+    slug: "ciberseguridad-aplicada-prevencion-fraudes-digitales",
+    title: "Ciberseguridad aplicada: prevención y detección de fraudes digitales",
+    shortDescription:
+      "Aprendé a identificar y prevenir los fraudes digitales más comunes. Casos reales, señales de alerta y buenas prácticas para proteger tu información.",
+    fullDescription:
+      "Los fraudes digitales evolucionan cada día y cualquiera puede ser víctima. En este webinar práctico vas a aprender a reconocer las técnicas más usadas por los atacantes y cómo protegerte de forma efectiva.\n\n**Lo que vas a aprender:**\n\n• Cómo funcionan los fraudes digitales más frecuentes (phishing, ingeniería social, suplantación de identidad, estafas en redes sociales y marketplaces).\n• Señales de alerta para detectar intentos de fraude antes de caer.\n• Herramientas y hábitos de seguridad para proteger tus cuentas, dispositivos e información personal.\n• Qué hacer si fuiste víctima de un fraude: pasos inmediatos y canales de denuncia.\n\n**Metodología práctica:**\n\nAnalizaremos casos reales y ejemplos concretos para que puedas aplicar lo aprendido desde el primer día. No se requieren conocimientos técnicos previos.\n\n**Por qué es importante:**\n\nLa ciberseguridad ya no es solo para expertos en tecnología. Hoy todos manejamos información sensible online: datos bancarios, contraseñas, documentos personales. Saber identificar riesgos y actuar con criterio es una habilidad esencial en el mundo digital.",
+    image: "/images/webinar-ciberseguridad-fraudes.jpg",
+    type: "Webinar",
+    typeColor: "bg-red-600",
+    category: "seguridad",
+    duration: "90 – 120 min",
+    instructor: "Prof. Edgardo Robinson",
+    instructorImage: "/images/profesor-edgardo.jpeg",
+    date: "2026-05-28",
+    dateLabel: "Jueves 28 de Mayo 2026",
+    time: "18:30 (Argentina) / 16:30 (Colombia)",
+    audience:
+      "Cualquier persona que use internet: estudiantes, profesionales, emprendedores y usuarios que quieran proteger su información personal y laboral.",
+    downloadableMaterial:
+      "Checklist de seguridad personal + Guía de señales de alerta + Recursos y canales de denuncia.",
+    tags: ["Ciberseguridad", "Fraudes", "Phishing", "Seguridad Digital"],
+    available: true,
+  },
+  {
     slug: "cv-2026-pasa-filtros-ats-industria-tech",
     title: "CV 2026: pas\u00e1 filtros ATS y humanos en la industria Tech",
     shortDescription:
@@ -172,7 +196,7 @@ export const webinars: Webinar[] = [
     duration: "90 – 120 min",
     instructor: "Prof. Santiago Rincón",
     instructorImage: "/images/docente-santiago.jpeg",
-    date: "2026-05-05",
+    date: "2026-03-31",
     dateLabel: "Martes 31 de Marzo 2026",
     time: "18:30 (Argentina) / 16:30 (Colombia)",
     audience: "Principiantes, estudiantes y trabajadores remotos.",
@@ -489,8 +513,8 @@ export const webinars: Webinar[] = [
     duration: "90 \u2013 120 min",
     instructor: "Prof. Mat\u00edas Gim\u00e9nez",
     instructorImage: "/images/docente-matias.png",
-    date: "2026-10-22",
-    dateLabel: "Miércoles 30 de Septiembre 2026",
+    date: "2026-04-14",
+    dateLabel: "Martes 14 de Abril 2026",
     time: "18:30 (Argentina) / 16:30 (Colombia)",
     audience:
       "Devs juniors, estudiantes y autodidactas que vienen de HTML/CSS/JS.",

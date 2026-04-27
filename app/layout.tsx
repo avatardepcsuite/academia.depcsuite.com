@@ -157,16 +157,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://metricas-sitios.s3.us-east-1.amazonaws.com" />
         <link rel="dns-prefetch" href="https://www.google.com" />
         
-        {/* Analytics script with async for non-blocking load */}
-        <script
-          src="https://metricas-sitios.s3.us-east-1.amazonaws.com/analytics.js"
-          data-site-id="1"
-          data-endpoint="https://6rldo3zfyk.execute-api.us-east-1.amazonaws.com/prod/collect"
-          data-token-endpoint="https://6rldo3zfyk.execute-api.us-east-1.amazonaws.com/prod/token"
-          data-recovery-cart-endpoint="https://6rldo3zfyk.execute-api.us-east-1.amazonaws.com/prod/cart-recovery"
-          defer
-          async
-        />
+
       </head>
       <body className="font-sans antialiased">
         <CurrencyProvider>
