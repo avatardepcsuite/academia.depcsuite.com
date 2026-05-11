@@ -81,16 +81,15 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-4">
+            <Link href="/" className="flex items-center mb-4">
               <Image
-                src="/images/logo-depc-cuadrado.jpg"
-                alt="Academia DePC Logo"
-                width={48}
-                height={48}
+                src="/images/logo-depcsuite-academia-blanco.png"
+                alt="Academia DePC Suite"
+                width={180}
+                height={60}
                 loading="lazy"
-                className="rounded-xl"
+                className="h-14 w-auto brightness-0 invert"
               />
-              <span className="font-bold text-xl text-white">Academia DePC</span>
             </Link>
             <p className="text-sm text-white/70 mb-6">
               Comunidad educativa tech con formacion, certificaciones y oportunidades laborales para Argentina y LATAM.

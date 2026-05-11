@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown, Sparkles, Zap, Code, Brain, Clock, Briefcase, ArrowRight, FileSpreadsheet, Shield } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { useCurrency, currencies, flagComponents } from "@/contexts/currency-context"
 import { webinars as webinarsData } from "@/lib/webinars-data"
 
@@ -141,7 +142,14 @@ export function Header() {
           <div className="flex items-center h-16">
             {/* Logo - Left aligned */}
             <Link href="/" className="flex items-center shrink-0">
-              <span className="font-bold text-lg tracking-tight text-white">Academia DePC</span>
+              <Image
+                src="/images/logo-depcsuite-academia-blanco.png"
+                alt="Academia DePC Suite"
+                width={160}
+                height={50}
+                className="h-10 w-auto"
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation - Only on xl screens - Logo + Menu aligned left */}
