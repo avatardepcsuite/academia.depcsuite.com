@@ -67,11 +67,11 @@ export const categoryColorMap: Record<string, { stripe: string; heroGradient: st
     titleColor: "text-cyan-700",
   },
   seguridad: {
-    stripe: "bg-red-500",
-    heroGradient: "from-[#2D1B4E] via-red-900 to-rose-700",
-    accent: "text-red-300",
-    light: "bg-red-500/20",
-    titleColor: "text-red-700",
+    stripe: "bg-teal-500",
+    heroGradient: "from-[#2D1B4E] via-teal-900 to-teal-700",
+    accent: "text-teal-300",
+    light: "bg-teal-500/20",
+    titleColor: "text-teal-700",
   },
 }
 
