@@ -47,7 +47,7 @@ const webinarCategoryDefs = [
   { id: "empleabilidad", label: "Empleabilidad", icon: Briefcase, color: "text-amber-400", bgColor: "bg-amber-500/10" },
   { id: "programacion", label: "Programación", icon: Code, color: "text-cyan-400", bgColor: "bg-cyan-500/10" },
   { id: "ia", label: "Inteligencia Artificial", icon: Brain, color: "text-purple-400", bgColor: "bg-purple-500/10" },
-  { id: "seguridad", label: "Seguridad", icon: Shield, color: "text-slate-400", bgColor: "bg-slate-500/10" },
+  { id: "seguridad", label: "Seguridad", icon: Shield, color: "text-teal-400", bgColor: "bg-teal-500/10" },
   { id: "productividad", label: "Productividad", icon: Clock, color: "text-emerald-400", bgColor: "bg-emerald-500/10" },
 ]
 

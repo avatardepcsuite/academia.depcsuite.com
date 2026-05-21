@@ -85,7 +85,7 @@ const categoryHeaderColors: Record<string, { bg: string; iconColor: string }> = 
   automatizacion: { bg: "bg-orange-500", iconColor: "text-orange-200/20" },
   productividad: { bg: "bg-slate-700", iconColor: "text-slate-300/20" },
   programacion: { bg: "bg-cyan-600", iconColor: "text-cyan-200/20" },
-  seguridad: { bg: "bg-red-600", iconColor: "text-red-200/20" },
+  seguridad: { bg: "bg-teal-600", iconColor: "text-teal-200/20" },
 }
 
 const watermarkIconMap: Record<string, React.ElementType> = {

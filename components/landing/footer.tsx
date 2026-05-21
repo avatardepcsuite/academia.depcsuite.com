@@ -92,7 +92,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm text-white/70 mb-6">
-              Comunidad educativa tech con formacion, certificaciones y oportunidades laborales para Argentina y LATAM.
+              Comunidad educativa tech con formación, certificaciones y oportunidades laborales para Argentina y LATAM.
             </p>
             
             {/* Social Links - Prominent */}
@@ -168,10 +168,10 @@ export function Footer() {
               </p>
               <div className="flex items-center gap-4">
                 <Link href="/politicas-de-privacidad" className="text-xs text-white/50 hover:text-white transition-colors">
-                  Politicas de privacidad
+                  Políticas de privacidad
                 </Link>
                 <Link href="/terminos-y-condiciones" className="text-xs text-white/50 hover:text-white transition-colors">
-                  Terminos y condiciones
+                  Términos y condiciones
                 </Link>
               </div>
             </div>
@@ -179,13 +179,27 @@ export function Footer() {
             {/* Right: Legal Badges */}
             <div className="flex items-center gap-5">
               <Link 
-                href="https://www.cace.org.ar/" 
+                href="https://www.argentina.gob.ar/economia/comercio" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
                 <Image
-                  src="/images/logo-cace.png"
-                  alt="CACE"
+                  src="/images/logo-camara-argentina.png"
+                  alt="Cámara Argentina"
+                  width={100}
+                  height={40}
+                  loading="lazy"
+                  className="h-10 w-auto object-contain brightness-0 invert"
+                />
+              </Link>
+              <Link 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/images/logo-oeip.png"
+                  alt="OIEP"
                   width={100}
                   height={40}
                   loading="lazy"
@@ -211,7 +225,7 @@ export function Footer() {
           
           {/* About Us */}
           <p className="text-sm text-white/60 text-center mt-6 max-w-3xl mx-auto">
-            DEPCSUITE SA es una empresa desarrolladora de tecnologia que trabaja con las principales empresas del pais para brindarte la mejor formacion.
+            DEPCSUITE SA es una empresa desarrolladora de tecnología que trabaja con las principales empresas del país para brindarte la mejor formación.
           </p>
           
           {/* CUIT Info */}
