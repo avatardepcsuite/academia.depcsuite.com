@@ -47,19 +47,21 @@ export function Hero() {
             <Button 
               size="lg" 
               className="bg-white hover:bg-gray-100 text-[#2D1B4E] font-semibold shadow-lg px-8 h-12 text-base"
-              onClick={() => scrollToSection("precios")}
+              onClick={() => scrollToSection("formacion")}
             >
-              Suscribirme ahora
+              Diplomaturas
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
             <Button 
+              asChild
               size="lg" 
               variant="outline" 
               className="border-white/30 hover:bg-white/10 px-8 h-12 text-base text-white bg-transparent"
-              onClick={() => scrollToSection("formacion")}
             >
-              <Play className="mr-2 w-4 h-4" />
-              Ver diplomaturas
+              <a href="/webinars">
+                <Play className="mr-2 w-4 h-4" />
+                Streaming
+              </a>
             </Button>
           </div>
 
