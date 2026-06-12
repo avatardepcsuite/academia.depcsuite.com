@@ -46,7 +46,7 @@ const navItems = [
   { href: "/webinars", label: "Streaming" },
   { href: "#hackathones", label: "Hackathones" },
   { href: "#empleo", label: "Portal de Empleo" },
-  { href: "#instituciones", label: "Promociones" },
+  { href: "/promociones", label: "Promociones" },
 ]
 
 export function Header() {
@@ -145,10 +145,10 @@ export function Header() {
                     <button
                       type="button"
                       onClick={() => setIsDiplomaturasOpen(!isDiplomaturasOpen)}
-                      className={`flex items-center gap-0.5 px-2.5 py-1.5 transition-colors duration-200 font-medium text-sm ${
+                      className={`flex items-center gap-0.5 px-2.5 py-1.5 transition-colors duration-200 font-medium text-base ${
                         activeSection === item.href || pathname.startsWith("/diplomaturas")
                           ? "text-white" 
-                          : "text-white/60 hover:text-white"
+                          : "text-white/85 hover:text-white"
                       }`}
                     >
                       {item.label}
@@ -190,10 +190,10 @@ export function Header() {
                     key={item.href}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className={`relative px-2.5 py-1.5 transition-colors duration-200 font-medium text-sm ${
+                    className={`relative px-2.5 py-1.5 transition-colors duration-200 font-medium text-base ${
                       activeSection === item.href || (!item.href.startsWith("#") && pathname.startsWith(item.href))
                         ? "text-white" 
-                        : "text-white/60 hover:text-white"
+                        : "text-white/85 hover:text-white"
                     }`}
                   >
                     {item.label}
@@ -254,7 +254,7 @@ export function Header() {
                         className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-[15px] font-semibold transition-all duration-200 ${
                           pathname.startsWith("/diplomaturas")
                             ? "bg-gradient-to-r from-pink-500/20 to-fuchsia-500/20 text-white border-l-4 border-pink-500" 
-                            : "text-white/70 hover:text-white hover:bg-white/10"
+                            : "text-white/85 hover:text-white hover:bg-white/10"
                         }`}
                       >
                         {item.label}
@@ -299,7 +299,7 @@ export function Header() {
                       className={`px-4 py-3 rounded-lg text-[15px] font-semibold transition-all duration-200 ${
                         activeSection === item.href || (!item.href.startsWith("#") && pathname.startsWith(item.href))
                           ? "bg-gradient-to-r from-pink-500/20 to-fuchsia-500/20 text-white border-l-4 border-pink-500" 
-                          : "text-white/70 hover:text-white hover:bg-white/10"
+                          : "text-white/85 hover:text-white hover:bg-white/10"
                       }`}
                     >
                       {item.label}

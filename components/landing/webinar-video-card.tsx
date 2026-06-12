@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Calendar, Clock, BadgeCheck } from "lucide-react"
 import { WebinarVideoPlayer } from "@/components/landing/webinar-video-player"
 import { categoryColorMap, categories, type Webinar } from "@/lib/webinars-data"
@@ -40,9 +41,21 @@ export function WebinarVideoCard({ webinar, isPast }: WebinarVideoCardProps) {
       <div className="mt-3 flex gap-3">
         {/* Avatar del instructor */}
         <div className="shrink-0">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#E91E63] to-[#9C27B0] text-sm font-bold text-white">
-            {initials}
-          </div>
+          {webinar.instructorImage ? (
+            <div className="relative h-10 w-10 overflow-hidden rounded-full ring-1 ring-border">
+              <Image
+                src={webinar.instructorImage || "/placeholder.svg"}
+                alt={webinar.instructor}
+                fill
+                sizes="40px"
+                className="object-cover"
+              />
+            </div>
+          ) : (
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#E91E63] to-[#9C27B0] text-sm font-bold text-white">
+              {initials}
+            </div>
+          )}
         </div>
 
         <div className="min-w-0 flex-1">

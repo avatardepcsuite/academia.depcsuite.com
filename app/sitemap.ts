@@ -20,6 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${baseUrl}/diplomaturas/ciberseguridad-aplicada`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/diplomaturas/programacion-fullstack-react-node-ia`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
@@ -50,6 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     ...webinarEntries,
+    {
+      url: `${baseUrl}/promociones`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
     {
       url: `${baseUrl}/preguntas-frecuentes`,
       lastModified: currentDate,

@@ -15,7 +15,8 @@ import {
   Zap,
   Hourglass,
   Flame,
-  Globe
+  Globe,
+  CalendarCheck
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -36,6 +37,7 @@ const diplomaturas = [
     duracion: "3 meses (12 clases)",
     diferencial: "Prácticas en entornos reales",
     certificacion: "Nacional e Internacional",
+    comienzo: "27 de agosto (docente en vivo)",
     professor: "Prof. Eliana Caballero",
     professorImage: null,
     students: 0,
@@ -262,6 +264,12 @@ export function Features() {
                     <Globe className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
                     <span><span className="font-semibold text-gray-900">Certificación:</span> {curso.certificacion}</span>
                   </li>
+                  {"comienzo" in curso && curso.comienzo && (
+                    <li className="flex items-start gap-2.5 text-sm text-gray-700">
+                      <CalendarCheck className="w-4 h-4 text-rose-500 mt-0.5 flex-shrink-0" />
+                      <span><span className="font-semibold text-gray-900">Comienzo:</span> {curso.comienzo}</span>
+                    </li>
+                  )}
                 </ul>
 
                 {/* Price */}

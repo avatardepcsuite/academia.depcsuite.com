@@ -34,35 +34,35 @@ const footerLinks = {
   formacion: {
     title: "Diplomaturas",
     links: [
-      { label: "React.js/Node.js + IA", href: "/diplomaturas/programacion-fullstack-react-node-ia" },
-      { label: "Python", href: "/diplomaturas/programacion-python" },
-      { label: "Web Full Stack PHP", href: "/diplomaturas/web-fullstack-php-laravel" },
-      { label: "Ciberseguridad", href: "https://academia.depcsuite.com/diplomatura-ciberseguridad-aplicada-37984" },
-      { label: "Microsoft Excel", href: "/diplomaturas/fundamentos-microsoft-excel" },
+      { label: "Fundamentos de Ciberseguridad Aplicada", href: "/diplomaturas/ciberseguridad-aplicada" },
+      { label: "Full Stack React + Node.js + IA", href: "/diplomaturas/programacion-fullstack-react-node-ia" },
+      { label: "Web Full Stack PHP Laravel", href: "/diplomaturas/web-fullstack-php-laravel" },
+      { label: "Programación Python", href: "/diplomaturas/programacion-python" },
+      { label: "Fundamentos Microsoft Excel", href: "/diplomaturas/fundamentos-microsoft-excel" },
     ],
   },
-  eventos: {
-    title: "Eventos",
+  explora: {
+    title: "Explorá",
     links: [
-      { label: "Streaming", href: "#webinars" },
-      { label: "Masterclass en Vivo", href: "#formacion" },
-      { label: "Hackathones", href: "#hackathones" },
-    ],
-  },
-  comunidad: {
-    title: "Comunidad DePC",
-    links: [
-      { label: "Red social", href: "#comunidad" },
-      { label: "Portal de Empleo", href: "#empleo" },
-      { label: "Credencial Digital", href: "#comunidad" },
-      { label: "Certificaciones", href: "#instituciones" },
+      { label: "Streaming", href: "/webinars" },
+      { label: "Hackathones", href: "/#hackathones" },
+      { label: "Portal de Empleo", href: "/#empleo" },
+      { label: "Promociones", href: "/promociones" },
     ],
   },
   soporte: {
     title: "Soporte",
     links: [
       { label: "Preguntas frecuentes", href: "/preguntas-frecuentes" },
+      { label: "Acceso alumnos", href: "https://autogestion.depcsuite.com/" },
       { label: "info@depcsuite.com", href: "mailto:info@depcsuite.com" },
+    ],
+  },
+  legal: {
+    title: "Legal",
+    links: [
+      { label: "Políticas de privacidad", href: "/politicas-de-privacidad" },
+      { label: "Términos y condiciones", href: "/terminos-y-condiciones" },
     ],
   },
 }

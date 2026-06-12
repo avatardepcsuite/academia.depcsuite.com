@@ -10,6 +10,7 @@ import {
   Award,
   BookOpen,
   Shield,
+  CalendarCheck,
 } from "lucide-react"
 import { Header } from "@/components/landing/header"
 import { Footer } from "@/components/landing/footer"
@@ -229,6 +230,7 @@ export default function DiplomaturaCiberseguridadPage() {
             { icon: Clock, label: "3 meses de duración" },
             { icon: Monitor, label: "100% online" },
             { icon: GraduationCap, label: "Sin conocimientos previos" },
+            { icon: CalendarCheck, label: "Comienzo en vivo: 27 de agosto" },
           ]}
           certifications={[
             { src: "/images/logo-camara-argentina.png", alt: "Logo Cámara Argentina de Comercio - Certificación Nacional" },

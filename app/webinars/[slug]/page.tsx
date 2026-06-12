@@ -196,9 +196,19 @@ export default function WebinarDetailPage() {
               {/* Barra del instructor + CTA */}
               <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-y border-border py-4">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-[#E91E63] to-[#9C27B0] text-sm font-bold text-white">
-                    {initials}
-                  </div>
+                  {webinar.instructorImage ? (
+                    <div className="relative h-11 w-11 overflow-hidden rounded-full ring-1 ring-border">
+                      <img
+                        src={webinar.instructorImage || "/placeholder.svg"}
+                        alt={webinar.instructor}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-[#E91E63] to-[#9C27B0] text-sm font-bold text-white">
+                      {initials}
+                    </div>
+                  )}
                   <div>
                     <p className="flex items-center gap-1 font-semibold text-foreground">
                       {webinar.instructor}
