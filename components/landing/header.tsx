@@ -145,11 +145,7 @@ export function Header() {
                     <button
                       type="button"
                       onClick={() => setIsDiplomaturasOpen(!isDiplomaturasOpen)}
-                      className={`flex items-center gap-0.5 px-2.5 py-1.5 transition-colors duration-200 font-medium text-base ${
-                        activeSection === item.href || pathname.startsWith("/diplomaturas")
-                          ? "text-white" 
-                          : "text-white/85 hover:text-white"
-                      }`}
+                      className={`flex items-center gap-0.5 px-2.5 py-1.5 transition-colors duration-200 font-medium text-[15px] text-white hover:text-white`}
                     >
                       {item.label}
                       <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isDiplomaturasOpen ? "rotate-180" : ""}`} />
@@ -190,11 +186,7 @@ export function Header() {
                     key={item.href}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className={`relative px-2.5 py-1.5 transition-colors duration-200 font-medium text-base ${
-                      activeSection === item.href || (!item.href.startsWith("#") && pathname.startsWith(item.href))
-                        ? "text-white" 
-                        : "text-white/85 hover:text-white"
-                    }`}
+                    className={`relative px-2.5 py-1.5 transition-colors duration-200 font-medium text-[15px] text-white hover:text-white`}
                   >
                     {item.label}
                   </Link>
