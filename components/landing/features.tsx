@@ -45,9 +45,9 @@ const diplomaturas = [
     badge: "Inscribiendo para el vivo",
     badgeColor: "bg-rose-500",
     featured: true,
-    price: 290000,
+    price: 300000,
     installments: 6,
-    installmentPrice: 48333,
+    installmentPrice: 50000,
   },
   {
     title: "Diplomatura Programación Full Stack + IA",

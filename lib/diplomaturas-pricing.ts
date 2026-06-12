@@ -21,9 +21,9 @@ export const PAYMENT_WHATSAPP = "541162845700"
 export const diplomaturasPricing: Record<string, DiplomaturaPricing> = {
   "ciberseguridad-aplicada": {
     title: "Diplomatura Fundamentos de Ciberseguridad Aplicada",
-    price: 290000,
+    price: 300000,
     installments: 6,
-    installmentPrice: 48333,
+    installmentPrice: 50000,
     mpagoLink: "https://mpago.la/2RSwY5A",
   },
   "programacion-fullstack-react-node-ia": {

@@ -218,7 +218,7 @@ export default function WebinarDetailPage() {
                   </div>
                 </div>
 
-                {isPast ? (
+                {isPast && (
                   <a
                     href={`https://wa.me/541162845700?text=Hola!%20Me%20interesa%20acceder%20al%20streaming%20gratuito:%20${encodeURIComponent(webinar.title)}`}
                     target="_blank"
@@ -229,13 +229,6 @@ export default function WebinarDetailPage() {
                       Solicitar acceso gratis
                     </Button>
                   </a>
-                ) : (
-                  <Link href="/#precios">
-                    <Button className="bg-primary text-primary-foreground hover:opacity-90 font-medium">
-                      Suscribirme ahora
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
-                  </Link>
                 )}
               </div>
 
