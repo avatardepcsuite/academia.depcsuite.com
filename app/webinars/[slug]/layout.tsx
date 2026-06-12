@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!webinar) {
     return {
-      title: "Webinar no encontrado | Academia DePC",
-      description: "El webinar que buscas no existe.",
+      title: "Streaming no encontrado | Academia DePC",
+      description: "El streaming que buscas no existe.",
       robots: { index: false, follow: false },
     }
   }
@@ -27,17 +27,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const fullImageUrl = `${baseUrl}${webinar.image}`
   const canonicalUrl = `${baseUrl}/webinars/${webinar.slug}`
 
-  const seoDescription = `${webinar.shortDescription} Webinar gratuito en vivo el ${webinar.dateLabel}, ${webinar.duration}. Dictado por ${webinar.instructor} en Academia DePC.`
+  const seoDescription = `${webinar.shortDescription} Streaming gratuito en vivo el ${webinar.dateLabel}, ${webinar.duration}. Dictado por ${webinar.instructor} en Academia DePC.`
 
   const tagKeywords = webinar.tags || []
 
   return {
-    title: `${webinar.title} | Webinar Gratuito | Academia DePC`,
+    title: `${webinar.title} | Streaming Gratuito | Academia DePC`,
     description: seoDescription,
     keywords: [
-      "webinar gratuito",
-      "webinar en vivo",
-      "webinar tecnologia",
+      "streaming gratuito",
+      "streaming en vivo",
+      "streaming tecnologia",
       "academia depc",
       categoryLabel.toLowerCase(),
       webinar.instructor,
@@ -45,11 +45,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "educacion online",
       "curso online",
       "aprender tecnologia",
-      "webinar gratis argentina",
-      "webinar gratis latinoamerica",
+      "streaming gratis argentina",
+      "streaming gratis latinoamerica",
     ],
     openGraph: {
-      title: `${webinar.title} | Webinar Gratuito en Vivo`,
+      title: `${webinar.title} | Streaming Gratuito en Vivo`,
       description: seoDescription,
       url: canonicalUrl,
       siteName: "Academia DePC",
@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: fullImageUrl,
           width: 1200,
           height: 630,
-          alt: `Webinar: ${webinar.title} - Academia DePC`,
+          alt: `Streaming: ${webinar.title} - Academia DePC`,
         },
       ],
       locale: "es_AR",
@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${webinar.title} | Webinar Gratuito`,
+      title: `${webinar.title} | Streaming Gratuito`,
       description: webinar.shortDescription,
       images: [fullImageUrl],
       creator: "@academiadepc",

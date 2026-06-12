@@ -44,7 +44,7 @@ const footerLinks = {
   eventos: {
     title: "Eventos",
     links: [
-      { label: "Webinars", href: "#webinars" },
+      { label: "Streaming", href: "#webinars" },
       { label: "Masterclass en Vivo", href: "#formacion" },
       { label: "Hackathones", href: "#hackathones" },
     ],

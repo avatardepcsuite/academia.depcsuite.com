@@ -9,7 +9,7 @@ const locations = [
 
 export function Hackathons() {
   return (
-    <section id="hackathones" className="py-24 relative bg-[#2D1B4E]/5">
+    <section id="hackathones" className="py-12 relative bg-[#2D1B4E]/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}

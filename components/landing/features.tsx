@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from "react"
+
 import { Button } from "@/components/ui/button"
 import { 
   GraduationCap, 
@@ -9,14 +11,42 @@ import {
   FileText,
   MessageCircle,
   BookOpen,
-  Users,
   Lock,
-  Zap
+  Zap,
+  Hourglass,
+  Flame,
+  Globe
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { EnrollModal } from "@/components/landing/enroll-modal"
+import { diplomaturasPricing } from "@/lib/diplomaturas-pricing"
 
 const diplomaturas = [
+  {
+    title: "Diplomatura Fundamentos de Ciberseguridad Aplicada",
+    subtitle: "Seguridad Informatica",
+    description: "Protegé infraestructuras críticas y convertite en el perfil más buscado por las empresas globales desde cero.",
+    href: "/diplomaturas/ciberseguridad-aplicada",
+    image: "/images/course-cybersecurity.jpg",
+    type: "Diplomatura",
+    typeColor: "bg-teal-600",
+    hours: 12,
+    classes: 12,
+    duracion: "3 meses (12 clases)",
+    diferencial: "Prácticas en entornos reales",
+    certificacion: "Nacional e Internacional",
+    professor: "Prof. Eliana Caballero",
+    professorImage: null,
+    students: 0,
+    available: true,
+    badge: "Inscribiendo para el vivo",
+    badgeColor: "bg-rose-500",
+    featured: true,
+    price: 290000,
+    installments: 6,
+    installmentPrice: 48333,
+  },
   {
     title: "Diplomatura Programación Full Stack + IA",
     subtitle: "React.js / Node.js + IA",
@@ -27,25 +57,19 @@ const diplomaturas = [
     typeColor: "bg-indigo-600",
     hours: 48,
     classes: 48,
+    duracion: "12 meses (48 clases)",
+    diferencial: "Proyectos reales con IA integrada",
+    certificacion: "Nacional e Internacional",
     professor: "Prof. Matías Giménez",
     professorImage: "/images/docente-matias.png",
     students: 1234,
     available: true,
-  },
-  {
-    title: "Diplomatura Programación Python",
-    subtitle: "Django + Vue.js + API REST",
-    description: "Aprendé Python desde cero hasta nivel intermedio. Ideal para ciencia de datos.",
-    href: "/diplomaturas/programacion-python",
-    image: "/images/course-python.jpg",
-    type: "Diplomatura",
-    typeColor: "bg-emerald-600",
-    hours: 24,
-    classes: 24,
-    professor: "Prof. Cristian Mitas",
-    professorImage: "/images/docente-cristian.png",
-    students: 856,
-    available: true,
+    badge: "Inscribiendo on demand",
+    badgeColor: "bg-blue-500",
+    featured: true,
+    price: 300000,
+    installments: 6,
+    installmentPrice: 50000,
   },
   {
     title: "Diplomatura Programación Web Full Stack",
@@ -57,12 +81,43 @@ const diplomaturas = [
     typeColor: "bg-orange-500",
     hours: 36,
     classes: 36,
+    duracion: "9 meses (36 clases)",
+    diferencial: "Desarrollo web profesional con Laravel",
+    certificacion: "Nacional e Internacional",
     professor: "Prof. Nelson Daniel Tarche",
     professorImage: "/images/docente-nelson.jpg",
     students: 2103,
     available: true,
+    badge: "Inscribiendo on demand",
+    badgeColor: "bg-blue-500",
+    price: 240000,
+    installments: 6,
+    installmentPrice: 40000,
   },
-    {
+  {
+    title: "Diplomatura Programación Python",
+    subtitle: "Django + Vue.js + API REST",
+    description: "Aprendé Python desde cero hasta nivel intermedio. Ideal para ciencia de datos.",
+    href: "/diplomaturas/programacion-python",
+    image: "/images/course-python.jpg",
+    type: "Diplomatura",
+    typeColor: "bg-emerald-600",
+    hours: 24,
+    classes: 24,
+    duracion: "6 meses (24 clases)",
+    diferencial: "Ideal para ciencia de datos",
+    certificacion: "Nacional e Internacional",
+    professor: "Prof. Cristian Mitas",
+    professorImage: "/images/docente-cristian.png",
+    students: 856,
+    available: true,
+    badge: "Inscribiendo on demand",
+    badgeColor: "bg-blue-500",
+    price: 240000,
+    installments: 6,
+    installmentPrice: 40000,
+  },
+  {
     title: "Diplomatura Fundamentos de Microsoft Excel",
     subtitle: "De básico a avanzado",
     description: "Dominá Excel desde cero. Aprendé fórmulas, tablas dinámicas y gráficos.",
@@ -72,25 +127,18 @@ const diplomaturas = [
     typeColor: "bg-green-600",
     hours: 12,
     classes: 12,
+    duracion: "3 meses (12 clases)",
+    diferencial: "De básico a avanzado con casos reales",
+    certificacion: "Nacional e Internacional",
     professor: "Prof. Nicolás Villalba",
     professorImage: "/images/docente-nicolas.jpeg",
     students: 3421,
     available: true,
-  },
-  {
-    title: "Diplomatura Fundamentos en Ciberseguridad",
-    subtitle: "Seguridad Informática",
-    description: "Protegé sistemas y redes con técnicas profesionales de seguridad informática.",
-    href: "/diplomaturas/ciberseguridad-aplicada",
-    image: "/images/course-cybersecurity.jpg",
-    type: "Diplomatura",
-    typeColor: "bg-gray-700",
-    hours: 42,
-    classes: 42,
-    professor: "Prof. Eliana Caballero",
-    professorImage: null,
-    students: 0,
-    available: false,
+    badge: "Inscribiendo on demand",
+    badgeColor: "bg-blue-500",
+    price: 120000,
+    installments: 6,
+    installmentPrice: 20000,
   },
 ]
 
@@ -118,6 +166,18 @@ const metodologia = [
 ]
 
 export function Features() {
+  const [enrollOpen, setEnrollOpen] = useState(false)
+  const [selectedCurso, setSelectedCurso] = useState<string>("")
+  const [selectedPaymentLink, setSelectedPaymentLink] = useState<string>("")
+
+  const handleEnroll = (title: string, href: string) => {
+    const slug = href.replace("/diplomaturas/", "")
+    const pricing = diplomaturasPricing[slug]
+    setSelectedCurso(pricing?.title ?? title)
+    setSelectedPaymentLink(pricing?.mpagoLink ?? "")
+    setEnrollOpen(true)
+  }
+
   return (
     <section id="formacion" className="py-24 relative bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -138,28 +198,34 @@ export function Features() {
         {/* Diplomaturas Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {diplomaturas.map((curso) => (
-            <Link
+            <div
               key={curso.title}
-              href={curso.available ? curso.href : "#"}
-              className={`group relative bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 block ${!curso.available ? "cursor-default" : ""}`}
-              onClick={(e) => !curso.available && e.preventDefault()}
+              className={`group relative bg-white rounded-2xl border ${curso.featured ? 'border-rose-300 shadow-lg shadow-rose-100' : 'border-gray-200'} overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col`}
             >
               {/* Image Container */}
               <div className="relative h-48 overflow-hidden">
-                <Image
-                  src={curso.image || "/placeholder.svg"}
-                  alt={curso.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  loading="lazy"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                <Link href={curso.href} aria-label={`Ver ${curso.title}`} className="absolute inset-0 z-10">
+                  <Image
+                    src={curso.image || "/placeholder.svg"}
+                    alt={curso.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading="lazy"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </Link>
                 {/* Badges */}
                 <div className="absolute top-4 left-4 right-4 flex items-start justify-between">
                   <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full ${curso.typeColor} text-white text-xs font-medium shadow-lg`}>
                     <BookOpen className="w-3.5 h-3.5" />
                     {curso.type}
                   </span>
+                  {curso.badge && (
+                    <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full ${curso.badgeColor} text-white text-xs font-medium shadow-lg animate-pulse`}>
+                      <Zap className="w-3.5 h-3.5" />
+                      {curso.badge}
+                    </span>
+                  )}
                   {!curso.available && (
                     <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500 text-white text-xs font-medium shadow-lg">
                       <Lock className="w-4 h-4" />
@@ -167,29 +233,55 @@ export function Features() {
                     </span>
                   )}
                 </div>
+                {/* Featured highlight border */}
+                {curso.featured && (
+                  <div className="absolute inset-0 ring-2 ring-rose-500/50 ring-inset pointer-events-none" />
+                )}
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold text-gray-900 mb-2 text-balance">
                   {curso.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                <p className="text-gray-600 text-sm mb-5 line-clamp-3">
                   {curso.description}
                 </p>
 
-                {/* Duration Info */}
-                <div className="flex items-center gap-3 text-sm text-gray-500 mb-4">
-                  <div className="flex items-center gap-1.5">
-                    <Clock className="w-4 h-4" />
-                    <span>{curso.hours} horas</span>
+                {/* Detalles */}
+                <ul className="space-y-2.5 mb-5">
+                  <li className="flex items-start gap-2.5 text-sm text-gray-700">
+                    <Hourglass className="w-4 h-4 text-[#5C1F5C] mt-0.5 flex-shrink-0" />
+                    <span><span className="font-semibold text-gray-900">Duración:</span> {curso.duracion}</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-sm text-gray-700">
+                    <Flame className="w-4 h-4 text-[#E91E63] mt-0.5 flex-shrink-0" />
+                    <span><span className="font-semibold text-gray-900">Diferencial:</span> {curso.diferencial}</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-sm text-gray-700">
+                    <Globe className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
+                    <span><span className="font-semibold text-gray-900">Certificación:</span> {curso.certificacion}</span>
+                  </li>
+                </ul>
+
+                {/* Price */}
+                <div className="border-t border-gray-100 pt-4 mb-5 mt-auto">
+                  <p className="text-xs font-semibold tracking-wide text-[#5C1F5C] uppercase mb-1">
+                    {curso.installments} cuotas sin interés de
+                  </p>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-3xl font-bold text-gray-900">
+                      ${curso.installmentPrice?.toLocaleString('es-AR')}
+                    </span>
+                    <span className="text-sm text-gray-500">/mes</span>
                   </div>
-                  <span className="text-gray-300">|</span>
-                  <span>{curso.classes} clases</span>
+                  <p className="text-sm font-semibold text-emerald-600 mt-1">
+                    Precio Final: ${curso.price?.toLocaleString('es-AR')}
+                  </p>
                 </div>
 
                 {/* Professor */}
-                <div className="flex items-center py-4 border-t border-gray-100">
+                <div className="flex items-center pb-4">
                   <div className="flex items-center gap-2">
                     {curso.professorImage ? (
                       <div className="w-8 h-8 rounded-full overflow-hidden relative">
@@ -213,11 +305,24 @@ export function Features() {
                   </div>
                 </div>
 
-                {/* Action Button */}
+                {/* Action Buttons */}
                 {curso.available ? (
-                  <div className="w-full h-12 bg-gradient-to-r from-[#2D1B4E] to-[#5C1F5C] group-hover:from-[#3D2B5E] group-hover:to-[#6C2F6C] text-white font-medium rounded-md flex items-center justify-center gap-2 transition-all duration-300">
-                    <Zap className="w-4 h-4" />
-                    Ver diplomatura
+                  <div className="flex flex-col gap-2">
+                    <button
+                      type="button"
+                      onClick={() => handleEnroll(curso.title, curso.href)}
+                      className="w-full h-12 bg-gradient-to-r from-[#2D1B4E] to-[#5C1F5C] hover:from-[#3D2B5E] hover:to-[#6C2F6C] text-white font-medium rounded-md flex items-center justify-center gap-2 transition-all duration-300"
+                    >
+                      <Zap className="w-4 h-4" />
+                      Inscribirme ahora
+                    </button>
+                    <Link
+                      href={curso.href}
+                      className="w-full h-12 border border-[#2D1B4E]/20 text-[#2D1B4E] hover:bg-[#2D1B4E]/5 font-medium rounded-md flex items-center justify-center gap-2 transition-all duration-300"
+                    >
+                      <BookOpen className="w-4 h-4" />
+                      Ver plan de estudio
+                    </Link>
                   </div>
                 ) : (
                   <div className="w-full h-12 bg-gray-100 text-gray-400 font-medium rounded-md flex items-center justify-center gap-2">
@@ -226,7 +331,7 @@ export function Features() {
                   </div>
                 )}
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 
@@ -257,7 +362,7 @@ export function Features() {
         </div>
 
         {/* Instituciones que nos respaldan */}
-        <div className="mt-16 p-8 md:p-12">
+        <div className="mt-8 px-8 pt-8 md:px-12 md:pt-12 pb-0">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-2">
               Instituciones que nos respaldan
@@ -267,7 +372,7 @@ export function Features() {
             </p>
           </div>
           
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mb-8">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mb-0">
             <div className="relative w-40 h-24 md:w-48 md:h-28 flex-shrink-0">
               <Image
                 src="/images/logo-camara-argentina.png"
@@ -299,39 +404,10 @@ export function Features() {
               />
             </div>
           </div>
-          
-          {/* Benefits Grid */}
-          <div className="grid md:grid-cols-3 gap-6 pt-8">
-            <div className="flex items-start gap-3 text-center md:text-left">
-              <div className="w-10 h-10 rounded-lg bg-[#2D1B4E]/10 flex items-center justify-center flex-shrink-0 mx-auto md:mx-0">
-                <GraduationCap className="w-5 h-5 text-[#2D1B4E]" />
-              </div>
-              <div>
-                <p className="font-semibold text-gray-900">Certificación Nacional</p>
-                <p className="text-sm text-gray-500">Avalada por la Cámara Argentina</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3 text-center md:text-left">
-              <div className="w-10 h-10 rounded-lg bg-[#E91E63]/10 flex items-center justify-center flex-shrink-0 mx-auto md:mx-0">
-                <Sparkles className="w-5 h-5 text-[#E91E63]" />
-              </div>
-              <div>
-                <p className="font-semibold text-gray-900">Certificación Internacional</p>
-                <p className="text-sm text-gray-500">Reconocida por OEIP</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3 text-center md:text-left">
-              <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 mx-auto md:mx-0">
-                <Users className="w-5 h-5 text-emerald-600" />
-              </div>
-              <div>
-                <p className="font-semibold text-gray-900">Portal de Empleo</p>
-                <p className="text-sm text-gray-500">Acceso exclusivo para alumnos</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
+
+      <EnrollModal open={enrollOpen} onOpenChange={setEnrollOpen} cursoTitle={selectedCurso} paymentLink={selectedPaymentLink} />
     </section>
   )
 }

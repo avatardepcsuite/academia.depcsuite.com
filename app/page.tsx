@@ -23,12 +23,6 @@ const Testimonials = dynamic(() => import("@/components/landing/testimonials").t
 const Partners = dynamic(() => import("@/components/landing/partners").then(mod => ({ default: mod.Partners })), {
   loading: () => <div className="py-24" />
 })
-const Pricing = dynamic(() => import("@/components/landing/pricing").then(mod => ({ default: mod.Pricing })), {
-  loading: () => <div className="py-24 bg-gradient-to-br from-[#2D1B4E] via-[#5C1F5C] to-[#E91E63]" />
-})
-const CTA = dynamic(() => import("@/components/landing/cta").then(mod => ({ default: mod.CTA })), {
-  loading: () => <div className="py-20 bg-gradient-to-r from-[#2D1B4E] via-[#5C1F5C] to-[#E91E63]" />
-})
 const Footer = dynamic(() => import("@/components/landing/footer").then(mod => ({ default: mod.Footer })), {
   loading: () => <div className="bg-gradient-to-r from-[#2D1B4E] via-[#5C1F5C] to-[#E91E63] py-16" />
 })
@@ -205,8 +199,6 @@ export default function Home() {
         <Community />
         <Testimonials />
         <Partners />
-        <Pricing />
-        <CTA />
         <Footer />
       </main>
     </>

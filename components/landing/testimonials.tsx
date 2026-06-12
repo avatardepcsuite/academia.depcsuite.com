@@ -49,7 +49,7 @@ const testimonials = [
     name: "Valentina Ruiz",
     role: "Estudiante Data Science",
     rating: 5,
-    text: "Las certificaciones nacionales e internacionales le dan mucho valor al CV. Los webinars gratuitos son un plus increíble. Muy agradecida con todo el equipo.",
+    text: "Las certificaciones nacionales e internacionales le dan mucho valor al CV. El streaming gratuito es un plus increíble. Muy agradecida con todo el equipo.",
     date: "Hace 3 semanas",
     avatar: null
   }
@@ -88,7 +88,7 @@ export function Testimonials() {
   }
 
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className="py-12 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">

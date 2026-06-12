@@ -12,7 +12,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-gradient-to-br from-[#2D1B4E] via-[#5C1F5C] to-[#E91E63]">
+    <section className="relative flex items-center justify-center pt-8 overflow-hidden bg-gradient-to-br from-[#2D1B4E] via-[#5C1F5C] to-[#E91E63]">
       {/* Background decorative elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-pink-500/20 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-900/30 rounded-full blur-3xl" />
@@ -20,10 +20,10 @@ export function Hero() {
       
 
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
@@ -39,7 +39,7 @@ export function Hero() {
 
           {/* Subheadline */}
           <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 text-pretty">
-            Diplomaturas en vivo y on demand, webinars en vivo, masterclass con docentes, hackathones presenciales y acceso al portal de empleo. Todo con una sola suscripción.
+            Diplomaturas en vivo y on demand, streaming en vivo, masterclass con docentes, hackathones presenciales y acceso al portal de empleo.
           </p>
 
           {/* CTAs */}

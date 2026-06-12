@@ -1,13 +1,11 @@
 "use client"
 
-import React, { useState, useEffect, useCallback, useMemo } from "react"
+import React, { useState, useEffect, useCallback } from "react"
 import { usePathname, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown, Sparkles, Zap, Code, Brain, Clock, Briefcase, ArrowRight, FileSpreadsheet, Shield } from "lucide-react"
+import { Menu, X, ChevronDown, Sparkles, FileSpreadsheet, Shield } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import { useCurrency, currencies, flagComponents } from "@/contexts/currency-context"
-import { webinars as webinarsData } from "@/lib/webinars-data"
 
 // Custom brand icons
 const ReactIcon = ({ className }: { className?: string }) => (
@@ -36,53 +34,35 @@ const LaravelIcon = ({ className }: { className?: string }) => (
 const ExcelIcon = FileSpreadsheet
 
 const diplomaturas = [
+  { href: "/diplomaturas/ciberseguridad-aplicada", label: "Fundamentos de Ciberseguridad Aplicada", icon: Shield, color: "text-teal-400", bgColor: "bg-teal-500/10" },
   { href: "/diplomaturas/programacion-fullstack-react-node-ia", label: "Full Stack React + Node.js + IA", icon: ReactIcon, color: "text-cyan-400", bgColor: "bg-cyan-500/10" },
-  { href: "/diplomaturas/programacion-python", label: "Programacion Python", icon: PythonIcon, color: "text-yellow-400", bgColor: "bg-yellow-500/10" },
   { href: "/diplomaturas/web-fullstack-php-laravel", label: "Web Full Stack PHP Laravel", icon: LaravelIcon, color: "text-red-400", bgColor: "bg-red-500/10" },
+  { href: "/diplomaturas/programacion-python", label: "Programación Python", icon: PythonIcon, color: "text-yellow-400", bgColor: "bg-yellow-500/10" },
   { href: "/diplomaturas/fundamentos-microsoft-excel", label: "Fundamentos Microsoft Excel", icon: ExcelIcon, color: "text-green-500", bgColor: "bg-green-500/10" },
 ]
 
-const webinarCategoryDefs = [
-  { id: "automatizacion", label: "Automatización", icon: Zap, color: "text-orange-400", bgColor: "bg-orange-500/10" },
-  { id: "empleabilidad", label: "Empleabilidad", icon: Briefcase, color: "text-amber-400", bgColor: "bg-amber-500/10" },
-  { id: "programacion", label: "Programación", icon: Code, color: "text-cyan-400", bgColor: "bg-cyan-500/10" },
-  { id: "ia", label: "Inteligencia Artificial", icon: Brain, color: "text-purple-400", bgColor: "bg-purple-500/10" },
-  { id: "seguridad", label: "Seguridad", icon: Shield, color: "text-teal-400", bgColor: "bg-teal-500/10" },
-  { id: "productividad", label: "Productividad", icon: Clock, color: "text-emerald-400", bgColor: "bg-emerald-500/10" },
-]
-
-const webinarCategories = webinarCategoryDefs.map(cat => ({
-  ...cat,
-  count: webinarsData.filter(w => w.category === cat.id).length,
-}))
-
-const getNavItems = (isRioplatense: boolean) => [
+const navItems = [
   { href: "#formacion", label: "Diplomaturas", hasSubmenu: "diplomaturas" },
-  { href: "#webinars", label: "Webinars", hasSubmenu: "webinars" },
+  { href: "/webinars", label: "Streaming" },
   { href: "#hackathones", label: "Hackathones" },
   { href: "#empleo", label: "Portal de Empleo" },
-  { href: "#comunidad", label: "Comunidad" },
   { href: "#instituciones", label: "Promociones" },
-  { href: "#precios", label: isRioplatense ? "¡Forma parte!" : "¡Forma parte!" },
 ]
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isCurrencyOpen, setIsCurrencyOpen] = useState(false)
   const [isDiplomaturasOpen, setIsDiplomaturasOpen] = useState(false)
-  const [isWebinarsOpen, setIsWebinarsOpen] = useState(false)
   const [isMobileDiplomaturasOpen, setIsMobileDiplomaturasOpen] = useState(false)
-  const [isMobileWebinarsOpen, setIsMobileWebinarsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("")
-  const { selectedCurrency, setSelectedCurrency } = useCurrency()
-  
-  // Rioplatense (Argentina/Uruguay) uses "vos" form
-  const isRioplatense = selectedCurrency.code === "ARS"
-  const navItems = useMemo(() => getNavItems(isRioplatense), [isRioplatense])
   const pathname = usePathname()
   const router = useRouter()
 
   const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Real route links (e.g. /webinars) should navigate normally
+    if (!href.startsWith("#")) {
+      return
+    }
+
     const sectionId = href.replace("#", "")
     
     if (pathname === "/") {
@@ -120,18 +100,18 @@ export function Header() {
   }, [navItems])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header className="relative z-50">
       {/* Promotional Banner */}
       <div className="bg-gradient-to-r from-[#6B1B4D] via-[#8B2563] to-[#6B1B4D] py-2">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10">
           <div className="flex items-center justify-center gap-2 text-white text-sm font-medium">
-            <Sparkles className="w-4 h-4" />
+            <Sparkles className="w-4 h-4 text-yellow-300" />
             <span className="text-center">
-              {selectedCurrency.code === "ARS" 
-                ? "¡Sumate a la comunidad más activa de estudiantes de tecnología en Argentina y LATAM!" 
-                : "¡Únete a la comunidad más activa de estudiantes de tecnología en Argentina y LATAM!"}
+              <span className="font-bold">Inscribiendo 2026</span>
+              <span className="mx-2 text-white/50">|</span>
+              Formaciones con certificación nacional e internacional
             </span>
-            <Sparkles className="w-4 h-4" />
+            <Sparkles className="w-4 h-4 text-yellow-300" />
           </div>
         </div>
       </div>
@@ -159,7 +139,7 @@ export function Header() {
                   <div 
                     key={item.href} 
                     className="relative"
-                    onMouseEnter={() => { setIsDiplomaturasOpen(true); setIsWebinarsOpen(false); }}
+                    onMouseEnter={() => { setIsDiplomaturasOpen(true); }}
                     onMouseLeave={() => setIsDiplomaturasOpen(false)}
                   >
                     <button
@@ -205,90 +185,13 @@ export function Header() {
                       </div>
                     )}
                   </div>
-                ) : item.hasSubmenu === "webinars" ? (
-                  <div 
-                    key={item.href} 
-                    className="relative"
-                    onMouseEnter={() => { setIsWebinarsOpen(true); setIsDiplomaturasOpen(false); }}
-                    onMouseLeave={() => setIsWebinarsOpen(false)}
-                  >
-                    <button
-                      type="button"
-                      onClick={() => setIsWebinarsOpen(!isWebinarsOpen)}
-                      className={`flex items-center gap-0.5 px-2.5 py-1.5 transition-colors duration-200 font-medium text-sm ${
-                        activeSection === item.href
-                          ? "text-white" 
-                          : "text-white/60 hover:text-white"
-                      }`}
-                    >
-                      {item.label}
-                      <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isWebinarsOpen ? "rotate-180" : ""}`} />
-                    </button>
-                    {isWebinarsOpen && (
-                      <div 
-                        className="absolute left-0 top-full pt-2"
-                      >
-                        <div 
-                          className="w-[480px] bg-[#1A0F2E] rounded-xl border border-white/15 shadow-2xl shadow-black/40 p-3 overflow-hidden"
-                        >
-                          <div className="grid grid-cols-2 gap-2">
-                            {webinarCategories.map((category) => {
-                              const IconComponent = category.icon
-                              return (
-                                <Link
-                                  key={category.id}
-                                  href={`/#webinars?cat=${category.id}`}
-                                  onClick={(e) => {
-                                    e.preventDefault()
-                                    setIsWebinarsOpen(false)
-                                    if (pathname === "/") {
-                                      window.dispatchEvent(new CustomEvent("filter-webinar-category", { detail: category.id }))
-                                      document.getElementById("webinars")?.scrollIntoView({ behavior: "smooth" })
-                                    } else {
-                                      router.push(`/?webinar_cat=${category.id}#webinars`)
-                                    }
-                                  }}
-                                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-all duration-200 group/item"
-                                >
-                                  <div className={`w-9 h-9 rounded-lg ${category.bgColor} flex items-center justify-center shrink-0`}>
-                                    <IconComponent className={`w-4 h-4 ${category.color}`} />
-                                  </div>
-                                  <div className="flex-1 min-w-0">
-                                    <span className="block text-sm font-medium text-white group-hover/item:text-pink-300 transition-colors">
-                                      {category.label}
-                                    </span>
-                                    <span className="block text-xs text-white/50">
-                                      {category.count} {category.count === 1 ? "webinar" : "webinars"}
-                                    </span>
-                                  </div>
-                                </Link>
-                              )
-                            })}
-                          </div>
-                          <div className="mt-3 pt-3 border-t border-white/10">
-                            <Link
-                              href="#webinars"
-                              onClick={(e) => {
-                                handleNavClick(e, "#webinars")
-                                setIsWebinarsOpen(false)
-                              }}
-                              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-fuchsia-500/10 text-sm text-pink-400 hover:text-pink-300 hover:from-pink-500/20 hover:to-fuchsia-500/20 font-medium transition-all"
-                            >
-                              Ver todos los webinars
-                              <ArrowRight className="w-4 h-4" />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
                 ) : (
                   <Link 
                     key={item.href}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
                     className={`relative px-2.5 py-1.5 transition-colors duration-200 font-medium text-sm ${
-                      activeSection === item.href 
+                      activeSection === item.href || (!item.href.startsWith("#") && pathname.startsWith(item.href))
                         ? "text-white" 
                         : "text-white/60 hover:text-white"
                     }`}
@@ -299,123 +202,22 @@ export function Header() {
               ))}
             </nav>
 
-            {/* Right Side: Login + Subscribe + Currency Flag - Aligned right */}
+            {/* Right Side: Acceso alumnos - Aligned right */}
             <div className="hidden xl:flex items-center gap-3 ml-auto">
               <Link href="https://autogestion.depcsuite.com/" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" className="text-white/70 hover:text-white hover:bg-white/10 font-medium text-sm px-3 py-1.5 h-auto bg-transparent">
-                  Iniciar sesión
-                </Button>
-              </Link>
-              <Link href="#precios" onClick={(e) => handleNavClick(e, "#precios")}>
                 <Button className="bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white font-semibold text-sm px-4 py-1.5 h-auto shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 transition-all duration-300">
-                  Comenzar
+                  Acceso alumnos
                 </Button>
               </Link>
-              
-              {/* Currency Selector - Only flag visible */}
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() => setIsCurrencyOpen(!isCurrencyOpen)}
-                  className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-white/25 hover:bg-white/10 transition-all duration-200"
-                  aria-label={`Moneda: ${selectedCurrency.country}`}
-                >
-                  {flagComponents[selectedCurrency.code]()}
-                </button>
-
-                {isCurrencyOpen && (
-                  <>
-                    <div 
-                      className="fixed inset-0 z-10" 
-                      onClick={() => setIsCurrencyOpen(false)}
-                      aria-hidden="true"
-                    />
-                    <div className="absolute right-0 top-full mt-2 w-52 bg-[#1A0F2E] rounded-xl border border-white/15 shadow-2xl shadow-black/40 z-20 py-2 overflow-hidden">
-                      {currencies.map((currency) => (
-                        <button
-                          key={currency.code}
-                          type="button"
-                          onClick={() => {
-                            setSelectedCurrency(currency)
-                            setIsCurrencyOpen(false)
-                          }}
-                          className={`w-full flex items-center gap-3 px-4 py-2.5 text-left hover:bg-white/10 transition-colors ${
-                            selectedCurrency.code === currency.code ? "bg-pink-500/15" : ""
-                          }`}
-                        >
-                          {flagComponents[currency.code]()}
-                          <div className="flex-1">
-                            <span className="text-sm font-medium text-white">{currency.country}</span>
-                            <span className="text-xs text-white/50 ml-2">{currency.code}</span>
-                          </div>
-                          {selectedCurrency.code === currency.code && (
-                            <span className="w-2 h-2 rounded-full bg-pink-500 shadow-lg shadow-pink-500/50" />
-                          )}
-                        </button>
-                      ))}
-                    </div>
-                  </>
-                )}
-              </div>
             </div>
 
-            {/* Tablet: Login + Subscribe buttons visible (md to xl) */}
+            {/* Tablet: Acceso alumnos button visible (md to xl) */}
             <div className="hidden md:flex xl:hidden items-center gap-2 ml-auto mr-2">
-<Link href="https://autogestion.depcsuite.com/" target="_blank" rel="noopener noreferrer">
-              <Button variant="ghost" className="text-white/70 hover:text-white hover:bg-white/10 font-medium text-sm px-3 py-1.5 h-auto bg-transparent">
-                Iniciar sesión
-              </Button>
-            </Link>
-            <Link href="#precios" onClick={(e) => handleNavClick(e, "#precios")}>
+            <Link href="https://autogestion.depcsuite.com/" target="_blank" rel="noopener noreferrer">
               <Button className="bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white font-semibold text-sm px-4 py-1.5 h-auto shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 transition-all duration-300">
-                Comenzar
+                Acceso alumnos
               </Button>
             </Link>
-            {/* Currency Selector for Tablet */}
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() => setIsCurrencyOpen(!isCurrencyOpen)}
-                  className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-white/25 hover:bg-white/10 transition-all duration-200"
-                  aria-label={`Moneda: ${selectedCurrency.country}`}
-                >
-                  {flagComponents[selectedCurrency.code]()}
-                </button>
-
-                {isCurrencyOpen && (
-                  <>
-                    <div 
-                      className="fixed inset-0 z-10" 
-                      onClick={() => setIsCurrencyOpen(false)}
-                      aria-hidden="true"
-                    />
-                    <div className="absolute right-0 top-full mt-2 w-52 bg-[#1A0F2E] rounded-xl border border-white/15 shadow-2xl shadow-black/40 z-20 py-2 overflow-hidden">
-                      {currencies.map((currency) => (
-                        <button
-                          key={currency.code}
-                          type="button"
-                          onClick={() => {
-                            setSelectedCurrency(currency)
-                            setIsCurrencyOpen(false)
-                          }}
-                          className={`w-full flex items-center gap-3 px-4 py-2.5 text-left hover:bg-white/10 transition-colors ${
-                            selectedCurrency.code === currency.code ? "bg-pink-500/15" : ""
-                          }`}
-                        >
-                          {flagComponents[currency.code]()}
-                          <div className="flex-1">
-                            <span className="text-sm font-medium text-white">{currency.country}</span>
-                            <span className="text-xs text-white/50 ml-2">{currency.code}</span>
-                          </div>
-                          {selectedCurrency.code === currency.code && (
-                            <span className="w-2 h-2 rounded-full bg-pink-500 shadow-lg shadow-pink-500/50" />
-                          )}
-                        </button>
-                      ))}
-                    </div>
-                  </>
-                )}
-              </div>
             </div>
 
             {/* Mobile: Only hamburger menu (smaller than md) */}
@@ -443,48 +245,6 @@ export function Header() {
           {isMenuOpen && (
             <div className="xl:hidden py-6 border-t border-white/10">
               <nav className="flex flex-col gap-3">
-                {/* Mobile Only: Currency Selector Dropdown (hidden on tablet since it's in header) */}
-                <div className="md:hidden pb-5 border-b border-white/10">
-                  <div className="relative">
-                    <button
-                      type="button"
-                      onClick={() => setIsCurrencyOpen(!isCurrencyOpen)}
-                      className="w-full flex items-center justify-between px-4 py-3 rounded-lg bg-white/10 text-white"
-                    >
-                      <div className="flex items-center gap-3">
-                        {flagComponents[selectedCurrency.code]()}
-                        <span className="text-sm font-medium">{selectedCurrency.country}</span>
-                        <span className="text-xs text-white/60">({selectedCurrency.code})</span>
-                      </div>
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isCurrencyOpen ? "rotate-180" : ""}`} />
-                    </button>
-                    
-                    {isCurrencyOpen && (
-                      <div className="absolute top-full left-0 right-0 mt-2 bg-[#1a1a2e] border border-white/10 rounded-lg overflow-hidden z-50">
-                        {currencies.map((currency) => (
-                          <button
-                            key={currency.code}
-                            type="button"
-                            onClick={() => {
-                              setSelectedCurrency(currency)
-                              setIsCurrencyOpen(false)
-                            }}
-                            className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-colors ${
-                              selectedCurrency.code === currency.code
-                                ? "bg-pink-500/20 text-white"
-                                : "text-white/70 hover:bg-white/10 hover:text-white"
-                            }`}
-                          >
-                            {flagComponents[currency.code]()}
-                            <span className="text-sm font-medium">{currency.country}</span>
-                            <span className="text-xs text-white/50">({currency.code})</span>
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-
                 {navItems.map((item) => (
                   item.hasSubmenu === "diplomaturas" ? (
                     <div key={item.href}>
@@ -528,70 +288,6 @@ export function Header() {
                         </div>
                       )}
                     </div>
-                  ) : item.hasSubmenu === "webinars" ? (
-                    <div key={item.href}>
-                      <button
-                        type="button"
-                        onClick={() => setIsMobileWebinarsOpen(!isMobileWebinarsOpen)}
-                        className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-[15px] font-semibold transition-all duration-200 ${
-                          activeSection === item.href
-                            ? "bg-gradient-to-r from-pink-500/20 to-fuchsia-500/20 text-white border-l-4 border-pink-500" 
-                            : "text-white/70 hover:text-white hover:bg-white/10"
-                        }`}
-                      >
-                        {item.label}
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileWebinarsOpen ? "rotate-180" : ""}`} />
-                      </button>
-                      {isMobileWebinarsOpen && (
-                        <div className="mt-3 flex flex-col gap-1.5 max-h-[50vh] overflow-y-auto">
-                          {webinarCategories.map((category) => {
-                            const IconComponent = category.icon
-                            return (
-                              <Link
-                                key={category.id}
-                                href={`/#webinars?cat=${category.id}`}
-                                onClick={(e) => {
-                                  e.preventDefault()
-                                  setIsMenuOpen(false)
-                                  setIsMobileWebinarsOpen(false)
-                                  if (pathname === "/") {
-                                    window.dispatchEvent(new CustomEvent("filter-webinar-category", { detail: category.id }))
-                                    document.getElementById("webinars")?.scrollIntoView({ behavior: "smooth" })
-                                  } else {
-                                    router.push(`/?webinar_cat=${category.id}#webinars`)
-                                  }
-                                }}
-                                className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5 transition-all duration-200"
-                              >
-                                <div className={`w-9 h-9 rounded-lg ${category.bgColor} flex items-center justify-center shrink-0`}>
-                                  <IconComponent className={`w-4 h-4 ${category.color}`} />
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                  <span className="block text-sm font-medium text-white">
-                                    {category.label}
-                                  </span>
-                                  <span className="block text-xs text-white/50">
-                                    {category.count} {category.count === 1 ? "webinar" : "webinars"}
-                                  </span>
-                                </div>
-                              </Link>
-                            )
-                          })}
-                          <Link
-                            href="#webinars"
-                            onClick={(e) => {
-                              handleNavClick(e, "#webinars")
-                              setIsMenuOpen(false)
-                              setIsMobileWebinarsOpen(false)
-                            }}
-                            className="flex items-center justify-center gap-2 mt-2 py-2.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-fuchsia-500/10 text-sm text-pink-400 font-medium"
-                          >
-                            Ver todos los webinars
-                            <ArrowRight className="w-4 h-4" />
-                          </Link>
-                        </div>
-                      )}
-                    </div>
                   ) : (
                     <Link 
                       key={item.href}
@@ -601,7 +297,7 @@ export function Header() {
                         setIsMenuOpen(false)
                       }}
                       className={`px-4 py-3 rounded-lg text-[15px] font-semibold transition-all duration-200 ${
-                        activeSection === item.href 
+                        activeSection === item.href || (!item.href.startsWith("#") && pathname.startsWith(item.href))
                           ? "bg-gradient-to-r from-pink-500/20 to-fuchsia-500/20 text-white border-l-4 border-pink-500" 
                           : "text-white/70 hover:text-white hover:bg-white/10"
                       }`}
@@ -611,7 +307,7 @@ export function Header() {
                   )
                 ))}
 
-                {/* Mobile Only: Buttons */}
+                {/* Mobile Only: Button */}
                 <div className="md:hidden flex flex-col gap-3 pt-5 border-t border-white/10 mt-2">
                   <Link 
                     href="https://autogestion.depcsuite.com/" 
@@ -619,20 +315,9 @@ export function Header() {
                     rel="noopener noreferrer"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    <Button variant="outline" className="w-full border-white/20 text-white hover:bg-white/10 font-medium bg-transparent">
-                      Iniciar sesión
+                    <Button className="w-full bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white font-semibold shadow-lg shadow-pink-500/25">
+                      Acceso alumnos
                     </Button>
-                  </Link>
-                  <Link 
-                    href="#precios" 
-                    onClick={(e) => {
-                      handleNavClick(e, "#precios")
-                      setIsMenuOpen(false)
-                    }}
-                  >
-<Button className="w-full bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white font-semibold shadow-lg shadow-pink-500/25">
-                    Comenzar ahora
-                  </Button>
                   </Link>
                 </div>
               </nav>

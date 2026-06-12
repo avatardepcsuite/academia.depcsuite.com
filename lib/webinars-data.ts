@@ -18,6 +18,8 @@ export interface Webinar {
   note?: string
   tags?: string[]
   available: boolean
+  /** URL del video (YouTube/Vimeo embed o mp4). Si está vacío se muestra el espacio reservado para el video. */
+  videoUrl?: string
 }
 
 export const categories = [
@@ -82,9 +84,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Aprendé a identificar y prevenir los fraudes digitales más comunes. Casos reales, señales de alerta y buenas prácticas para proteger tu información.",
     fullDescription:
-      "Los fraudes digitales evolucionan cada día y cualquiera puede ser víctima. En este webinar práctico vas a aprender a reconocer las técnicas más usadas por los atacantes y cómo protegerte de forma efectiva.\n\n**Lo que vas a aprender:**\n\n• Cómo funcionan los fraudes digitales más frecuentes (phishing, ingeniería social, suplantación de identidad, estafas en redes sociales y marketplaces).\n• Señales de alerta para detectar intentos de fraude antes de caer.\n• Herramientas y hábitos de seguridad para proteger tus cuentas, dispositivos e información personal.\n• Qué hacer si fuiste víctima de un fraude: pasos inmediatos y canales de denuncia.\n\n**Metodología práctica:**\n\nAnalizaremos casos reales y ejemplos concretos para que puedas aplicar lo aprendido desde el primer día. No se requieren conocimientos técnicos previos.\n\n**Por qué es importante:**\n\nLa ciberseguridad ya no es solo para expertos en tecnología. Hoy todos manejamos información sensible online: datos bancarios, contraseñas, documentos personales. Saber identificar riesgos y actuar con criterio es una habilidad esencial en el mundo digital.",
+      "Los fraudes digitales evolucionan cada día y cualquiera puede ser víctima. En este streaming práctico vas a aprender a reconocer las técnicas más usadas por los atacantes y cómo protegerte de forma efectiva.\n\n**Lo que vas a aprender:**\n\n• Cómo funcionan los fraudes digitales más frecuentes (phishing, ingeniería social, suplantación de identidad, estafas en redes sociales y marketplaces).\n• Señales de alerta para detectar intentos de fraude antes de caer.\n• Herramientas y hábitos de seguridad para proteger tus cuentas, dispositivos e información personal.\n• Qué hacer si fuiste víctima de un fraude: pasos inmediatos y canales de denuncia.\n\n**Metodología práctica:**\n\nAnalizaremos casos reales y ejemplos concretos para que puedas aplicar lo aprendido desde el primer día. No se requieren conocimientos técnicos previos.\n\n**Por qué es importante:**\n\nLa ciberseguridad ya no es solo para expertos en tecnología. Hoy todos manejamos información sensible online: datos bancarios, contraseñas, documentos personales. Saber identificar riesgos y actuar con criterio es una habilidad esencial en el mundo digital.",
     image: "/images/webinar-ciberseguridad-fraudes.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-teal-600",
     category: "seguridad",
     duration: "90 – 120 min",
@@ -106,9 +108,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Aprend\u00e9 a crear un CV escaneable, claro y orientado a resultados, con la estructura y el lenguaje que hoy funciona en la industria tech.",
     fullDescription:
-      "Tu CV compite en dos etapas: primero lo filtra un sistema (ATS) y despu\u00e9s lo juzga una persona en segundos. En este webinar vas a aprender a crear un CV escaneable, claro y orientado a resultados, con la estructura y el lenguaje que hoy funciona en la industria tech.\n\nVas a salir con criterios concretos para pasar filtros autom\u00e1ticos, reducir el \u201cte ghostean\u201d y aumentar tus chances de entrevista sin inventarte experiencia: mejor narrativa, mejor evidencia, mejor lectura.",
+      "Tu CV compite en dos etapas: primero lo filtra un sistema (ATS) y despu\u00e9s lo juzga una persona en segundos. En este streaming vas a aprender a crear un CV escaneable, claro y orientado a resultados, con la estructura y el lenguaje que hoy funciona en la industria tech.\n\nVas a salir con criterios concretos para pasar filtros autom\u00e1ticos, reducir el \u201cte ghostean\u201d y aumentar tus chances de entrevista sin inventarte experiencia: mejor narrativa, mejor evidencia, mejor lectura.",
     image: "/images/webinar-cv-ats.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-emerald-600",
     category: "empleabilidad",
     duration: "90 \u2013 120 min",
@@ -128,9 +130,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Compar\u00e1 los dos enfoques m\u00e1s usados de IA para trabajo: asistentes tipo Copilot vs agentes aut\u00f3nomos. Descubr\u00ed cu\u00e1l se adapta mejor a tu flujo.",
     fullDescription:
-      "No se trata de \u201cusar IA\u201d. Se trata de trabajar mejor con IA sin apagar tu pensamiento cr\u00edtico. En este webinar compar\u00e1s dos enfoques que hoy dominan el trabajo real:\n\n\u2022 Copilot / asistente: te ayuda mientras hac\u00e9s.\n\u2022 Agent-first / agentes: planifican y ejecutan por pasos.\n\nVas a aprender cu\u00e1ndo conviene cada uno, c\u00f3mo pedir resultados verificables, c\u00f3mo revisar sin perder tiempo y c\u00f3mo integrar IA a tu flujo para ganar velocidad sin dependencia.",
+      "No se trata de \u201cusar IA\u201d. Se trata de trabajar mejor con IA sin apagar tu pensamiento cr\u00edtico. En este streaming compar\u00e1s dos enfoques que hoy dominan el trabajo real:\n\n\u2022 Copilot / asistente: te ayuda mientras hac\u00e9s.\n\u2022 Agent-first / agentes: planifican y ejecutan por pasos.\n\nVas a aprender cu\u00e1ndo conviene cada uno, c\u00f3mo pedir resultados verificables, c\u00f3mo revisar sin perder tiempo y c\u00f3mo integrar IA a tu flujo para ganar velocidad sin dependencia.",
     image: "/images/webinar-ai-productivity.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-purple-600",
     category: "ia",
     duration: "90 \u2013 120 min",
@@ -149,7 +151,7 @@ export const webinars: Webinar[] = [
     title: "Notion desde cero: tu primer sistema de productividad digital",
     shortDescription:
       "Aprendé Notion desde cero y armá un sistema simple para planificación semanal + seguimiento de pendientes en vivo.",
-    fullDescription: `En este webinar se revisan los componentes clave de la interfaz de Notion (workspace, panel de control, páginas privadas/compartidas y teamspaces), los principales bloques de construcción y cómo crearlos con "/" (texto, encabezados, listas, tablas, toggles, callouts, etc.), los fundamentos de las bases de datos (qué son y cómo funcionan con páginas, propiedades, vistas y filtros, y cuándo conviene usarlas inline vs full page), los beneficios de la gestión del conocimiento mediante una wiki (incluyendo propiedades típicas como dueño, verificación y etiquetas) y un panorama general de AI Agents y sus consideraciones de uso, especialmente vía API.
+    fullDescription: `En este streaming se revisan los componentes clave de la interfaz de Notion (workspace, panel de control, páginas privadas/compartidas y teamspaces), los principales bloques de construcción y cómo crearlos con "/" (texto, encabezados, listas, tablas, toggles, callouts, etc.), los fundamentos de las bases de datos (qué son y cómo funcionan con páginas, propiedades, vistas y filtros, y cuándo conviene usarlas inline vs full page), los beneficios de la gestión del conocimiento mediante una wiki (incluyendo propiedades típicas como dueño, verificación y etiquetas) y un panorama general de AI Agents y sus consideraciones de uso, especialmente vía API.
 
 **Temario:**
 
@@ -190,7 +192,7 @@ export const webinars: Webinar[] = [
 **7. Certificación**
 • Con la información obtenida, los estudiantes van a ser capaces de obtener la certificación Notion Essentials.`,
     image: "/images/webinar-notion-productivity.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-gray-800",
     category: "productividad",
     duration: "90 – 120 min",
@@ -212,7 +214,7 @@ export const webinars: Webinar[] = [
     fullDescription:
       "Si est\u00e1s aplicando, la diferencia rara vez es \u201csaber m\u00e1s\u201d: suele ser explicarlo mejor. Ac\u00e1 vas a usar IA de forma pr\u00e1ctica y \u00e9tica para entrenar entrevistas: simulaci\u00f3n de preguntas, pr\u00e1ctica de respuestas, feedback para mejorar claridad y un plan para optimizar LinkedIn + portfolio.\n\nLa clave: que la IA sea tu entrenador (te mejora), no tu muleta (te reemplaza). Vas a aprender a justificar decisiones t\u00e9cnicas, sonar natural y construir un perfil que convierta visitas en entrevistas.",
     image: "/images/webinar-ia-entrevistas.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-emerald-600",
     category: "empleabilidad",
     duration: "90 \u2013 120 min",
@@ -234,9 +236,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Integr\u00e1 modelos de IA con n8n para crear asistentes y automatizaciones: clasificaci\u00f3n de mensajes, res\u00famenes y generaci\u00f3n de contenido.",
     fullDescription:
-      "La IA es potente\u2026 pero el valor aparece cuando la conect\u00e1s a procesos reales. En este webinar integr\u00e1s modelos de IA con n8n para crear asistentes y automatizaciones: clasificaci\u00f3n de mensajes, res\u00famenes, respuestas sugeridas y generaci\u00f3n de contenido con control de calidad.\n\nTe llev\u00e1s un patr\u00f3n replicable para automatizar sin perder precisi\u00f3n, reduciendo errores y \u201calucinaciones\u201d.",
+      "La IA es potente\u2026 pero el valor aparece cuando la conect\u00e1s a procesos reales. En este streaming integr\u00e1s modelos de IA con n8n para crear asistentes y automatizaciones: clasificaci\u00f3n de mensajes, res\u00famenes, respuestas sugeridas y generaci\u00f3n de contenido con control de calidad.\n\nTe llev\u00e1s un patr\u00f3n replicable para automatizar sin perder precisi\u00f3n, reduciendo errores y \u201calucinaciones\u201d.",
     image: "/images/webinar-ia-n8n-asistentes.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-violet-600",
     category: "automatizacion",
     duration: "90 \u2013 120 min",
@@ -259,9 +261,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Hac\u00e9 el puente real entre estudiar y conseguir entrevistas: portfolio, postulaciones y un mapa claro para medir tu progreso.",
     fullDescription:
-      "Estudiar es necesario, pero no alcanza: el mercado entrevista a candidatos, no a \u201cpersonas que est\u00e1n aprendiendo\u201d. En este webinar hacemos el puente real: c\u00f3mo armar un portfolio con proyectos que sumen, demostrar habilidades, leer requisitos de b\u00fasquedas reales y sostener un ritmo de postulaciones sin frustrarte.\n\nTe vas con un mapa claro para ordenar tu camino y medir progreso con se\u00f1ales concretas (no con ansiedad).",
+      "Estudiar es necesario, pero no alcanza: el mercado entrevista a candidatos, no a \u201cpersonas que est\u00e1n aprendiendo\u201d. En este streaming hacemos el puente real: c\u00f3mo armar un portfolio con proyectos que sumen, demostrar habilidades, leer requisitos de b\u00fasquedas reales y sostener un ritmo de postulaciones sin frustrarte.\n\nTe vas con un mapa claro para ordenar tu camino y medir progreso con se\u00f1ales concretas (no con ansiedad).",
     image: "/images/webinar-estudiante-candidato.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-emerald-600",
     category: "empleabilidad",
     duration: "90 \u2013 120 min",
@@ -284,9 +286,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Entend\u00e9 qu\u00e9 automatizar, c\u00f3mo empezar sin experiencia y constru\u00ed flujos en vivo con formularios + alertas.",
     fullDescription:
-      "Automatizar no es \u201cser programador\u201d: es dejar de repetir tareas que drenan energ\u00eda. En este webinar entend\u00e9s qu\u00e9 automatizar, c\u00f3mo empezar sin experiencia y construimos flujos en vivo (captura desde formularios + alertas por email/Telegram).\n\nSal\u00eds pensando en workflows simples que ahorran tiempo de verdad y con un m\u00e9todo para destrabar errores comunes.",
+      "Automatizar no es \u201cser programador\u201d: es dejar de repetir tareas que drenan energ\u00eda. En este streaming entend\u00e9s qu\u00e9 automatizar, c\u00f3mo empezar sin experiencia y construimos flujos en vivo (captura desde formularios + alertas por email/Telegram).\n\nSal\u00eds pensando en workflows simples que ahorran tiempo de verdad y con un m\u00e9todo para destrabar errores comunes.",
     image: "/images/webinar-n8n-basics.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-orange-500",
     category: "automatizacion",
     duration: "90 \u2013 120 min",
@@ -308,9 +310,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Creá una automatización completa: recibí solicitudes de turnos por WhatsApp, respondé automáticamente y agendá en Google Calendar.",
     fullDescription:
-      "WhatsApp es el canal donde tus clientes quieren comunicarse. En este webinar vas a crear una automatización real que integra n8n, WhatsApp, Google Calendar y Google Docs para gestionar turnos de forma profesional.\n\nAprendé a configurar un flujo donde el cliente solicita un turno por WhatsApp, el bot responde automáticamente con disponibilidad, agenda el turno en Google Calendar y genera documentación en Google Docs. Ideal para comercios, consultorios, peluquerías y cualquier negocio que necesite gestionar citas.\n\nTe llevás un sistema funcional que podés adaptar a tu negocio desde el primer día.",
+      "WhatsApp es el canal donde tus clientes quieren comunicarse. En este streaming vas a crear una automatización real que integra n8n, WhatsApp, Google Calendar y Google Docs para gestionar turnos de forma profesional.\n\nAprendé a configurar un flujo donde el cliente solicita un turno por WhatsApp, el bot responde automáticamente con disponibilidad, agenda el turno en Google Calendar y genera documentación en Google Docs. Ideal para comercios, consultorios, peluquerías y cualquier negocio que necesite gestionar citas.\n\nTe llevás un sistema funcional que podés adaptar a tu negocio desde el primer día.",
     image: "/images/webinar-whatsapp-bot.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-green-600",
     category: "automatizacion",
     duration: "90 – 120 min",
@@ -333,9 +335,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Convert\u00ed experiencias t\u00e9cnicas en historias claras para entrevistas, demos y networking usando el m\u00e9todo STAR.",
     fullDescription:
-      "Pod\u00e9s ser bueno t\u00e9cnicamente y aun as\u00ed perder oportunidades por no comunicar impacto. En este webinar convert\u00eds experiencias t\u00e9cnicas (bugs, performance, arquitectura, trabajo en equipo) en historias claras para entrevistas, demos y networking usando STAR.\n\nPracticamos con casos t\u00edpicos de IT y aprend\u00e9s a cuantificar resultados sin exagerar: claridad, evidencia y credibilidad.",
+      "Pod\u00e9s ser bueno t\u00e9cnicamente y aun as\u00ed perder oportunidades por no comunicar impacto. En este streaming convert\u00eds experiencias t\u00e9cnicas (bugs, performance, arquitectura, trabajo en equipo) en historias claras para entrevistas, demos y networking usando STAR.\n\nPracticamos con casos t\u00edpicos de IT y aprend\u00e9s a cuantificar resultados sin exagerar: claridad, evidencia y credibilidad.",
     image: "/images/webinar-storytelling-devs.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-emerald-600",
     category: "empleabilidad",
     duration: "90 \u2013 120 min",
@@ -358,9 +360,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Arm\u00e1 un sistema operativo en Notion: CRM + pipeline, tablero Kanban, documentaci\u00f3n interna y control financiero b\u00e1sico.",
     fullDescription:
-      "Si tu operaci\u00f3n vive en mil herramientas, termin\u00e1s apagando incendios. En este webinar arm\u00e1s un \u201csistema operativo\u201d en Notion: CRM + pipeline, tablero Kanban, documentaci\u00f3n interna y control financiero b\u00e1sico.\n\nIdeal para ordenar ventas y operaci\u00f3n con una base clara, simple y escalable.",
+      "Si tu operaci\u00f3n vive en mil herramientas, termin\u00e1s apagando incendios. En este streaming arm\u00e1s un \u201csistema operativo\u201d en Notion: CRM + pipeline, tablero Kanban, documentaci\u00f3n interna y control financiero b\u00e1sico.\n\nIdeal para ordenar ventas y operaci\u00f3n con una base clara, simple y escalable.",
     image: "/images/webinar-notion-emprendedores.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-gray-800",
     category: "productividad",
     duration: "90 \u2013 120 min",
@@ -382,9 +384,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Conect\u00e1 Notion con otras apps usando n8n: carg\u00e1 tareas/leads desde formularios y sincroniz\u00e1 con Google Sheets.",
     fullDescription:
-      "Notion funciona mejor cuando deja de depender de que \u201calguien cargue todo a mano\u201d. En este webinar conect\u00e1s Notion con otras apps usando n8n, ves lo esencial del API de Notion y armamos automatizaciones en vivo: cargar tareas/leads desde formularios y sincronizar con Google Sheets u otras bases.\n\nIncluye errores comunes, buenas pr\u00e1cticas y c\u00f3mo pensar flujos mantenibles.",
+      "Notion funciona mejor cuando deja de depender de que \u201calguien cargue todo a mano\u201d. En este streaming conect\u00e1s Notion con otras apps usando n8n, ves lo esencial del API de Notion y armamos automatizaciones en vivo: cargar tareas/leads desde formularios y sincronizar con Google Sheets u otras bases.\n\nIncluye errores comunes, buenas pr\u00e1cticas y c\u00f3mo pensar flujos mantenibles.",
     image: "/images/webinar-notion-n8n.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-amber-600",
     category: "automatizacion",
     duration: "90 \u2013 120 min",
@@ -407,9 +409,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Us\u00e1 IA para acelerar documentaci\u00f3n t\u00e9cnica: README, gu\u00edas de instalaci\u00f3n, docs de API y decisiones t\u00e9cnicas (ADR).",
     fullDescription:
-      "La documentaci\u00f3n no es \u201crelleno\u201d: es lo que convierte un proyecto en algo usable, mantenible y confiable. En este webinar us\u00e1s IA para acelerar documentaci\u00f3n t\u00e9cnica que s\u00ed sirve: README, gu\u00edas de instalaci\u00f3n, docs de API, ejemplos de uso y decisiones t\u00e9cnicas (ADR).\n\nTe llev\u00e1s prompts + un flujo de revisi\u00f3n para evitar texto inflado y lograr claridad profesional.",
+      "La documentaci\u00f3n no es \u201crelleno\u201d: es lo que convierte un proyecto en algo usable, mantenible y confiable. En este streaming us\u00e1s IA para acelerar documentaci\u00f3n t\u00e9cnica que s\u00ed sirve: README, gu\u00edas de instalaci\u00f3n, docs de API, ejemplos de uso y decisiones t\u00e9cnicas (ADR).\n\nTe llev\u00e1s prompts + un flujo de revisi\u00f3n para evitar texto inflado y lograr claridad profesional.",
     image: "/images/webinar-documentation-ai.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-indigo-600",
     category: "ia",
     duration: "90 \u2013 120 min",
@@ -431,9 +433,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Dise\u00f1\u00e1 e implement\u00e1 un asistente para tu sitio: objetivos, contenido fuente, tono de marca y escalamiento a humano.",
     fullDescription:
-      "Un asistente virtual bien hecho baja tickets, mejora la experiencia y puede aumentar conversi\u00f3n. Mal hecho, rompe confianza. En este webinar dise\u00f1\u00e1s e implement\u00e1s un asistente para tu sitio: objetivos, contenido fuente (FAQs, docs, blog), tono de marca, escalamiento a humano y m\u00e9tricas para medir impacto real.\n\nAprend\u00e9s tambi\u00e9n a reducir respuestas incorrectas con buenas pr\u00e1cticas de QA y seguridad.",
+      "Un asistente virtual bien hecho baja tickets, mejora la experiencia y puede aumentar conversi\u00f3n. Mal hecho, rompe confianza. En este streaming dise\u00f1\u00e1s e implement\u00e1s un asistente para tu sitio: objetivos, contenido fuente (FAQs, docs, blog), tono de marca, escalamiento a humano y m\u00e9tricas para medir impacto real.\n\nAprend\u00e9s tambi\u00e9n a reducir respuestas incorrectas con buenas pr\u00e1cticas de QA y seguridad.",
     image: "/images/webinar-virtual-assistant.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-teal-600",
     category: "ia",
     duration: "90 \u2013 120 min",
@@ -455,9 +457,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Aprend\u00e9 lo esencial de APIs (endpoints, tokens, JSON) y us\u00e1 n8n para orquestar Notion, Sheets, Slack, Trello y m\u00e1s.",
     fullDescription:
-      "Saber \u201cun poco\u201d de APIs hoy es una superhabilidad: te permite integrar herramientas sin sufrir. En este webinar aprend\u00e9s lo esencial (endpoints, tokens, JSON) y c\u00f3mo usarlo en n8n para orquestar Notion, Sheets, Slack, Trello, Airtable y m\u00e1s.\n\nArmamos flujos reales multi-app para que pases de la teor\u00eda a conexiones que funcionan.",
+      "Saber \u201cun poco\u201d de APIs hoy es una superhabilidad: te permite integrar herramientas sin sufrir. En este streaming aprend\u00e9s lo esencial (endpoints, tokens, JSON) y c\u00f3mo usarlo en n8n para orquestar Notion, Sheets, Slack, Trello, Airtable y m\u00e1s.\n\nArmamos flujos reales multi-app para que pases de la teor\u00eda a conexiones que funcionan.",
     image: "/images/webinar-apis-n8n.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-sky-600",
     category: "automatizacion",
     duration: "90 \u2013 120 min",
@@ -480,9 +482,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Aprend\u00e9 patrones para llevar flujos a producci\u00f3n: manejo de errores, reintentos, scheduling, logs y monitoreo.",
     fullDescription:
-      "Hay una diferencia enorme entre \u201cautomatizaciones caseras\u201d y procesos de nivel empresa. En este webinar aprend\u00e9s patrones para llevar flujos a producci\u00f3n: manejo de errores, reintentos, scheduling, branching logic, logs, monitoreo e idempotencia.\n\nTe llev\u00e1s criterios para que tus automatizaciones sean mantenibles, auditables y escalables.",
+      "Hay una diferencia enorme entre \u201cautomatizaciones caseras\u201d y procesos de nivel empresa. En este streaming aprend\u00e9s patrones para llevar flujos a producci\u00f3n: manejo de errores, reintentos, scheduling, branching logic, logs, monitoreo e idempotencia.\n\nTe llev\u00e1s criterios para que tus automatizaciones sean mantenibles, auditables y escalables.",
     image: "/images/webinar-automatizacion-empresas.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-orange-600",
     category: "automatizacion",
     duration: "90 \u2013 120 min",
@@ -505,9 +507,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Entend\u00e9 c\u00f3mo se construyen interfaces modernas, c\u00f3mo pensar en componentes y estado y por qu\u00e9 React sigue siendo tan demandado.",
     fullDescription:
-      "Si ya manej\u00e1s lo b\u00e1sico, el pr\u00f3ximo salto es entender c\u00f3mo se construyen interfaces modernas. En este webinar aprend\u00e9s qu\u00e9 problema resuelven los frameworks/librer\u00edas frontend, c\u00f3mo pensar en componentes y estado y por qu\u00e9 React sigue siendo tan demandado.\n\nTe mostramos c\u00f3mo arrancar tu primer proyecto, qu\u00e9 aprender primero y c\u00f3mo evitar trabas t\u00edpicas del inicio.",
+      "Si ya manej\u00e1s lo b\u00e1sico, el pr\u00f3ximo salto es entender c\u00f3mo se construyen interfaces modernas. En este streaming aprend\u00e9s qu\u00e9 problema resuelven los frameworks/librer\u00edas frontend, c\u00f3mo pensar en componentes y estado y por qu\u00e9 React sigue siendo tan demandado.\n\nTe mostramos c\u00f3mo arrancar tu primer proyecto, qu\u00e9 aprender primero y c\u00f3mo evitar trabas t\u00edpicas del inicio.",
     image: "/images/webinar-react-frameworks.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-cyan-600",
     category: "programacion",
     duration: "90 \u2013 120 min",
@@ -529,9 +531,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Domin\u00e1 fundamentos de web scraping responsable y aprend\u00e9 a proteger tu web de bots con rate limiting y reglas anti-abuse.",
     fullDescription:
-      "Scraping es \u00fatil\u2026 y tambi\u00e9n puede ser un problema. En este webinar domin\u00e1s fundamentos de web scraping responsable (qu\u00e9 se puede y qu\u00e9 no), casos de uso y l\u00edmites \u00e9ticos/legales. Y del lado defensivo aprend\u00e9s a detectar bots, aplicar rate limiting y reglas anti-abuse para proteger tu web sin romper la UX.",
+      "Scraping es \u00fatil\u2026 y tambi\u00e9n puede ser un problema. En este streaming domin\u00e1s fundamentos de web scraping responsable (qu\u00e9 se puede y qu\u00e9 no), casos de uso y l\u00edmites \u00e9ticos/legales. Y del lado defensivo aprend\u00e9s a detectar bots, aplicar rate limiting y reglas anti-abuse para proteger tu web sin romper la UX.",
     image: "/images/webinar-web-scraping.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-orange-600",
     category: "programacion",
     duration: "90 \u2013 120 min",
@@ -554,9 +556,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Aprend\u00e9 patrones modernos: OAuth2/OIDC, JWT vs sessions, MFA y buenas pr\u00e1cticas para evitar fallas t\u00edpicas de seguridad.",
     fullDescription:
-      "La autenticaci\u00f3n no es \u201chacer un login\u201d: es una superficie cr\u00edtica de seguridad y experiencia. En este webinar aprend\u00e9s patrones modernos: OAuth2/OIDC, JWT vs sessions, MFA, manejo de tokens y buenas pr\u00e1cticas para evitar fallas t\u00edpicas (phishing, credential stuffing, sesiones mal gestionadas).\n\nEnfoque pr\u00e1ctico para dise\u00f1ar un sistema seguro y escalable sin sacrificar UX.",
+      "La autenticaci\u00f3n no es \u201chacer un login\u201d: es una superficie cr\u00edtica de seguridad y experiencia. En este streaming aprend\u00e9s patrones modernos: OAuth2/OIDC, JWT vs sessions, MFA, manejo de tokens y buenas pr\u00e1cticas para evitar fallas t\u00edpicas (phishing, credential stuffing, sesiones mal gestionadas).\n\nEnfoque pr\u00e1ctico para dise\u00f1ar un sistema seguro y escalable sin sacrificar UX.",
     image: "/images/webinar-authentication.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-teal-600",
     category: "programacion",
     duration: "90 – 120 min",
@@ -579,9 +581,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Desarroll\u00e1 habilidades que te diferencian: comunicaci\u00f3n, feedback, colaboraci\u00f3n, ownership y pensamiento cr\u00edtico.",
     fullDescription:
-      "Cuando la IA acelera lo t\u00e9cnico, lo que te hace crecer es lo humano: comunicaci\u00f3n, feedback, colaboraci\u00f3n, ownership, criterio y pensamiento cr\u00edtico. En este webinar desarroll\u00e1s habilidades que te diferencian en equipos reales y con stakeholders reales.\n\nPorque no basta con resolver: hay que alinear, priorizar, explicar y ejecutar con claridad.",
+      "Cuando la IA acelera lo t\u00e9cnico, lo que te hace crecer es lo humano: comunicaci\u00f3n, feedback, colaboraci\u00f3n, ownership, criterio y pensamiento cr\u00edtico. En este streaming desarroll\u00e1s habilidades que te diferencian en equipos reales y con stakeholders reales.\n\nPorque no basta con resolver: hay que alinear, priorizar, explicar y ejecutar con claridad.",
     image: "/images/webinar-soft-skills.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-rose-600",
     category: "empleabilidad",
     duration: "90 \u2013 120 min",
@@ -603,9 +605,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Descubrí qué es la ciberseguridad, por qué importa hoy más que nunca, y conocé las amenazas más comunes como phishing, malware y ransomware con casos prácticos.",
     fullDescription:
-      "En este webinar vas a entender qué es la ciberseguridad y por qué se convirtió en un tema central para personas, empresas y organizaciones de cualquier tamaño. Recorreremos los principios clave de la seguridad de la información, el entorno digital actual con sus desafíos y las amenazas más frecuentes que enfrentamos todos los días.\n\n**Agenda del Webinar:**\n\n• **¿Qué es la ciberseguridad y por qué importa?** Introducción al concepto y su relevancia en el mundo actual.\n\n• **Principios clave: Tríada C-I-D y fundamentos.** Los pilares de la seguridad de la información: Confidencialidad, Integridad y Disponibilidad.\n\n• **Entorno digital actual: nube, teletrabajo, IoT.** Cómo estos cambios ampliaron la superficie de ataque y qué implica para tu seguridad.\n\n• **Amenazas comunes: phishing, malware, ransomware.** Las técnicas más usadas por atacantes y cómo funcionan.\n\n• **Casos prácticos: phishing y ransomware.** Ejemplos reales para identificar y entender cómo operan estos ataques.\n\n• **Roles y perfiles en ciberseguridad.** Conocé las distintas especialidades y oportunidades laborales en el área.\n\n• **Conclusiones, motivación y preguntas.** Cierre con recomendaciones y espacio para resolver dudas.\n\n**¿Por qué participar?**\n\nLa ciberseguridad ya no es solo para expertos en tecnología. Hoy todos manejamos información sensible online: datos bancarios, contraseñas, documentos personales. Este webinar te da las bases para entender los riesgos, protegerte mejor y, si te interesa, explorar un campo laboral con alta demanda.",
+      "En este streaming vas a entender qué es la ciberseguridad y por qué se convirtió en un tema central para personas, empresas y organizaciones de cualquier tamaño. Recorreremos los principios clave de la seguridad de la información, el entorno digital actual con sus desafíos y las amenazas más frecuentes que enfrentamos todos los días.\n\n**Agenda del Streaming:**\n\n• **¿Qué es la ciberseguridad y por qué importa?** Introducción al concepto y su relevancia en el mundo actual.\n\n• **Principios clave: Tríada C-I-D y fundamentos.** Los pilares de la seguridad de la información: Confidencialidad, Integridad y Disponibilidad.\n\n• **Entorno digital actual: nube, teletrabajo, IoT.** Cómo estos cambios ampliaron la superficie de ataque y qué implica para tu seguridad.\n\n• **Amenazas comunes: phishing, malware, ransomware.** Las técnicas más usadas por atacantes y cómo funcionan.\n\n• **Casos prácticos: phishing y ransomware.** Ejemplos reales para identificar y entender cómo operan estos ataques.\n\n• **Roles y perfiles en ciberseguridad.** Conocé las distintas especialidades y oportunidades laborales en el área.\n\n• **Conclusiones, motivación y preguntas.** Cierre con recomendaciones y espacio para resolver dudas.\n\n**¿Por qué participar?**\n\nLa ciberseguridad ya no es solo para expertos en tecnología. Hoy todos manejamos información sensible online: datos bancarios, contraseñas, documentos personales. Este webinar te da las bases para entender los riesgos, protegerte mejor y, si te interesa, explorar un campo laboral con alta demanda.",
     image: "/images/webinar-ciberseguridad-fundamentos.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-teal-600",
     category: "seguridad",
     duration: "90 min",
@@ -624,9 +626,9 @@ export const webinars: Webinar[] = [
     shortDescription:
       "Descubrí cómo la inteligencia artificial está transformando la ciberseguridad y sus aplicaciones en detección y prevención de amenazas.",
     fullDescription:
-      "En este webinar descubrirás cómo la inteligencia artificial está transformando la ciberseguridad y cuáles son sus aplicaciones más relevantes en la detección, prevención y respuesta ante amenazas. Se explorará cómo la IA permite identificar comportamientos anómalos, automatizar tareas de monitoreo, analizar grandes volúmenes de datos y anticipar posibles ataques con mayor velocidad y precisión.\n\nTambién se presentarán casos de uso y escenarios concretos en los que la IA se convierte en una aliada estratégica para fortalecer la seguridad digital, optimizar recursos y mejorar la toma de decisiones. Una propuesta pensada para quienes quieren comprender el impacto real de esta tecnología y cómo empezar a aplicarla en contextos de ciberseguridad de forma efectiva e innovadora.",
+      "En este streaming descubrirás cómo la inteligencia artificial está transformando la ciberseguridad y cuáles son sus aplicaciones más relevantes en la detección, prevención y respuesta ante amenazas. Se explorará cómo la IA permite identificar comportamientos anómalos, automatizar tareas de monitoreo, analizar grandes volúmenes de datos y anticipar posibles ataques con mayor velocidad y precisión.\n\nTambién se presentarán casos de uso y escenarios concretos en los que la IA se convierte en una aliada estratégica para fortalecer la seguridad digital, optimizar recursos y mejorar la toma de decisiones. Una propuesta pensada para quienes quieren comprender el impacto real de esta tecnología y cómo empezar a aplicarla en contextos de ciberseguridad de forma efectiva e innovadora.",
     image: "/images/webinar-ia-ciberseguridad.jpg",
-    type: "Webinar",
+    type: "Streaming",
     typeColor: "bg-teal-600",
     category: "seguridad",
     duration: "90 min",

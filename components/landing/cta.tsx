@@ -7,7 +7,7 @@ const included = [
   "Masterclass en vivo con docentes",
   "2 clases de consultas al mes",
   "Hackathones presenciales",
-  "Webinars de tendencias tech",
+  "Streaming de tendencias tech",
   "Certificación nacional e internacional",
   "Acceso al portal de empleo",
   "Credencial digital verificable",

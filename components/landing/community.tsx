@@ -62,7 +62,7 @@ const features = [
 
 export function Community() {
   return (
-    <section id="comunidad" className="py-24 relative bg-white">
+    <section id="comunidad" className="py-12 relative bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
