@@ -33,6 +33,17 @@ export function WebinarsCatalog() {
     return d
   }, [])
 
+  // Docentes únicos con foto, para mostrar en el hero
+  const docentes = useMemo(() => {
+    const map = new Map<string, { name: string; image: string }>()
+    for (const w of webinars) {
+      if (w.instructorImage && !map.has(w.instructor)) {
+        map.set(w.instructor, { name: w.instructor, image: w.instructorImage })
+      }
+    }
+    return Array.from(map.values())
+  }, [])
+
   // Orden: primero los que tienen video (fecha desc), luego los próximos (fecha asc)
   const sortedWebinars = useMemo(() => {
     const withVideo = webinars
@@ -71,6 +82,26 @@ export function WebinarsCatalog() {
             Mirá el streaming en vivo y on demand. Dale play y leé la descripción completa de cada uno,
             como tu canal favorito de tecnología.
           </p>
+
+          {/* Docentes */}
+          {docentes.length > 0 && (
+            <div className="mt-6 flex items-center gap-3">
+              <div className="flex -space-x-3">
+                {docentes.map((docente) => (
+                  <img
+                    key={docente.name}
+                    src={docente.image || "/placeholder.svg"}
+                    alt={docente.name}
+                    title={docente.name}
+                    className="h-11 w-11 sm:h-12 sm:w-12 rounded-full border-2 border-[#2D1B4E] object-cover bg-white/10 transition-transform hover:scale-110 hover:z-10"
+                  />
+                ))}
+              </div>
+              <span className="text-sm text-white/70">
+                Dictado por nuestros docentes
+              </span>
+            </div>
+          )}
 
           {/* Buscador */}
           <div className="mt-6 w-full sm:max-w-md">
