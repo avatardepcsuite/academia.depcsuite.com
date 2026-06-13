@@ -13,17 +13,20 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { ArrowRight } from "lucide-react"
+import { useCurrency, flagComponents, currencies, type CurrencyCode } from "@/contexts/currency-context"
+import { getPaymentLink, type DiplomaturaPricing } from "@/lib/diplomaturas-pricing"
 
 interface EnrollModalProps {
   open: boolean
   onOpenChange: (open: boolean) => void
   cursoTitle: string
-  /** MercadoPago checkout link the "Ir a pagar" button redirects to */
-  paymentLink?: string
+  /** Pricing for the selected course, used to resolve the correct payment link per currency */
+  pricing?: DiplomaturaPricing
 }
 
-export function EnrollModal({ open, onOpenChange, cursoTitle, paymentLink }: EnrollModalProps) {
+export function EnrollModal({ open, onOpenChange, cursoTitle, pricing }: EnrollModalProps) {
   const [form, setForm] = useState({ nombre: "", correo: "", whatsapp: "" })
+  const { selectedCurrency, setSelectedCurrency } = useCurrency()
 
   const handleChange = (field: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm((prev) => ({ ...prev, [field]: e.target.value }))
@@ -31,9 +34,10 @@ export function EnrollModal({ open, onOpenChange, cursoTitle, paymentLink }: Enr
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("[v0] Datos de inscripción:", { curso: cursoTitle, ...form })
-    if (paymentLink) {
-      window.open(paymentLink, "_blank", "noopener,noreferrer")
+    console.log("[v0] Datos de inscripción:", { curso: cursoTitle, moneda: selectedCurrency.code, ...form })
+    if (pricing) {
+      const { href } = getPaymentLink(pricing, selectedCurrency.code)
+      window.open(href, "_blank", "noopener,noreferrer")
     }
   }
 
@@ -50,6 +54,33 @@ export function EnrollModal({ open, onOpenChange, cursoTitle, paymentLink }: Enr
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-2">
+          {/* Currency selector */}
+          <div className="flex flex-col gap-2">
+            <Label>Seleccioná tu país / moneda</Label>
+            <div className="flex flex-wrap gap-2">
+              {currencies.map((currency) => {
+                const Flag = flagComponents[currency.code as CurrencyCode]
+                const active = currency.code === selectedCurrency.code
+                return (
+                  <button
+                    key={currency.code}
+                    type="button"
+                    onClick={() => setSelectedCurrency(currency)}
+                    aria-pressed={active}
+                    className={`inline-flex items-center gap-2 px-3 py-2 rounded-lg border text-sm font-medium transition-all ${
+                      active
+                        ? "border-[#5C1F5C] bg-[#5C1F5C]/5 text-[#2D1B4E]"
+                        : "border-gray-200 text-gray-600 hover:border-gray-300"
+                    }`}
+                  >
+                    <Flag />
+                    {currency.code}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+
           <div className="flex flex-col gap-2">
             <Label htmlFor="enroll-nombre">Tu nombre</Label>
             <Input
@@ -90,7 +121,9 @@ export function EnrollModal({ open, onOpenChange, cursoTitle, paymentLink }: Enr
             size="lg"
             className="mt-2 h-12 bg-gradient-to-r from-[#2D1B4E] to-[#5C1F5C] hover:from-[#3D2B5E] hover:to-[#6C2F6C] text-white font-semibold"
           >
-            Ir a pagar
+            {pricing && getPaymentLink(pricing, selectedCurrency.code).method === "whatsapp"
+              ? "Continuar pago por WhatsApp"
+              : "Ir a pagar"}
             <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
         </form>

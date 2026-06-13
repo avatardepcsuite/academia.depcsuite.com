@@ -39,6 +39,10 @@ interface DiplomaturaLayoutProps {
   buttonGradient?: string
   previewGradient?: string
   firstClassMessage: string
+  /** When provided, the sidebar preview embeds this video */
+  docenteVideoUrl?: string
+  /** Label shown above the embedded docente video */
+  docenteVideoLabel?: string
   perks?: string[]
   /** Whether to show the "Solicitar clase de prueba" secondary CTA in the sidebar */
   showTrialClass?: boolean
@@ -63,6 +67,8 @@ export function DiplomaturaLayout({
   buttonGradient,
   previewGradient,
   firstClassMessage,
+  docenteVideoUrl,
+  docenteVideoLabel,
   perks,
   showTrialClass = true,
   onEnroll,
@@ -164,6 +170,8 @@ export function DiplomaturaLayout({
                 buttonGradient={buttonGradient}
                 previewGradient={previewGradient}
                 firstClassMessage={firstClassMessage}
+                docenteVideoUrl={docenteVideoUrl}
+                docenteVideoLabel={docenteVideoLabel}
                 perks={perks}
                 showTrialClass={showTrialClass}
                 onEnroll={onEnroll}

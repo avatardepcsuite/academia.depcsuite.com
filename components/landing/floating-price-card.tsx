@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { useCurrency } from "@/contexts/currency-context"
 import {
-  buildWhatsAppPaymentLink,
+  getPaymentLink,
   type DiplomaturaPricing,
 } from "@/lib/diplomaturas-pricing"
 import { Check, CreditCard, MessageCircle, ArrowDown } from "lucide-react"
@@ -29,6 +29,8 @@ export function FloatingPriceCard({
 }: FloatingPriceCardProps) {
   const { selectedCurrency } = useCurrency()
   const isArs = selectedCurrency.code === "ARS"
+  const { href: paymentHref, method } = getPaymentLink(pricing, selectedCurrency.code)
+  const isWhatsApp = method === "whatsapp"
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -49,10 +51,6 @@ export function FloatingPriceCard({
       window.removeEventListener("resize", onScroll)
     }
   }, [])
-
-  const paymentHref = isArs
-    ? pricing.mpagoLink
-    : buildWhatsAppPaymentLink(pricing.title)
 
   const scrollToInscripcion = () => {
     document.getElementById("inscripcion")?.scrollIntoView({ behavior: "smooth" })
@@ -82,7 +80,7 @@ export function FloatingPriceCard({
                 Precio Final: ${pricing.price.toLocaleString("es-AR")}
               </p>
             </>
-          ) : (
+          ) : isWhatsApp ? (
             <>
               <p className="text-xs font-semibold tracking-wide text-[#5C1F5C] uppercase mb-1">
                 Pago internacional
@@ -92,6 +90,18 @@ export function FloatingPriceCard({
               </p>
               <p className="text-sm text-gray-500">
                 Coordinamos el medio de pago y el valor en tu moneda local.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="text-xs font-semibold tracking-wide text-[#5C1F5C] uppercase mb-1">
+                Pago internacional
+              </p>
+              <p className="text-lg font-bold text-gray-900 mb-1">
+                Pagá con PayPal
+              </p>
+              <p className="text-sm text-gray-500">
+                Checkout seguro en {selectedCurrency.code} con tarjeta internacional.
               </p>
             </>
           )}
@@ -116,10 +126,15 @@ export function FloatingPriceCard({
                 <CreditCard className="w-4 h-4" />
                 Inscribirme ahora
               </>
-            ) : (
+            ) : isWhatsApp ? (
               <>
                 <MessageCircle className="w-4 h-4" />
                 Inscribirme por WhatsApp
+              </>
+            ) : (
+              <>
+                <CreditCard className="w-4 h-4" />
+                Pagar con PayPal
               </>
             )}
           </a>

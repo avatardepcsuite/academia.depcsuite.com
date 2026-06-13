@@ -13,6 +13,10 @@ interface DiplomaturaSidebarProps {
   previewGradient?: string
   /** WhatsApp message (human readable) used for the "primera clase" CTA */
   firstClassMessage: string
+  /** When provided, the preview header embeds this video instead of the WhatsApp first-class link */
+  docenteVideoUrl?: string
+  /** Label shown above the embedded docente video. Defaults to "Conocé a la docente" */
+  docenteVideoLabel?: string
   /** Perks listed under "Esta diplomatura incluye" */
   perks?: string[]
   /** Whether to show the "Solicitar clase de prueba" secondary CTA */
@@ -36,6 +40,8 @@ export function DiplomaturaSidebar({
   buttonGradient = "from-[#2D1B4E] to-[#5C1F5C] hover:from-[#3D2B5E] hover:to-[#6C2F6C]",
   previewGradient = "from-[#2D1B4E] to-[#5C1F5C]",
   firstClassMessage,
+  docenteVideoUrl,
+  docenteVideoLabel = "Conocé a la docente",
   perks = defaultPerks,
   showTrialClass = true,
   onEnroll,
@@ -58,19 +64,38 @@ export function DiplomaturaSidebar({
   return (
     <div className="bg-white rounded-xl border border-gray-200 shadow-xl shadow-black/10 overflow-hidden">
       {/* Preview header */}
-      <a
-        href={firstClassHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`relative flex aspect-video items-center justify-center bg-gradient-to-br ${previewGradient} group`}
-      >
-        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 ring-1 ring-white/30 backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
-          <Play className="h-7 w-7 text-white fill-white" />
-        </span>
-        <span className="absolute bottom-3 left-0 right-0 text-center text-sm font-medium text-white">
-          Ver primera clase gratis
-        </span>
-      </a>
+      {docenteVideoUrl ? (
+        <div>
+          <div className={`flex items-center justify-center gap-2 bg-gradient-to-br ${previewGradient} px-4 py-2.5`}>
+            <Play className="h-4 w-4 text-white fill-white" />
+            <span className="text-sm font-medium text-white">{docenteVideoLabel}</span>
+          </div>
+          <div className="relative aspect-video bg-black">
+            <iframe
+              src={docenteVideoUrl}
+              title={docenteVideoLabel}
+              className="absolute inset-0 h-full w-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      ) : (
+        <a
+          href={firstClassHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`relative flex aspect-video items-center justify-center bg-gradient-to-br ${previewGradient} group`}
+        >
+          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 ring-1 ring-white/30 backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
+            <Play className="h-7 w-7 text-white fill-white" />
+          </span>
+          <span className="absolute bottom-3 left-0 right-0 text-center text-sm font-medium text-white">
+            Ver primera clase gratis
+          </span>
+        </a>
+      )}
 
       <div className="p-6">
         {/* Price */}

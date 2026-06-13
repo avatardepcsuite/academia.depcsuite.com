@@ -136,7 +136,7 @@ export function WebinarCard({ webinar, isNext = false, isPast = false }: { webin
       )}
 
       {/* Solid color header with icon + watermark */}
-      <Link href={`/webinars/${webinar.slug}`} className="block">
+      <Link href={`/streaming/${webinar.slug}`} className="block">
         <div className={`relative ${headerColors.bg} px-6 py-6 overflow-hidden`}>
           <WatermarkIcon className={`absolute -right-3 -bottom-3 w-24 h-24 ${headerColors.iconColor} rotate-12 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110`} />
           <WatermarkIcon className={`absolute right-16 top-0 w-10 h-10 ${headerColors.iconColor} -rotate-12`} />
@@ -153,7 +153,7 @@ export function WebinarCard({ webinar, isNext = false, isPast = false }: { webin
 
       {/* Content */}
       <div className="p-6 flex flex-col flex-1">
-        <Link href={`/webinars/${webinar.slug}`}>
+        <Link href={`/streaming/${webinar.slug}`}>
           <h3 className="text-base font-bold mb-2 text-balance text-gray-900 hover:text-[#E91E63] transition-colors">
             {webinar.title}
           </h3>
@@ -247,7 +247,7 @@ export function WebinarCard({ webinar, isNext = false, isPast = false }: { webin
             </Button>
           </a>
         ) : (
-          <Link href={`/webinars/${webinar.slug}`}>
+          <Link href={`/streaming/${webinar.slug}`}>
             <Button className="w-full h-12 bg-gradient-to-r from-[#E91E63] to-[#C2185B] hover:from-[#D81B60] hover:to-[#AD1457] text-white font-medium">
               <ArrowRight className="w-4 h-4 mr-2" />
               Ver streaming
@@ -271,7 +271,7 @@ export function WebinarTableRow({ webinar, isNext = false, isPast = false }: { w
   return (
     <tr className={`group border-b border-gray-100 hover:bg-[#E91E63]/5 transition-colors ${isNext ? "bg-[#E91E63]/5" : ""}`}>
       <td className="py-4 px-4">
-        <Link href={`/webinars/${webinar.slug}`} className="flex items-center gap-3">
+        <Link href={`/streaming/${webinar.slug}`} className="flex items-center gap-3">
           <div className={`w-1.5 h-8 rounded-full flex-shrink-0 hidden sm:block ${catColors?.stripe ?? "bg-gray-400"}`} />
           <span className="text-sm font-semibold text-gray-900 group-hover:text-[#E91E63] transition-colors line-clamp-2">
             {webinar.title}
@@ -352,7 +352,7 @@ export function WebinarTableRow({ webinar, isNext = false, isPast = false }: { w
             </Button>
           </a>
         ) : (
-          <Link href={`/webinars/${webinar.slug}`}>
+          <Link href={`/streaming/${webinar.slug}`}>
             <Button size="sm" className="bg-gradient-to-r from-[#E91E63] to-[#C2185B] hover:from-[#D81B60] hover:to-[#AD1457] text-white text-xs whitespace-nowrap">
               <ArrowRight className="w-3.5 h-3.5 mr-1" />
               Ver

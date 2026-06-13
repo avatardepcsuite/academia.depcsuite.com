@@ -58,6 +58,23 @@ export function FlagEU({ className = "w-5 h-4" }: { className?: string }) {
   )
 }
 
+export function FlagUS({ className = "w-5 h-4" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+      <rect fill="#B22234" width="900" height="600" />
+      <g fill="#fff">
+        <rect y="46.15" width="900" height="46.15" />
+        <rect y="138.46" width="900" height="46.15" />
+        <rect y="230.77" width="900" height="46.15" />
+        <rect y="323.08" width="900" height="46.15" />
+        <rect y="415.38" width="900" height="46.15" />
+        <rect y="507.69" width="900" height="46.15" />
+      </g>
+      <rect fill="#3C3B6E" width="360" height="323.08" />
+    </svg>
+  )
+}
+
 export function FlagWorld({ className = "w-5 h-4" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -81,7 +98,7 @@ export const flagComponents: Record<CurrencyCode, () => JSX.Element> = {
   ARS: () => <FlagAR />,
   COP: () => <FlagCO />,
   MXN: () => <FlagMX />,
-  USD: () => <FlagWorld />,
+  USD: () => <FlagUS />,
   EUR: () => <FlagEU />,
 }
 

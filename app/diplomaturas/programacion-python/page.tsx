@@ -50,10 +50,17 @@ const courseSchema = {
   "@type": "Course",
   "name": "Diplomatura en Programación Python con Django y Vue.js",
   "description": "Aprende Python desde cero, domina Django para el backend y Vue.js para crear interfaces dinámicas. Desarrolla APIs REST profesionales. 6 meses de duración, 100% online, con doble certificación nacional e internacional.",
+  "url": "https://academia.depcsuite.com/diplomaturas/programacion-python",
+  "image": "https://academia.depcsuite.com/images/course-python.jpg",
   "provider": {
     "@type": "EducationalOrganization",
     "name": "Academia DePC",
-    "url": "https://academia.depcsuite.com"
+    "url": "https://academia.depcsuite.com",
+    "sameAs": [
+      "https://www.instagram.com/academiadepc",
+      "https://www.linkedin.com/company/academiadepc",
+      "https://www.youtube.com/@academiadepc"
+    ]
   },
   "courseMode": "online",
   "educationalLevel": "Beginner to Intermediate",
@@ -64,7 +71,17 @@ const courseSchema = {
   "hasCourseInstance": {
     "@type": "CourseInstance",
     "courseMode": "online",
+    "courseWorkload": "PT120H",
     "duration": "P6M"
+  },
+  "offers": {
+    "@type": "Offer",
+    "category": "Diplomatura",
+    "price": "240000",
+    "priceCurrency": "ARS",
+    "availability": "https://schema.org/InStock",
+    "url": "https://academia.depcsuite.com/diplomaturas/programacion-python",
+    "validFrom": "2026-01-01"
   }
 }
 
@@ -391,7 +408,7 @@ export default function DiplomaturaPythonPage() {
         open={enrollOpen}
         onOpenChange={setEnrollOpen}
         cursoTitle={diplomaturasPricing["programacion-python"].title}
-        paymentLink="https://mpago.la/1zE4Vfa"
+        pricing={diplomaturasPricing["programacion-python"]}
       />
     </>
   )

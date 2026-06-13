@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 
 const baseUrl = "https://academia.depcsuite.com"
-const canonicalUrl = `${baseUrl}/webinars`
+const canonicalUrl = `${baseUrl}/streaming`
 
 export const metadata: Metadata = {
   title: "Catálogo de Streaming Gratuito | Academia DePC",
@@ -27,6 +27,14 @@ export const metadata: Metadata = {
       "Todo el streaming de Academia DePC en un solo lugar. Filtrá por temática o buscá por palabra clave. En vivo y on demand.",
     url: canonicalUrl,
     siteName: "Academia DePC",
+    images: [
+      {
+        url: `${baseUrl}/images/logo-depc-cuadrado.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Catálogo de Streaming Gratuito - Academia DePC",
+      },
+    ],
     locale: "es_AR",
     type: "website",
   },
@@ -35,6 +43,7 @@ export const metadata: Metadata = {
     title: "Catálogo de Streaming Gratuito | Academia DePC",
     description:
       "Todo el streaming de Academia DePC en un solo lugar. Filtrá por temática o buscá por palabra clave.",
+    images: [`${baseUrl}/images/logo-depc-cuadrado.jpg`],
     creator: "@academiadepc",
     site: "@academiadepc",
   },

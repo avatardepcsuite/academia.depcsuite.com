@@ -2,7 +2,7 @@ import React from "react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Diplomatura Fundamentos de Ciberseguridad Aplicada | Academia DePC",
+  title: "Diplomatura Fundamentos de Ciberseguridad Aplicada",
   description:
     "Aprende ciberseguridad desde cero. Fundamentos, hacking etico, criptografia, seguridad en redes y DevSecOps. 3 meses, 100% online, doble certificacion nacional e internacional.",
   keywords: [

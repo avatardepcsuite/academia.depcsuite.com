@@ -50,10 +50,17 @@ const courseSchema = {
   "@type": "Course",
   "name": "Diplomatura en Programación Full Stack con React, Node.js e Inteligencia Artificial",
   "description": "Formación completa en desarrollo web Full Stack: frontend con React.js, backend con Node.js, bases de datos MySQL y MongoDB, e integración con Inteligencia Artificial usando OpenAI API. 9 meses de duración, 100% online, con doble certificación nacional e internacional.",
+  "url": "https://academia.depcsuite.com/diplomaturas/programacion-fullstack-react-node-ia",
+  "image": "https://academia.depcsuite.com/images/course-fullstack-ia.jpg",
   "provider": {
     "@type": "EducationalOrganization",
     "name": "Academia DePC",
-    "url": "https://academia.depcsuite.com"
+    "url": "https://academia.depcsuite.com",
+    "sameAs": [
+      "https://www.instagram.com/academiadepc",
+      "https://www.linkedin.com/company/academiadepc",
+      "https://www.youtube.com/@academiadepc"
+    ]
   },
   "courseMode": "online",
   "educationalLevel": "Beginner to Intermediate",
@@ -69,8 +76,12 @@ const courseSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "category": "Subscription",
-    "availability": "https://schema.org/InStock"
+    "category": "Diplomatura",
+    "price": "300000",
+    "priceCurrency": "ARS",
+    "availability": "https://schema.org/InStock",
+    "url": "https://academia.depcsuite.com/diplomaturas/programacion-fullstack-react-node-ia",
+    "validFrom": "2026-01-01"
   }
 }
 
@@ -238,6 +249,8 @@ export default function DiplomaturaFullStackPage() {
           buttonGradient={buttonGradient}
           previewGradient={themeGradient}
           firstClassMessage="Hola! Quiero ver la primera clase gratis de la Diplomatura Full Stack React + Node.js + IA"
+          docenteVideoUrl="https://www.youtube.com/embed/SiCEjkCstZI?si=HMvXprDPS2mHI5Ka"
+          docenteVideoLabel="Conocé al docente"
           onEnroll={() => setEnrollOpen(true)}
         >
           {/* Lo que aprenderás — boxed checklist (top of page) */}
@@ -405,7 +418,7 @@ export default function DiplomaturaFullStackPage() {
         open={enrollOpen}
         onOpenChange={setEnrollOpen}
         cursoTitle={diplomaturasPricing["programacion-fullstack-react-node-ia"].title}
-        paymentLink="https://mpago.la/1xXuTBX"
+        pricing={diplomaturasPricing["programacion-fullstack-react-node-ia"]}
       />
     </>
   )

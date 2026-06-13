@@ -1,7 +1,7 @@
 "use client"
 
 import { useCurrency } from "@/contexts/currency-context"
-import { buildWhatsAppPaymentLink, type DiplomaturaPricing } from "@/lib/diplomaturas-pricing"
+import { getPaymentLink, type DiplomaturaPricing } from "@/lib/diplomaturas-pricing"
 import { CreditCard, MessageCircle } from "lucide-react"
 
 interface MobilePriceBarProps {
@@ -18,7 +18,8 @@ export function MobilePriceBar({
 }: MobilePriceBarProps) {
   const { selectedCurrency } = useCurrency()
   const isArs = selectedCurrency.code === "ARS"
-  const paymentHref = isArs ? pricing.mpagoLink : buildWhatsAppPaymentLink(pricing.title)
+  const { href: paymentHref, method } = getPaymentLink(pricing, selectedCurrency.code)
+  const isWhatsApp = method === "whatsapp"
 
   return (
     <div className="lg:hidden fixed bottom-0 inset-x-0 z-40 border-t border-gray-200 bg-white/95 backdrop-blur-sm shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">

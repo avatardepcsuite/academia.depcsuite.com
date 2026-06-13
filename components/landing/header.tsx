@@ -43,10 +43,10 @@ const diplomaturas = [
 
 const navItems = [
   { href: "#formacion", label: "Diplomaturas", hasSubmenu: "diplomaturas" },
-  { href: "/webinars", label: "Streaming" },
+  { href: "/streaming", label: "Streaming" },
   { href: "#hackathones", label: "Hackathones" },
   { href: "#empleo", label: "Portal de Empleo" },
-  { href: "/promociones", label: "Promociones" },
+  { href: "/convenios", label: "Convenios" },
 ]
 
 export function Header() {
@@ -58,7 +58,7 @@ export function Header() {
   const router = useRouter()
 
   const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    // Real route links (e.g. /webinars) should navigate normally
+    // Real route links (e.g. /streaming) should navigate normally
     if (!href.startsWith("#")) {
       return
     }

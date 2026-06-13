@@ -2,7 +2,7 @@
 
 import { useCurrency, flagComponents, currencies, type CurrencyCode } from "@/contexts/currency-context"
 import {
-  buildWhatsAppPaymentLink,
+  getPaymentLink,
   type DiplomaturaPricing,
 } from "@/lib/diplomaturas-pricing"
 import { Check, CreditCard, MessageCircle, ShieldCheck } from "lucide-react"
@@ -29,10 +29,8 @@ export function InscripcionBlock({
 }: InscripcionBlockProps) {
   const { selectedCurrency, setSelectedCurrency } = useCurrency()
   const isArs = selectedCurrency.code === "ARS"
-
-  const paymentHref = isArs
-    ? pricing.mpagoLink
-    : buildWhatsAppPaymentLink(pricing.title)
+  const { href: paymentHref, method } = getPaymentLink(pricing, selectedCurrency.code)
+  const isWhatsApp = method === "whatsapp"
 
   return (
     <div className="bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
@@ -84,11 +82,19 @@ export function InscripcionBlock({
           </div>
         ) : (
           <div className="border-t border-gray-100 pt-6">
-            <p className="text-sm text-gray-700 leading-relaxed">
-              Para pagos desde <span className="font-semibold">{selectedCurrency.country}</span> te
-              atendemos por WhatsApp y coordinamos el medio de pago internacional y el valor en tu
-              moneda local.
-            </p>
+            {isWhatsApp ? (
+              <p className="text-sm text-gray-700 leading-relaxed">
+                Para pagos desde <span className="font-semibold">{selectedCurrency.country}</span> te
+                atendemos por WhatsApp y coordinamos el medio de pago internacional y el valor en tu
+                moneda local.
+              </p>
+            ) : (
+              <p className="text-sm text-gray-700 leading-relaxed">
+                Pagá desde <span className="font-semibold">{selectedCurrency.country}</span> de forma
+                segura con PayPal en {selectedCurrency.code}. Aceptamos tarjetas de crédito y débito
+                internacionales.
+              </p>
+            )}
           </div>
         )}
 
@@ -114,17 +120,26 @@ export function InscripcionBlock({
               <CreditCard className="w-5 h-5" />
               Continuar pago
             </>
-          ) : (
+          ) : isWhatsApp ? (
             <>
               <MessageCircle className="w-5 h-5" />
               Continuar pago por WhatsApp
+            </>
+          ) : (
+            <>
+              <CreditCard className="w-5 h-5" />
+              Pagar con PayPal
             </>
           )}
         </a>
 
         <p className="flex items-center justify-center gap-1.5 text-xs text-gray-500 mt-3">
           <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-          {isArs ? "Pago seguro con MercadoPago" : "Atención personalizada para pagos internacionales"}
+          {isArs
+            ? "Pago seguro con MercadoPago"
+            : isWhatsApp
+              ? "Atención personalizada para pagos internacionales"
+              : "Pago seguro con PayPal"}
         </p>
       </div>
     </div>

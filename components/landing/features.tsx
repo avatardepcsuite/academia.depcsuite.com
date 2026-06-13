@@ -8,8 +8,8 @@ import {
   Video, 
   Sparkles,
   Clock,
-  FileText,
-  MessageCircle,
+  PlayCircle,
+  Briefcase,
   BookOpen,
   Lock,
   Zap,
@@ -21,7 +21,8 @@ import {
 import Image from "next/image"
 import Link from "next/link"
 import { EnrollModal } from "@/components/landing/enroll-modal"
-import { diplomaturasPricing } from "@/lib/diplomaturas-pricing"
+import { diplomaturasPricing, formatCoursePrice, type DiplomaturaPricing } from "@/lib/diplomaturas-pricing"
+import { useCurrency, flagComponents, currencies, type CurrencyCode } from "@/contexts/currency-context"
 
 const diplomaturas = [
   {
@@ -39,7 +40,7 @@ const diplomaturas = [
     certificacion: "Nacional e Internacional",
     comienzo: "27 de agosto (docente en vivo)",
     professor: "Prof. Eliana Caballero",
-    professorImage: null,
+    professorImage: "/docentes/eliana-caballero.png",
     students: 0,
     available: true,
     badge: "Inscribiendo para el vivo",
@@ -50,7 +51,7 @@ const diplomaturas = [
     installmentPrice: 50000,
   },
   {
-    title: "Diplomatura Programación Full Stack + IA",
+    title: "Diplomatura Programación React.js/Node.js + IA",
     subtitle: "React.js / Node.js + IA",
     description: "Dominá React.js, Node.js e integrá Inteligencia Artificial en tus proyectos.",
     href: "/diplomaturas/programacion-fullstack-react-node-ia",
@@ -147,36 +148,38 @@ const diplomaturas = [
 const metodologia = [
   {
     icon: Video,
-    title: "Clases On Demand",
-    description: "Cientos de horas grabadas de todos los cursos, ejercitaciones, evaluaciones y material teórico-práctico.",
+    title: "Clases en vivo y on demand",
+    description: "Diplomaturas con clases online con docente en vivo y contenido on demand para repasar cuando lo necesites. Todas incluyen acceso al campus virtual, grabaciones y material de estudio.",
   },
   {
-    icon: MessageCircle,
-    title: "Masterclass en Vivo",
-    description: "2 clases de consultas al mes con el docente en vivo: resolvé dudas, corrección de ejercicios y orientación personalizada.",
-  },
-  {
-    icon: FileText,
-    title: "Material Completo",
-    description: "Ejercitaciones prácticas, evaluaciones y material teórico para que puedas certificarte.",
+    icon: PlayCircle,
+    title: "DePC Streaming",
+    description: "Complementá tu formación con contenidos exclusivos: transmisiones sobre productividad con Notion, automatizaciones, IA, armado de CV, desarrollo profesional y más.",
   },
   {
     icon: Clock,
-    title: "A tu Ritmo",
-    description: "Accedé cuando quieras, desde donde quieras. Avanzá según tu disponibilidad.",
+    title: "A tu ritmo",
+    description: "Con nuestra modalidad FLEX vos elegís cómo avanzar. Todas las diplomaturas pueden cursarse de forma asincrónica con clases grabadas y materiales en el campus virtual.",
+  },
+  {
+    icon: Briefcase,
+    title: "Enfocados en la salida laboral",
+    description: "Gracias a nuestro convenio con la Cámara Argentina para la Formación Profesional, accedés a un portal de empleos que facilita la vinculación con empresas y la inserción en el mercado IT.",
   },
 ]
 
 export function Features() {
   const [enrollOpen, setEnrollOpen] = useState(false)
   const [selectedCurso, setSelectedCurso] = useState<string>("")
-  const [selectedPaymentLink, setSelectedPaymentLink] = useState<string>("")
+  const [selectedPricing, setSelectedPricing] = useState<DiplomaturaPricing | undefined>(undefined)
+  const { selectedCurrency, setSelectedCurrency } = useCurrency()
+  const isArs = selectedCurrency.code === "ARS"
 
   const handleEnroll = (title: string, href: string) => {
     const slug = href.replace("/diplomaturas/", "")
     const pricing = diplomaturasPricing[slug]
     setSelectedCurso(pricing?.title ?? title)
-    setSelectedPaymentLink(pricing?.mpagoLink ?? "")
+    setSelectedPricing(pricing)
     setEnrollOpen(true)
   }
 
@@ -195,6 +198,33 @@ export function Features() {
           <p className="text-lg text-gray-600 text-pretty">
             Planes de estudio concebidos para que incorpores los conocimientos necesarios para insertarte rápidamente en el mundo de la programación y las tecnologías digitales.
           </p>
+
+          {/* Currency selector */}
+          <div className="mt-8 flex flex-col items-center gap-3">
+            <span className="text-sm font-medium text-gray-700">Ver precios en tu moneda</span>
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              {currencies.map((currency) => {
+                const Flag = flagComponents[currency.code as CurrencyCode]
+                const active = currency.code === selectedCurrency.code
+                return (
+                  <button
+                    key={currency.code}
+                    type="button"
+                    onClick={() => setSelectedCurrency(currency)}
+                    aria-pressed={active}
+                    className={`inline-flex items-center gap-2 px-3 py-2 rounded-lg border text-sm font-medium transition-all ${
+                      active
+                        ? "border-[#5C1F5C] bg-[#5C1F5C]/5 text-[#2D1B4E]"
+                        : "border-gray-200 text-gray-600 hover:border-gray-300"
+                    }`}
+                  >
+                    <Flag />
+                    {currency.code}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
         </div>
 
         {/* Diplomaturas Grid */}
@@ -279,13 +309,21 @@ export function Features() {
                   </p>
                   <div className="flex items-baseline gap-1">
                     <span className="text-3xl font-bold text-gray-900">
-                      ${curso.installmentPrice?.toLocaleString('es-AR')}
+                      {isArs
+                        ? `$${curso.installmentPrice?.toLocaleString("es-AR")}`
+                        : formatCoursePrice(curso.installmentPrice, selectedCurrency.code)}
                     </span>
                     <span className="text-sm text-gray-500">/mes</span>
                   </div>
                   <p className="text-sm font-semibold text-emerald-600 mt-1">
-                    Precio Final: ${curso.price?.toLocaleString('es-AR')}
+                    Precio Final:{" "}
+                    {isArs
+                      ? `$${curso.price?.toLocaleString("es-AR")}`
+                      : formatCoursePrice(curso.price, selectedCurrency.code)}
                   </p>
+                  {!isArs && (
+                    <p className="text-xs text-gray-400 mt-1">Valor aproximado en {selectedCurrency.code}</p>
+                  )}
                 </div>
 
                 {/* Professor */}
@@ -415,7 +453,7 @@ export function Features() {
         </div>
       </div>
 
-      <EnrollModal open={enrollOpen} onOpenChange={setEnrollOpen} cursoTitle={selectedCurso} paymentLink={selectedPaymentLink} />
+      <EnrollModal open={enrollOpen} onOpenChange={setEnrollOpen} cursoTitle={selectedCurso} pricing={selectedPricing} />
     </section>
   )
 }

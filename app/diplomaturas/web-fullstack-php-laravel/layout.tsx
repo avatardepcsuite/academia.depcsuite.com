@@ -2,7 +2,7 @@ import React from "react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Diplomatura Full Stack PHP + Laravel | Academia DePC",
+  title: "Diplomatura Full Stack PHP + Laravel",
   description:
     "Aprendé desarrollo web profesional con PHP y Laravel. Creá sistemas, ecommerce y aplicaciones web con MercadoPago. 6 meses, 100% online, doble certificación nacional e internacional.",
   keywords: [

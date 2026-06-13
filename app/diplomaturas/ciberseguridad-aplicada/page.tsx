@@ -51,10 +51,17 @@ const courseSchema = {
   "@type": "Course",
   "name": "Diplomatura en Fundamentos de Ciberseguridad Aplicada",
   "description": "Adquiere los conocimientos esenciales para proteger sistemas y redes. Aprende hacking etico, criptografia, seguridad en redes y DevSecOps. 3 meses de duracion, 100% online, con doble certificacion nacional e internacional.",
+  "url": "https://academia.depcsuite.com/diplomaturas/ciberseguridad-aplicada",
+  "image": "https://academia.depcsuite.com/images/course-cybersecurity.jpg",
   "provider": {
     "@type": "EducationalOrganization",
     "name": "Academia DePC",
-    "url": "https://academia.depcsuite.com"
+    "url": "https://academia.depcsuite.com",
+    "sameAs": [
+      "https://www.instagram.com/academiadepc",
+      "https://www.linkedin.com/company/academiadepc",
+      "https://www.youtube.com/@academiadepc"
+    ]
   },
   "courseMode": "online",
   "educationalLevel": "Beginner to Intermediate",
@@ -65,7 +72,21 @@ const courseSchema = {
   "hasCourseInstance": {
     "@type": "CourseInstance",
     "courseMode": "online",
+    "courseWorkload": "PT36H",
+    "instructor": {
+      "@type": "Person",
+      "name": "Eliana Caballero"
+    },
     "duration": "P3M"
+  },
+  "offers": {
+    "@type": "Offer",
+    "category": "Diplomatura",
+    "price": "300000",
+    "priceCurrency": "ARS",
+    "availability": "https://schema.org/InStock",
+    "url": "https://academia.depcsuite.com/diplomaturas/ciberseguridad-aplicada",
+    "validFrom": "2026-01-01"
   }
 }
 
@@ -240,6 +261,7 @@ export default function DiplomaturaCiberseguridadPage() {
           buttonGradient={buttonGradient}
           previewGradient={themeGradient}
           firstClassMessage="Hola! Quiero ver la primera clase gratis de la Diplomatura en Ciberseguridad"
+          docenteVideoUrl="https://www.youtube.com/embed/H1xfsal_0mA"
           showTrialClass={false}
           onEnroll={() => setEnrollOpen(true)}
         >
@@ -407,7 +429,7 @@ export default function DiplomaturaCiberseguridadPage() {
         open={enrollOpen}
         onOpenChange={setEnrollOpen}
         cursoTitle={diplomaturasPricing["ciberseguridad-aplicada"].title}
-        paymentLink="https://mpago.la/2RSwY5A"
+        pricing={diplomaturasPricing["ciberseguridad-aplicada"]}
       />
     </>
   )

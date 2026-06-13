@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date().toISOString()
 
   const webinarEntries: MetadataRoute.Sitemap = webinars.map((webinar) => ({
-    url: `${baseUrl}/webinars/${webinar.slug}`,
+    url: `${baseUrl}/streaming/${webinar.slug}`,
     lastModified: currentDate,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
@@ -50,14 +50,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/webinars`,
+      url: `${baseUrl}/streaming`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     ...webinarEntries,
     {
-      url: `${baseUrl}/promociones`,
+      url: `${baseUrl}/convenios`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.7,

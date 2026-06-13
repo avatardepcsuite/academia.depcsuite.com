@@ -2,7 +2,7 @@ import React from "react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Diplomatura Programación Python + Django + Vue.js | Academia DePC",
+  title: "Diplomatura Programación Python + Django + Vue.js",
   description:
     "Aprendé Python desde cero con Django y Vue.js. Desarrollá APIs REST profesionales. 6 meses, 100% online, doble certificación nacional e internacional. Sin conocimientos previos.",
   keywords: [

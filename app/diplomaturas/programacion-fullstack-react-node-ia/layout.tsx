@@ -2,7 +2,7 @@ import React from "react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Diplomatura Full Stack React + Node.js + IA | Academia DePC",
+  title: "Diplomatura Full Stack React + Node.js + IA",
   description:
     "Aprendé desarrollo web Full Stack con React.js, Node.js, Express, MongoDB, MySQL e Inteligencia Artificial. 9 meses, 100% online, doble certificación nacional e internacional. Sin conocimientos previos.",
   keywords: [

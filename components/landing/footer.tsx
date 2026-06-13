@@ -44,10 +44,10 @@ const footerLinks = {
   explora: {
     title: "Explorá",
     links: [
-      { label: "Streaming", href: "/webinars" },
+      { label: "Streaming", href: "/streaming" },
       { label: "Hackathones", href: "/#hackathones" },
       { label: "Portal de Empleo", href: "/#empleo" },
-      { label: "Promociones", href: "/promociones" },
+      { label: "Convenios", href: "/convenios" },
     ],
   },
   soporte: {

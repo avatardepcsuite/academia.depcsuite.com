@@ -22,22 +22,27 @@ export function WebinarsCatalog() {
   const [query, setQuery] = useState("")
   const [activeCategory, setActiveCategory] = useState("all")
 
+  const handleCategoryChange = (categoryId: string) => {
+    setActiveCategory(categoryId)
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
   const today = useMemo(() => {
     const d = new Date()
     d.setHours(0, 0, 0, 0)
     return d
   }, [])
 
-  // Orden: próximos en vivo primero (asc), luego grabaciones (desc)
+  // Orden: primero los que tienen video (fecha desc), luego los próximos (fecha asc)
   const sortedWebinars = useMemo(() => {
-    const upcoming = webinars
-      .filter((w) => parseWebinarDate(w.date) >= today)
-      .sort((a, b) => parseWebinarDate(a.date).getTime() - parseWebinarDate(b.date).getTime())
-    const past = webinars
-      .filter((w) => parseWebinarDate(w.date) < today)
+    const withVideo = webinars
+      .filter((w) => Boolean(w.videoUrl))
       .sort((a, b) => parseWebinarDate(b.date).getTime() - parseWebinarDate(a.date).getTime())
-    return [...upcoming, ...past]
-  }, [today])
+    const upcoming = webinars
+      .filter((w) => !w.videoUrl)
+      .sort((a, b) => parseWebinarDate(a.date).getTime() - parseWebinarDate(b.date).getTime())
+    return [...withVideo, ...upcoming]
+  }, [])
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
@@ -105,7 +110,7 @@ export function WebinarsCatalog() {
                 <button
                   key={cat.id}
                   type="button"
-                  onClick={() => setActiveCategory(cat.id)}
+                  onClick={() => handleCategoryChange(cat.id)}
                   className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
                     active
                       ? "bg-primary text-primary-foreground"

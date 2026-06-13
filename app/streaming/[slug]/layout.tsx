@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const categoryLabel = categories.find((c) => c.id === webinar.category)?.label || webinar.category
   const baseUrl = "https://academia.depcsuite.com"
   const fullImageUrl = `${baseUrl}${webinar.image}`
-  const canonicalUrl = `${baseUrl}/webinars/${webinar.slug}`
+  const canonicalUrl = `${baseUrl}/streaming/${webinar.slug}`
 
   const seoDescription = `${webinar.shortDescription} Streaming gratuito en vivo el ${webinar.dateLabel}, ${webinar.duration}. Dictado por ${webinar.instructor} en Academia DePC.`
 

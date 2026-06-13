@@ -58,7 +58,7 @@ export function Hero() {
               variant="outline" 
               className="border-white/30 hover:bg-white/10 px-8 h-12 text-base text-white bg-transparent"
             >
-              <a href="/webinars">
+              <a href="/streaming">
                 <Play className="mr-2 w-4 h-4" />
                 Streaming
               </a>

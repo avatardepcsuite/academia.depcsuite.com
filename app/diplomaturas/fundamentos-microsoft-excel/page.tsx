@@ -25,10 +25,17 @@ const courseSchema = {
   "@type": "Course",
   "name": "Curso de Fundamentos de Microsoft Excel",
   "description": "Domina Microsoft Excel desde cero. Aprende fórmulas, funciones, tablas dinámicas y gráficos profesionales para destacar en cualquier entorno laboral. 12 horas de contenido, 100% online.",
+  "url": "https://academia.depcsuite.com/diplomaturas/fundamentos-microsoft-excel",
+  "image": "https://academia.depcsuite.com/images/course-excel.jpg",
   "provider": {
     "@type": "EducationalOrganization",
     "name": "Academia DePC",
-    "url": "https://academia.depcsuite.com"
+    "url": "https://academia.depcsuite.com",
+    "sameAs": [
+      "https://www.instagram.com/academiadepc",
+      "https://www.linkedin.com/company/academiadepc",
+      "https://www.youtube.com/@academiadepc"
+    ]
   },
   "courseMode": "online",
   "educationalLevel": "Beginner",
@@ -39,6 +46,15 @@ const courseSchema = {
     "@type": "CourseInstance",
     "courseMode": "online",
     "courseWorkload": "PT12H"
+  },
+  "offers": {
+    "@type": "Offer",
+    "category": "Curso",
+    "price": "120000",
+    "priceCurrency": "ARS",
+    "availability": "https://schema.org/InStock",
+    "url": "https://academia.depcsuite.com/diplomaturas/fundamentos-microsoft-excel",
+    "validFrom": "2026-01-01"
   }
 }
 
@@ -373,7 +389,7 @@ export default function FundamentosExcelPage() {
         open={enrollOpen}
         onOpenChange={setEnrollOpen}
         cursoTitle={diplomaturasPricing["fundamentos-microsoft-excel"].title}
-        paymentLink="https://mpago.la/24BFTmn"
+        pricing={diplomaturasPricing["fundamentos-microsoft-excel"]}
       />
     </>
   )

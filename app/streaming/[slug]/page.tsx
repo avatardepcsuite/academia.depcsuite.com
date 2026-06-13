@@ -33,7 +33,7 @@ function RelatedVideoItem({ webinar, isPast }: { webinar: Webinar; isPast: boole
     categories.find((c) => c.id === webinar.category)?.label || webinar.category
   return (
     <Link
-      href={`/webinars/${webinar.slug}`}
+      href={`/streaming/${webinar.slug}`}
       className="group flex gap-3 rounded-xl p-2 transition-colors hover:bg-secondary"
     >
       <div className="w-40 shrink-0">
@@ -76,7 +76,7 @@ export default function WebinarDetailPage() {
         <div className="flex flex-col items-center justify-center py-40">
           <h1 className="text-3xl font-bold text-foreground mb-4">Streaming no encontrado</h1>
           <p className="text-muted-foreground mb-8">El streaming que buscas no existe o fue removido.</p>
-          <Link href="/webinars">
+          <Link href="/streaming">
             <Button className="bg-primary text-primary-foreground hover:opacity-90">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Volver a streaming
@@ -113,8 +113,8 @@ export default function WebinarDetailPage() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Academia DePC", item: "https://academia.depcsuite.com" },
-      { "@type": "ListItem", position: 2, name: "Streaming", item: "https://academia.depcsuite.com/webinars" },
-      { "@type": "ListItem", position: 3, name: webinar.title, item: `https://academia.depcsuite.com/webinars/${webinar.slug}` },
+      { "@type": "ListItem", position: 2, name: "Streaming", item: "https://academia.depcsuite.com/streaming" },
+      { "@type": "ListItem", position: 3, name: webinar.title, item: `https://academia.depcsuite.com/streaming/${webinar.slug}` },
     ],
   }
 
@@ -124,9 +124,11 @@ export default function WebinarDetailPage() {
     name: webinar.title,
     description: webinar.fullDescription,
     startDate: webinar.date,
+    endDate: webinar.date,
+    inLanguage: "es-AR",
     eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
     eventStatus: "https://schema.org/EventScheduled",
-    location: { "@type": "VirtualLocation", url: "https://academia.depcsuite.com" },
+    location: { "@type": "VirtualLocation", url: `https://academia.depcsuite.com/streaming/${webinar.slug}` },
     organizer: { "@type": "EducationalOrganization", name: "Academia DePC", url: "https://academia.depcsuite.com" },
     performer: { "@type": "Person", name: webinar.instructor },
     image: `https://academia.depcsuite.com${webinar.image}`,
@@ -136,8 +138,36 @@ export default function WebinarDetailPage() {
       priceCurrency: "ARS",
       availability: "https://schema.org/InStock",
       url: "https://academia.depcsuite.com/#precios",
+      validFrom: webinar.date,
     },
   }
+
+  // Datos estructurados de video (rich results) solo si hay video disponible
+  const youtubeId = webinar.videoUrl?.match(/(?:embed\/|v=|youtu\.be\/)([\w-]{11})/)?.[1]
+  const videoSchema = webinar.videoUrl
+    ? {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        name: webinar.title,
+        description: webinar.shortDescription,
+        thumbnailUrl: youtubeId
+          ? [`https://i.ytimg.com/vi/${youtubeId}/maxresdefault.jpg`]
+          : [`https://academia.depcsuite.com${webinar.image}`],
+        uploadDate: webinar.date,
+        contentUrl: webinar.videoUrl,
+        embedUrl: webinar.videoUrl,
+        inLanguage: "es-AR",
+        publisher: {
+          "@type": "EducationalOrganization",
+          name: "Academia DePC",
+          url: "https://academia.depcsuite.com",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://academia.depcsuite.com/icon.png",
+          },
+        },
+      }
+    : null
 
   const descriptionParagraphs = webinar.fullDescription ? webinar.fullDescription.split("\n\n") : []
 
@@ -145,6 +175,9 @@ export default function WebinarDetailPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }} />
+      {videoSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} />
+      )}
       <main className="min-h-screen bg-background">
         <Header />
 
@@ -153,7 +186,7 @@ export default function WebinarDetailPage() {
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
             <Link href="/" className="hover:text-foreground transition-colors">Inicio</Link>
             <span>/</span>
-            <Link href="/webinars" className="hover:text-foreground transition-colors">Streaming</Link>
+            <Link href="/streaming" className="hover:text-foreground transition-colors">Streaming</Link>
             <span>/</span>
             <span className="text-foreground truncate max-w-[200px] sm:max-w-none">{webinar.title}</span>
           </nav>

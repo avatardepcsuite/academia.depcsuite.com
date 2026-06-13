@@ -2,7 +2,7 @@ import React from "react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Curso Fundamentos Microsoft Excel | Academia DePC",
+  title: "Curso Fundamentos Microsoft Excel",
   description:
     "Dominá Microsoft Excel desde cero. Aprendé fórmulas, funciones, tablas dinámicas y gráficos profesionales. 12 horas de contenido, 100% online, con certificación nacional e internacional.",
   keywords: [

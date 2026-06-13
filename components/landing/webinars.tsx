@@ -69,41 +69,35 @@ export function Webinars() {
   const today = new Date()
   today.setHours(0, 0, 0, 0)
 
-  // Conteo por categoría para la nube de tags
-  const categoriesWithCount = useMemo(
-    () =>
-      categories.map((cat) => ({
-        ...cat,
-        count: cat.id === "all" ? webinars.length : webinars.filter((w) => w.category === cat.id).length,
-      })),
+  // Conteo por categoría para la nube de tags (solo webinars con video)
+  const webinarsWithVideo = useMemo(
+    () => webinars.filter((w) => Boolean(w.videoUrl)),
     [],
   )
 
-  // Determinar el próximo webinar real (de todos)
-  const allFutureWebinars = webinars
-    .filter((w) => parseWebinarDate(w.date) >= today)
-    .sort((a, b) => parseWebinarDate(a.date).getTime() - parseWebinarDate(b.date).getTime())
-  const realNextWebinarSlug = allFutureWebinars[0]?.slug
+  const categoriesWithCount = useMemo(
+    () =>
+      categories
+        .map((cat) => ({
+          ...cat,
+          count:
+            cat.id === "all"
+              ? webinarsWithVideo.length
+              : webinarsWithVideo.filter((w) => w.category === cat.id).length,
+        }))
+        .filter((cat) => cat.count > 0),
+    [webinarsWithVideo],
+  )
 
-  // Filtrar por la categoría activa
-  const visibleWebinars = webinars.filter(
+  // Solo webinars con video disponible, filtrados por categoría activa
+  const visibleWebinars = webinarsWithVideo.filter(
     (w) => activeCategory === "all" || w.category === activeCategory,
   )
 
-  const futureWebinars = visibleWebinars
-    .filter((w) => parseWebinarDate(w.date) >= today)
-    .sort((a, b) => parseWebinarDate(a.date).getTime() - parseWebinarDate(b.date).getTime())
-
-  const pastWebinars = visibleWebinars
-    .filter((w) => parseWebinarDate(w.date) < today)
-    .sort((a, b) => parseWebinarDate(b.date).getTime() - parseWebinarDate(a.date).getTime())
-
-  // Orden: próximo primero, luego on demand (pasados), luego resto de futuros
-  const orderedWebinars = [
-    ...futureWebinars.filter((w) => w.slug === realNextWebinarSlug),
-    ...pastWebinars,
-    ...futureWebinars.filter((w) => w.slug !== realNextWebinarSlug),
-  ]
+  // Ordenados por fecha descendente (más reciente primero)
+  const orderedWebinars = [...visibleWebinars].sort(
+    (a, b) => parseWebinarDate(b.date).getTime() - parseWebinarDate(a.date).getTime(),
+  )
 
   return (
     <section id="webinars" className="pt-4 pb-12 relative bg-gradient-to-b from-white to-[#2D1B4E]/5">
@@ -155,7 +149,7 @@ export function Webinars() {
         {/* Carousel controls */}
         <div className="flex items-center justify-between gap-4 mb-6">
           <Link
-            href="/webinars"
+            href="/streaming"
             className="inline-flex items-center gap-2 text-sm font-semibold text-[#E91E63] hover:text-[#C2185B] transition-colors"
           >
             Ver catálogo completo
@@ -202,7 +196,7 @@ export function Webinars() {
 
         {/* Footer CTA */}
         <div className="flex justify-center mt-10">
-          <Link href="/webinars">
+          <Link href="/streaming">
             <Button className="h-12 px-6 bg-gradient-to-r from-[#E91E63] to-[#C2185B] hover:from-[#D81B60] hover:to-[#AD1457] text-white font-medium">
               Ver todo el streaming
               <ArrowRight className="w-4 h-4 ml-2" />

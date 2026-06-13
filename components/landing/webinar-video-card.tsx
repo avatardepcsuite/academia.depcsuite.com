@@ -28,7 +28,7 @@ export function WebinarVideoCard({ webinar, isPast }: WebinarVideoCardProps) {
   return (
     <article className="group">
       {/* Video / espacio reservado */}
-      <Link href={`/webinars/${webinar.slug}`} className="block">
+      <Link href={`/streaming/${webinar.slug}`} className="block">
         <WebinarVideoPlayer
           videoUrl={webinar.videoUrl}
           title={webinar.title}
@@ -74,7 +74,7 @@ export function WebinarVideoCard({ webinar, isPast }: WebinarVideoCardProps) {
           </div>
 
           {/* Título */}
-          <Link href={`/webinars/${webinar.slug}`}>
+          <Link href={`/streaming/${webinar.slug}`}>
             <h3 className="text-base font-bold leading-snug text-foreground transition-colors group-hover:text-primary line-clamp-2 text-balance">
               {webinar.title}
             </h3>

@@ -123,6 +123,7 @@ export const webinars: Webinar[] = [
       "J\u00f3venes (18\u201330), primer empleo tech, juniors o cambio de rol (dev, data, dise\u00f1o, producto).",
     tags: ["CV", "ATS", "LinkedIn", "Empleo Tech"],
     available: true,
+    videoUrl: "https://www.youtube.com/embed/AhVkZd3jiBk",
   },
   {
     slug: "potencia-productividad-ia-copilot-vs-agent-first",
@@ -145,6 +146,7 @@ export const webinars: Webinar[] = [
       "Estudiantes y j\u00f3venes profesionales tech que quieren avanzar m\u00e1s r\u00e1pido sin perder criterio.",
     tags: ["IA", "Copilot", "Agentes", "Productividad"],
     available: true,
+    videoUrl: "https://www.youtube.com/embed/SiCEjkCstZI",
   },
   {
     slug: "notion-desde-cero-primer-sistema-productividad",
@@ -204,6 +206,7 @@ export const webinars: Webinar[] = [
     audience: "Principiantes, estudiantes y trabajadores remotos.",
     tags: ["Notion", "Productividad", "Organización", "Wiki", "Bases de Datos"],
     available: true,
+    videoUrl: "https://www.youtube.com/embed/m4503k5608Q",
   },
   {
     slug: "tu-aliado-ia-preparar-entrevistas-optimizar-perfil",
@@ -229,6 +232,7 @@ export const webinars: Webinar[] = [
       "Pack de prompts + gui\u00f3n de mock interview + r\u00fabrica de evaluaci\u00f3n + checklist de optimizaci\u00f3n de perfil.",
     tags: ["IA", "Entrevistas", "LinkedIn", "Portfolio"],
     available: true,
+    videoUrl: "https://www.youtube.com/embed/mvzEDaTH4Jc",
   },
     {
     slug: "ia-n8n-asistentes-inteligentes-sin-programar",
@@ -327,6 +331,7 @@ export const webinars: Webinar[] = [
     note: "WhatsApp suele requerir proveedor/API y tiene limitaciones según el método elegido.",
     tags: ["WhatsApp", "n8n", "Google Calendar", "Google Docs", "Turnos"],
     available: true,
+    videoUrl: "https://www.youtube.com/embed/cQ_a2i9g-04",
   },
   {
     slug: "storytelling-devs-metodo-star-desafios-tecnicos",
@@ -612,13 +617,14 @@ export const webinars: Webinar[] = [
     category: "seguridad",
     duration: "90 min",
     instructor: "Prof. Eliana Caballero",
-    instructorImage: null,
+    instructorImage: "/docentes/eliana-caballero.png",
     date: "2026-05-21",
     dateLabel: "Jueves 21 de Mayo 2026",
     time: "18:30 (Argentina) / 16:30 (Colombia)",
     audience: "Principiantes, estudiantes, emprendedores y cualquier persona interesada en proteger su información digital.",
     tags: ["Ciberseguridad", "Phishing", "Malware", "Ransomware", "Tríada C-I-D"],
     available: true,
+    videoUrl: "https://www.youtube.com/embed/H1xfsal_0mA",
   },
   {
     slug: "como-aplicar-ia-en-ciberseguridad",
