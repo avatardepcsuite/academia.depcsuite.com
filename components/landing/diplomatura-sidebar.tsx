@@ -1,7 +1,7 @@
 "use client"
 
 import { useCurrency, flagComponents, currencies, type CurrencyCode } from "@/contexts/currency-context"
-import { buildWhatsAppPaymentLink, type DiplomaturaPricing } from "@/lib/diplomaturas-pricing"
+import { buildWhatsAppPaymentLink, formatCoursePrice, type DiplomaturaPricing } from "@/lib/diplomaturas-pricing"
 import { Check, CreditCard, MessageCircle, Play, ShieldCheck, Tag } from "lucide-react"
 import { useState } from "react"
 
@@ -117,9 +117,14 @@ export function DiplomaturaSidebar({
         ) : (
           <>
             <p className="text-xs font-semibold uppercase tracking-wide text-[#5C1F5C] mb-1">
-              Pago internacional
+              Precio único
             </p>
-            <p className="text-lg font-bold text-gray-900 mb-1">Atención por WhatsApp</p>
+            <div className="flex items-baseline gap-1.5 mb-1">
+              <span className="text-3xl font-bold text-gray-900">
+                {formatCoursePrice(pricing.price, selectedCurrency.code)}
+              </span>
+            </div>
+            <p className="text-xs text-gray-400 mb-3">Valor aproximado en {selectedCurrency.code}</p>
             <p className="text-sm text-gray-500 mb-5">
               Coordinamos el medio de pago y el valor en tu moneda local.
             </p>

@@ -3,6 +3,7 @@
 import { useCurrency, flagComponents, currencies, type CurrencyCode } from "@/contexts/currency-context"
 import {
   getPaymentLink,
+  formatCoursePrice,
   type DiplomaturaPricing,
 } from "@/lib/diplomaturas-pricing"
 import { Check, CreditCard, MessageCircle, ShieldCheck } from "lucide-react"
@@ -82,6 +83,17 @@ export function InscripcionBlock({
           </div>
         ) : (
           <div className="border-t border-gray-100 pt-6">
+            <p className="text-xs font-semibold tracking-wide text-[#5C1F5C] uppercase mb-1">
+              Precio único
+            </p>
+            <div className="flex items-baseline gap-1">
+              <span className="text-4xl font-bold text-gray-900">
+                {formatCoursePrice(pricing.price, selectedCurrency.code)}
+              </span>
+            </div>
+            <p className="text-xs text-gray-400 mt-1 mb-3">
+              Valor aproximado en {selectedCurrency.code}
+            </p>
             {isWhatsApp ? (
               <p className="text-sm text-gray-700 leading-relaxed">
                 Para pagos desde <span className="font-semibold">{selectedCurrency.country}</span> te

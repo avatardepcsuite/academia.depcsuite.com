@@ -304,25 +304,33 @@ export function Features() {
 
                 {/* Price */}
                 <div className="border-t border-gray-100 pt-4 mb-5 mt-auto">
-                  <p className="text-xs font-semibold tracking-wide text-[#5C1F5C] uppercase mb-1">
-                    {curso.installments} cuotas sin interés de
-                  </p>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-bold text-gray-900">
-                      {isArs
-                        ? `$${curso.installmentPrice?.toLocaleString("es-AR")}`
-                        : formatCoursePrice(curso.installmentPrice, selectedCurrency.code)}
-                    </span>
-                    <span className="text-sm text-gray-500">/mes</span>
-                  </div>
-                  <p className="text-sm font-semibold text-emerald-600 mt-1">
-                    Precio Final:{" "}
-                    {isArs
-                      ? `$${curso.price?.toLocaleString("es-AR")}`
-                      : formatCoursePrice(curso.price, selectedCurrency.code)}
-                  </p>
-                  {!isArs && (
-                    <p className="text-xs text-gray-400 mt-1">Valor aproximado en {selectedCurrency.code}</p>
+                  {isArs ? (
+                    <>
+                      <p className="text-xs font-semibold tracking-wide text-[#5C1F5C] uppercase mb-1">
+                        {curso.installments} cuotas sin interés de
+                      </p>
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-3xl font-bold text-gray-900">
+                          ${curso.installmentPrice?.toLocaleString("es-AR")}
+                        </span>
+                        <span className="text-sm text-gray-500">/mes</span>
+                      </div>
+                      <p className="text-sm font-semibold text-emerald-600 mt-1">
+                        Precio Final: ${curso.price?.toLocaleString("es-AR")}
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="text-xs font-semibold tracking-wide text-[#5C1F5C] uppercase mb-1">
+                        Precio único
+                      </p>
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-3xl font-bold text-gray-900">
+                          {formatCoursePrice(curso.price, selectedCurrency.code)}
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-400 mt-1">Valor aproximado en {selectedCurrency.code}</p>
+                    </>
                   )}
                 </div>
 

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { useCurrency } from "@/contexts/currency-context"
 import {
   getPaymentLink,
+  formatCoursePrice,
   type DiplomaturaPricing,
 } from "@/lib/diplomaturas-pricing"
 import { Check, CreditCard, MessageCircle, ArrowDown } from "lucide-react"
@@ -80,28 +81,23 @@ export function FloatingPriceCard({
                 Precio Final: ${pricing.price.toLocaleString("es-AR")}
               </p>
             </>
-          ) : isWhatsApp ? (
-            <>
-              <p className="text-xs font-semibold tracking-wide text-[#5C1F5C] uppercase mb-1">
-                Pago internacional
-              </p>
-              <p className="text-lg font-bold text-gray-900 mb-1">
-                Atención por WhatsApp
-              </p>
-              <p className="text-sm text-gray-500">
-                Coordinamos el medio de pago y el valor en tu moneda local.
-              </p>
-            </>
           ) : (
             <>
               <p className="text-xs font-semibold tracking-wide text-[#5C1F5C] uppercase mb-1">
-                Pago internacional
+                Precio único
               </p>
-              <p className="text-lg font-bold text-gray-900 mb-1">
-                Pagá con PayPal
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="text-3xl font-bold text-gray-900">
+                  {formatCoursePrice(pricing.price, selectedCurrency.code)}
+                </span>
+              </div>
+              <p className="text-xs text-gray-400 mb-1">
+                Valor aproximado en {selectedCurrency.code}
               </p>
               <p className="text-sm text-gray-500">
-                Checkout seguro en {selectedCurrency.code} con tarjeta internacional.
+                {isWhatsApp
+                  ? "Coordinamos el medio de pago por WhatsApp."
+                  : `Checkout seguro en ${selectedCurrency.code} con PayPal.`}
               </p>
             </>
           )}

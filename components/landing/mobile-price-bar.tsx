@@ -1,7 +1,7 @@
 "use client"
 
 import { useCurrency } from "@/contexts/currency-context"
-import { getPaymentLink, type DiplomaturaPricing } from "@/lib/diplomaturas-pricing"
+import { getPaymentLink, formatCoursePrice, type DiplomaturaPricing } from "@/lib/diplomaturas-pricing"
 import { CreditCard, MessageCircle } from "lucide-react"
 
 interface MobilePriceBarProps {
@@ -37,8 +37,10 @@ export function MobilePriceBar({
             </>
           ) : (
             <>
-              <p className="text-sm font-bold text-gray-900 leading-tight">Pago internacional</p>
-              <p className="text-xs text-gray-500 truncate">Atención por WhatsApp</p>
+              <p className="text-base font-bold text-gray-900 leading-tight">
+                {formatCoursePrice(pricing.price, selectedCurrency.code)}
+              </p>
+              <p className="text-xs text-gray-500 truncate">Precio único en {selectedCurrency.code}</p>
             </>
           )}
         </div>
