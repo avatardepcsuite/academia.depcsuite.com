@@ -318,7 +318,7 @@ export default function DiplomaturaCiberseguridadPage() {
                   Con más de 10 años de experiencia en el sector, Eliana te acompaña en vivo durante toda la diplomatura, compartiendo casos reales y guiándote en cada laboratorio práctico.
                 </p>
                 <a
-                  href="https://www.linkedin.com/in/eliana-caballero"
+                  href="https://www.linkedin.com/in/eliana-caballero-0807b725/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#0a66c2] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#004182] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0a66c2]/40"
