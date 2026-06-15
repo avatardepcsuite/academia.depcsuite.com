@@ -187,7 +187,8 @@ export default function RootLayout({
           data-site-id="1"
           data-endpoint="https://6rldo3zfyk.execute-api.us-east-1.amazonaws.com/prod/collect"
           data-token-endpoint="https://6rldo3zfyk.execute-api.us-east-1.amazonaws.com/prod/token"
-          strategy="lazyOnload"
+          data-recovery-cart-endpoint="https://6rldo3zfyk.execute-api.us-east-1.amazonaws.com/prod/cart-recovery"
+          strategy="afterInteractive"
         />
       </body>
     </html>
