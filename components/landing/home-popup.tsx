@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
+import { X } from "lucide-react"
+import { Dialog, DialogContent, DialogClose, DialogTitle } from "@/components/ui/dialog"
 
 export function HomePopup() {
   const [open, setOpen] = useState(false)
@@ -23,17 +24,23 @@ export function HomePopup() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent
-        showCloseButton
-        className="max-w-[calc(100%-2rem)] sm:max-w-md border-0 bg-white p-0 overflow-hidden"
+        showCloseButton={false}
+        className="max-w-[calc(100%-2rem)] sm:max-w-md rounded-2xl border-4 border-white bg-white p-2 shadow-2xl overflow-hidden"
       >
         <DialogTitle className="sr-only">
           Diplomatura en Fundamentos de Ciberseguridad Aplicada
         </DialogTitle>
+        <DialogClose
+          className="absolute right-3 top-3 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-gray-700 shadow-md ring-1 ring-gray-200 transition-colors hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500"
+        >
+          <X className="h-5 w-5" />
+          <span className="sr-only">Cerrar</span>
+        </DialogClose>
         <button
           type="button"
           onClick={handleClick}
           aria-label="Ver Diplomatura en Fundamentos de Ciberseguridad Aplicada"
-          className="block w-full cursor-pointer focus:outline-none focus-visible:ring-4 focus-visible:ring-teal-500/40"
+          className="block w-full cursor-pointer overflow-hidden rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-teal-500/40"
         >
           <Image
             src="/images/popup-diplomatura-ciberseguridad.png"

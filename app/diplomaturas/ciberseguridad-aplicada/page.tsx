@@ -259,6 +259,11 @@ export default function DiplomaturaCiberseguridadPage() {
             { src: "/images/logo-camara-argentina.png", alt: "Logo Cámara Argentina de Comercio - Certificación Nacional" },
             { src: "/images/logo-oeip.png", alt: "Logo OEIP - Certificación Internacional" },
           ]}
+          heroDocente={{
+            src: "/docentes/eliana-caballero.png",
+            name: "Eliana Caballero",
+            role: "Experta en seguridad informática",
+          }}
           pricing={diplomaturasPricing["ciberseguridad-aplicada"]}
           buttonGradient={buttonGradient}
           previewGradient={themeGradient}
