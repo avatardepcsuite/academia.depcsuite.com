@@ -5,6 +5,7 @@ import { useCurrency } from "@/contexts/currency-context"
 import {
   getPaymentLink,
   formatCoursePrice,
+  hasFixedCurrencyPrice,
   type DiplomaturaPricing,
 } from "@/lib/diplomaturas-pricing"
 import { Check, CreditCard, MessageCircle, ArrowDown } from "lucide-react"
@@ -92,7 +93,9 @@ export function FloatingPriceCard({
                 </span>
               </div>
               <p className="text-xs text-gray-400 mb-1">
-                Valor aproximado en {selectedCurrency.code}
+                {hasFixedCurrencyPrice(pricing.price, selectedCurrency.code)
+                  ? `Precio único en ${selectedCurrency.code}`
+                  : `Valor aproximado en ${selectedCurrency.code}`}
               </p>
               <p className="text-sm text-gray-500">
                 {isWhatsApp

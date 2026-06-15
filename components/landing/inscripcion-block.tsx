@@ -4,6 +4,7 @@ import { useCurrency, flagComponents, currencies, type CurrencyCode } from "@/co
 import {
   getPaymentLink,
   formatCoursePrice,
+  hasFixedCurrencyPrice,
   type DiplomaturaPricing,
 } from "@/lib/diplomaturas-pricing"
 import { Check, CreditCard, MessageCircle, ShieldCheck } from "lucide-react"
@@ -92,7 +93,9 @@ export function InscripcionBlock({
               </span>
             </div>
             <p className="text-xs text-gray-400 mt-1 mb-3">
-              Valor aproximado en {selectedCurrency.code}
+              {hasFixedCurrencyPrice(pricing.price, selectedCurrency.code)
+                ? `Precio único en ${selectedCurrency.code}`
+                : `Valor aproximado en ${selectedCurrency.code}`}
             </p>
             {isWhatsApp ? (
               <p className="text-sm text-gray-700 leading-relaxed">
