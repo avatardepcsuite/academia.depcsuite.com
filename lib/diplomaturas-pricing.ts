@@ -18,6 +18,12 @@ export interface DiplomaturaPricing {
   mpagoLink: string
   /** PayPal checkout links per currency (USD / EUR / MXN) */
   paypalLinks?: PaypalLinks
+  /** Product id used by abandoned cart service */
+  idproducto?: number
+  /** Form id used by prospect lambda */
+  fkIdFormulario?: number
+  /** Area id used by prospect and abandoned cart lambdas */
+  fkIdArea?: number
 }
 
 // WhatsApp number used for payments in currencies other than ARS
@@ -44,17 +50,39 @@ const currencySymbols: Record<string, string> = {
   EUR: "€",
 }
 
+/**
+ * Fixed prices per currency, keyed by the ARS price tier of each diplomatura.
+ * These are the official single prices and must NOT be derived from conversion rates.
+ */
+export const fixedPricesByArs: Record<number, Record<string, number>> = {
+  300000: { USD: 200, EUR: 200, MXN: 3400 },
+  240000: { USD: 165, EUR: 165, MXN: 2800 },
+  120000: { USD: 80, EUR: 80, MXN: 1300 },
+}
+
 /** Convert an ARS amount into the target currency using the fixed rates. */
 export function convertFromArs(arsAmount: number, currencyCode: string): number {
   const rate = currencyConversionRates[currencyCode] ?? 1
   return arsAmount / rate
 }
 
-/** Format an ARS amount as an approximate price in the selected currency. */
+/** Format an ARS amount as a price in the selected currency, using fixed prices when defined. */
 export function formatCoursePrice(arsAmount: number, currencyCode: string): string {
-  const converted = Math.round(convertFromArs(arsAmount, currencyCode))
   const symbol = currencySymbols[currencyCode] ?? "$"
+
+  // Use the official fixed price for this tier/currency when available.
+  const fixed = fixedPricesByArs[arsAmount]?.[currencyCode]
+  if (fixed != null) {
+    return `${symbol} ${fixed.toLocaleString("es-AR")}`
+  }
+
+  const converted = Math.round(convertFromArs(arsAmount, currencyCode))
   return `${symbol} ${converted.toLocaleString("es-AR")}`
+}
+
+/** Whether an official fixed price exists for this ARS tier and currency. */
+export function hasFixedPrice(arsAmount: number, currencyCode: string): boolean {
+  return fixedPricesByArs[arsAmount]?.[currencyCode] != null
 }
 
 /**
@@ -73,6 +101,9 @@ export const diplomaturasPricing: Record<string, DiplomaturaPricing> = {
       EUR: "https://www.paypal.com/ncp/payment/JPJ76LHK84CKW",
       MXN: "https://www.paypal.com/ncp/payment/5YG4W8C4GAYDA",
     },
+    idproducto: 93011,
+    fkIdFormulario: 552,
+    fkIdArea: 2,
   },
   "programacion-fullstack-react-node-ia": {
     title: "Diplomatura Programación Full Stack + IA",
@@ -85,6 +116,9 @@ export const diplomaturasPricing: Record<string, DiplomaturaPricing> = {
       EUR: "https://www.paypal.com/ncp/payment/3DQ2VR6ZMW3W2",
       MXN: "https://www.paypal.com/ncp/payment/XPZXN5U8KH5GY",
     },
+    idproducto: 31015,
+    fkIdFormulario: 552,
+    fkIdArea: 2,
   },
   "web-fullstack-php-laravel": {
     title: "Diplomatura Programación Web Full Stack PHP / Laravel",
@@ -97,6 +131,9 @@ export const diplomaturasPricing: Record<string, DiplomaturaPricing> = {
       EUR: "https://www.paypal.com/ncp/payment/4TKQ3RKYPEV2C",
       MXN: "https://www.paypal.com/ncp/payment/G9A7U66SMW78E",
     },
+    idproducto: 18401,
+    fkIdFormulario: 552,
+    fkIdArea: 2,
   },
   "programacion-python": {
     title: "Diplomatura Programación Python",
@@ -109,6 +146,9 @@ export const diplomaturasPricing: Record<string, DiplomaturaPricing> = {
       EUR: "https://www.paypal.com/ncp/payment/NVZZY89T57ZJN",
       MXN: "https://www.paypal.com/ncp/payment/XFHHWJVTW4LL6",
     },
+    idproducto: 430,
+    fkIdFormulario: 552,
+    fkIdArea: 2,
   },
   "fundamentos-microsoft-excel": {
     title: "Diplomatura Fundamentos de Microsoft Excel",
@@ -121,6 +161,9 @@ export const diplomaturasPricing: Record<string, DiplomaturaPricing> = {
       EUR: "https://www.paypal.com/ncp/payment/Y27YHGE4Y3HJ2",
       MXN: "https://www.paypal.com/ncp/payment/S6SPUGEL6KCK4",
     },
+    idproducto: 112,
+    fkIdFormulario: 552,
+    fkIdArea: 2,
   },
 }
 

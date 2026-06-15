@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Image from "next/image"
 import {
   Clock,
   GraduationCap,
@@ -10,6 +11,7 @@ import {
   Award,
   BookOpen,
   Code,
+  Radio,
 } from "lucide-react"
 import { Header } from "@/components/landing/header"
 import { Footer } from "@/components/landing/footer"
@@ -253,6 +255,59 @@ export default function DiplomaturaFullStackPage() {
           docenteVideoLabel="Conocé al docente"
           onEnroll={() => setEnrollOpen(true)}
         >
+          {/* Destacado: Masterclass en vivo con docente */}
+          <div className="mb-10 overflow-hidden rounded-2xl border border-indigo-200 bg-indigo-50">
+            <div className="flex flex-col gap-5 p-6 sm:flex-row sm:items-center sm:gap-6">
+              <span className="inline-flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#5C1F5C] to-indigo-600 text-white">
+                <Radio className="h-7 w-7" aria-hidden="true" />
+              </span>
+              <div className="min-w-0">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-indigo-600 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-white" aria-hidden="true" />
+                  En vivo y on demand
+                </span>
+                <h2 className="mt-3 text-xl font-bold text-gray-900 sm:text-2xl text-balance">
+                  Contenido on demand <span className="text-indigo-700">+ 2 masterclass al mes con docente en vivo</span>
+                </h2>
+                <p className="mt-1.5 text-gray-600 leading-relaxed">
+                  La diplomatura es 100% on demand: las clases están grabadas y las cursás a tu ritmo, cuando y desde donde quieras. Además, todos los meses sumás 2 masterclass en vivo con un docente para el seguimiento académico y la consulta de dudas, donde resolvés tus consultas en tiempo real y profundizás los temas más importantes junto a un experto.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Docente */}
+          <CourseSection
+            eyebrow="Tu docente"
+            eyebrowIcon={GraduationCap}
+            title="Conocé a tu docente"
+            accentText={accent.text}
+            accentBg={accent.bg}
+            accentBorder={accent.border}
+          >
+            <div className="flex flex-col gap-6 rounded-2xl border border-gray-200 bg-white p-6 sm:flex-row sm:items-center">
+              <div className="relative mx-auto h-32 w-32 flex-shrink-0 overflow-hidden rounded-full ring-4 ring-indigo-100 sm:mx-0">
+                <Image
+                  src="/images/docente-matias.png"
+                  alt="Matías Giménez, docente experto en desarrollo web full stack"
+                  fill
+                  sizes="128px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="min-w-0 text-center sm:text-left">
+                <h3 className="text-xl font-bold text-gray-900">Matías Giménez</h3>
+                <p className="mt-1 inline-flex items-center gap-2 text-sm font-semibold text-indigo-600">
+                  <Code className="h-4 w-4" aria-hidden="true" />
+                  Desarrollador Web Full Stack
+                </p>
+                <p className="mt-3 text-gray-600 leading-relaxed">
+                  Con más de 6 años de experiencia en el rubro, Matías te acompaña durante toda la diplomatura en las masterclass en vivo, compartiendo casos reales y guiándote en cada proyecto práctico con React, Node.js e Inteligencia Artificial.
+                </p>
+              </div>
+            </div>
+          </CourseSection>
+
           {/* Lo que aprenderás — boxed checklist (top of page) */}
           <CourseSection
             eyebrow="Lo que aprenderás"

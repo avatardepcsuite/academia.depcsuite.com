@@ -1,9 +1,8 @@
 "use client"
 
 import { useCurrency, flagComponents, currencies, type CurrencyCode } from "@/contexts/currency-context"
-import { buildWhatsAppPaymentLink, formatCoursePrice, type DiplomaturaPricing } from "@/lib/diplomaturas-pricing"
-import { Check, CreditCard, MessageCircle, Play, ShieldCheck, Tag } from "lucide-react"
-import { useState } from "react"
+import { buildWhatsAppPaymentLink, formatCoursePrice, hasFixedPrice, type DiplomaturaPricing } from "@/lib/diplomaturas-pricing"
+import { CreditCard, MessageCircle, Play, ShieldCheck } from "lucide-react"
 
 interface DiplomaturaSidebarProps {
   pricing: DiplomaturaPricing
@@ -48,18 +47,11 @@ export function DiplomaturaSidebar({
 }: DiplomaturaSidebarProps) {
   const { selectedCurrency, setSelectedCurrency } = useCurrency()
   const isArs = selectedCurrency.code === "ARS"
-  const [coupon, setCoupon] = useState("")
-  const [couponApplied, setCouponApplied] = useState(false)
 
   const paymentHref = isArs ? pricing.mpagoLink : buildWhatsAppPaymentLink(pricing.title)
   const firstClassHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(firstClassMessage)}`
 
-  // When a coupon is applied we route the inscription through WhatsApp so an
-  // advisor can validate the code and apply the corresponding discount.
-  const couponHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    `Hola! Quiero inscribirme en la ${pricing.title} y tengo el cupón de descuento "${coupon.trim()}". ¿Me ayudan a aplicarlo?`,
-  )}`
-  const primaryHref = couponApplied && coupon.trim() ? couponHref : paymentHref
+  const primaryHref = paymentHref
 
   return (
     <div className="bg-white rounded-xl border border-gray-200 shadow-xl shadow-black/10 overflow-hidden">
@@ -124,7 +116,9 @@ export function DiplomaturaSidebar({
                 {formatCoursePrice(pricing.price, selectedCurrency.code)}
               </span>
             </div>
-            <p className="text-xs text-gray-400 mb-3">Valor aproximado en {selectedCurrency.code}</p>
+            {!hasFixedPrice(pricing.price, selectedCurrency.code) && (
+              <p className="text-xs text-gray-400 mb-3">Valor aproximado en {selectedCurrency.code}</p>
+            )}
             <p className="text-sm text-gray-500 mb-5">
               Coordinamos el medio de pago y el valor en tu moneda local.
             </p>
@@ -207,41 +201,6 @@ export function DiplomaturaSidebar({
               )
             })}
           </div>
-        </div>
-
-        {/* Coupon */}
-        <div className="mt-5 pt-5 border-t border-gray-100">
-          <label htmlFor="coupon" className="flex items-center gap-1.5 text-sm font-semibold text-gray-900 mb-2">
-            <Tag className="w-4 h-4 text-[#5C1F5C]" />
-            ¿Tenés un cupón de descuento?
-          </label>
-          <div className="flex gap-2">
-            <input
-              id="coupon"
-              type="text"
-              value={coupon}
-              onChange={(e) => {
-                setCoupon(e.target.value)
-                setCouponApplied(false)
-              }}
-              placeholder="Ingresá tu cupón"
-              className="flex-1 h-11 px-3 rounded-md border border-gray-300 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#5C1F5C]/30 focus:border-[#5C1F5C] uppercase"
-            />
-            <button
-              type="button"
-              onClick={() => setCouponApplied(coupon.trim().length > 0)}
-              disabled={coupon.trim().length === 0}
-              className="h-11 px-4 rounded-md bg-[#2D1B4E] text-white text-sm font-medium transition-colors hover:bg-[#3D2B5E] disabled:opacity-40 disabled:cursor-not-allowed"
-            >
-              Aplicar
-            </button>
-          </div>
-          {couponApplied && coupon.trim() && (
-            <p className="flex items-center gap-1.5 text-xs text-emerald-600 mt-2">
-              <Check className="w-3.5 h-3.5 flex-shrink-0" />
-              Cupón aplicado. Coordinamos el descuento al inscribirte.
-            </p>
-          )}
         </div>
       </div>
     </div>

@@ -30,6 +30,8 @@ interface DiplomaturaLayoutProps {
   meta?: HeroMeta[]
   /** Optional certification logos shown in the hero */
   certifications?: { src: string; alt: string }[]
+  /** Optional docente shown in the hero */
+  heroDocente?: { src: string; name: string; role: string }
   /** Hero background gradient classes */
   heroGradient?: string
   /** Accent text color used for the highlighted title + subtitle */
@@ -61,6 +63,7 @@ export function DiplomaturaLayout({
   description,
   meta = [],
   certifications = [],
+  heroDocente,
   heroGradient = "from-[#1b1033] via-[#2D1B4E] to-[#3d2456]",
   accentText = "text-emerald-300",
   pricing,
@@ -150,6 +153,27 @@ export function DiplomaturaLayout({
                 <p className="text-sm font-semibold text-white">
                   Certificación Nacional e Internacional
                 </p>
+              </div>
+            )}
+
+            {heroDocente && (
+              <div className="mt-8 inline-flex items-center gap-4 rounded-2xl border border-white/15 bg-white/10 p-3 pr-5 backdrop-blur-sm">
+                <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-full ring-2 ring-white/40">
+                  <Image
+                    src={heroDocente.src}
+                    alt={`${heroDocente.name}, ${heroDocente.role}`}
+                    fill
+                    sizes="64px"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="min-w-0">
+                  <p className={`text-xs font-medium uppercase tracking-wide ${accentText}`}>
+                    Docente en vivo
+                  </p>
+                  <p className="text-base font-bold text-white leading-tight">{heroDocente.name}</p>
+                  <p className="text-sm text-white/70 leading-tight">{heroDocente.role}</p>
+                </div>
               </div>
             )}
           </div>

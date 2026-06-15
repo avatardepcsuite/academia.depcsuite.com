@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Image from "next/image"
 import {
   Clock,
   GraduationCap,
@@ -10,6 +11,8 @@ import {
   Award,
   BookOpen,
   Code,
+  Radio,
+  Linkedin,
 } from "lucide-react"
 import { Header } from "@/components/landing/header"
 import { Footer } from "@/components/landing/footer"
@@ -241,6 +244,68 @@ export default function DiplomaturaPhpLaravelPage() {
           showTrialClass={false}
           onEnroll={() => setEnrollOpen(true)}
         >
+          {/* Destacado: Masterclass en vivo con docente */}
+          <div className="mb-10 overflow-hidden rounded-2xl border border-orange-200 bg-orange-50">
+            <div className="flex flex-col gap-5 p-6 sm:flex-row sm:items-center sm:gap-6">
+              <span className="inline-flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#FF2D20] to-orange-500 text-white">
+                <Radio className="h-7 w-7" aria-hidden="true" />
+              </span>
+              <div className="min-w-0">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FF2D20] px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-white" aria-hidden="true" />
+                  En vivo y on demand
+                </span>
+                <h2 className="mt-3 text-xl font-bold text-gray-900 sm:text-2xl text-balance">
+                  Contenido on demand <span className="text-[#FF2D20]">+ 2 masterclass al mes con docente en vivo</span>
+                </h2>
+                <p className="mt-1.5 text-gray-600 leading-relaxed">
+                  La diplomatura es 100% on demand: las clases están grabadas y las cursás a tu ritmo, cuando y desde donde quieras. Además, todos los meses sumás 2 masterclass en vivo con un docente para el seguimiento académico y la consulta de dudas, donde resolvés tus consultas en tiempo real y profundizás los temas más importantes junto a un experto.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Docente */}
+          <CourseSection
+            eyebrow="Tu docente"
+            eyebrowIcon={GraduationCap}
+            title="Conocé a tu docente"
+            accentText={accent.text}
+            accentBg={accent.bg}
+            accentBorder={accent.border}
+          >
+            <div className="flex flex-col gap-6 rounded-2xl border border-gray-200 bg-white p-6 sm:flex-row sm:items-center">
+              <div className="relative mx-auto h-32 w-32 flex-shrink-0 overflow-hidden rounded-full ring-4 ring-orange-100 sm:mx-0">
+                <Image
+                  src="/images/docente-nelson.jpg"
+                  alt="Nelson Daniel Tarche, docente experto en desarrollo web full stack"
+                  fill
+                  sizes="128px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="min-w-0 text-center sm:text-left">
+                <h3 className="text-xl font-bold text-gray-900">Nelson Daniel Tarche</h3>
+                <p className="mt-1 inline-flex items-center gap-2 text-sm font-semibold text-[#FF2D20]">
+                  <Code className="h-4 w-4" aria-hidden="true" />
+                  Desarrollador Web Full Stack
+                </p>
+                <p className="mt-3 text-gray-600 leading-relaxed">
+                  Con más de 10 años de experiencia en el rubro, Nelson te acompaña durante toda la diplomatura en las masterclass en vivo, compartiendo casos reales y guiándote en cada proyecto práctico con PHP y Laravel.
+                </p>
+                <a
+                  href="https://www.linkedin.com/in/nelson-daniel-tarche/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#0a66c2] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#004182] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0a66c2]/40"
+                >
+                  <Linkedin className="h-4 w-4" aria-hidden="true" />
+                  Ver perfil de LinkedIn
+                </a>
+              </div>
+            </div>
+          </CourseSection>
+
           {/* Lo que aprenderás */}
           <CourseSection
             eyebrow="Lo que aprenderás"
