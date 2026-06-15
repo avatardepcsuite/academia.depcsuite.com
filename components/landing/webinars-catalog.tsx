@@ -33,12 +33,14 @@ export function WebinarsCatalog() {
     return d
   }, [])
 
-  // Docentes únicos con foto, para mostrar en el hero
+  // Docentes únicos con foto, para mostrar en el hero.
+  // Deduplicamos por imagen para evitar repetir un docente cuyo nombre
+  // figura con variantes (por ejemplo con o sin tilde).
   const docentes = useMemo(() => {
     const map = new Map<string, { name: string; image: string }>()
     for (const w of webinars) {
-      if (w.instructorImage && !map.has(w.instructor)) {
-        map.set(w.instructor, { name: w.instructor, image: w.instructorImage })
+      if (w.instructorImage && !map.has(w.instructorImage)) {
+        map.set(w.instructorImage, { name: w.instructor, image: w.instructorImage })
       }
     }
     return Array.from(map.values())
