@@ -109,7 +109,7 @@ export const diplomaturasPricing: Record<string, DiplomaturaPricing> = {
       EUR: "https://www.paypal.com/ncp/payment/4TKQ3RKYPEV2C",
       MXN: "https://www.paypal.com/ncp/payment/G9A7U66SMW78E",
     },
-    idproducto: 15654,
+    idproducto: 18401,
     fkIdFormulario: 552,
     fkIdArea: 2,
   },
