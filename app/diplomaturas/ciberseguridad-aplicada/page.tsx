@@ -13,6 +13,7 @@ import {
   Shield,
   CalendarCheck,
   Radio,
+  Linkedin,
 } from "lucide-react"
 import { Header } from "@/components/landing/header"
 import { Footer } from "@/components/landing/footer"
@@ -259,11 +260,6 @@ export default function DiplomaturaCiberseguridadPage() {
             { src: "/images/logo-camara-argentina.png", alt: "Logo Cámara Argentina de Comercio - Certificación Nacional" },
             { src: "/images/logo-oeip.png", alt: "Logo OEIP - Certificación Internacional" },
           ]}
-          heroDocente={{
-            src: "/docentes/eliana-caballero.png",
-            name: "Eliana Caballero",
-            role: "Experta en seguridad informática",
-          }}
           pricing={diplomaturasPricing["ciberseguridad-aplicada"]}
           buttonGradient={buttonGradient}
           previewGradient={themeGradient}
@@ -321,6 +317,15 @@ export default function DiplomaturaCiberseguridadPage() {
                 <p className="mt-3 text-gray-600 leading-relaxed">
                   Con más de 10 años de experiencia en el sector, Eliana te acompaña en vivo durante toda la diplomatura, compartiendo casos reales y guiándote en cada laboratorio práctico.
                 </p>
+                <a
+                  href="https://www.linkedin.com/in/eliana-caballero"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#0a66c2] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#004182] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0a66c2]/40"
+                >
+                  <Linkedin className="h-4 w-4" aria-hidden="true" />
+                  Ver perfil de LinkedIn
+                </a>
               </div>
             </div>
           </CourseSection>
