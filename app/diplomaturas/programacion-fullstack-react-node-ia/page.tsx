@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Image from "next/image"
 import {
   Clock,
   GraduationCap,
@@ -274,6 +275,38 @@ export default function DiplomaturaFullStackPage() {
               </div>
             </div>
           </div>
+
+          {/* Docente */}
+          <CourseSection
+            eyebrow="Tu docente"
+            eyebrowIcon={GraduationCap}
+            title="Conocé a tu docente"
+            accentText={accent.text}
+            accentBg={accent.bg}
+            accentBorder={accent.border}
+          >
+            <div className="flex flex-col gap-6 rounded-2xl border border-gray-200 bg-white p-6 sm:flex-row sm:items-center">
+              <div className="relative mx-auto h-32 w-32 flex-shrink-0 overflow-hidden rounded-full ring-4 ring-indigo-100 sm:mx-0">
+                <Image
+                  src="/images/docente-matias.png"
+                  alt="Matías Giménez, docente experto en desarrollo web full stack"
+                  fill
+                  sizes="128px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="min-w-0 text-center sm:text-left">
+                <h3 className="text-xl font-bold text-gray-900">Matías Giménez</h3>
+                <p className="mt-1 inline-flex items-center gap-2 text-sm font-semibold text-indigo-600">
+                  <Code className="h-4 w-4" aria-hidden="true" />
+                  Desarrollador Web Full Stack
+                </p>
+                <p className="mt-3 text-gray-600 leading-relaxed">
+                  Con más de 6 años de experiencia en el rubro, Matías te acompaña durante toda la diplomatura en las masterclass en vivo, compartiendo casos reales y guiándote en cada proyecto práctico con React, Node.js e Inteligencia Artificial.
+                </p>
+              </div>
+            </div>
+          </CourseSection>
 
           {/* Lo que aprenderás — boxed checklist (top of page) */}
           <CourseSection

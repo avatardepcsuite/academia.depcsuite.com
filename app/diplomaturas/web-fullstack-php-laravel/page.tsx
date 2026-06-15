@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Image from "next/image"
 import {
   Clock,
   GraduationCap,
@@ -274,9 +275,15 @@ export default function DiplomaturaPhpLaravelPage() {
             accentBorder={accent.border}
           >
             <div className="flex flex-col gap-6 rounded-2xl border border-gray-200 bg-white p-6 sm:flex-row sm:items-center">
-              <span className="mx-auto flex h-32 w-32 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#FF2D20] to-orange-500 text-white ring-4 ring-orange-100 sm:mx-0">
-                <GraduationCap className="h-14 w-14" aria-hidden="true" />
-              </span>
+              <div className="relative mx-auto h-32 w-32 flex-shrink-0 overflow-hidden rounded-full ring-4 ring-orange-100 sm:mx-0">
+                <Image
+                  src="/images/docente-nelson.jpg"
+                  alt="Nelson Daniel Tarche, docente experto en desarrollo web full stack"
+                  fill
+                  sizes="128px"
+                  className="object-cover"
+                />
+              </div>
               <div className="min-w-0 text-center sm:text-left">
                 <h3 className="text-xl font-bold text-gray-900">Nelson Daniel Tarche</h3>
                 <p className="mt-1 inline-flex items-center gap-2 text-sm font-semibold text-[#FF2D20]">
