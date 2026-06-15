@@ -50,17 +50,39 @@ const currencySymbols: Record<string, string> = {
   EUR: "€",
 }
 
+/**
+ * Fixed prices per currency, keyed by the ARS price tier of each diplomatura.
+ * These are the official single prices and must NOT be derived from conversion rates.
+ */
+export const fixedPricesByArs: Record<number, Record<string, number>> = {
+  300000: { USD: 200, EUR: 200, MXN: 3400 },
+  240000: { USD: 165, EUR: 165, MXN: 2800 },
+  120000: { USD: 80, EUR: 80, MXN: 1300 },
+}
+
 /** Convert an ARS amount into the target currency using the fixed rates. */
 export function convertFromArs(arsAmount: number, currencyCode: string): number {
   const rate = currencyConversionRates[currencyCode] ?? 1
   return arsAmount / rate
 }
 
-/** Format an ARS amount as an approximate price in the selected currency. */
+/** Format an ARS amount as a price in the selected currency, using fixed prices when defined. */
 export function formatCoursePrice(arsAmount: number, currencyCode: string): string {
-  const converted = Math.round(convertFromArs(arsAmount, currencyCode))
   const symbol = currencySymbols[currencyCode] ?? "$"
+
+  // Use the official fixed price for this tier/currency when available.
+  const fixed = fixedPricesByArs[arsAmount]?.[currencyCode]
+  if (fixed != null) {
+    return `${symbol} ${fixed.toLocaleString("es-AR")}`
+  }
+
+  const converted = Math.round(convertFromArs(arsAmount, currencyCode))
   return `${symbol} ${converted.toLocaleString("es-AR")}`
+}
+
+/** Whether an official fixed price exists for this ARS tier and currency. */
+export function hasFixedPrice(arsAmount: number, currencyCode: string): boolean {
+  return fixedPricesByArs[arsAmount]?.[currencyCode] != null
 }
 
 /**

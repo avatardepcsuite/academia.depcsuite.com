@@ -21,7 +21,7 @@ import {
 import Image from "next/image"
 import Link from "next/link"
 import { EnrollModal } from "@/components/landing/enroll-modal"
-import { diplomaturasPricing, formatCoursePrice, type DiplomaturaPricing } from "@/lib/diplomaturas-pricing"
+import { diplomaturasPricing, formatCoursePrice, hasFixedPrice, type DiplomaturaPricing } from "@/lib/diplomaturas-pricing"
 import { useCurrency, flagComponents, currencies, type CurrencyCode } from "@/contexts/currency-context"
 
 const diplomaturas = [
@@ -329,7 +329,9 @@ export function Features() {
                           {formatCoursePrice(curso.price, selectedCurrency.code)}
                         </span>
                       </div>
-                      <p className="text-xs text-gray-400 mt-1">Valor aproximado en {selectedCurrency.code}</p>
+                      {!hasFixedPrice(curso.price, selectedCurrency.code) && (
+                        <p className="text-xs text-gray-400 mt-1">Valor aproximado en {selectedCurrency.code}</p>
+                      )}
                     </>
                   )}
                 </div>
