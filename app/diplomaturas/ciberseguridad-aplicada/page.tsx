@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Image from "next/image"
 import {
   Clock,
   GraduationCap,
@@ -11,6 +12,7 @@ import {
   BookOpen,
   Shield,
   CalendarCheck,
+  Radio,
 } from "lucide-react"
 import { Header } from "@/components/landing/header"
 import { Footer } from "@/components/landing/footer"
@@ -249,7 +251,7 @@ export default function DiplomaturaCiberseguridadPage() {
           accentText="text-teal-300"
           meta={[
             { icon: Clock, label: "3 meses de duración" },
-            { icon: Monitor, label: "100% online" },
+            { icon: Monitor, label: "100% online con docente en vivo" },
             { icon: GraduationCap, label: "Sin conocimientos previos" },
             { icon: CalendarCheck, label: "Comienzo en vivo: 27 de agosto" },
           ]}
@@ -265,6 +267,59 @@ export default function DiplomaturaCiberseguridadPage() {
           showTrialClass={false}
           onEnroll={() => setEnrollOpen(true)}
         >
+          {/* Destacado: Clases en vivo con docente */}
+          <div className="mb-10 overflow-hidden rounded-2xl border border-teal-200 bg-teal-50">
+            <div className="flex flex-col gap-5 p-6 sm:flex-row sm:items-center sm:gap-6">
+              <span className="inline-flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-teal-600 to-emerald-600 text-white">
+                <Radio className="h-7 w-7" aria-hidden="true" />
+              </span>
+              <div className="min-w-0">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-teal-600 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-white" aria-hidden="true" />
+                  En vivo
+                </span>
+                <h2 className="mt-3 text-xl font-bold text-gray-900 sm:text-2xl text-balance">
+                  Clases 100% online <span className="text-teal-700">con docente en vivo</span>
+                </h2>
+                <p className="mt-1.5 text-gray-600 leading-relaxed">
+                  No son solo videos grabados: cursás en tiempo real junto a una docente que te acompaña, resuelve tus dudas al instante y guía cada laboratorio práctico.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Docente */}
+          <CourseSection
+            eyebrow="Tu docente"
+            eyebrowIcon={GraduationCap}
+            title="Conocé a tu docente"
+            accentText={accent.text}
+            accentBg={accent.bg}
+            accentBorder={accent.border}
+          >
+            <div className="flex flex-col gap-6 rounded-2xl border border-gray-200 bg-white p-6 sm:flex-row sm:items-center">
+              <div className="relative mx-auto h-32 w-32 flex-shrink-0 overflow-hidden rounded-full ring-4 ring-teal-100 sm:mx-0">
+                <Image
+                  src="/docentes/eliana-caballero.png"
+                  alt="Eliana Caballero, docente experta en seguridad informática"
+                  fill
+                  sizes="128px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="min-w-0 text-center sm:text-left">
+                <h3 className="text-xl font-bold text-gray-900">Eliana Caballero</h3>
+                <p className="mt-1 inline-flex items-center gap-2 text-sm font-semibold text-teal-700">
+                  <Shield className="h-4 w-4" aria-hidden="true" />
+                  Experta en seguridad informática
+                </p>
+                <p className="mt-3 text-gray-600 leading-relaxed">
+                  Con más de 10 años de experiencia en el sector, Eliana te acompaña en vivo durante toda la diplomatura, compartiendo casos reales y guiándote en cada laboratorio práctico.
+                </p>
+              </div>
+            </div>
+          </CourseSection>
+
           {/* Lo que aprenderás */}
           <CourseSection
             eyebrow="Lo que aprenderás"
