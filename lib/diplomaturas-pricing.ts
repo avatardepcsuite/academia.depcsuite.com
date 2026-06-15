@@ -18,6 +18,12 @@ export interface DiplomaturaPricing {
   mpagoLink: string
   /** PayPal checkout links per currency (USD / EUR / MXN) */
   paypalLinks?: PaypalLinks
+  /** Product id used by abandoned cart service */
+  idproducto?: number
+  /** Form id used by prospect lambda */
+  fkIdFormulario?: number
+  /** Area id used by prospect and abandoned cart lambdas */
+  fkIdArea?: number
 }
 
 // WhatsApp number used for payments in currencies other than ARS
@@ -73,6 +79,9 @@ export const diplomaturasPricing: Record<string, DiplomaturaPricing> = {
       EUR: "https://www.paypal.com/ncp/payment/JPJ76LHK84CKW",
       MXN: "https://www.paypal.com/ncp/payment/5YG4W8C4GAYDA",
     },
+    idproducto: 93011,
+    fkIdFormulario: 552,
+    fkIdArea: 2,
   },
   "programacion-fullstack-react-node-ia": {
     title: "Diplomatura Programación Full Stack + IA",
@@ -85,6 +94,9 @@ export const diplomaturasPricing: Record<string, DiplomaturaPricing> = {
       EUR: "https://www.paypal.com/ncp/payment/3DQ2VR6ZMW3W2",
       MXN: "https://www.paypal.com/ncp/payment/XPZXN5U8KH5GY",
     },
+    idproducto: 31015,
+    fkIdFormulario: 552,
+    fkIdArea: 2,
   },
   "web-fullstack-php-laravel": {
     title: "Diplomatura Programación Web Full Stack PHP / Laravel",
@@ -97,6 +109,9 @@ export const diplomaturasPricing: Record<string, DiplomaturaPricing> = {
       EUR: "https://www.paypal.com/ncp/payment/4TKQ3RKYPEV2C",
       MXN: "https://www.paypal.com/ncp/payment/G9A7U66SMW78E",
     },
+    idproducto: 15654,
+    fkIdFormulario: 552,
+    fkIdArea: 2,
   },
   "programacion-python": {
     title: "Diplomatura Programación Python",
@@ -109,6 +124,9 @@ export const diplomaturasPricing: Record<string, DiplomaturaPricing> = {
       EUR: "https://www.paypal.com/ncp/payment/NVZZY89T57ZJN",
       MXN: "https://www.paypal.com/ncp/payment/XFHHWJVTW4LL6",
     },
+    idproducto: 430,
+    fkIdFormulario: 552,
+    fkIdArea: 2,
   },
   "fundamentos-microsoft-excel": {
     title: "Diplomatura Fundamentos de Microsoft Excel",
@@ -121,6 +139,9 @@ export const diplomaturasPricing: Record<string, DiplomaturaPricing> = {
       EUR: "https://www.paypal.com/ncp/payment/Y27YHGE4Y3HJ2",
       MXN: "https://www.paypal.com/ncp/payment/S6SPUGEL6KCK4",
     },
+    idproducto: 112,
+    fkIdFormulario: 552,
+    fkIdArea: 2,
   },
 }
 
