@@ -263,13 +263,13 @@ export default function DiplomaturaFullStackPage() {
               <div className="min-w-0">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-indigo-600 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
                   <span className="h-2 w-2 animate-pulse rounded-full bg-white" aria-hidden="true" />
-                  En vivo
+                  En vivo y on demand
                 </span>
                 <h2 className="mt-3 text-xl font-bold text-gray-900 sm:text-2xl text-balance">
-                  2 masterclass al mes <span className="text-indigo-700">con docente en vivo</span>
+                  Contenido on demand <span className="text-indigo-700">+ 2 masterclass al mes con docente en vivo</span>
                 </h2>
                 <p className="mt-1.5 text-gray-600 leading-relaxed">
-                  Todos los meses tenés 2 masterclass en vivo con un docente para el seguimiento académico y la consulta de dudas: resolvés tus consultas en tiempo real y profundizás los temas más importantes junto a un experto.
+                  La diplomatura es 100% on demand: las clases están grabadas y las cursás a tu ritmo, cuando y desde donde quieras. Además, todos los meses sumás 2 masterclass en vivo con un docente para el seguimiento académico y la consulta de dudas, donde resolvés tus consultas en tiempo real y profundizás los temas más importantes junto a un experto.
                 </p>
               </div>
             </div>
