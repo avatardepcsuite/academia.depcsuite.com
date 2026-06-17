@@ -1,8 +1,25 @@
 "use client"
 
+import { usePathname } from "next/navigation"
+import { diplomaturasPricing } from "@/lib/diplomaturas-pricing"
+
 export function WhatsAppButton() {
   const phoneNumber = "541162845700"
-  const message = "Hola! Me interesa conocer más sobre la suscripción DePC Tech"
+  const pathname = usePathname()
+
+  // Default message (home and other pages)
+  let message = "Hola, me gustaría recibir más información sobre..."
+
+  // If we are inside a diplomatura page, include its name in the message
+  const match = pathname?.match(/^\/diplomaturas\/([^/]+)/)
+  if (match) {
+    const slug = match[1]
+    const diplomatura = diplomaturasPricing[slug]
+    if (diplomatura) {
+      message = `Hola, me gustaría recibir más información sobre ${diplomatura.title}`
+    }
+  }
+
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
   return (
