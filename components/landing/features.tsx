@@ -26,7 +26,7 @@ import { useCurrency, flagComponents, currencies, type CurrencyCode } from "@/co
 
 const diplomaturas = [
   {
-    title: "Diplomatura Fundamentos de Ciberseguridad Aplicada",
+    title: "Diplomatura Ciberseguridad Aplicada",
     subtitle: "Seguridad Informatica",
     description: "Protegé infraestructuras críticas y convertite en el perfil más buscado por las empresas globales desde cero.",
     href: "/diplomaturas/ciberseguridad-aplicada",

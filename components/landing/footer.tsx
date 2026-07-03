@@ -34,7 +34,7 @@ const footerLinks = {
   formacion: {
     title: "Diplomaturas",
     links: [
-      { label: "Fundamentos de Ciberseguridad Aplicada", href: "/diplomaturas/ciberseguridad-aplicada" },
+      { label: "Ciberseguridad Aplicada", href: "/diplomaturas/ciberseguridad-aplicada" },
       { label: "Full Stack React + Node.js + IA", href: "/diplomaturas/programacion-fullstack-react-node-ia" },
       { label: "Web Full Stack PHP Laravel", href: "/diplomaturas/web-fullstack-php-laravel" },
       { label: "Programación Python", href: "/diplomaturas/programacion-python" },

@@ -91,7 +91,7 @@ export function hasFixedPrice(arsAmount: number, currencyCode: string): boolean 
  */
 export const diplomaturasPricing: Record<string, DiplomaturaPricing> = {
   "ciberseguridad-aplicada": {
-    title: "Diplomatura Fundamentos de Ciberseguridad Aplicada",
+    title: "Diplomatura Ciberseguridad Aplicada",
     price: 300000,
     installments: 6,
     installmentPrice: 50000,

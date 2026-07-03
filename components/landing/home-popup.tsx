@@ -28,7 +28,7 @@ export function HomePopup() {
         className="max-w-[calc(100%-2rem)] sm:max-w-md rounded-2xl border-4 border-white bg-white p-2 shadow-2xl overflow-hidden"
       >
         <DialogTitle className="sr-only">
-          Diplomatura en Fundamentos de Ciberseguridad Aplicada
+          Diplomatura en Ciberseguridad Aplicada
         </DialogTitle>
         <DialogClose
           className="absolute right-3 top-3 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-gray-700 shadow-md ring-1 ring-gray-200 transition-colors hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500"
@@ -39,12 +39,12 @@ export function HomePopup() {
         <button
           type="button"
           onClick={handleClick}
-          aria-label="Ver Diplomatura en Fundamentos de Ciberseguridad Aplicada"
+          aria-label="Ver Diplomatura en Ciberseguridad Aplicada"
           className="block w-full cursor-pointer overflow-hidden rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-teal-500/40"
         >
           <Image
             src="/images/popup-diplomatura-ciberseguridad.png"
-            alt="Diplomatura en Fundamentos de Ciberseguridad Aplicada - Docente en vivo, 3 meses de duración, certificación nacional e internacional"
+            alt="Diplomatura en Ciberseguridad Aplicada - Docente en vivo, 3 meses de duración, certificación nacional e internacional"
             width={1080}
             height={1350}
             priority
