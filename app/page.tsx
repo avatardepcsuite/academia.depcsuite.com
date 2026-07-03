@@ -3,6 +3,7 @@ import { Header } from "@/components/landing/header"
 import { Hero } from "@/components/landing/hero"
 import { Features } from "@/components/landing/features"
 import { HomePopup } from "@/components/landing/home-popup"
+import { EmojiRain } from "@/components/landing/emoji-rain"
 
 
 // Lazy load below-the-fold components for better initial page load
@@ -187,6 +188,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <EmojiRain />
       <HomePopup />
       <main className="min-h-screen bg-white">
         <Header />
