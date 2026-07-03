@@ -244,7 +244,7 @@ export default function DiplomaturaCiberseguridadPage() {
         <DiplomaturaLayout
           breadcrumb="Ciberseguridad Aplicada"
           badge="Certificación Nacional e Internacional"
-          title="Ciberseguridad"
+          title="Diplomatura en Ciberseguridad"
           titleHighlight="Aplicada"
           subtitle="Hacking Ético + Redes + Criptografía + DevSecOps"
           description="Adquiere los conocimientos esenciales para proteger sistemas y redes. Aprende desde los fundamentos hasta técnicas de pentesting y seguridad en el desarrollo de software."
