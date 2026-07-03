@@ -2,9 +2,9 @@
 
 import { useEffect, useState, useMemo } from "react"
 
-const EMOJIS = ["⚽"]
+const EMOJIS = ["🇦🇷", "⭐", "⚽"]
 const RAIN_DURATION = 6000 // ms visible on screen
-const DROP_COUNT = 40
+const DROP_COUNT = 24
 
 type Drop = {
   id: number
@@ -24,8 +24,8 @@ export function EmojiRain() {
       id: i,
       emoji: EMOJIS[Math.floor(Math.random() * EMOJIS.length)],
       left: Math.random() * 100,
-      delay: Math.random() * 1.5,
-      duration: 3 + Math.random() * 3,
+      delay: Math.random() * 0.4,
+      duration: 3 + Math.random() * 2.5,
       size: 20 + Math.random() * 28,
       drift: (Math.random() - 0.5) * 120,
     }))
@@ -61,13 +61,10 @@ export function EmojiRain() {
       <style jsx>{`
         @keyframes emoji-fall {
           0% {
-            transform: translate3d(0, -10vh, 0) rotate(0deg);
-            opacity: 0;
-          }
-          10% {
+            transform: translate3d(0, -15vh, 0) rotate(0deg);
             opacity: 1;
           }
-          90% {
+          92% {
             opacity: 1;
           }
           100% {
@@ -77,7 +74,7 @@ export function EmojiRain() {
         }
         .animate-emoji-fall {
           animation-name: emoji-fall;
-          animation-timing-function: ease-in;
+          animation-timing-function: linear;
           animation-iteration-count: 1;
           animation-fill-mode: forwards;
           will-change: transform, opacity;
