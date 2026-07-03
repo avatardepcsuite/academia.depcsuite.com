@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useMemo } from "react"
 
-const EMOJIS = ["🏆", "⚽", "🇦🇷", "🥇", "🎉", "⭐", "🎊", "🙌"]
+const EMOJIS = ["⚽"]
 const RAIN_DURATION = 6000 // ms visible on screen
 const DROP_COUNT = 40
 
