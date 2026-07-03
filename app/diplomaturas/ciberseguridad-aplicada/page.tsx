@@ -43,7 +43,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Fundamentos de Ciberseguridad Aplicada",
+      "name": "Ciberseguridad Aplicada",
       "item": "https://academia.depcsuite.com/diplomaturas/ciberseguridad-aplicada"
     }
   ]
@@ -52,7 +52,7 @@ const breadcrumbSchema = {
 const courseSchema = {
   "@context": "https://schema.org",
   "@type": "Course",
-  "name": "Diplomatura en Fundamentos de Ciberseguridad Aplicada",
+  "name": "Diplomatura en Ciberseguridad Aplicada",
   "description": "Adquiere los conocimientos esenciales para proteger sistemas y redes. Aprende hacking etico, criptografia, seguridad en redes y DevSecOps. 3 meses de duracion, 100% online, con doble certificacion nacional e internacional.",
   "url": "https://academia.depcsuite.com/diplomaturas/ciberseguridad-aplicada",
   "image": "https://academia.depcsuite.com/images/course-cybersecurity.jpg",
@@ -71,7 +71,7 @@ const courseSchema = {
   "inLanguage": "es",
   "numberOfCredits": "3 meses",
   "teaches": ["Ciberseguridad", "Hacking Etico", "Pentesting", "Criptografia", "Seguridad de Redes", "DevSecOps", "ISO 27001", "NIST", "Wireshark", "Nmap", "Kali Linux", "Metasploit", "OWASP"],
-  "occupationalCredentialAwarded": "Diplomatura en Fundamentos de Ciberseguridad Aplicada con certificacion nacional e internacional",
+  "occupationalCredentialAwarded": "Diplomatura en Ciberseguridad Aplicada con certificacion nacional e internacional",
   "hasCourseInstance": {
     "@type": "CourseInstance",
     "courseMode": "online",
@@ -244,7 +244,7 @@ export default function DiplomaturaCiberseguridadPage() {
         <DiplomaturaLayout
           breadcrumb="Ciberseguridad Aplicada"
           badge="Certificación Nacional e Internacional"
-          title="Fundamentos de Ciberseguridad"
+          title="Ciberseguridad"
           titleHighlight="Aplicada"
           subtitle="Hacking Ético + Redes + Criptografía + DevSecOps"
           description="Adquiere los conocimientos esenciales para proteger sistemas y redes. Aprende desde los fundamentos hasta técnicas de pentesting y seguridad en el desarrollo de software."

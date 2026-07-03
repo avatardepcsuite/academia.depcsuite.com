@@ -2,7 +2,7 @@ import React from "react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Diplomatura Fundamentos de Ciberseguridad Aplicada",
+  title: "Diplomatura Ciberseguridad Aplicada",
   description:
     "Aprende ciberseguridad desde cero. Fundamentos, hacking etico, criptografia, seguridad en redes y DevSecOps. 3 meses, 100% online, doble certificacion nacional e internacional.",
   keywords: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "criptografia basica",
   ],
   openGraph: {
-    title: "Diplomatura Fundamentos de Ciberseguridad Aplicada | Academia DePC",
+    title: "Diplomatura Ciberseguridad Aplicada | Academia DePC",
     description:
       "Aprende ciberseguridad, hacking etico, criptografia y seguridad en redes. 3 meses, 100% online, con doble certificacion.",
     url: "https://academia.depcsuite.com/diplomaturas/ciberseguridad-aplicada",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: "/images/course-cybersecurity.jpg",
         width: 1200,
         height: 630,
-        alt: "Diplomatura Fundamentos de Ciberseguridad Aplicada - Academia DePC",
+        alt: "Diplomatura Ciberseguridad Aplicada - Academia DePC",
       },
     ],
     locale: "es_AR",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Diplomatura Fundamentos de Ciberseguridad Aplicada",
+    title: "Diplomatura Ciberseguridad Aplicada",
     description:
       "Aprende ciberseguridad, hacking etico y seguridad en redes. Certificacion nacional e internacional.",
     images: ["/images/course-cybersecurity.jpg"],

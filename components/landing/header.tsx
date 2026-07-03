@@ -34,7 +34,7 @@ const LaravelIcon = ({ className }: { className?: string }) => (
 const ExcelIcon = FileSpreadsheet
 
 const diplomaturas = [
-  { href: "/diplomaturas/ciberseguridad-aplicada", label: "Fundamentos de Ciberseguridad Aplicada", icon: Shield, color: "text-teal-400", bgColor: "bg-teal-500/10" },
+  { href: "/diplomaturas/ciberseguridad-aplicada", label: "Ciberseguridad Aplicada", icon: Shield, color: "text-teal-400", bgColor: "bg-teal-500/10" },
   { href: "/diplomaturas/programacion-fullstack-react-node-ia", label: "Full Stack React + Node.js + IA", icon: ReactIcon, color: "text-cyan-400", bgColor: "bg-cyan-500/10" },
   { href: "/diplomaturas/web-fullstack-php-laravel", label: "Web Full Stack PHP Laravel", icon: LaravelIcon, color: "text-red-400", bgColor: "bg-red-500/10" },
   { href: "/diplomaturas/programacion-python", label: "Programación Python", icon: PythonIcon, color: "text-yellow-400", bgColor: "bg-yellow-500/10" },
