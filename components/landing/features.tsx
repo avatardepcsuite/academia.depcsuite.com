@@ -38,7 +38,7 @@ const diplomaturas = [
     duracion: "3 meses (12 clases)",
     diferencial: "Prácticas en entornos reales",
     certificacion: "Nacional e Internacional",
-    comienzo: "27 de agosto (docente en vivo)",
+    comienzo: "17 de septiembre (docente en vivo)",
     professor: "Prof. Eliana Caballero",
     professorImage: "/docentes/eliana-caballero.png",
     students: 0,

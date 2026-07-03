@@ -44,9 +44,9 @@ export function HomePopup() {
         >
           <Image
             src="/images/popup-diplomatura-ciberseguridad.png"
-            alt="Diplomatura en Ciberseguridad Aplicada - Docente en vivo, 3 meses de duración, certificación nacional e internacional"
-            width={1080}
-            height={1350}
+            alt="Diplomatura en Ciberseguridad Aplicada - Hacking ético, docente en vivo, criptografía y certificación nacional e internacional"
+            width={1035}
+            height={1500}
             priority
             className="h-auto w-full"
           />

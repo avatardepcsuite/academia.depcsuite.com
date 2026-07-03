@@ -254,7 +254,7 @@ export default function DiplomaturaCiberseguridadPage() {
             { icon: Clock, label: "3 meses de duración" },
             { icon: Monitor, label: "100% online con docente en vivo" },
             { icon: GraduationCap, label: "Sin conocimientos previos" },
-            { icon: CalendarCheck, label: "Comienzo en vivo: 27 de agosto" },
+            { icon: CalendarCheck, label: "Comienzo en vivo: 17 de septiembre" },
           ]}
           certifications={[
             { src: "/images/logo-camara-argentina.png", alt: "Logo Cámara Argentina de Comercio - Certificación Nacional" },
