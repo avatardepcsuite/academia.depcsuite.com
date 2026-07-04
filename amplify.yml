@@ -5,12 +5,10 @@ frontend:
       commands:
         - node -v
         - npm -v
-        - npm install -g pnpm
-        - pnpm -v
-        - pnpm install --no-frozen-lockfile
+        - npm install --legacy-peer-deps
     build:
       commands:
-        - pnpm run build
+        - npm run build
   artifacts:
     baseDirectory: .next
     files:
@@ -18,5 +16,4 @@ frontend:
   cache:
     paths:
       - .next/cache/**/*
-      - .pnpm-store/**/*
       - node_modules/**/*
