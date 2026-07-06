@@ -99,7 +99,7 @@ const planDeEstudio = [
     titulo: "Fundamentos de Ciberseguridad",
     clases: [
       "Introduccion al mundo de la ciberseguridad",
-      "Que es la ciberseguridad y por que es importante",
+      "Ciberseguridad y su importancia en el mundo actual",
       "Ciberamenazas actuales y tendencias",
       "Actores y motivaciones (hacktivismo, cibercrimen, espionaje)",
       "Confidencialidad, integridad y disponibilidad (CIA triad)",
@@ -397,6 +397,7 @@ export default function DiplomaturaCiberseguridadPage() {
               accentGradient={themeGradient}
               accentText="text-teal-600"
               accentChipBg="bg-teal-50"
+              totalClasesOverride={12}
             />
           </CourseSection>
 
