@@ -55,6 +55,8 @@ interface PlanDeEstudioProps {
   accentGradient?: string
   accentText?: string
   accentChipBg?: string
+  /** Overrides the automatically computed total number of clases shown in the summary. */
+  totalClasesOverride?: number
 }
 
 export function PlanDeEstudio({
@@ -62,10 +64,11 @@ export function PlanDeEstudio({
   accentGradient = "from-[#2D1B4E] to-[#5C1F5C]",
   accentText = "text-[#5C1F5C]",
   accentChipBg = "bg-[#5C1F5C]/10",
+  totalClasesOverride,
 }: PlanDeEstudioProps) {
   const [open, setOpen] = useState<number | null>(unidades[0]?.unidad ?? null)
 
-  const totalClases = unidades.reduce((acc, u) => acc + u.clases.length, 0)
+  const totalClases = totalClasesOverride ?? unidades.reduce((acc, u) => acc + u.clases.length, 0)
 
   return (
     <div>
